@@ -7,6 +7,7 @@
 //
 
 #import "FDAppDelegate.h"
+#import "FSClient.h"
 
 @implementation FDAppDelegate
 
@@ -16,10 +17,30 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+  // Check if this is the first time the app has been launched
+  if ([[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"])
+  {
+    // if so, do nothing - print this to terminal just so I know
+    NSLog(@"We've seen you before");
+  }
+  else
+  {
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    // This is the first launch ever
+    NSLog(@"Welcome to the food diary app!");
+    // Set tabController to open profile page if this is the first time ever launching the app
+    NSLog(@"Root: %@", self.window.rootViewController);
+    UITabBarController *tabController = (UITabBarController *)self.window.rootViewController;
+    tabController.selectedIndex = 3;
+  }
+  
+  [FSClient sharedClient].oauthConsumerKey = @"b066c53bc69a42bba07b5d530f685611";
+  [FSClient sharedClient].oauthConsumerSecret = @"c82eddab535842068c9ed771cb4c7e84";
+
+   self.dataController = [[FoodDiaryDayController alloc] init];
+  
+  
     return YES;
 }
 
