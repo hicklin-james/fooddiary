@@ -370,21 +370,6 @@
                                     <outlet property="delegate" destination="dI4-RA-oa9" id="8fV-A4-YQJ"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" id="mz5-0C-CGP">
-                                <rect key="frame" x="0.0" y="254" width="320" height="162"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <pickerView contentMode="scaleToFill" id="sfV-Ya-dm2">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="162"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
-                                        <connections>
-                                            <outlet property="dataSource" destination="dI4-RA-oa9" id="Aqt-Ay-AUZ"/>
-                                            <outlet property="delegate" destination="dI4-RA-oa9" id="fnw-XV-P9a"/>
-                                        </connections>
-                                    </pickerView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -397,7 +382,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="nutInfoTable" destination="2Me-TV-r7A" id="ED6-j5-REm"/>
-                        <outlet property="unitPicker" destination="sfV-Ya-dm2" id="PHb-bv-fWd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pan-oA-fo8" userLabel="First Responder" sceneMemberID="firstResponder"/>

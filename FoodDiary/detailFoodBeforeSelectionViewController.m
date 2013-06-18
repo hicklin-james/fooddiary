@@ -175,26 +175,6 @@
   return cell;
 }
 
-- (BOOL) textFieldShouldBeginEditing:(UITextView *)textView
-{
-  self.unitPicker.frame = CGRectMake(0, 500, self.unitPicker.frame.size.width,    self.unitPicker.frame.size.height);
-  [UIView beginAnimations:nil context:NULL];
-  [UIView setAnimationDuration:.50];
-  [UIView setAnimationDelegate:self];
-  self.unitPicker.frame = CGRectMake(0, 200, self.unitPicker.frame.size.width, self.unitPicker.frame.size.height);
-  [self.view addSubview:self.unitPicker];
-  [UIView commitAnimations];
-  return NO;
-}
-
-- (void)setPickerHidden:(BOOL)hidden
-{
-  CGAffineTransform transform = hidden ? CGAffineTransformIdentity : CGAffineTransformMakeTranslation(0, CGRectGetHeight(self.unitPicker.frame));
-  
-  [UIView animateWithDuration:0.3 animations:^{
-    self.unitPicker.transform = transform;
-  }];
-}
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   
@@ -204,9 +184,43 @@
        
     }
     
+    {
+      
+      UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                    initWithTitle:nil
+                                    delegate:nil
+                                    cancelButtonTitle:@"Cancel Button"
+                                    destructiveButtonTitle:nil
+                                    otherButtonTitles:nil];
+
+      CGRect pickerFrame = CGRectMake(0,40,0,0);
+      UIPickerView *testPicker = [[UIPickerView alloc] initWithFrame:pickerFrame];
+      testPicker.showsSelectionIndicator = YES;
+      testPicker.dataSource = self;
+      testPicker.delegate = self;
+      
+      UISegmentedControl *closeButton = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObject:@"Close"]];
+      closeButton.momentary = YES;
+      closeButton.frame = CGRectMake(260, 7.0f, 50.0f, 30.0f);
+      closeButton.segmentedControlStyle = UISegmentedControlStyleBar;
+      closeButton.tintColor = [UIColor blueColor];
+      [closeButton addTarget:self action:@selector(dismissActionSheet:) forControlEvents:UIControlEventValueChanged];
+      [actionSheet addSubview:closeButton];
+      
+      actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
+      [actionSheet addSubview:testPicker];
+      
+      [actionSheet showInView:[[UIApplication sharedApplication] keyWindow]];
+      [actionSheet setBounds:CGRectMake(0, 0, 320, 485)];
+    }
     
   }
   
+}
+
+-(void) dismissActionSheet:(id)sender {
+  UIActionSheet *actionSheet =  (UIActionSheet *)[(UIView *)sender superview];
+  [actionSheet dismissWithClickedButtonIndex:0 animated:YES];
 }
 
 @end
