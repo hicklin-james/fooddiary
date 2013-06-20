@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "AddFoodViewController.h"
 #import "DetailFoodBeforeSelectionViewController.h"
+#import <CoreLocation/CoreLocation.h>
+
 @class FoodDiaryDayController;
 
 // implement NewMealViewControllerDelegate Protocol
-@interface FoodDiaryViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface FoodDiaryViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *date;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;

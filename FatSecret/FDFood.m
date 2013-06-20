@@ -10,13 +10,14 @@
 
 @implementation FDFood
 
--(id)initWithIndex:(NSUInteger)index theFood:(FSFood *)theFood mealName:(NSString *)mealName {
+-(id)initWithIndex:(NSInteger)index theFood:(FSFood *)theFood mealName:(NSString *)mealName servingSize:(CGFloat)servingSize {
   
   self = [super init];
   if (self) {
     _food = theFood;
     _selectedServingIndex = index;
     _mealName = mealName;
+    _servingSize = servingSize;
     return self;
   }
   return nil;

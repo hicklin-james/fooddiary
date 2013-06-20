@@ -99,6 +99,23 @@
     return nil;
 }
 
+- (void)deleteFoodFromMeal:(NSString *)theMeal index:(NSUInteger)theIndex {
+  
+  if ([theMeal isEqual: @"Breakfast"]) {
+    [self.breakfast removeObjectAtIndex:theIndex];
+  }
+  else if ([theMeal isEqual: @"Lunch"]) {
+    [self.lunch removeObjectAtIndex:theIndex];
+  }
+  else if ([theMeal isEqual: @"Dinner"]) {
+    [self.dinner removeObjectAtIndex:theIndex];
+  }
+  else if ([theMeal isEqual: @"Snacks"]) {
+    [self.snacks removeObjectAtIndex:theIndex];
+  }
+  
+}
+
 -(void)addFoodToMeal:(NSString *)theMeal food:(FDFood *)theFood {
   
   if ([theMeal isEqual: @"Breakfast"]) {

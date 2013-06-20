@@ -12,9 +12,10 @@
 @interface FDFood : NSObject
 
 @property (nonatomic, copy) FSFood * food;
-@property (nonatomic, assign) NSUInteger selectedServingIndex;
+@property (nonatomic, assign) NSInteger selectedServingIndex;
+@property (nonatomic, assign) CGFloat servingSize;
 @property (nonatomic, copy) NSString * mealName;
 
--(id)initWithIndex:(NSUInteger)index theFood:(FSFood*)theFood mealName:(NSString*)mealName;
+-(id)initWithIndex:(NSInteger)index theFood:(FSFood*)theFood mealName:(NSString*)mealName servingSize:(CGFloat)servingSize;
 
 @end

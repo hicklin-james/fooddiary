@@ -19,6 +19,7 @@
 
 - (NSUInteger)countOfFoodsInMeal:(NSString*)theMeal;
 - (FDFood*)getFoodFromMeal:(NSString*)theMeal index:(NSUInteger)theIndex;
+- (void)deleteFoodFromMeal:(NSString*)theMeal index:(NSUInteger)theIndex;
 - (void)addFoodToMeal:(NSString*)theMeal food:(FDFood*)theFood;
 
 

@@ -76,6 +76,8 @@
 }
 
 
+//--------------------Table View Delegate Methods------------------//
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)aTableView {
   // Return the number of sections.
   return 4;
@@ -139,10 +141,11 @@
   cell.textLabel.text = [thisFood name];
   FSServing *selectedServing = [thisFood.servings objectAtIndex:[thisFoodCustom selectedServingIndex]];
   
-  NSString * cals = [NSString stringWithFormat:@"%@ Calories, ", selectedServing.calories];
-  NSString * fat = [NSString stringWithFormat:@"%@g of Fat, ", selectedServing.fat];
-  NSString * protein = [NSString stringWithFormat:@"%@g of protein, ", selectedServing.protein];
-  NSString * carbs = [NSString stringWithFormat:@"%@g of carbs", selectedServing.carbohydrate];
+  
+  NSString * cals = [NSString stringWithFormat:@" %.01f Calories, ", selectedServing.caloriesValue*thisFoodCustom.servingSize];
+  NSString * fat = [NSString stringWithFormat:@"%.01fg of Fat, ", selectedServing.fatValue*thisFoodCustom.servingSize];
+  NSString * protein = [NSString stringWithFormat:@"%.01fg of protein, ", selectedServing.proteinValue*thisFoodCustom.servingSize];
+  NSString * carbs = [NSString stringWithFormat:@"%.01fg of carbs", selectedServing.carbohydrateValue*thisFoodCustom.servingSize];
   
   NSString *builtString = [[[cals stringByAppendingFormat:fat] stringByAppendingFormat:protein] stringByAppendingFormat:carbs];
   
@@ -161,6 +164,22 @@
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   
   [tableView deselectRowAtIndexPath:indexPath animated:YES];
+  
+}
+
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+  
+  return YES;
+  
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+  
+  FDAppDelegate *appDelegate = (FDAppDelegate*)[[UIApplication sharedApplication] delegate];
+  FoodDiaryDayController *controller = [appDelegate dataController];
+  NSString *title = [self tableView:tableView titleForHeaderInSection:indexPath.section];
+  [controller deleteFoodFromMeal:title index:indexPath.row];
+  [tableView reloadData];
   
 }
 

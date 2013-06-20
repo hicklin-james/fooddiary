@@ -14,6 +14,9 @@
 
 @end
 
+ActionSheetCustomPicker *unitPicker;
+ActionSheetCustomPicker *servingSizePicker;
+
 @implementation DetailFoodBeforeSelectionViewController
 @synthesize detailedFood;
 
@@ -31,10 +34,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-  
+  self.servingSize = 1;
   FSServing *serving = [self.detailedFood.servings objectAtIndex:0];
   self.selectedServing = serving;
-  FDFood * currentFood = [[FDFood alloc] initWithIndex:0 theFood:self.detailedFood mealName:self.mealName];
+  FDFood * currentFood = [[FDFood alloc] initWithIndex:0 theFood:self.detailedFood mealName:self.mealName servingSize:self.servingSize];
   self.customFood = currentFood;
 }
 
@@ -60,23 +63,39 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
   
-  return [self.detailedFood.servings count];
+  if (pickerView == unitPicker.pickerView) {
+    return [self.detailedFood.servings count];
+  }
+  else {
+    return 98;
+  }
   
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-  
-  FSServing *serving = [self.detailedFood.servings objectAtIndex:row];
-  return serving.servingDescription;
+  if (pickerView == unitPicker.pickerView) {
+    FSServing *serving = [self.detailedFood.servings objectAtIndex:row];
+    return serving.servingDescription;
+  }
+  else {
+    NSString *numberAsString = [NSString stringWithFormat:@"%d", row+1];
+    return numberAsString;
+  }
   
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
   
-  FSServing *tappedServing = [self.detailedFood.servings objectAtIndex:row];
-  self.selectedServing = tappedServing;
-  self.customFood.selectedServingIndex = row;
-  [self.nutInfoTable reloadData];
+  if (pickerView == unitPicker.pickerView) {
+    FSServing *tappedServing = [self.detailedFood.servings objectAtIndex:row];
+    self.selectedServing = tappedServing;
+    self.customFood.selectedServingIndex = row;
+    [self.nutInfoTable reloadData];
+  }
+  else {
+    self.customFood.servingSize = row+1;
+    [self.nutInfoTable reloadData];
+  }
   
 }
 
@@ -115,28 +134,40 @@
     if (indexPath.row == 0) {
       cell.selectionStyle = UITableViewCellSelectionStyleNone;
       NSString *label = @"Calories: ";
-      NSString *amount = [NSString stringWithFormat:@"%@", [self.selectedServing calories]];
+     
+      CGFloat amountNumber = [self.selectedServing caloriesValue] * self.customFood.servingSize;
+      NSString *amount = [NSString stringWithFormat:@"%.01f", amountNumber];
+      
       NSString *completeNutrientInfo = [[label stringByAppendingString:amount] stringByAppendingString:calorieFormat];
       cell.textLabel.text = completeNutrientInfo;
     }
     if (indexPath.row == 1) {
       cell.selectionStyle = UITableViewCellSelectionStyleNone;
       NSString *label = @"Fat: ";
-      NSString *amount = [NSString stringWithFormat:@"%@", [self.selectedServing fat]];
+      
+      CGFloat amountNumber = [self.selectedServing fatValue] * self.customFood.servingSize;
+      NSString *amount = [NSString stringWithFormat:@"%.01f", amountNumber];
+      
       NSString *completeNutrientInfo = [[label stringByAppendingString:amount] stringByAppendingString:nutrientFormat];
       cell.textLabel.text = completeNutrientInfo;
     }
     if (indexPath.row == 2) {
       cell.selectionStyle = UITableViewCellSelectionStyleNone;
       NSString *label = @"Carbohydrates: ";
-      NSString *amount = [NSString stringWithFormat:@"%@", [self.selectedServing carbohydrate]];
+      
+      CGFloat amountNumber = [self.selectedServing carbohydrateValue] * self.customFood.servingSize;
+      NSString *amount = [NSString stringWithFormat:@"%.01f", amountNumber];
+      
       NSString *completeNutrientInfo = [[label stringByAppendingString:amount] stringByAppendingString:nutrientFormat];
       cell.textLabel.text = completeNutrientInfo;
     }
     if (indexPath.row == 3) {
       cell.selectionStyle = UITableViewCellSelectionStyleNone;
       NSString *label = @"Protein: ";
-      NSString *amount = [NSString stringWithFormat:@"%@", [self.selectedServing protein]];
+      
+      CGFloat amountNumber = [self.selectedServing proteinValue] * self.customFood.servingSize;
+      NSString *amount = [NSString stringWithFormat:@"%.01f", amountNumber];
+      
       NSString *completeNutrientInfo = [[label stringByAppendingString:amount]  stringByAppendingString:nutrientFormat];
       cell.textLabel.text = completeNutrientInfo;
     }
@@ -144,23 +175,6 @@
   else {
     
     if (indexPath.row == 0) {
-      self.customTextField = [[UITextField alloc] initWithFrame:CGRectMake(110, 10, 185, 30)];
-      self.customTextField.adjustsFontSizeToFitWidth = YES;
-      self.customTextField.textColor = [UIColor blackColor];
-      self.customTextField.backgroundColor = [UIColor whiteColor];
-      self.customTextField.autocorrectionType = UITextAutocorrectionTypeNo; // no auto correction support
-      self.customTextField.autocapitalizationType = UITextAutocapitalizationTypeNone; // no auto capitalization support
-      self.customTextField.textAlignment = NSTextAlignmentLeft;
-      self.customTextField.tag = 0;
-      [self.customTextField setDelegate:self];
-      
-      
-      //customTextField.text = [self.selectedServing servingDescription];
-      [self.customTextField setEnabled:YES];
-      
-      self.customTextField.inputView = self.unitPicker;
-
-      
       cell.textLabel.text = @"Serving Size";
       cell.detailTextLabel.text = [self.selectedServing servingDescription];
       
@@ -168,6 +182,7 @@
     }
     if (indexPath.row == 1 ) {
       cell.textLabel.text = @"Number of servings";
+      cell.detailTextLabel.text = [NSString stringWithFormat:@"%.f", [self.customFood servingSize]];
     }
     
   }
@@ -181,37 +196,16 @@
   if (indexPath.section == 1) {
     
     if (indexPath.row == 0) {
+      
+      unitPicker = [[ActionSheetCustomPicker alloc] initWithTitle:@"Serving Unit" delegate:self showCancelButton:YES origin:tableView];
+      unitPicker.pickerView.tag = 1;
+      [unitPicker showActionSheetPicker];
        
     }
-    
-    {
-      
-      UIActionSheet *actionSheet = [[UIActionSheet alloc]
-                                    initWithTitle:nil
-                                    delegate:nil
-                                    cancelButtonTitle:@"Cancel Button"
-                                    destructiveButtonTitle:nil
-                                    otherButtonTitles:nil];
-
-      CGRect pickerFrame = CGRectMake(0,40,0,0);
-      UIPickerView *testPicker = [[UIPickerView alloc] initWithFrame:pickerFrame];
-      testPicker.showsSelectionIndicator = YES;
-      testPicker.dataSource = self;
-      testPicker.delegate = self;
-      
-      UISegmentedControl *closeButton = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObject:@"Close"]];
-      closeButton.momentary = YES;
-      closeButton.frame = CGRectMake(260, 7.0f, 50.0f, 30.0f);
-      closeButton.segmentedControlStyle = UISegmentedControlStyleBar;
-      closeButton.tintColor = [UIColor blueColor];
-      [closeButton addTarget:self action:@selector(dismissActionSheet:) forControlEvents:UIControlEventValueChanged];
-      [actionSheet addSubview:closeButton];
-      
-      actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
-      [actionSheet addSubview:testPicker];
-      
-      [actionSheet showInView:[[UIApplication sharedApplication] keyWindow]];
-      [actionSheet setBounds:CGRectMake(0, 0, 320, 485)];
+    if (indexPath.row == 1) {
+      servingSizePicker = [[ActionSheetCustomPicker alloc] initWithTitle:@"Serving Size" delegate:self showCancelButton:YES origin:tableView];
+      servingSizePicker.pickerView.tag = 2;
+      [servingSizePicker showActionSheetPicker];
     }
     
   }

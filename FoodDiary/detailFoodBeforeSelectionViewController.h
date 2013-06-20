@@ -10,10 +10,11 @@
 #import "FSFood.h"
 #import "FSServing.h"
 #import "FDFood.h"
+#import "ActionSheetPicker.h"
 
 @protocol DetailFoodBeforeSelectionViewControllerDelegate;
 
-@interface DetailFoodBeforeSelectionViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+@interface DetailFoodBeforeSelectionViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, ActionSheetCustomPickerDelegate>
 
 @property (nonatomic, weak) id<DetailFoodBeforeSelectionViewControllerDelegate> delegate;
 @property (nonatomic, strong) FSFood* detailedFood;
@@ -23,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *unitPicker;
 @property (weak, nonatomic) IBOutlet UITableView *nutInfoTable;
 @property (strong, nonatomic) UITextField *customTextField;
+@property (nonatomic, assign) CGFloat servingSize;
 
 
 - (IBAction)addFoodToMeal:(id)sender;
