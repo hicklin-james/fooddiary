@@ -8,6 +8,8 @@
 
 #import "FDAppDelegate.h"
 #import "FSClient.h"
+#import "MyMeal.h"
+#import "FoodDiaryViewController.h"
 
 @implementation FDAppDelegate
 
@@ -17,6 +19,84 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  
+  
+  NSManagedObjectContext *context = [self managedObjectContext];
+  if (!context) {
+    NSLog(@"Couldn't get context to access core data");
+  }
+  
+  NSCalendar *calendar = [NSCalendar currentCalendar];
+  NSDate *date = [NSDate date];
+  NSDateComponents *compsStart = [[NSCalendar currentCalendar] components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:date];
+  [compsStart setHour:0];
+  [compsStart setMinute:0];
+  [compsStart setSecond:0];
+  NSDate *todayStart = [calendar dateFromComponents:compsStart];
+  
+  NSDateComponents *compsEnd = [[NSCalendar currentCalendar] components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:date];
+  [compsEnd setHour:23];
+  [compsEnd setMinute:59];
+  [compsEnd setSecond:59];
+  NSDate *todayEnd = [calendar dateFromComponents:compsEnd];
+  
+  
+  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(date >= %@) AND (date <= %@)", todayStart, todayEnd];
+  NSFetchRequest *request = [[NSFetchRequest alloc] init];
+  [request setEntity:[NSEntityDescription entityForName:@"MyMeal" inManagedObjectContext:context]];
+  [request setPredicate:predicate];
+  
+  NSError *error = nil;
+  NSArray *results = [context executeFetchRequest:request error:&error];
+  
+  NSArray *mealsToday = results;
+  
+  if ([mealsToday count] == 0) {
+    NSLog(@"No meals found today, we must create some");
+    
+    MyMeal *breakfast = (MyMeal*)[NSEntityDescription insertNewObjectForEntityForName:@"MyMeal" inManagedObjectContext:context];
+    [breakfast setName:@"Breakfast"];
+    [breakfast setDate:date];
+    
+    if (![context save:&error]) {
+      NSLog(@"There was an error saving the data");
+    }
+    
+    MyMeal *lunch = (MyMeal*)[NSEntityDescription insertNewObjectForEntityForName:@"MyMeal" inManagedObjectContext:context];
+    [lunch setName:@"Lunch"];
+    [lunch setDate:date];
+    
+    if (![context save:&error]) {
+      NSLog(@"There was an error saving the data");
+    }
+    
+    MyMeal *dinner = (MyMeal*)[NSEntityDescription insertNewObjectForEntityForName:@"MyMeal" inManagedObjectContext:context];
+    [dinner setName:@"Dinner"];
+    [dinner setDate:date];
+    
+    if (![context save:&error]) {
+      NSLog(@"There was an error saving the data");
+    }
+    
+    MyMeal *snacks = (MyMeal*)[NSEntityDescription insertNewObjectForEntityForName:@"MyMeal" inManagedObjectContext:context];
+    [snacks setName:@"Snacks"];
+    [snacks setDate:date];
+    
+    //NSError *error = nil;
+    if (![context save:&error]) {
+      NSLog(@"There was an error saving the data");
+    }
+    
+  }
+  else {
+    for (int i = 0; i < [mealsToday count]; i++) {
+      MyMeal *meal = [mealsToday objectAtIndex:i];
+      NSLog([meal name]);
+    }
+  }
+  
+  
+  
   // Check if this is the first time the app has been launched
   if ([[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"])
   {
@@ -38,7 +118,11 @@
   [FSClient sharedClient].oauthConsumerKey = @"b066c53bc69a42bba07b5d530f685611";
   [FSClient sharedClient].oauthConsumerSecret = @"c82eddab535842068c9ed771cb4c7e84";
 
-   self.dataController = [[FoodDiaryDayController alloc] init];
+  
+   UITabBarController *tabController = (UITabBarController *)self.window.rootViewController;
+   UINavigationController *navController = (UINavigationController*)[tabController.viewControllers objectAtIndex:0];
+   FoodDiaryViewController *foodDiaryViewController = (FoodDiaryViewController*)navController.topViewController;
+   foodDiaryViewController.managedObjectContext = context;
   
   
     return YES;

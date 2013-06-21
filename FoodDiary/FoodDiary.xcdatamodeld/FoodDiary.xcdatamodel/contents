@@ -1,4 +1,53 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="MyFood" representedClassName="MyFood" syncable="YES">
+        <attribute name="brandName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="foodDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="selectedServing" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="servingSize" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="toMyMeal" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="MyMeal" inverseName="toMyFood" inverseEntity="MyMeal" syncable="YES"/>
+        <relationship name="toMyServing" toMany="YES" minCount="1" deletionRule="Cascade" destinationEntity="MyServing" inverseName="toMyFood" inverseEntity="MyServing" syncable="YES"/>
+    </entity>
+    <entity name="MyMeal" representedClassName="MyMeal" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="toMyFood" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MyFood" inverseName="toMyMeal" inverseEntity="MyFood" syncable="YES"/>
+    </entity>
+    <entity name="MyServing" representedClassName="MyServing" syncable="YES">
+        <attribute name="calcium" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="calories" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="carbohydrates" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="cholesterol" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="fat" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="fiber" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="iron" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="measurementDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="metricServingAmount" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="metricServingUnit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="monounsaturatedFat" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="numberOfUnits" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="polyunsaturatedFat" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="potassium" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="protein" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="saturatedFat" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="servingDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="servingId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="servingUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sodium" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="sugar" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="transFat" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="vitaminA" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="vitaminC" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="toMyFood" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="MyFood" inverseName="toMyServing" inverseEntity="MyFood" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="MyFood" positionX="160" positionY="192" width="128" height="210"/>
+        <element name="MyServing" positionX="160" positionY="192" width="128" height="420"/>
+        <element name="MyMeal" positionX="160" positionY="192" width="128" height="90"/>
+    </elements>
 </model>

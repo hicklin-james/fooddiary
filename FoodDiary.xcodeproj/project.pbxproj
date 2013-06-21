@@ -14,8 +14,6 @@
 		CB74DBD517714B770018A0A1 /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CB74DBCE17714B770018A0A1 /* ActionSheetStringPicker.m */; };
 		CB74DBD617714B770018A0A1 /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB74DBD017714B770018A0A1 /* DistancePickerView.m */; };
 		CB7ADA97176F81FB00B0178C /* MealSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7ADA96176F81FB00B0178C /* MealSelectionViewController.m */; };
-		CB7ADA9A176F8E5700B0178C /* FoodDiaryDayController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7ADA99176F8E5600B0178C /* FoodDiaryDayController.m */; };
-		CB7ADAA1176FA01600B0178C /* FDFood.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7ADAA0176FA01600B0178C /* FDFood.m */; };
 		CB7BFFE9176BACB40092F645 /* FSClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7BFFDC176BACB40092F645 /* FSClient.m */; };
 		CB7BFFEA176BACB40092F645 /* FSFood.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7BFFDE176BACB40092F645 /* FSFood.m */; };
 		CB7BFFEB176BACB40092F645 /* FSServing.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7BFFE0176BACB40092F645 /* FSServing.m */; };
@@ -26,6 +24,9 @@
 		CB7BFFF5176BAD0E0092F645 /* SVHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7BFFF2176BAD0E0092F645 /* SVHTTPClient.m */; };
 		CB7BFFF6176BAD0E0092F645 /* SVHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7BFFF4176BAD0E0092F645 /* SVHTTPRequest.m */; };
 		CB7BFFF8176C13210092F645 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7BFFF7176C13210092F645 /* QuartzCore.framework */; };
+		CB84002717737BB400798344 /* MyServing.m in Sources */ = {isa = PBXBuildFile; fileRef = CB84002617737BB400798344 /* MyServing.m */; };
+		CB84002A17737BB400798344 /* MyMeal.m in Sources */ = {isa = PBXBuildFile; fileRef = CB84002917737BB400798344 /* MyMeal.m */; };
+		CB84002E1773B2AF00798344 /* MyFood.m in Sources */ = {isa = PBXBuildFile; fileRef = CB84002D1773B2AE00798344 /* MyFood.m */; };
 		CBBE6BCB176967C6005C8CD7 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBE6BC9176967C6005C8CD7 /* EventKit.framework */; };
 		CBBE6BCC176967C6005C8CD7 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBE6BCA176967C6005C8CD7 /* EventKitUI.framework */; };
 		CBBE6BD117696964005C8CD7 /* RecipeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBE6BD017696964005C8CD7 /* RecipeTableViewController.m */; };
@@ -76,10 +77,6 @@
 		CB74DBD717714B800018A0A1 /* ActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetPicker.h; sourceTree = "<group>"; };
 		CB7ADA95176F81FB00B0178C /* MealSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealSelectionViewController.h; sourceTree = "<group>"; };
 		CB7ADA96176F81FB00B0178C /* MealSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealSelectionViewController.m; sourceTree = "<group>"; };
-		CB7ADA98176F8E5600B0178C /* FoodDiaryDayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodDiaryDayController.h; sourceTree = "<group>"; };
-		CB7ADA99176F8E5600B0178C /* FoodDiaryDayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodDiaryDayController.m; sourceTree = "<group>"; };
-		CB7ADA9F176FA01600B0178C /* FDFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDFood.h; path = ../FatSecret/FDFood.h; sourceTree = "<group>"; };
-		CB7ADAA0176FA01600B0178C /* FDFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDFood.m; path = ../FatSecret/FDFood.m; sourceTree = "<group>"; };
 		CB7BFFDB176BACB40092F645 /* FSClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSClient.h; sourceTree = "<group>"; };
 		CB7BFFDC176BACB40092F645 /* FSClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSClient.m; sourceTree = "<group>"; };
 		CB7BFFDD176BACB40092F645 /* FSFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFood.h; sourceTree = "<group>"; };
@@ -99,6 +96,12 @@
 		CB7BFFF3176BAD0E0092F645 /* SVHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVHTTPRequest.h; sourceTree = "<group>"; };
 		CB7BFFF4176BAD0E0092F645 /* SVHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVHTTPRequest.m; sourceTree = "<group>"; };
 		CB7BFFF7176C13210092F645 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CB84002517737BB400798344 /* MyServing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyServing.h; path = ../MyServing.h; sourceTree = "<group>"; };
+		CB84002617737BB400798344 /* MyServing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyServing.m; path = ../MyServing.m; sourceTree = "<group>"; };
+		CB84002817737BB400798344 /* MyMeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyMeal.h; path = ../MyMeal.h; sourceTree = "<group>"; };
+		CB84002917737BB400798344 /* MyMeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyMeal.m; path = ../MyMeal.m; sourceTree = "<group>"; };
+		CB84002C1773B2AD00798344 /* MyFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFood.h; sourceTree = "<group>"; };
+		CB84002D1773B2AE00798344 /* MyFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFood.m; sourceTree = "<group>"; };
 		CBBE6BC9176967C6005C8CD7 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		CBBE6BCA176967C6005C8CD7 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		CBBE6BCF17696964005C8CD7 /* RecipeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecipeTableViewController.h; path = ../RecipeTableViewController.h; sourceTree = "<group>"; };
@@ -185,10 +188,6 @@
 		CB7ADA9B176F8E5F00B0178C /* FoodDay */ = {
 			isa = PBXGroup;
 			children = (
-				CB7ADA9F176FA01600B0178C /* FDFood.h */,
-				CB7ADAA0176FA01600B0178C /* FDFood.m */,
-				CB7ADA98176F8E5600B0178C /* FoodDiaryDayController.h */,
-				CB7ADA99176F8E5600B0178C /* FoodDiaryDayController.m */,
 			);
 			name = FoodDay;
 			sourceTree = "<group>";
@@ -223,6 +222,19 @@
 				CB7BFFF4176BAD0E0092F645 /* SVHTTPRequest.m */,
 			);
 			path = SVHTTPRequest;
+			sourceTree = "<group>";
+		};
+		CB84002B17737BBC00798344 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CB84002C1773B2AD00798344 /* MyFood.h */,
+				CB84002D1773B2AE00798344 /* MyFood.m */,
+				CB84002817737BB400798344 /* MyMeal.h */,
+				CB84002917737BB400798344 /* MyMeal.m */,
+				CB84002517737BB400798344 /* MyServing.h */,
+				CB84002617737BB400798344 /* MyServing.m */,
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 		CBBE6BCD17696905005C8CD7 /* ShoppingListClasses */ = {
@@ -301,6 +313,7 @@
 		CBDD31A61768D39500E3F641 /* FoodDiary */ = {
 			isa = PBXGroup;
 			children = (
+				CB84002B17737BBC00798344 /* Entities */,
 				CBDD31C01768D3E200E3F641 /* FDiPhone.storyboard */,
 				CBDD31AF1768D39500E3F641 /* FDAppDelegate.h */,
 				CBDD31B01768D39500E3F641 /* FDAppDelegate.m */,
@@ -441,14 +454,15 @@
 				CBDD400F176CD4FE00444E51 /* AddFoodViewController.m in Sources */,
 				CBDD4015176CE1C700444E51 /* DetailFoodBeforeSelectionViewController.m in Sources */,
 				CB7ADA97176F81FB00B0178C /* MealSelectionViewController.m in Sources */,
-				CB7ADA9A176F8E5700B0178C /* FoodDiaryDayController.m in Sources */,
-				CB7ADAA1176FA01600B0178C /* FDFood.m in Sources */,
 				CB74DBD117714B770018A0A1 /* AbstractActionSheetPicker.m in Sources */,
 				CB74DBD217714B770018A0A1 /* ActionSheetCustomPicker.m in Sources */,
 				CB74DBD317714B770018A0A1 /* ActionSheetDatePicker.m in Sources */,
 				CB74DBD417714B770018A0A1 /* ActionSheetDistancePicker.m in Sources */,
 				CB74DBD517714B770018A0A1 /* ActionSheetStringPicker.m in Sources */,
 				CB74DBD617714B770018A0A1 /* DistancePickerView.m in Sources */,
+				CB84002717737BB400798344 /* MyServing.m in Sources */,
+				CB84002A17737BB400798344 /* MyMeal.m in Sources */,
+				CB84002E1773B2AF00798344 /* MyFood.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

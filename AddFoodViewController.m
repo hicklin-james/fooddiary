@@ -20,6 +20,9 @@ NSMutableArray *searchArray;
 
 @implementation AddFoodViewController
 
+@synthesize managedObjectContext;
+@synthesize mealsToday;
+
 -(void)handleCancelButton:(id)sender {
   
 }
@@ -136,6 +139,8 @@ NSMutableArray *searchArray;
   
   destViewController.detailedFood = self.foodToBeSentToNextView;
   destViewController.mealName = self.title;
+  destViewController.managedObjectContext = managedObjectContext;
+  destViewController.mealsToday = mealsToday;
   
 }
 

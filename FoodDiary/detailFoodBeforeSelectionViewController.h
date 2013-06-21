@@ -9,17 +9,26 @@
 #import <UIKit/UIKit.h>
 #import "FSFood.h"
 #import "FSServing.h"
-#import "FDFood.h"
 #import "ActionSheetPicker.h"
+#import "MyFood.h"
+#import "MyServing.h"
 
 @protocol DetailFoodBeforeSelectionViewControllerDelegate;
 
-@interface DetailFoodBeforeSelectionViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, ActionSheetCustomPickerDelegate>
+@interface DetailFoodBeforeSelectionViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, ActionSheetCustomPickerDelegate> {
+  
+  NSManagedObjectContext *managedObjectContext;
+  NSArray *mealsToday;
+  
+}
+
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) NSArray *mealsToday;
 
 @property (nonatomic, weak) id<DetailFoodBeforeSelectionViewControllerDelegate> delegate;
 @property (nonatomic, strong) FSFood* detailedFood;
 @property (nonatomic, strong) FSServing* selectedServing;
-@property (nonatomic, strong) FDFood* customFood;
+@property (nonatomic, assign) NSInteger servingIndex;
 @property (nonatomic, strong) NSString* mealName;
 @property (weak, nonatomic) IBOutlet UIPickerView *unitPicker;
 @property (weak, nonatomic) IBOutlet UITableView *nutInfoTable;
@@ -29,11 +38,5 @@
 
 - (IBAction)addFoodToMeal:(id)sender;
 - (void)setPickerHidden:(BOOL)hidden;
-
-@end
-
-@protocol DetailFoodBeforeSelectionViewControllerDelegate <NSObject>
-
-- (void)foodWasAddedToDay:(DetailFoodBeforeSelectionViewController*)controller mealID:(NSString*)mealID food:(FDFood*)food;
 
 @end

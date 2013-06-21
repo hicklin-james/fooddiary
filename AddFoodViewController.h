@@ -9,8 +9,17 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 #import "FSFood.h"
+#import "MyFood.h"
 
-@interface AddFoodViewController : UIViewController <UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface AddFoodViewController : UIViewController <UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate> {
+  
+  NSManagedObjectContext *managedObjectContext;
+  NSArray *mealsToday;
+  
+}
+
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) NSArray *mealsToday;
 
 @property (nonatomic, weak) FSFood *foodToBeSentToNextView;
 

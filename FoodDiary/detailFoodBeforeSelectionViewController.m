@@ -9,6 +9,7 @@
 #import "DetailFoodBeforeSelectionViewController.h"
 #import "FSClient.h"
 #import "FDAppDelegate.h"
+#import "MyMeal.h"
 
 @interface DetailFoodBeforeSelectionViewController ()
 
@@ -18,7 +19,10 @@ ActionSheetCustomPicker *unitPicker;
 ActionSheetCustomPicker *servingSizePicker;
 
 @implementation DetailFoodBeforeSelectionViewController
+@synthesize managedObjectContext;
+@synthesize mealsToday;
 @synthesize detailedFood;
+
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -37,9 +41,7 @@ ActionSheetCustomPicker *servingSizePicker;
   self.servingSize = 1;
   FSServing *serving = [self.detailedFood.servings objectAtIndex:0];
   self.selectedServing = serving;
-  FDFood * currentFood = [[FDFood alloc] initWithIndex:0 theFood:self.detailedFood mealName:self.mealName servingSize:self.servingSize];
-  self.customFood = currentFood;
-}
+  }
 
 - (void)didReceiveMemoryWarning
 {
@@ -48,9 +50,87 @@ ActionSheetCustomPicker *servingSizePicker;
 }
 
 - (IBAction)addFoodToMeal:(id)sender {
+
+  MyFood *newFood = (MyFood*)[NSEntityDescription insertNewObjectForEntityForName:@"MyFood" inManagedObjectContext:managedObjectContext];
+  [newFood setBrandName:[self.detailedFood brandName]];
+  [newFood setFoodDescription:[self.detailedFood foodDescription]];
+  [newFood setIdentifier:[NSNumber numberWithInteger:[self.detailedFood identifier]]];
+  [newFood setName:[self.detailedFood name]];
+  [newFood setType:[self.detailedFood type]];
+  [newFood setUrl:[self.detailedFood url]];
+  [newFood setServingSize:[NSNumber numberWithFloat:[self servingSize]]];
+  [newFood setSelectedServing:[NSNumber numberWithInteger:[self.selectedServing servingIdValue]]];
   
-  FDAppDelegate *appDelegate = (FDAppDelegate*)[[UIApplication sharedApplication] delegate];
-  [appDelegate.dataController addFoodToMeal:self.mealName food:self.customFood];
+  
+  NSCalendar *calendar = [NSCalendar currentCalendar];
+  NSDate *date = [NSDate date];
+  NSDateComponents *compsStart = [[NSCalendar currentCalendar] components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:date];
+  [compsStart setHour:0];
+  [compsStart setMinute:0];
+  [compsStart setSecond:0];
+  NSDate *todayStart = [calendar dateFromComponents:compsStart];
+  
+  NSDateComponents *compsEnd = [[NSCalendar currentCalendar] components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:date];
+  [compsEnd setHour:23];
+  [compsEnd setMinute:59];
+  [compsEnd setSecond:59];
+  NSDate *todayEnd = [calendar dateFromComponents:compsEnd];
+  
+  
+  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(date >= %@) AND (date <= %@) AND (name == %@)", todayStart, todayEnd, self.mealName];
+
+  NSFetchRequest *request = [[NSFetchRequest alloc] init];
+  [request setEntity:[NSEntityDescription entityForName:@"MyMeal" inManagedObjectContext:managedObjectContext]];
+  [request setPredicate:predicate];
+  
+  NSError *error = nil;
+  NSArray *results = [managedObjectContext executeFetchRequest:request error:&error];
+  
+  NSArray *thisMeal = results;
+  MyMeal *theMeal = [thisMeal objectAtIndex:0];
+  
+  [newFood setDate:date];
+  [newFood setToMyMeal:theMeal];
+  
+  
+  for (int i = 0; i < [[self.detailedFood servings] count]; i++) {
+    
+    MyServing *newServing = (MyServing*)[NSEntityDescription insertNewObjectForEntityForName:@"MyServing" inManagedObjectContext:managedObjectContext];
+    FSServing *thisServing = [[self.detailedFood servings] objectAtIndex:i];
+    [newServing setServingDescription:[thisServing servingDescription]];
+    [newServing setServingUrl:[thisServing servingUrl]];
+    [newServing setMetricServingUnit:[thisServing metricServingUnit]];
+    [newServing setMeasurementDescription:[thisServing measurementDescription]];
+    [newServing setNumberOfUnits:[NSNumber numberWithFloat:[thisServing numberOfUnitsValue]]];
+    [newServing setMetricServingAmount:[NSNumber numberWithFloat:[thisServing metricServingAmountValue]]];
+    [newServing setServingId:[NSNumber numberWithFloat:[thisServing servingIdValue]]];
+    [newServing setCalories:[NSNumber numberWithFloat:[thisServing caloriesValue]]];
+    [newServing setCarbohydrates:[NSNumber numberWithFloat:[thisServing carbohydrateValue]]];
+    [newServing setProtein:[NSNumber numberWithFloat:[thisServing proteinValue]]];
+    [newServing setFat:[NSNumber numberWithFloat:[thisServing fatValue]]];
+    [newServing setSaturatedFat:[NSNumber numberWithFloat:[thisServing saturatedFatValue]]];
+    [newServing setPolyunsaturatedFat:[NSNumber numberWithFloat:[thisServing polyunsaturatedFatValue]]];
+    [newServing setMonounsaturatedFat:[NSNumber numberWithFloat:[thisServing monounsaturatedFatValue]]];
+    [newServing setTransFat:[NSNumber numberWithFloat:[thisServing transFatValue]]];
+    [newServing setCholesterol:[NSNumber numberWithFloat:[thisServing cholesterolValue]]];
+    [newServing setSodium:[NSNumber numberWithFloat:[thisServing sodiumValue]]];
+    [newServing setPotassium:[NSNumber numberWithFloat:[thisServing potassiumValue]]];
+    [newServing setFiber:[NSNumber numberWithFloat:[thisServing fiberValue]]];
+    [newServing setSugar:[NSNumber numberWithFloat:[thisServing sugarValue]]];
+    [newServing setVitaminC:[NSNumber numberWithFloat:[thisServing vitaminCValue]]];
+    [newServing setVitaminA:[NSNumber numberWithFloat:[thisServing vitaminAValue]]];
+    [newServing setCalcium:[NSNumber numberWithFloat:[thisServing calciumValue]]];
+    [newServing setIron:[NSNumber numberWithFloat:[thisServing ironValue]]];
+    [newServing setToMyFood:newFood];
+    
+  }
+  
+  
+
+  if (![managedObjectContext save:&error]) {
+    NSLog(@"There was an error saving the data");
+  }
+  
   [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
   
 }
@@ -89,11 +169,11 @@ ActionSheetCustomPicker *servingSizePicker;
   if (pickerView == unitPicker.pickerView) {
     FSServing *tappedServing = [self.detailedFood.servings objectAtIndex:row];
     self.selectedServing = tappedServing;
-    self.customFood.selectedServingIndex = row;
+    self.servingIndex = row;
     [self.nutInfoTable reloadData];
   }
   else {
-    self.customFood.servingSize = row+1;
+    self.servingSize = row+1;
     [self.nutInfoTable reloadData];
   }
   
@@ -135,7 +215,7 @@ ActionSheetCustomPicker *servingSizePicker;
       cell.selectionStyle = UITableViewCellSelectionStyleNone;
       NSString *label = @"Calories: ";
      
-      CGFloat amountNumber = [self.selectedServing caloriesValue] * self.customFood.servingSize;
+      CGFloat amountNumber = [self.selectedServing caloriesValue] * self.servingSize;
       NSString *amount = [NSString stringWithFormat:@"%.01f", amountNumber];
       
       NSString *completeNutrientInfo = [[label stringByAppendingString:amount] stringByAppendingString:calorieFormat];
@@ -145,7 +225,7 @@ ActionSheetCustomPicker *servingSizePicker;
       cell.selectionStyle = UITableViewCellSelectionStyleNone;
       NSString *label = @"Fat: ";
       
-      CGFloat amountNumber = [self.selectedServing fatValue] * self.customFood.servingSize;
+      CGFloat amountNumber = [self.selectedServing fatValue] * self.servingSize;
       NSString *amount = [NSString stringWithFormat:@"%.01f", amountNumber];
       
       NSString *completeNutrientInfo = [[label stringByAppendingString:amount] stringByAppendingString:nutrientFormat];
@@ -155,7 +235,7 @@ ActionSheetCustomPicker *servingSizePicker;
       cell.selectionStyle = UITableViewCellSelectionStyleNone;
       NSString *label = @"Carbohydrates: ";
       
-      CGFloat amountNumber = [self.selectedServing carbohydrateValue] * self.customFood.servingSize;
+      CGFloat amountNumber = [self.selectedServing carbohydrateValue] * self.servingSize;
       NSString *amount = [NSString stringWithFormat:@"%.01f", amountNumber];
       
       NSString *completeNutrientInfo = [[label stringByAppendingString:amount] stringByAppendingString:nutrientFormat];
@@ -165,7 +245,7 @@ ActionSheetCustomPicker *servingSizePicker;
       cell.selectionStyle = UITableViewCellSelectionStyleNone;
       NSString *label = @"Protein: ";
       
-      CGFloat amountNumber = [self.selectedServing proteinValue] * self.customFood.servingSize;
+      CGFloat amountNumber = [self.selectedServing proteinValue] * self.servingSize;
       NSString *amount = [NSString stringWithFormat:@"%.01f", amountNumber];
       
       NSString *completeNutrientInfo = [[label stringByAppendingString:amount]  stringByAppendingString:nutrientFormat];
@@ -182,7 +262,7 @@ ActionSheetCustomPicker *servingSizePicker;
     }
     if (indexPath.row == 1 ) {
       cell.textLabel.text = @"Number of servings";
-      cell.detailTextLabel.text = [NSString stringWithFormat:@"%.f", [self.customFood servingSize]];
+      cell.detailTextLabel.text = [NSString stringWithFormat:@"%.f", [self servingSize]];
     }
     
   }
