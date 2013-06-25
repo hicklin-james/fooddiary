@@ -22,6 +22,7 @@ NSMutableArray *searchArray;
 
 @synthesize managedObjectContext;
 @synthesize mealsToday;
+@synthesize dateOfFood;
 
 -(void)handleCancelButton:(id)sender {
   
@@ -129,7 +130,7 @@ NSMutableArray *searchArray;
   
   DetailFoodBeforeSelectionViewController *destViewController = segue.destinationViewController;
   
-  destViewController.title = [self.foodToBeSentToNextView name];
+  destViewController.title = [@"Add to " stringByAppendingFormat:[self title],nil];
   
   UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
                                  initWithTitle: @"Back"
@@ -141,6 +142,7 @@ NSMutableArray *searchArray;
   destViewController.mealName = self.title;
   destViewController.managedObjectContext = managedObjectContext;
   destViewController.mealsToday = mealsToday;
+  destViewController.dateOfFood = dateOfFood;
   
 }
 

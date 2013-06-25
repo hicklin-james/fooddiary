@@ -15,12 +15,13 @@
   
   NSManagedObjectContext *managedObjectContext;
   NSArray *mealsToday;
+  NSDate *dateOfFood;
   
 }
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSArray *mealsToday;
-
+@property (nonatomic, strong) NSDate* dateOfFood;
 @property (nonatomic, weak) FSFood *foodToBeSentToNextView;
 
 -(IBAction)handleCancelButton:(id)sender;

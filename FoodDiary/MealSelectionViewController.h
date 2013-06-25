@@ -12,11 +12,13 @@
   
   NSManagedObjectContext *managedObjectContext;
   NSArray *mealsToday;
+  NSDate* dateOfFood;
   
 }
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSArray *mealsToday;
+@property (nonatomic, strong) NSDate* dateOfFood;
 
 @property (weak, nonatomic) NSString* selectedMeal;
 @property (weak, nonatomic) IBOutlet UITableView *mealTable;

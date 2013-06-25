@@ -17,6 +17,7 @@
 
 @synthesize managedObjectContext;
 @synthesize mealsToday;
+@synthesize dateOfFood;
 
 - (IBAction)closeWindow:(id)sender {
   
@@ -51,6 +52,7 @@
   AddFoodViewController *controller = [segue destinationViewController];
   controller.mealsToday = mealsToday;
   controller.managedObjectContext = managedObjectContext;
+  controller.dateOfFood = dateOfFood;
   nav.title = self.selectedMeal;
   
   

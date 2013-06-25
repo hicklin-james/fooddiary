@@ -15,10 +15,11 @@
 
 @protocol DetailFoodBeforeSelectionViewControllerDelegate;
 
-@interface DetailFoodBeforeSelectionViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, ActionSheetCustomPickerDelegate> {
+@interface DetailFoodBeforeSelectionViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, ActionSheetCustomPickerDelegate> {
   
   NSManagedObjectContext *managedObjectContext;
   NSArray *mealsToday;
+  NSDate *dateOfFood;
   
 }
 
@@ -34,9 +35,12 @@
 @property (weak, nonatomic) IBOutlet UITableView *nutInfoTable;
 @property (strong, nonatomic) UITextField *customTextField;
 @property (nonatomic, assign) CGFloat servingSize;
+@property (strong, nonatomic) IBOutlet UIView *nutritionInfoHeaderView;
+@property (strong, nonatomic) IBOutlet UILabel *nutritionInfoHeaderTitle;
+@property (strong, nonatomic) NSDate *dateOfFood;
+
 
 
 - (IBAction)addFoodToMeal:(id)sender;
-- (void)setPickerHidden:(BOOL)hidden;
 
 @end
