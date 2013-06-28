@@ -26,10 +26,14 @@
 		CB7BFFF8176C13210092F645 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7BFFF7176C13210092F645 /* QuartzCore.framework */; };
 		CB7EBBBB1778CE2B0022F1EE /* parchmentTexture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB7EBBBA1778CE2B0022F1EE /* parchmentTexture.jpg */; };
 		CB7EBBBD1778E8D50022F1EE /* leftArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = CB7EBBBC1778E8D50022F1EE /* leftArrow.png */; };
-		CB7EBBC417793CF40022F1EE /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7EBBC317793CF40022F1EE /* ProfileViewController.m */; };
 		CB84002717737BB400798344 /* MyServing.m in Sources */ = {isa = PBXBuildFile; fileRef = CB84002617737BB400798344 /* MyServing.m */; };
 		CB84002A17737BB400798344 /* MyMeal.m in Sources */ = {isa = PBXBuildFile; fileRef = CB84002917737BB400798344 /* MyMeal.m */; };
 		CB84002E1773B2AF00798344 /* MyFood.m in Sources */ = {isa = PBXBuildFile; fileRef = CB84002D1773B2AE00798344 /* MyFood.m */; };
+		CB9D0E53177DF35400152108 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9D0E52177DF35400152108 /* ProfileViewController.m */; };
+		CB9D0E56177DF45300152108 /* ProfileNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9D0E55177DF45300152108 /* ProfileNameCell.m */; };
+		CB9D0E59177E0B7600152108 /* NonEditableNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9D0E58177E0B7600152108 /* NonEditableNameCell.m */; };
+		CB9D0E5C177E100800152108 /* ProfileAgeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9D0E5B177E100800152108 /* ProfileAgeCell.m */; };
+		CB9D0E5F177E16EC00152108 /* NonEditableAgeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9D0E5E177E16EC00152108 /* NonEditableAgeCell.m */; };
 		CBBE6BCB176967C6005C8CD7 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBE6BC9176967C6005C8CD7 /* EventKit.framework */; };
 		CBBE6BCC176967C6005C8CD7 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBE6BCA176967C6005C8CD7 /* EventKitUI.framework */; };
 		CBBE6BD117696964005C8CD7 /* RecipeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBE6BD017696964005C8CD7 /* RecipeTableViewController.m */; };
@@ -101,14 +105,22 @@
 		CB7BFFF7176C13210092F645 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CB7EBBBA1778CE2B0022F1EE /* parchmentTexture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = parchmentTexture.jpg; sourceTree = "<group>"; };
 		CB7EBBBC1778E8D50022F1EE /* leftArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftArrow.png; sourceTree = "<group>"; };
-		CB7EBBC217793CF40022F1EE /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
-		CB7EBBC317793CF40022F1EE /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		CB84002517737BB400798344 /* MyServing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyServing.h; path = ../MyServing.h; sourceTree = "<group>"; };
 		CB84002617737BB400798344 /* MyServing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyServing.m; path = ../MyServing.m; sourceTree = "<group>"; };
 		CB84002817737BB400798344 /* MyMeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyMeal.h; path = ../MyMeal.h; sourceTree = "<group>"; };
 		CB84002917737BB400798344 /* MyMeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyMeal.m; path = ../MyMeal.m; sourceTree = "<group>"; };
 		CB84002C1773B2AD00798344 /* MyFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFood.h; sourceTree = "<group>"; };
 		CB84002D1773B2AE00798344 /* MyFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFood.m; sourceTree = "<group>"; };
+		CB9D0E51177DF35400152108 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		CB9D0E52177DF35400152108 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		CB9D0E54177DF45300152108 /* ProfileNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileNameCell.h; sourceTree = "<group>"; };
+		CB9D0E55177DF45300152108 /* ProfileNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileNameCell.m; sourceTree = "<group>"; };
+		CB9D0E57177E0B7600152108 /* NonEditableNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonEditableNameCell.h; sourceTree = "<group>"; };
+		CB9D0E58177E0B7600152108 /* NonEditableNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonEditableNameCell.m; sourceTree = "<group>"; };
+		CB9D0E5A177E100800152108 /* ProfileAgeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileAgeCell.h; sourceTree = "<group>"; };
+		CB9D0E5B177E100800152108 /* ProfileAgeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileAgeCell.m; sourceTree = "<group>"; };
+		CB9D0E5D177E16EC00152108 /* NonEditableAgeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonEditableAgeCell.h; sourceTree = "<group>"; };
+		CB9D0E5E177E16EC00152108 /* NonEditableAgeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonEditableAgeCell.m; sourceTree = "<group>"; };
 		CBBE6BC9176967C6005C8CD7 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		CBBE6BCA176967C6005C8CD7 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		CBBE6BCF17696964005C8CD7 /* RecipeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecipeTableViewController.h; path = ../RecipeTableViewController.h; sourceTree = "<group>"; };
@@ -227,8 +239,16 @@
 		CB7EBBBE17792F120022F1EE /* ProfileInformation */ = {
 			isa = PBXGroup;
 			children = (
-				CB7EBBC217793CF40022F1EE /* ProfileViewController.h */,
-				CB7EBBC317793CF40022F1EE /* ProfileViewController.m */,
+				CB9D0E51177DF35400152108 /* ProfileViewController.h */,
+				CB9D0E52177DF35400152108 /* ProfileViewController.m */,
+				CB9D0E54177DF45300152108 /* ProfileNameCell.h */,
+				CB9D0E55177DF45300152108 /* ProfileNameCell.m */,
+				CB9D0E57177E0B7600152108 /* NonEditableNameCell.h */,
+				CB9D0E58177E0B7600152108 /* NonEditableNameCell.m */,
+				CB9D0E5A177E100800152108 /* ProfileAgeCell.h */,
+				CB9D0E5B177E100800152108 /* ProfileAgeCell.m */,
+				CB9D0E5D177E16EC00152108 /* NonEditableAgeCell.h */,
+				CB9D0E5E177E16EC00152108 /* NonEditableAgeCell.m */,
 			);
 			name = ProfileInformation;
 			sourceTree = "<group>";
@@ -322,11 +342,11 @@
 		CBDD31A61768D39500E3F641 /* FoodDiary */ = {
 			isa = PBXGroup;
 			children = (
-				CB7EBBBE17792F120022F1EE /* ProfileInformation */,
 				CB84002B17737BBC00798344 /* Entities */,
 				CBDD31C01768D3E200E3F641 /* FDiPhone.storyboard */,
 				CBDD31AF1768D39500E3F641 /* FDAppDelegate.h */,
 				CBDD31B01768D39500E3F641 /* FDAppDelegate.m */,
+				CB7EBBBE17792F120022F1EE /* ProfileInformation */,
 				CBBE6BCE1769691B005C8CD7 /* FoodDiaryClasses */,
 				CBBE6BD51769698C005C8CD7 /* RecipeClasses */,
 				CBBE6BCD17696905005C8CD7 /* ShoppingListClasses */,
@@ -476,7 +496,11 @@
 				CB84002717737BB400798344 /* MyServing.m in Sources */,
 				CB84002A17737BB400798344 /* MyMeal.m in Sources */,
 				CB84002E1773B2AF00798344 /* MyFood.m in Sources */,
-				CB7EBBC417793CF40022F1EE /* ProfileViewController.m in Sources */,
+				CB9D0E53177DF35400152108 /* ProfileViewController.m in Sources */,
+				CB9D0E56177DF45300152108 /* ProfileNameCell.m in Sources */,
+				CB9D0E59177E0B7600152108 /* NonEditableNameCell.m in Sources */,
+				CB9D0E5C177E100800152108 /* ProfileAgeCell.m in Sources */,
+				CB9D0E5F177E16EC00152108 /* NonEditableAgeCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
