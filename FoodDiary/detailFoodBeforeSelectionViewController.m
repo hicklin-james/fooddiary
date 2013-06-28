@@ -481,7 +481,7 @@ NSInteger numberOfLinesInHeader;
       [servingSizePicker showActionSheetPicker];
       
       UIPickerView *temp = (UIPickerView*)servingSizePicker.pickerView;
-      [temp selectRow:self.servingSize inComponent:0 animated:NO];
+      [temp selectRow:self.servingSize-1 inComponent:0 animated:NO];
     }
    [tableView deselectRowAtIndexPath:indexPath animated:YES]; 
   }
