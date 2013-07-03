@@ -11,7 +11,7 @@
 #import "NonEditableNameCell.h"
 #import "ProfileAgeCell.h"
 #import "NonEditableAgeCell.h"
-#import "NonEditableHeightCell.h"
+#import "ProfileHeightCell.h"
 #import "UnitSelectionViewController.h"
 
 @interface ProfileViewController ()
@@ -36,7 +36,7 @@ ActionSheetCustomPicker *heightPicker;
 // Editable Cells
 ProfileNameCell *firstNameCell;
 ProfileNameCell *lastNameCell;
-NonEditableHeightCell *noEditHeightCell;
+ProfileHeightCell *heightCell;
 
 // Non-Editable Cells
 NonEditableNameCell *nameCell;
@@ -176,23 +176,23 @@ NonEditableAgeCell *noEditAgeCell;
         
       }
       if (indexPath.row == 1) {
-        noEditHeightCell = [tableView dequeueReusableCellWithIdentifier:@"nonEditableHeightCell"];
+        heightCell = [tableView dequeueReusableCellWithIdentifier:@"heightCell"];
         
         if (unitType == NO) {
           heightPicker = [[ActionSheetCustomPicker alloc] initWithTitle:@"Height Picker" delegate:self showCancelButton:YES origin:self.tableView];
           NSString *englishHeight = [NSString stringWithFormat:@"%.00f\" %.00f'", feet, inches];
-          noEditHeightCell.metricHeightTextField.text = englishHeight;
-          [noEditHeightCell.metricHeightTextField setEnabled:NO];
-          noEditHeightCell.cmLabel.hidden = YES;
+          heightCell.metricHeightTextField.text = englishHeight;
+          [heightCell.metricHeightTextField setEnabled:NO];
+          heightCell.cmLabel.hidden = YES;
         }
         else {
-          noEditHeightCell.cmLabel.hidden = NO;
-          [noEditHeightCell.metricHeightTextField setEnabled:YES];
+          heightCell.cmLabel.hidden = NO;
+          [heightCell.metricHeightTextField setEnabled:YES];
           NSString *metricHeight = [NSString stringWithFormat:@"%.00f",cm];
-          noEditHeightCell.metricHeightTextField.text = metricHeight;
+          heightCell.metricHeightTextField.text = metricHeight;
           
         }
-        return noEditHeightCell;
+        return heightCell;
       }
     }
   }
@@ -219,67 +219,26 @@ NonEditableAgeCell *noEditAgeCell;
       
     }
     if (indexPath.section == 2) {
-      noEditHeightCell = [tableView dequeueReusableCellWithIdentifier:@"nonEditableHeightCell"];
-      heightPicker = [[ActionSheetCustomPicker alloc] initWithTitle:@"Height Picker" delegate:self showCancelButton:YES origin:self.tableView];
-      [noEditHeightCell.metricHeightTextField setEnabled:NO];
+      heightCell = [tableView dequeueReusableCellWithIdentifier:@"heightCell"];
+      [heightCell.metricHeightTextField setEnabled:NO];
       if (unitType == NO) {
-        noEditHeightCell.cmLabel.hidden = YES;
+        heightCell.cmLabel.hidden = YES;
         NSString *englishHeight = [NSString stringWithFormat:@"%.00f\" %.00f'", feet, inches];
-        noEditHeightCell.metricHeightTextField.text = englishHeight;
+        heightCell.metricHeightTextField.text = englishHeight;
       }
       else {
-        noEditHeightCell.cmLabel.hidden = NO;
+        heightCell.cmLabel.hidden = NO;
         NSString *metricHeight = [NSString stringWithFormat:@"%.00f",cm];
-        noEditHeightCell.metricHeightTextField.text = metricHeight;
+        heightCell.metricHeightTextField.text = metricHeight;
       }
       
-      return noEditHeightCell;
+      return heightCell;
       
     }
     
   }
 
 }
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 
 #pragma mark - Table view delegate
@@ -324,6 +283,10 @@ NonEditableAgeCell *noEditAgeCell;
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationNone];
     //[self.tableView reloadSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationNone];
+    
+    if (unitType == NO) {
+      [heightCell.metricHeightTextField setEnabled:NO];
+    }
 
 
   } else {
@@ -333,18 +296,16 @@ NonEditableAgeCell *noEditAgeCell;
     [self textFieldShouldReturn:firstNameCell.nameTextField];
     [self textFieldShouldReturn:lastNameCell.nameTextField];
     [self textFieldShouldReturn:ageCell.ageTextBox];
+    [heightCell.metricHeightTextField resignFirstResponder];
   
     //[self.tableView reloadData];
     [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:0 inSection:0],[NSIndexPath indexPathForRow:0 inSection:2],nil] withRowAnimation:UITableViewRowAnimationFade];
     
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationNone];
-    //[self.tableView reloadSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationNone];
-   // [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationNone];
-    
+    //[self.tableView reloadSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationFade];
+    [heightCell.metricHeightTextField setEnabled:NO];
 
-   // [self.tableView reloadData];
-   // [self.tableView reloadSections:section withRowAnimation:UITableViewRowAnimationTop];
   }
 }
 
@@ -364,7 +325,7 @@ NonEditableAgeCell *noEditAgeCell;
     age = [textField.text integerValue];
     [profile setInteger:[textField.text integerValue] forKey:@"age"];
   }
-  if (textField == noEditHeightCell.metricHeightTextField) {
+  if (textField == heightCell.metricHeightTextField) {
     cm = [textField.text floatValue];
     CGFloat totalinches = cm * 0.39370;
     inches = fmod(totalinches, 12);
@@ -374,6 +335,8 @@ NonEditableAgeCell *noEditAgeCell;
     [profile setFloat:feet forKey:@"feet"];
     [profile setFloat:[textField.text floatValue] forKey:@"cm"];
   }
+  
+  [profile synchronize];
 
   [textField resignFirstResponder];
   return YES;
@@ -395,10 +358,18 @@ NonEditableAgeCell *noEditAgeCell;
     age = [textField.text integerValue];
     [profile setInteger:[textField.text integerValue] forKey:@"age"];
   }
-  if (textField == noEditHeightCell.metricHeightTextField) {
+  if (textField == heightCell.metricHeightTextField) {
     cm = [textField.text floatValue];
+    CGFloat totalinches = cm * 0.39370;
+    inches = fmod(totalinches, 12);
+    feet = totalinches / 12;
+    
+    [profile setFloat:inches forKey:@"inches"];
+    [profile setFloat:feet forKey:@"feet"];
     [profile setFloat:[textField.text floatValue] forKey:@"cm"];
   }
+  
+  [profile synchronize];
   
 }
 
@@ -450,7 +421,7 @@ NonEditableAgeCell *noEditAgeCell;
   [profile synchronize];
   
   NSString *englishHeight = [NSString stringWithFormat:@"%.00f\" %.00f'", feet, inches];
-  noEditHeightCell.metricHeightTextField.text = englishHeight;
+  heightCell.metricHeightTextField.text = englishHeight;
   
 }
 

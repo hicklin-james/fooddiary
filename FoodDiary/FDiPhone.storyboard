@@ -1227,7 +1227,7 @@
                                     <outlet property="ageLabel" destination="Ha8-aS-Mgy" id="Urd-oR-9Qd"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="nonEditableHeightCell" id="PYi-Pb-3CC" customClass="NonEditableHeightCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="heightCell" id="PYi-Pb-3CC" customClass="ProfileHeightCell">
                                 <rect key="frame" x="0.0" y="198" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1242,7 +1242,7 @@
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="FYS-oE-9QI">
-                                            <rect key="frame" x="70" y="7" width="62" height="30"/>
+                                            <rect key="frame" x="87" y="7" width="62" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
@@ -1251,7 +1251,7 @@
                                             </connections>
                                         </textField>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="cm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cpT-YP-3I3">
-                                            <rect key="frame" x="139" y="11" width="42" height="21"/>
+                                            <rect key="frame" x="126" y="11" width="42" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1373,13 +1373,6 @@
                 <relationship kind="outlet" name="ageLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
-        <class className="NonEditableHeightCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NonEditableHeightCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="cmLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="metricHeightTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
         <class className="NonEditableNameCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NonEditableNameCell.h"/>
             <relationships>
@@ -1390,6 +1383,13 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileAgeCell.h"/>
             <relationships>
                 <relationship kind="outlet" name="ageTextBox" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ProfileHeightCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileHeightCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="cmLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="metricHeightTextField" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="ProfileNameCell" superclassName="UITableViewCell">

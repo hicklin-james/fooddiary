@@ -302,7 +302,7 @@
         [actionSheet showFromBarButtonItem:_barButtonItem animated:YES];
     else if (self.containerView && NO == CGRectIsEmpty(self.presentFromRect))
         [actionSheet showFromRect:_presentFromRect inView:_containerView animated:YES];
-    else
+    else 
         [actionSheet showInView:_containerView];
 }
 

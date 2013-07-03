@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 James Hicklin. All rights reserved.
 //
 
-#import "NonEditableHeightCell.h"
+#import "ProfileHeightCell.h"
 
-@implementation NonEditableHeightCell
+@implementation ProfileHeightCell
 
 @synthesize metricHeightTextField;
 @synthesize cmLabel;

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ActionSheetCustomPicker.h"
 
-@interface NonEditableHeightCell : UITableViewCell
+@interface ProfileHeightCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UITextField *metricHeightTextField;
 @property (strong, nonatomic) IBOutlet UILabel *cmLabel;
