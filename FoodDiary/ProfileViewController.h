@@ -7,17 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ActionSheetCustomPicker.h"
 
-@interface ProfileViewController : UITableViewController <UITextFieldDelegate> {
-  
-  NSString* firstName;
-  NSString* lastName;
-  NSInteger age;
-  
-}
+@interface ProfileViewController : UITableViewController <UITextFieldDelegate, ActionSheetCustomPickerDelegate, UIPickerViewDelegate> 
 
-@property (nonatomic, strong) NSString* firstName;
-@property (nonatomic, strong) NSString* lastName;
-@property (nonatomic, assign) NSInteger age;
 
 @end

@@ -38,6 +38,8 @@
 		CBBE6BCC176967C6005C8CD7 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBE6BCA176967C6005C8CD7 /* EventKitUI.framework */; };
 		CBBE6BD117696964005C8CD7 /* RecipeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBE6BD017696964005C8CD7 /* RecipeTableViewController.m */; };
 		CBBE6BD417696977005C8CD7 /* NewRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBE6BD317696977005C8CD7 /* NewRecipeViewController.m */; };
+		CBD6DB41178252690028C768 /* NonEditableHeightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD6DB40178252690028C768 /* NonEditableHeightCell.m */; };
+		CBD6DB45178358100028C768 /* UnitSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD6DB44178358100028C768 /* UnitSelectionViewController.m */; };
 		CBDD319F1768D39500E3F641 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBDD319E1768D39500E3F641 /* UIKit.framework */; };
 		CBDD31A11768D39500E3F641 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBDD31A01768D39500E3F641 /* Foundation.framework */; };
 		CBDD31A31768D39500E3F641 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBDD31A21768D39500E3F641 /* CoreGraphics.framework */; };
@@ -127,6 +129,10 @@
 		CBBE6BD017696964005C8CD7 /* RecipeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecipeTableViewController.m; path = ../RecipeTableViewController.m; sourceTree = "<group>"; };
 		CBBE6BD217696977005C8CD7 /* NewRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewRecipeViewController.h; path = ../NewRecipeViewController.h; sourceTree = "<group>"; };
 		CBBE6BD317696977005C8CD7 /* NewRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewRecipeViewController.m; path = ../NewRecipeViewController.m; sourceTree = "<group>"; };
+		CBD6DB3F178252690028C768 /* NonEditableHeightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonEditableHeightCell.h; sourceTree = "<group>"; };
+		CBD6DB40178252690028C768 /* NonEditableHeightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonEditableHeightCell.m; sourceTree = "<group>"; };
+		CBD6DB43178358100028C768 /* UnitSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitSelectionViewController.h; sourceTree = "<group>"; };
+		CBD6DB44178358100028C768 /* UnitSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitSelectionViewController.m; sourceTree = "<group>"; };
 		CBDD319B1768D39500E3F641 /* FoodDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBDD319E1768D39500E3F641 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CBDD31A01768D39500E3F641 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -239,16 +245,11 @@
 		CB7EBBBE17792F120022F1EE /* ProfileInformation */ = {
 			isa = PBXGroup;
 			children = (
+				CBD6DB42178357EA0028C768 /* Cell SubClasses */,
 				CB9D0E51177DF35400152108 /* ProfileViewController.h */,
 				CB9D0E52177DF35400152108 /* ProfileViewController.m */,
-				CB9D0E54177DF45300152108 /* ProfileNameCell.h */,
-				CB9D0E55177DF45300152108 /* ProfileNameCell.m */,
-				CB9D0E57177E0B7600152108 /* NonEditableNameCell.h */,
-				CB9D0E58177E0B7600152108 /* NonEditableNameCell.m */,
-				CB9D0E5A177E100800152108 /* ProfileAgeCell.h */,
-				CB9D0E5B177E100800152108 /* ProfileAgeCell.m */,
-				CB9D0E5D177E16EC00152108 /* NonEditableAgeCell.h */,
-				CB9D0E5E177E16EC00152108 /* NonEditableAgeCell.m */,
+				CBD6DB43178358100028C768 /* UnitSelectionViewController.h */,
+				CBD6DB44178358100028C768 /* UnitSelectionViewController.m */,
 			);
 			name = ProfileInformation;
 			sourceTree = "<group>";
@@ -301,6 +302,23 @@
 				CBBE6BD317696977005C8CD7 /* NewRecipeViewController.m */,
 			);
 			name = RecipeClasses;
+			sourceTree = "<group>";
+		};
+		CBD6DB42178357EA0028C768 /* Cell SubClasses */ = {
+			isa = PBXGroup;
+			children = (
+				CBD6DB3F178252690028C768 /* NonEditableHeightCell.h */,
+				CBD6DB40178252690028C768 /* NonEditableHeightCell.m */,
+				CB9D0E54177DF45300152108 /* ProfileNameCell.h */,
+				CB9D0E55177DF45300152108 /* ProfileNameCell.m */,
+				CB9D0E57177E0B7600152108 /* NonEditableNameCell.h */,
+				CB9D0E58177E0B7600152108 /* NonEditableNameCell.m */,
+				CB9D0E5A177E100800152108 /* ProfileAgeCell.h */,
+				CB9D0E5B177E100800152108 /* ProfileAgeCell.m */,
+				CB9D0E5D177E16EC00152108 /* NonEditableAgeCell.h */,
+				CB9D0E5E177E16EC00152108 /* NonEditableAgeCell.m */,
+			);
+			name = "Cell SubClasses";
 			sourceTree = "<group>";
 		};
 		CBDD31921768D39500E3F641 = {
@@ -501,6 +519,8 @@
 				CB9D0E59177E0B7600152108 /* NonEditableNameCell.m in Sources */,
 				CB9D0E5C177E100800152108 /* ProfileAgeCell.m in Sources */,
 				CB9D0E5F177E16EC00152108 /* NonEditableAgeCell.m in Sources */,
+				CBD6DB41178252690028C768 /* NonEditableHeightCell.m in Sources */,
+				CBD6DB45178358100028C768 /* UnitSelectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
