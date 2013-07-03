@@ -276,17 +276,18 @@ NonEditableAgeCell *noEditAgeCell;
     
    // NSIndexSet *section = [NSIndexSet indexSetWithIndexesInRange:range];
     
-    [self.tableView beginUpdates];
-    [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:0 inSection:0],[NSIndexPath indexPathForRow:0 inSection:2],nil] withRowAnimation:UITableViewRowAnimationBottom];
-    [self.tableView endUpdates];
+  //  [self.tableView beginUpdates];
+  //  [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:0 inSection:0],[NSIndexPath indexPathForRow:0 inSection:2],nil] withRowAnimation:UITableViewRowAnimationBottom];
+  //  [self.tableView endUpdates];
     
-    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
-    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationNone];
+  //  [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
+  //  [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationNone];
     //[self.tableView reloadSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationNone];
     
-    if (unitType == NO) {
-      [heightCell.metricHeightTextField setEnabled:NO];
-    }
+  //  if (unitType == NO) {
+  //    [heightCell.metricHeightTextField setEnabled:NO];
+  //  }
+    [self.tableView reloadData];
 
 
   } else {
@@ -298,13 +299,14 @@ NonEditableAgeCell *noEditAgeCell;
     [self textFieldShouldReturn:ageCell.ageTextBox];
     [heightCell.metricHeightTextField resignFirstResponder];
   
+    [self.tableView reloadData];
     //[self.tableView reloadData];
-    [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:0 inSection:0],[NSIndexPath indexPathForRow:0 inSection:2],nil] withRowAnimation:UITableViewRowAnimationFade];
+  //  [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:0 inSection:0],[NSIndexPath indexPathForRow:0 inSection:2],nil] withRowAnimation:UITableViewRowAnimationFade];
     
-    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
-    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationNone];
+  //  [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
+  //  [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationNone];
     //[self.tableView reloadSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationFade];
-    [heightCell.metricHeightTextField setEnabled:NO];
+   // [heightCell.metricHeightTextField setEnabled:NO];
 
   }
 }
