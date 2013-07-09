@@ -26,6 +26,7 @@
 		CB7BFFF8176C13210092F645 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7BFFF7176C13210092F645 /* QuartzCore.framework */; };
 		CB7EBBBB1778CE2B0022F1EE /* parchmentTexture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB7EBBBA1778CE2B0022F1EE /* parchmentTexture.jpg */; };
 		CB7EBBBD1778E8D50022F1EE /* leftArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = CB7EBBBC1778E8D50022F1EE /* leftArrow.png */; };
+		CB83D57A178B763B000A3FFA /* ProfileWeightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB83D579178B763B000A3FFA /* ProfileWeightCell.m */; };
 		CB84002717737BB400798344 /* MyServing.m in Sources */ = {isa = PBXBuildFile; fileRef = CB84002617737BB400798344 /* MyServing.m */; };
 		CB84002A17737BB400798344 /* MyMeal.m in Sources */ = {isa = PBXBuildFile; fileRef = CB84002917737BB400798344 /* MyMeal.m */; };
 		CB84002E1773B2AF00798344 /* MyFood.m in Sources */ = {isa = PBXBuildFile; fileRef = CB84002D1773B2AE00798344 /* MyFood.m */; };
@@ -107,6 +108,8 @@
 		CB7BFFF7176C13210092F645 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CB7EBBBA1778CE2B0022F1EE /* parchmentTexture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = parchmentTexture.jpg; sourceTree = "<group>"; };
 		CB7EBBBC1778E8D50022F1EE /* leftArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftArrow.png; sourceTree = "<group>"; };
+		CB83D578178B763B000A3FFA /* ProfileWeightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileWeightCell.h; sourceTree = "<group>"; };
+		CB83D579178B763B000A3FFA /* ProfileWeightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileWeightCell.m; sourceTree = "<group>"; };
 		CB84002517737BB400798344 /* MyServing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyServing.h; path = ../MyServing.h; sourceTree = "<group>"; };
 		CB84002617737BB400798344 /* MyServing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyServing.m; path = ../MyServing.m; sourceTree = "<group>"; };
 		CB84002817737BB400798344 /* MyMeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyMeal.h; path = ../MyMeal.h; sourceTree = "<group>"; };
@@ -317,6 +320,8 @@
 				CB9D0E5B177E100800152108 /* ProfileAgeCell.m */,
 				CB9D0E5D177E16EC00152108 /* NonEditableAgeCell.h */,
 				CB9D0E5E177E16EC00152108 /* NonEditableAgeCell.m */,
+				CB83D578178B763B000A3FFA /* ProfileWeightCell.h */,
+				CB83D579178B763B000A3FFA /* ProfileWeightCell.m */,
 			);
 			name = "Cell SubClasses";
 			sourceTree = "<group>";
@@ -521,6 +526,7 @@
 				CB9D0E5F177E16EC00152108 /* NonEditableAgeCell.m in Sources */,
 				CBD6DB41178252690028C768 /* ProfileHeightCell.m in Sources */,
 				CBD6DB45178358100028C768 /* UnitSelectionViewController.m in Sources */,
+				CB83D57A178B763B000A3FFA /* ProfileWeightCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
