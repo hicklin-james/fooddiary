@@ -1,17 +1,16 @@
 //
-//  ProfileWeightCell.m
+//  MetricWeightCell.m
 //  FoodDiary
 //
-//  Created by James Hicklin on 2013-07-01.
+//  Created by James Hicklin on 2013-07-09.
 //  Copyright (c) 2013 James Hicklin. All rights reserved.
 //
 
-#import "ProfileHeightCell.h"
+#import "MetricWeightCell.h"
 
-@implementation ProfileHeightCell
+@implementation MetricWeightCell
 
-@synthesize metricHeightTextField;
-@synthesize cmLabel;
+@synthesize weightTextField;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

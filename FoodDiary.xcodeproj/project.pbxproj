@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB29FD98178C92C20024F898 /* FirstNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FD97178C92C20024F898 /* FirstNameViewController.m */; };
+		CB29FD9B178C9CC50024F898 /* FirstNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FD9A178C9CC50024F898 /* FirstNameCell.m */; };
+		CB29FDA0178CA4EF0024F898 /* LastNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FD9F178CA4EF0024F898 /* LastNameCell.m */; };
+		CB29FDA3178CA5060024F898 /* LastNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FDA2178CA5060024F898 /* LastNameViewController.m */; };
+		CB29FDA7178CA96B0024F898 /* AgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FDA6178CA96B0024F898 /* AgeViewController.m */; };
+		CB29FDAA178CA9800024F898 /* AgeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FDA9178CA9800024F898 /* AgeCell.m */; };
+		CB29FDAE178CB2110024F898 /* MetricHeightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FDAD178CB2110024F898 /* MetricHeightCell.m */; };
+		CB29FDB1178CB2230024F898 /* MetricHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FDB0178CB2230024F898 /* MetricHeightViewController.m */; };
+		CB29FDB6178CBDFC0024F898 /* EnglishHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FDB5178CBDFC0024F898 /* EnglishHeightViewController.m */; };
+		CB29FDB9178CBE100024F898 /* EnglishHeightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FDB8178CBE100024F898 /* EnglishHeightCell.m */; };
+		CB29FDBD178CCA240024F898 /* EnglishWeightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FDBC178CCA240024F898 /* EnglishWeightCell.m */; };
+		CB29FDC0178CCA330024F898 /* EnglishWeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FDBF178CCA330024F898 /* EnglishWeightViewController.m */; };
+		CB29FDC4178CCCD50024F898 /* MetricWeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FDC3178CCCD50024F898 /* MetricWeightViewController.m */; };
+		CB29FDC7178CCCE30024F898 /* MetricWeightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FDC6178CCCE30024F898 /* MetricWeightCell.m */; };
+		CB29FDCB178CE8DB0024F898 /* NoProfileNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FDCA178CE8DA0024F898 /* NoProfileNameViewController.m */; };
+		CB6FC075178DAD3C009D9963 /* noisy-texture-100x100-o51-d36-c-3783bd-t0.png in Resources */ = {isa = PBXBuildFile; fileRef = CB6FC074178DAD3C009D9963 /* noisy-texture-100x100-o51-d36-c-3783bd-t0.png */; };
 		CB74DBD117714B770018A0A1 /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CB74DBC517714B770018A0A1 /* AbstractActionSheetPicker.m */; };
 		CB74DBD217714B770018A0A1 /* ActionSheetCustomPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CB74DBC717714B770018A0A1 /* ActionSheetCustomPicker.m */; };
 		CB74DBD317714B770018A0A1 /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CB74DBCA17714B770018A0A1 /* ActionSheetDatePicker.m */; };
@@ -26,20 +42,14 @@
 		CB7BFFF8176C13210092F645 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7BFFF7176C13210092F645 /* QuartzCore.framework */; };
 		CB7EBBBB1778CE2B0022F1EE /* parchmentTexture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB7EBBBA1778CE2B0022F1EE /* parchmentTexture.jpg */; };
 		CB7EBBBD1778E8D50022F1EE /* leftArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = CB7EBBBC1778E8D50022F1EE /* leftArrow.png */; };
-		CB83D57A178B763B000A3FFA /* ProfileWeightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB83D579178B763B000A3FFA /* ProfileWeightCell.m */; };
 		CB84002717737BB400798344 /* MyServing.m in Sources */ = {isa = PBXBuildFile; fileRef = CB84002617737BB400798344 /* MyServing.m */; };
 		CB84002A17737BB400798344 /* MyMeal.m in Sources */ = {isa = PBXBuildFile; fileRef = CB84002917737BB400798344 /* MyMeal.m */; };
 		CB84002E1773B2AF00798344 /* MyFood.m in Sources */ = {isa = PBXBuildFile; fileRef = CB84002D1773B2AE00798344 /* MyFood.m */; };
 		CB9D0E53177DF35400152108 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9D0E52177DF35400152108 /* ProfileViewController.m */; };
-		CB9D0E56177DF45300152108 /* ProfileNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9D0E55177DF45300152108 /* ProfileNameCell.m */; };
-		CB9D0E59177E0B7600152108 /* NonEditableNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9D0E58177E0B7600152108 /* NonEditableNameCell.m */; };
-		CB9D0E5C177E100800152108 /* ProfileAgeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9D0E5B177E100800152108 /* ProfileAgeCell.m */; };
-		CB9D0E5F177E16EC00152108 /* NonEditableAgeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9D0E5E177E16EC00152108 /* NonEditableAgeCell.m */; };
 		CBBE6BCB176967C6005C8CD7 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBE6BC9176967C6005C8CD7 /* EventKit.framework */; };
 		CBBE6BCC176967C6005C8CD7 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBE6BCA176967C6005C8CD7 /* EventKitUI.framework */; };
 		CBBE6BD117696964005C8CD7 /* RecipeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBE6BD017696964005C8CD7 /* RecipeTableViewController.m */; };
 		CBBE6BD417696977005C8CD7 /* NewRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBE6BD317696977005C8CD7 /* NewRecipeViewController.m */; };
-		CBD6DB41178252690028C768 /* ProfileHeightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD6DB40178252690028C768 /* ProfileHeightCell.m */; };
 		CBD6DB45178358100028C768 /* UnitSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD6DB44178358100028C768 /* UnitSelectionViewController.m */; };
 		CBDD319F1768D39500E3F641 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBDD319E1768D39500E3F641 /* UIKit.framework */; };
 		CBDD31A11768D39500E3F641 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBDD31A01768D39500E3F641 /* Foundation.framework */; };
@@ -71,6 +81,37 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB29FD96178C92C20024F898 /* FirstNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstNameViewController.h; sourceTree = "<group>"; };
+		CB29FD97178C92C20024F898 /* FirstNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstNameViewController.m; sourceTree = "<group>"; };
+		CB29FD99178C9CC40024F898 /* FirstNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstNameCell.h; sourceTree = "<group>"; };
+		CB29FD9A178C9CC50024F898 /* FirstNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstNameCell.m; sourceTree = "<group>"; };
+		CB29FD9E178CA4EF0024F898 /* LastNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LastNameCell.h; sourceTree = "<group>"; };
+		CB29FD9F178CA4EF0024F898 /* LastNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastNameCell.m; sourceTree = "<group>"; };
+		CB29FDA1178CA5060024F898 /* LastNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LastNameViewController.h; sourceTree = "<group>"; };
+		CB29FDA2178CA5060024F898 /* LastNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastNameViewController.m; sourceTree = "<group>"; };
+		CB29FDA5178CA96B0024F898 /* AgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgeViewController.h; sourceTree = "<group>"; };
+		CB29FDA6178CA96B0024F898 /* AgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgeViewController.m; sourceTree = "<group>"; };
+		CB29FDA8178CA9800024F898 /* AgeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgeCell.h; sourceTree = "<group>"; };
+		CB29FDA9178CA9800024F898 /* AgeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgeCell.m; sourceTree = "<group>"; };
+		CB29FDAC178CB2110024F898 /* MetricHeightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetricHeightCell.h; sourceTree = "<group>"; };
+		CB29FDAD178CB2110024F898 /* MetricHeightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetricHeightCell.m; sourceTree = "<group>"; };
+		CB29FDAF178CB2230024F898 /* MetricHeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetricHeightViewController.h; sourceTree = "<group>"; };
+		CB29FDB0178CB2230024F898 /* MetricHeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetricHeightViewController.m; sourceTree = "<group>"; };
+		CB29FDB4178CBDFC0024F898 /* EnglishHeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnglishHeightViewController.h; sourceTree = "<group>"; };
+		CB29FDB5178CBDFC0024F898 /* EnglishHeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnglishHeightViewController.m; sourceTree = "<group>"; };
+		CB29FDB7178CBE100024F898 /* EnglishHeightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnglishHeightCell.h; sourceTree = "<group>"; };
+		CB29FDB8178CBE100024F898 /* EnglishHeightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnglishHeightCell.m; sourceTree = "<group>"; };
+		CB29FDBB178CCA240024F898 /* EnglishWeightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnglishWeightCell.h; sourceTree = "<group>"; };
+		CB29FDBC178CCA240024F898 /* EnglishWeightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnglishWeightCell.m; sourceTree = "<group>"; };
+		CB29FDBE178CCA330024F898 /* EnglishWeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnglishWeightViewController.h; sourceTree = "<group>"; };
+		CB29FDBF178CCA330024F898 /* EnglishWeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnglishWeightViewController.m; sourceTree = "<group>"; };
+		CB29FDC2178CCCD50024F898 /* MetricWeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetricWeightViewController.h; sourceTree = "<group>"; };
+		CB29FDC3178CCCD50024F898 /* MetricWeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetricWeightViewController.m; sourceTree = "<group>"; };
+		CB29FDC5178CCCE30024F898 /* MetricWeightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetricWeightCell.h; sourceTree = "<group>"; };
+		CB29FDC6178CCCE30024F898 /* MetricWeightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetricWeightCell.m; sourceTree = "<group>"; };
+		CB29FDC9178CE8D90024F898 /* NoProfileNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoProfileNameViewController.h; sourceTree = "<group>"; };
+		CB29FDCA178CE8DA0024F898 /* NoProfileNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoProfileNameViewController.m; sourceTree = "<group>"; };
+		CB6FC074178DAD3C009D9963 /* noisy-texture-100x100-o51-d36-c-3783bd-t0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "noisy-texture-100x100-o51-d36-c-3783bd-t0.png"; sourceTree = "<group>"; };
 		CB74DBC417714B770018A0A1 /* AbstractActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractActionSheetPicker.h; sourceTree = "<group>"; };
 		CB74DBC517714B770018A0A1 /* AbstractActionSheetPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractActionSheetPicker.m; sourceTree = "<group>"; };
 		CB74DBC617714B770018A0A1 /* ActionSheetCustomPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetCustomPicker.h; sourceTree = "<group>"; };
@@ -108,8 +149,6 @@
 		CB7BFFF7176C13210092F645 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CB7EBBBA1778CE2B0022F1EE /* parchmentTexture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = parchmentTexture.jpg; sourceTree = "<group>"; };
 		CB7EBBBC1778E8D50022F1EE /* leftArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftArrow.png; sourceTree = "<group>"; };
-		CB83D578178B763B000A3FFA /* ProfileWeightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileWeightCell.h; sourceTree = "<group>"; };
-		CB83D579178B763B000A3FFA /* ProfileWeightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileWeightCell.m; sourceTree = "<group>"; };
 		CB84002517737BB400798344 /* MyServing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyServing.h; path = ../MyServing.h; sourceTree = "<group>"; };
 		CB84002617737BB400798344 /* MyServing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyServing.m; path = ../MyServing.m; sourceTree = "<group>"; };
 		CB84002817737BB400798344 /* MyMeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyMeal.h; path = ../MyMeal.h; sourceTree = "<group>"; };
@@ -118,22 +157,12 @@
 		CB84002D1773B2AE00798344 /* MyFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFood.m; sourceTree = "<group>"; };
 		CB9D0E51177DF35400152108 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		CB9D0E52177DF35400152108 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
-		CB9D0E54177DF45300152108 /* ProfileNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileNameCell.h; sourceTree = "<group>"; };
-		CB9D0E55177DF45300152108 /* ProfileNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileNameCell.m; sourceTree = "<group>"; };
-		CB9D0E57177E0B7600152108 /* NonEditableNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonEditableNameCell.h; sourceTree = "<group>"; };
-		CB9D0E58177E0B7600152108 /* NonEditableNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonEditableNameCell.m; sourceTree = "<group>"; };
-		CB9D0E5A177E100800152108 /* ProfileAgeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileAgeCell.h; sourceTree = "<group>"; };
-		CB9D0E5B177E100800152108 /* ProfileAgeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileAgeCell.m; sourceTree = "<group>"; };
-		CB9D0E5D177E16EC00152108 /* NonEditableAgeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonEditableAgeCell.h; sourceTree = "<group>"; };
-		CB9D0E5E177E16EC00152108 /* NonEditableAgeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonEditableAgeCell.m; sourceTree = "<group>"; };
 		CBBE6BC9176967C6005C8CD7 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		CBBE6BCA176967C6005C8CD7 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		CBBE6BCF17696964005C8CD7 /* RecipeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecipeTableViewController.h; path = ../RecipeTableViewController.h; sourceTree = "<group>"; };
 		CBBE6BD017696964005C8CD7 /* RecipeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecipeTableViewController.m; path = ../RecipeTableViewController.m; sourceTree = "<group>"; };
 		CBBE6BD217696977005C8CD7 /* NewRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewRecipeViewController.h; path = ../NewRecipeViewController.h; sourceTree = "<group>"; };
 		CBBE6BD317696977005C8CD7 /* NewRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewRecipeViewController.m; path = ../NewRecipeViewController.m; sourceTree = "<group>"; };
-		CBD6DB3F178252690028C768 /* ProfileHeightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileHeightCell.h; sourceTree = "<group>"; };
-		CBD6DB40178252690028C768 /* ProfileHeightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileHeightCell.m; sourceTree = "<group>"; };
 		CBD6DB43178358100028C768 /* UnitSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitSelectionViewController.h; sourceTree = "<group>"; };
 		CBD6DB44178358100028C768 /* UnitSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitSelectionViewController.m; sourceTree = "<group>"; };
 		CBDD319B1768D39500E3F641 /* FoodDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,6 +221,101 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB29FD9C178C9E320024F898 /* FirstName */ = {
+			isa = PBXGroup;
+			children = (
+				CB29FD96178C92C20024F898 /* FirstNameViewController.h */,
+				CB29FD97178C92C20024F898 /* FirstNameViewController.m */,
+				CB29FD99178C9CC40024F898 /* FirstNameCell.h */,
+				CB29FD9A178C9CC50024F898 /* FirstNameCell.m */,
+			);
+			name = FirstName;
+			sourceTree = "<group>";
+		};
+		CB29FD9D178CA4D00024F898 /* LastName */ = {
+			isa = PBXGroup;
+			children = (
+				CB29FDA1178CA5060024F898 /* LastNameViewController.h */,
+				CB29FDA2178CA5060024F898 /* LastNameViewController.m */,
+				CB29FD9E178CA4EF0024F898 /* LastNameCell.h */,
+				CB29FD9F178CA4EF0024F898 /* LastNameCell.m */,
+			);
+			name = LastName;
+			sourceTree = "<group>";
+		};
+		CB29FDA4178CA8170024F898 /* Age */ = {
+			isa = PBXGroup;
+			children = (
+				CB29FDA5178CA96B0024F898 /* AgeViewController.h */,
+				CB29FDA6178CA96B0024F898 /* AgeViewController.m */,
+				CB29FDA8178CA9800024F898 /* AgeCell.h */,
+				CB29FDA9178CA9800024F898 /* AgeCell.m */,
+			);
+			name = Age;
+			sourceTree = "<group>";
+		};
+		CB29FDAB178CB1EE0024F898 /* Height */ = {
+			isa = PBXGroup;
+			children = (
+				CB29FDB3178CBDEB0024F898 /* EnglishHeight */,
+				CB29FDB2178CBDD70024F898 /* MetricHeight */,
+			);
+			name = Height;
+			sourceTree = "<group>";
+		};
+		CB29FDB2178CBDD70024F898 /* MetricHeight */ = {
+			isa = PBXGroup;
+			children = (
+				CB29FDAF178CB2230024F898 /* MetricHeightViewController.h */,
+				CB29FDB0178CB2230024F898 /* MetricHeightViewController.m */,
+				CB29FDAC178CB2110024F898 /* MetricHeightCell.h */,
+				CB29FDAD178CB2110024F898 /* MetricHeightCell.m */,
+			);
+			name = MetricHeight;
+			sourceTree = "<group>";
+		};
+		CB29FDB3178CBDEB0024F898 /* EnglishHeight */ = {
+			isa = PBXGroup;
+			children = (
+				CB29FDB4178CBDFC0024F898 /* EnglishHeightViewController.h */,
+				CB29FDB5178CBDFC0024F898 /* EnglishHeightViewController.m */,
+				CB29FDB7178CBE100024F898 /* EnglishHeightCell.h */,
+				CB29FDB8178CBE100024F898 /* EnglishHeightCell.m */,
+			);
+			name = EnglishHeight;
+			sourceTree = "<group>";
+		};
+		CB29FDBA178CC9D00024F898 /* Weight */ = {
+			isa = PBXGroup;
+			children = (
+				CB29FDC1178CCA3E0024F898 /* EnglishWeight */,
+				CB29FDC8178CCCEE0024F898 /* MetricWeight */,
+			);
+			name = Weight;
+			sourceTree = "<group>";
+		};
+		CB29FDC1178CCA3E0024F898 /* EnglishWeight */ = {
+			isa = PBXGroup;
+			children = (
+				CB29FDBE178CCA330024F898 /* EnglishWeightViewController.h */,
+				CB29FDBF178CCA330024F898 /* EnglishWeightViewController.m */,
+				CB29FDBB178CCA240024F898 /* EnglishWeightCell.h */,
+				CB29FDBC178CCA240024F898 /* EnglishWeightCell.m */,
+			);
+			name = EnglishWeight;
+			sourceTree = "<group>";
+		};
+		CB29FDC8178CCCEE0024F898 /* MetricWeight */ = {
+			isa = PBXGroup;
+			children = (
+				CB29FDC2178CCCD50024F898 /* MetricWeightViewController.h */,
+				CB29FDC3178CCCD50024F898 /* MetricWeightViewController.m */,
+				CB29FDC5178CCCE30024F898 /* MetricWeightCell.h */,
+				CB29FDC6178CCCE30024F898 /* MetricWeightCell.m */,
+			);
+			name = MetricWeight;
+			sourceTree = "<group>";
+		};
 		CB74DBC317714B770018A0A1 /* Pickers */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,11 +372,17 @@
 		CB7EBBBE17792F120022F1EE /* ProfileInformation */ = {
 			isa = PBXGroup;
 			children = (
-				CBD6DB42178357EA0028C768 /* Cell SubClasses */,
 				CB9D0E51177DF35400152108 /* ProfileViewController.h */,
 				CB9D0E52177DF35400152108 /* ProfileViewController.m */,
 				CBD6DB43178358100028C768 /* UnitSelectionViewController.h */,
 				CBD6DB44178358100028C768 /* UnitSelectionViewController.m */,
+				CB29FD9C178C9E320024F898 /* FirstName */,
+				CB29FD9D178CA4D00024F898 /* LastName */,
+				CB29FDA4178CA8170024F898 /* Age */,
+				CB29FDAB178CB1EE0024F898 /* Height */,
+				CB29FDBA178CC9D00024F898 /* Weight */,
+				CB29FDC9178CE8D90024F898 /* NoProfileNameViewController.h */,
+				CB29FDCA178CE8DA0024F898 /* NoProfileNameViewController.m */,
 			);
 			name = ProfileInformation;
 			sourceTree = "<group>";
@@ -307,25 +437,6 @@
 			name = RecipeClasses;
 			sourceTree = "<group>";
 		};
-		CBD6DB42178357EA0028C768 /* Cell SubClasses */ = {
-			isa = PBXGroup;
-			children = (
-				CBD6DB3F178252690028C768 /* ProfileHeightCell.h */,
-				CBD6DB40178252690028C768 /* ProfileHeightCell.m */,
-				CB9D0E54177DF45300152108 /* ProfileNameCell.h */,
-				CB9D0E55177DF45300152108 /* ProfileNameCell.m */,
-				CB9D0E57177E0B7600152108 /* NonEditableNameCell.h */,
-				CB9D0E58177E0B7600152108 /* NonEditableNameCell.m */,
-				CB9D0E5A177E100800152108 /* ProfileAgeCell.h */,
-				CB9D0E5B177E100800152108 /* ProfileAgeCell.m */,
-				CB9D0E5D177E16EC00152108 /* NonEditableAgeCell.h */,
-				CB9D0E5E177E16EC00152108 /* NonEditableAgeCell.m */,
-				CB83D578178B763B000A3FFA /* ProfileWeightCell.h */,
-				CB83D579178B763B000A3FFA /* ProfileWeightCell.m */,
-			);
-			name = "Cell SubClasses";
-			sourceTree = "<group>";
-		};
 		CBDD31921768D39500E3F641 = {
 			isa = PBXGroup;
 			children = (
@@ -365,6 +476,7 @@
 		CBDD31A61768D39500E3F641 /* FoodDiary */ = {
 			isa = PBXGroup;
 			children = (
+				CB6FC074178DAD3C009D9963 /* noisy-texture-100x100-o51-d36-c-3783bd-t0.png */,
 				CB84002B17737BBC00798344 /* Entities */,
 				CBDD31C01768D3E200E3F641 /* FDiPhone.storyboard */,
 				CBDD31AF1768D39500E3F641 /* FDAppDelegate.h */,
@@ -480,6 +592,7 @@
 				CBDD31FF17692D7500E3F641 /* iPhoneIcon_Big.png in Resources */,
 				CB7EBBBB1778CE2B0022F1EE /* parchmentTexture.jpg in Resources */,
 				CB7EBBBD1778E8D50022F1EE /* leftArrow.png in Resources */,
+				CB6FC075178DAD3C009D9963 /* noisy-texture-100x100-o51-d36-c-3783bd-t0.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,13 +633,22 @@
 				CB84002A17737BB400798344 /* MyMeal.m in Sources */,
 				CB84002E1773B2AF00798344 /* MyFood.m in Sources */,
 				CB9D0E53177DF35400152108 /* ProfileViewController.m in Sources */,
-				CB9D0E56177DF45300152108 /* ProfileNameCell.m in Sources */,
-				CB9D0E59177E0B7600152108 /* NonEditableNameCell.m in Sources */,
-				CB9D0E5C177E100800152108 /* ProfileAgeCell.m in Sources */,
-				CB9D0E5F177E16EC00152108 /* NonEditableAgeCell.m in Sources */,
-				CBD6DB41178252690028C768 /* ProfileHeightCell.m in Sources */,
 				CBD6DB45178358100028C768 /* UnitSelectionViewController.m in Sources */,
-				CB83D57A178B763B000A3FFA /* ProfileWeightCell.m in Sources */,
+				CB29FD98178C92C20024F898 /* FirstNameViewController.m in Sources */,
+				CB29FD9B178C9CC50024F898 /* FirstNameCell.m in Sources */,
+				CB29FDA0178CA4EF0024F898 /* LastNameCell.m in Sources */,
+				CB29FDA3178CA5060024F898 /* LastNameViewController.m in Sources */,
+				CB29FDA7178CA96B0024F898 /* AgeViewController.m in Sources */,
+				CB29FDAA178CA9800024F898 /* AgeCell.m in Sources */,
+				CB29FDAE178CB2110024F898 /* MetricHeightCell.m in Sources */,
+				CB29FDB1178CB2230024F898 /* MetricHeightViewController.m in Sources */,
+				CB29FDB6178CBDFC0024F898 /* EnglishHeightViewController.m in Sources */,
+				CB29FDB9178CBE100024F898 /* EnglishHeightCell.m in Sources */,
+				CB29FDBD178CCA240024F898 /* EnglishWeightCell.m in Sources */,
+				CB29FDC0178CCA330024F898 /* EnglishWeightViewController.m in Sources */,
+				CB29FDC4178CCCD50024F898 /* MetricWeightViewController.m in Sources */,
+				CB29FDC7178CCCE30024F898 /* MetricWeightCell.m in Sources */,
+				CB29FDCB178CE8DB0024F898 /* NoProfileNameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

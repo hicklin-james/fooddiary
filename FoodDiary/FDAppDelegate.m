@@ -11,6 +11,7 @@
 #import "MyMeal.h"
 #import "FoodDiaryViewController.h"
 #import "ProfileViewController.h"
+#import "NoProfileNameViewController.h"
 
 @implementation FDAppDelegate
 
@@ -122,10 +123,6 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     // This is the first launch ever
     NSLog(@"Welcome to the food diary app!");
-    // Set tabController to open profile page if this is the first time ever launching the app
-    NSLog(@"Root: %@", self.window.rootViewController);
-    UITabBarController *tabController = (UITabBarController *)self.window.rootViewController;
-    tabController.selectedIndex = 3;
   }
   
   [FSClient sharedClient].oauthConsumerKey = @"b066c53bc69a42bba07b5d530f685611";
@@ -135,12 +132,8 @@
   foodDiaryViewController.mealsToday = mutableMealsToday;
   foodDiaryViewController.dateToShow = date;
   
-  NSUserDefaults *profile = [NSUserDefaults standardUserDefaults];
-  if ([profile boolForKey:@"profileSet"] == NO) {
-   // _window.rootViewController = [_window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"Profile"];
-    UITabBarController *tabController = (UITabBarController *)self.window.rootViewController;
-    tabController.selectedIndex = 3;
-  }
+  
+  self.window.backgroundColor = [UIColor whiteColor];
     return YES;
 }
 

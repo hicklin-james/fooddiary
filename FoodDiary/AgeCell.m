@@ -1,16 +1,16 @@
 //
-//  NonEditableNameCell.m
+//  AgeCell.m
 //  FoodDiary
 //
-//  Created by James Hicklin on 2013-06-28.
+//  Created by James Hicklin on 2013-07-09.
 //  Copyright (c) 2013 James Hicklin. All rights reserved.
 //
 
-#import "NonEditableNameCell.h"
+#import "AgeCell.h"
 
-@implementation NonEditableNameCell
+@implementation AgeCell
 
-@synthesize name;
+@synthesize ageTextField;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

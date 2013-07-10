@@ -56,28 +56,42 @@
 - (void) viewWillAppear:(BOOL)animated {
   
   [super viewWillAppear:animated];
-
   [self refreshFoodData];
-  
   [self.tableView reloadData];
   
-  
-
  // NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
  // self.date.text = [formatter stringFromDate:dateWithoutTime];
   
   //[self.tableView reloadData];
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+  
+  // If there is no profile, present modal view to create a profile!
+  NSUserDefaults *profile = [NSUserDefaults standardUserDefaults];
+  if ([profile boolForKey:@"profileSet"] == NO) {
+  
+    [self performSegueWithIdentifier:@"noProfileNameSegue" sender:self];
+  
+  }
+  
+}
+
 
 // Called before segue into another view
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // set the FoodDiaryViewController as the delegate for the new view
-  UINavigationController *nav = [segue destinationViewController];
-  MealSelectionViewController *dest = (MealSelectionViewController*)[nav topViewController];
-  dest.managedObjectContext = managedObjectContext;
-  dest.mealsToday = mealsToday;
-  dest.dateOfFood = dateToShow;
+  if ([segue.identifier isEqual: @"noProfileNameSegue"]) {
+    
+  }
+  else {
+    UINavigationController *nav = [segue destinationViewController];
+    MealSelectionViewController *dest = (MealSelectionViewController*)[nav topViewController];
+    dest.managedObjectContext = managedObjectContext;
+    dest.mealsToday = mealsToday;
+    dest.dateOfFood = dateToShow;
+  }
   //[dest setDelegate:self];
   
 }

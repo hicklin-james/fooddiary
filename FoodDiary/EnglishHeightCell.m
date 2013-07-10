@@ -1,16 +1,16 @@
 //
-//  ProfileWeightCell.m
+//  EnglishHeightCell.m
 //  FoodDiary
 //
-//  Created by James Hicklin on 2013-07-08.
+//  Created by James Hicklin on 2013-07-09.
 //  Copyright (c) 2013 James Hicklin. All rights reserved.
 //
 
-#import "ProfileWeightCell.h"
+#import "EnglishHeightCell.h"
 
-@implementation ProfileWeightCell
+@implementation EnglishHeightCell
 
-@synthesize weightTextField;
+@synthesize heightLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

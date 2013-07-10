@@ -1,16 +1,16 @@
 //
-//  ProfileNameCell.m
+//  MetricHeightCell.m
 //  FoodDiary
 //
-//  Created by James Hicklin on 2013-06-28.
+//  Created by James Hicklin on 2013-07-09.
 //  Copyright (c) 2013 James Hicklin. All rights reserved.
 //
 
-#import "ProfileNameCell.h"
+#import "MetricHeightCell.h"
 
-@implementation ProfileNameCell
+@implementation MetricHeightCell
 
-@synthesize nameTextField;
+@synthesize heightTextField;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
