@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "AddFoodViewController.h"
 #import "DetailFoodBeforeSelectionViewController.h"
-#import "NoProfileNameViewController.h"
+#import "WelcomeViewController.h"
 
 @class FoodDiaryMealDataController;
 
 // implement NewMealViewControllerDelegate Protocol
-@interface FoodDiaryViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, NoProfileNameViewControllerDelegate> {
+@interface FoodDiaryViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
   
   NSManagedObjectContext *managedObjectContext;
   NSMutableArray *mealsToday;

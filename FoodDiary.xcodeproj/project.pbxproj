@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB17DA59178DD814005DB220 /* apple-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = CB17DA58178DD814005DB220 /* apple-logo.png */; };
+		CB17DA5F178DDEF8005DB220 /* GradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CB17DA5E178DDEF8005DB220 /* GradientButton.m */; };
+		CB17DA63178DE362005DB220 /* WelcomeNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB17DA62178DE362005DB220 /* WelcomeNameViewController.m */; };
 		CB29FD98178C92C20024F898 /* FirstNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FD97178C92C20024F898 /* FirstNameViewController.m */; };
 		CB29FD9B178C9CC50024F898 /* FirstNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FD9A178C9CC50024F898 /* FirstNameCell.m */; };
 		CB29FDA0178CA4EF0024F898 /* LastNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FD9F178CA4EF0024F898 /* LastNameCell.m */; };
@@ -21,8 +24,7 @@
 		CB29FDC0178CCA330024F898 /* EnglishWeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FDBF178CCA330024F898 /* EnglishWeightViewController.m */; };
 		CB29FDC4178CCCD50024F898 /* MetricWeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FDC3178CCCD50024F898 /* MetricWeightViewController.m */; };
 		CB29FDC7178CCCE30024F898 /* MetricWeightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FDC6178CCCE30024F898 /* MetricWeightCell.m */; };
-		CB29FDCB178CE8DB0024F898 /* NoProfileNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FDCA178CE8DA0024F898 /* NoProfileNameViewController.m */; };
-		CB6FC075178DAD3C009D9963 /* noisy-texture-100x100-o51-d36-c-3783bd-t0.png in Resources */ = {isa = PBXBuildFile; fileRef = CB6FC074178DAD3C009D9963 /* noisy-texture-100x100-o51-d36-c-3783bd-t0.png */; };
+		CB29FDCB178CE8DB0024F898 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FDCA178CE8DA0024F898 /* WelcomeViewController.m */; };
 		CB74DBD117714B770018A0A1 /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CB74DBC517714B770018A0A1 /* AbstractActionSheetPicker.m */; };
 		CB74DBD217714B770018A0A1 /* ActionSheetCustomPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CB74DBC717714B770018A0A1 /* ActionSheetCustomPicker.m */; };
 		CB74DBD317714B770018A0A1 /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CB74DBCA17714B770018A0A1 /* ActionSheetDatePicker.m */; };
@@ -81,6 +83,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB17DA58178DD814005DB220 /* apple-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-logo.png"; sourceTree = "<group>"; };
+		CB17DA5D178DDEF8005DB220 /* GradientButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientButton.h; sourceTree = "<group>"; };
+		CB17DA5E178DDEF8005DB220 /* GradientButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientButton.m; sourceTree = "<group>"; };
+		CB17DA61178DE362005DB220 /* WelcomeNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeNameViewController.h; sourceTree = "<group>"; };
+		CB17DA62178DE362005DB220 /* WelcomeNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeNameViewController.m; sourceTree = "<group>"; };
 		CB29FD96178C92C20024F898 /* FirstNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstNameViewController.h; sourceTree = "<group>"; };
 		CB29FD97178C92C20024F898 /* FirstNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstNameViewController.m; sourceTree = "<group>"; };
 		CB29FD99178C9CC40024F898 /* FirstNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstNameCell.h; sourceTree = "<group>"; };
@@ -109,9 +116,8 @@
 		CB29FDC3178CCCD50024F898 /* MetricWeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetricWeightViewController.m; sourceTree = "<group>"; };
 		CB29FDC5178CCCE30024F898 /* MetricWeightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetricWeightCell.h; sourceTree = "<group>"; };
 		CB29FDC6178CCCE30024F898 /* MetricWeightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetricWeightCell.m; sourceTree = "<group>"; };
-		CB29FDC9178CE8D90024F898 /* NoProfileNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoProfileNameViewController.h; sourceTree = "<group>"; };
-		CB29FDCA178CE8DA0024F898 /* NoProfileNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoProfileNameViewController.m; sourceTree = "<group>"; };
-		CB6FC074178DAD3C009D9963 /* noisy-texture-100x100-o51-d36-c-3783bd-t0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "noisy-texture-100x100-o51-d36-c-3783bd-t0.png"; sourceTree = "<group>"; };
+		CB29FDC9178CE8D90024F898 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
+		CB29FDCA178CE8DA0024F898 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		CB74DBC417714B770018A0A1 /* AbstractActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractActionSheetPicker.h; sourceTree = "<group>"; };
 		CB74DBC517714B770018A0A1 /* AbstractActionSheetPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractActionSheetPicker.m; sourceTree = "<group>"; };
 		CB74DBC617714B770018A0A1 /* ActionSheetCustomPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetCustomPicker.h; sourceTree = "<group>"; };
@@ -221,6 +227,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB17DA5A178DDDE0005DB220 /* CustomButtons */ = {
+			isa = PBXGroup;
+			children = (
+				CB17DA5D178DDEF8005DB220 /* GradientButton.h */,
+				CB17DA5E178DDEF8005DB220 /* GradientButton.m */,
+			);
+			name = CustomButtons;
+			sourceTree = "<group>";
+		};
+		CB17DA60178DE2B0005DB220 /* SetupViews */ = {
+			isa = PBXGroup;
+			children = (
+				CB29FDC9178CE8D90024F898 /* WelcomeViewController.h */,
+				CB29FDCA178CE8DA0024F898 /* WelcomeViewController.m */,
+				CB17DA61178DE362005DB220 /* WelcomeNameViewController.h */,
+				CB17DA62178DE362005DB220 /* WelcomeNameViewController.m */,
+			);
+			name = SetupViews;
+			sourceTree = "<group>";
+		};
 		CB29FD9C178C9E320024F898 /* FirstName */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,6 +398,7 @@
 		CB7EBBBE17792F120022F1EE /* ProfileInformation */ = {
 			isa = PBXGroup;
 			children = (
+				CB17DA60178DE2B0005DB220 /* SetupViews */,
 				CB9D0E51177DF35400152108 /* ProfileViewController.h */,
 				CB9D0E52177DF35400152108 /* ProfileViewController.m */,
 				CBD6DB43178358100028C768 /* UnitSelectionViewController.h */,
@@ -381,8 +408,6 @@
 				CB29FDA4178CA8170024F898 /* Age */,
 				CB29FDAB178CB1EE0024F898 /* Height */,
 				CB29FDBA178CC9D00024F898 /* Weight */,
-				CB29FDC9178CE8D90024F898 /* NoProfileNameViewController.h */,
-				CB29FDCA178CE8DA0024F898 /* NoProfileNameViewController.m */,
 			);
 			name = ProfileInformation;
 			sourceTree = "<group>";
@@ -476,7 +501,7 @@
 		CBDD31A61768D39500E3F641 /* FoodDiary */ = {
 			isa = PBXGroup;
 			children = (
-				CB6FC074178DAD3C009D9963 /* noisy-texture-100x100-o51-d36-c-3783bd-t0.png */,
+				CB17DA5A178DDDE0005DB220 /* CustomButtons */,
 				CB84002B17737BBC00798344 /* Entities */,
 				CBDD31C01768D3E200E3F641 /* FDiPhone.storyboard */,
 				CBDD31AF1768D39500E3F641 /* FDAppDelegate.h */,
@@ -506,6 +531,7 @@
 		CBDD31D3176909AE00E3F641 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CB17DA58178DD814005DB220 /* apple-logo.png */,
 				CB7EBBBC1778E8D50022F1EE /* leftArrow.png */,
 				CB7EBBBA1778CE2B0022F1EE /* parchmentTexture.jpg */,
 				CBDD31F817692B5200E3F641 /* SettingsTabIcon.png */,
@@ -592,7 +618,7 @@
 				CBDD31FF17692D7500E3F641 /* iPhoneIcon_Big.png in Resources */,
 				CB7EBBBB1778CE2B0022F1EE /* parchmentTexture.jpg in Resources */,
 				CB7EBBBD1778E8D50022F1EE /* leftArrow.png in Resources */,
-				CB6FC075178DAD3C009D9963 /* noisy-texture-100x100-o51-d36-c-3783bd-t0.png in Resources */,
+				CB17DA59178DD814005DB220 /* apple-logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,7 +674,9 @@
 				CB29FDC0178CCA330024F898 /* EnglishWeightViewController.m in Sources */,
 				CB29FDC4178CCCD50024F898 /* MetricWeightViewController.m in Sources */,
 				CB29FDC7178CCCE30024F898 /* MetricWeightCell.m in Sources */,
-				CB29FDCB178CE8DB0024F898 /* NoProfileNameViewController.m in Sources */,
+				CB29FDCB178CE8DB0024F898 /* WelcomeViewController.m in Sources */,
+				CB17DA5F178DDEF8005DB220 /* GradientButton.m in Sources */,
+				CB17DA63178DE362005DB220 /* WelcomeNameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

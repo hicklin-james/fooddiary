@@ -6,18 +6,14 @@
 //  Copyright (c) 2013 James Hicklin. All rights reserved.
 //
 
-#import "NoProfileNameViewController.h"
+#import "WelcomeViewController.h"
 #import "FoodDiaryViewController.h"
 
-@interface NoProfileNameViewController ()
+@interface WelcomeViewController ()
 
 @end
 
-@implementation NoProfileNameViewController
-
-@synthesize managedObjectContext;
-@synthesize mealsToday;
-@synthesize dateToShow;
+@implementation WelcomeViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,7 +29,7 @@
     [super viewDidLoad];
   
   // sets background color
-  self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"noisy-texture-100x100-o51-d36-c-3783bd-t0"]];
+ // self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"noisy-texture-100x100-o51-d36-c-3783bd-t0"]];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -48,10 +44,4 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)testButtonPushed:(id)sender {
-  
-  //[self.delegate closeProfileWindow:self];
-  [self dismissViewControllerAnimated:YES completion:nil];
-  
-}
 @end

@@ -11,7 +11,7 @@
 #import "MyMeal.h"
 #import "FoodDiaryViewController.h"
 #import "ProfileViewController.h"
-#import "NoProfileNameViewController.h"
+#import "WelcomeViewController.h"
 
 @implementation FDAppDelegate
 

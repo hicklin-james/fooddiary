@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="I0f-oO-4YR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="I0f-oO-4YR">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -87,33 +87,188 @@
             </objects>
             <point key="canvasLocation" x="318" y="2058"/>
         </scene>
-        <!--No Profile Name View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="5HI-db-RzM">
             <objects>
-                <viewController storyboardIdentifier="NoProfileNameViewController" id="tES-OV-QT6" customClass="NoProfileNameViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoProfileNameViewController" id="tES-OV-QT6" customClass="WelcomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Gy-RK-sbR">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ln9-7l-Syh">
-                                <rect key="frame" x="112" y="176" width="73" height="44"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="apple-logo.png" id="Uty-jG-dK8">
+                                <rect key="frame" x="49" y="20" width="223" height="177"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Welcome to the food buddy app!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6Kw-E3-YYu">
+                                <rect key="frame" x="67" y="235" width="187" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                <color key="textColor" red="0.11246891121956824" green="0.74039381377551017" blue="0.16668708024589426" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Q0i-oY-0yL" customClass="GradientButton">
+                                <rect key="frame" x="72" y="317" width="176" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.18823529410000001" green="0.82352941180000006" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <state key="normal" title="Push here to get started!">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="oRJ-Nn-jcI" kind="push" id="a7m-cc-T4z"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="bBg-Ee-hLr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pOS-Ee-lih" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-663" y="1438"/>
+            <point key="canvasLocation" x="232" y="3006"/>
+        </scene>
+        <!--Welcome Name View Controller-->
+        <scene sceneID="c2e-B3-elA">
+            <objects>
+                <viewController id="oRJ-Nn-jcI" customClass="WelcomeNameViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZrS-4o-NOf">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="4cu-iB-FY7">
+                                <rect key="frame" x="0.0" y="20" width="320" height="198"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <color key="separatorColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="firstNameCell" id="54F-mt-de0" customClass="FirstNameCell">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" id="OtX-E4-aIP">
+                                                    <rect key="frame" x="102" y="7" width="185" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="oRJ-Nn-jcI" id="PSp-Tx-r0K"/>
+                                                    </connections>
+                                                </textField>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="First Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="j9h-mS-lNG">
+                                                    <rect key="frame" x="7" y="10" width="87" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="firstNameTextField" destination="OtX-E4-aIP" id="P8Y-fy-rJ0"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="lastNameCell" id="VHN-59-kBM" customClass="LastNameCell">
+                                        <rect key="frame" x="0.0" y="91" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Last Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zup-cT-2Ra">
+                                                    <rect key="frame" x="7" y="10" width="87" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" id="ssr-HL-58q">
+                                                    <rect key="frame" x="102" y="7" width="185" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="oRJ-Nn-jcI" id="zU7-Ja-PZb"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="lastNameTextField" destination="ssr-HL-58q" id="zhV-HS-oxo"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="oRJ-Nn-jcI" id="gkt-8h-sOJ"/>
+                                    <outlet property="delegate" destination="oRJ-Nn-jcI" id="Gmu-PJ-Xl8"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TlQ-sb-xkv">
+                        <barButtonItem key="rightBarButtonItem" title="Next" style="done" id="PW7-ZC-Yti">
+                            <color key="tintColor" red="0.18823529410000001" green="0.82352941180000006" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="goToNextView:" destination="oRJ-Nn-jcI" id="S7J-OZ-OVj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="PrX-LA-6Sx" kind="push" identifier="ageWeightHeightSegue" id="jex-XY-g7Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4XB-gV-E4w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="648" y="3006"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Vgq-ux-cpg">
+            <objects>
+                <viewController id="PrX-LA-6Sx" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L0L-xR-16Y">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" id="9Va-ei-cap">
+                                <rect key="frame" x="4" y="104" width="312" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Metric (cm, kg)"/>
+                                    <segment title="English (feet, lbs)"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Choose your unit type" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c1G-3e-wq0">
+                                <rect key="frame" x="67" y="15" width="187" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                <color key="textColor" red="0.11246891119999999" green="0.74039381380000002" blue="0.1666870802" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="haW-Lw-qSh">
+                        <barButtonItem key="rightBarButtonItem" title="Next" style="done" id="51R-Ob-lNB">
+                            <color key="tintColor" red="0.18823529410000001" green="0.82352941180000006" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zcr-ON-rmp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1057" y="3008"/>
         </scene>
         <!--Recipe Table View Controller - Recipes-->
         <scene sceneID="2pn-Rt-3Ne">
@@ -1085,7 +1240,7 @@
                         <outlet property="date" destination="0r6-dI-jSY" id="YbA-iz-kJC"/>
                         <outlet property="rightArrowButton" destination="9kN-uF-Yhv" id="Sdm-Cx-bsQ"/>
                         <outlet property="tableView" destination="61m-g9-ExB" id="abs-PP-wBH"/>
-                        <segue destination="tES-OV-QT6" kind="modal" identifier="noProfileNameSegue" modalTransitionStyle="flipHorizontal" id="IM1-yM-DwC"/>
+                        <segue destination="7RI-cm-9Fq" kind="modal" identifier="noProfileNameSegue" modalTransitionStyle="flipHorizontal" id="IM1-yM-DwC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vpu-uL-ECz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1316,7 +1471,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="toQ-fG-Gyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1957" y="2902"/>
+            <point key="canvasLocation" x="2483" y="2902"/>
         </scene>
         <!--Metric Weight View Controller - Edit Metric Weight-->
         <scene sceneID="JHf-ob-RD9">
@@ -1378,7 +1533,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gkr-vG-JJ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2401" y="2896"/>
+            <point key="canvasLocation" x="2927" y="2896"/>
         </scene>
         <!--English Height View Controller - Edit English Height-->
         <scene sceneID="4Ml-bM-VnJ">
@@ -1625,6 +1780,25 @@
             </objects>
             <point key="canvasLocation" x="2513" y="490"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Akz-2o-Z5P">
+            <objects>
+                <navigationController id="7RI-cm-9Fq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4GL-Lt-Lyj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tES-OV-QT6" kind="relationship" relationship="rootViewController" id="xru-VK-0fg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4nV-ne-bO6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-294" y="3006"/>
+        </scene>
     </scenes>
     <resources>
         <image name="FoodDiaryTabIcon.png" width="30" height="30"/>
@@ -1632,6 +1806,7 @@
         <image name="RecipesTabIcon.png" width="30" height="30"/>
         <image name="SettingsTabIcon.png" width="30" height="30"/>
         <image name="ShoppingListTabIcon.png" width="30" height="30"/>
+        <image name="apple-logo.png" width="352" height="387"/>
         <image name="leftArrow.png" width="60" height="60"/>
     </resources>
     <classes>
@@ -1704,6 +1879,9 @@
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>
+        <class className="GradientButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GradientButton.h"/>
+        </class>
         <class className="LastNameCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LastNameCell.h"/>
             <relationships>
@@ -1752,12 +1930,6 @@
                 <relationship kind="action" name="handleCancelButton:"/>
             </relationships>
         </class>
-        <class className="NoProfileNameViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NoProfileNameViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="testButtonPushed:"/>
-            </relationships>
-        </class>
         <class className="ProfileViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileViewController.h"/>
             <relationships>
@@ -1778,6 +1950,15 @@
             <relationships>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
+        </class>
+        <class className="WelcomeNameViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcomeNameViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="goToNextView:"/>
+            </relationships>
+        </class>
+        <class className="WelcomeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcomeViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
