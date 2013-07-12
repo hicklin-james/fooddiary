@@ -27,6 +27,7 @@ CGFloat lbs = 0;
 NSString* firstName;
 NSString* lastName;
 NSInteger age;
+NSInteger activityLevel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -71,7 +72,8 @@ NSInteger age;
   lastName = [profile stringForKey:@"lastName"];
   kg = [profile floatForKey:@"kg"];
   lbs = [profile floatForKey:@"lbs"];
-  
+  activityLevel = [profile integerForKey:@"activityLevel"];
+    
   [self.tableView reloadData];
   
 }
@@ -97,7 +99,7 @@ NSInteger age;
   // Return the number of rows in the section.
   if (self.editing == YES) {
     if (section == 0)
-      return 6;
+      return 7;
     //if (section == 1)
     //  return 1;
     //if (section == 2)
@@ -105,7 +107,7 @@ NSInteger age;
   }
   else {
     if (section == 0)
-      return 6;
+      return 7;
     //if (section == 1)
     //  return 1;
     //if (section == 2)
@@ -165,6 +167,10 @@ NSInteger age;
       }
     }
     
+      if (indexPath.row == 6) {
+          cell.textLabel.text = @"Activity Level";
+          cell.detailTextLabel.text = [NSString stringWithFormat:@"%d", activityLevel+1];
+      }
     return cell;
     
   }
@@ -209,6 +215,9 @@ NSInteger age;
   if (indexPath.section == 0 && self.editing == YES && indexPath.row == 5 && unitType == YES) {
     [self performSegueWithIdentifier:@"metricWeightSegue" sender:self];
   }
+    if (indexPath.section == 0 && self.editing == YES && indexPath.row == 6) {
+        [self performSegueWithIdentifier:@"activityLevelSegue" sender:self];
+    }
 }
 
 

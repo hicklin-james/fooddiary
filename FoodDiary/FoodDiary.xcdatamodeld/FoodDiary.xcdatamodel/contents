@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="MyFood" representedClassName="MyFood" syncable="YES">
         <attribute name="brandName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
@@ -7,6 +7,7 @@
         <attribute name="identifier" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="selectedServing" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="servingIndex" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="servingSize" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
@@ -23,6 +24,7 @@
         <attribute name="calories" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="carbohydrates" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="cholesterol" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="fat" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="fiber" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="iron" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
@@ -46,8 +48,8 @@
         <relationship name="toMyFood" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="MyFood" inverseName="toMyServing" inverseEntity="MyFood" syncable="YES"/>
     </entity>
     <elements>
-        <element name="MyFood" positionX="160" positionY="192" width="128" height="210"/>
-        <element name="MyServing" positionX="160" positionY="192" width="128" height="420"/>
+        <element name="MyFood" positionX="160" positionY="192" width="128" height="225"/>
         <element name="MyMeal" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="MyServing" positionX="160" positionY="192" width="128" height="435"/>
     </elements>
 </model>

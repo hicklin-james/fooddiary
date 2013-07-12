@@ -44,9 +44,13 @@
 		CB7BFFF8176C13210092F645 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7BFFF7176C13210092F645 /* QuartzCore.framework */; };
 		CB7EBBBB1778CE2B0022F1EE /* parchmentTexture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB7EBBBA1778CE2B0022F1EE /* parchmentTexture.jpg */; };
 		CB7EBBBD1778E8D50022F1EE /* leftArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = CB7EBBBC1778E8D50022F1EE /* leftArrow.png */; };
-		CB84002717737BB400798344 /* MyServing.m in Sources */ = {isa = PBXBuildFile; fileRef = CB84002617737BB400798344 /* MyServing.m */; };
+		CB839AC9179086B90048986C /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB839AC6179086B90048986C /* SVProgressHUD.bundle */; };
+		CB839ACA179086B90048986C /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CB839AC8179086B90048986C /* SVProgressHUD.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		CB839ACD179099320048986C /* DetailedFoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB839ACC179099320048986C /* DetailedFoodViewController.m */; };
+		CB839AD61790A5940048986C /* MyServing.m in Sources */ = {isa = PBXBuildFile; fileRef = CB839AD51790A5940048986C /* MyServing.m */; };
+		CB839AD91790BA020048986C /* MyFood.m in Sources */ = {isa = PBXBuildFile; fileRef = CB839AD81790BA020048986C /* MyFood.m */; };
+		CB839ADC1790C3330048986C /* ActivityLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB839ADB1790C3330048986C /* ActivityLevelViewController.m */; };
 		CB84002A17737BB400798344 /* MyMeal.m in Sources */ = {isa = PBXBuildFile; fileRef = CB84002917737BB400798344 /* MyMeal.m */; };
-		CB84002E1773B2AF00798344 /* MyFood.m in Sources */ = {isa = PBXBuildFile; fileRef = CB84002D1773B2AE00798344 /* MyFood.m */; };
 		CB87EA78178E40DE00D7A53A /* WelcomeUnitTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB87EA77178E40DE00D7A53A /* WelcomeUnitTypeViewController.m */; };
 		CB87EA7C178E47D500D7A53A /* WelcomeMetricHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB87EA7B178E47D500D7A53A /* WelcomeMetricHeightViewController.m */; };
 		CB87EA7F178E4A3B00D7A53A /* WelcomeMetricWeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB87EA7E178E4A3B00D7A53A /* WelcomeMetricWeightViewController.m */; };
@@ -169,12 +173,19 @@
 		CB7BFFF7176C13210092F645 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CB7EBBBA1778CE2B0022F1EE /* parchmentTexture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = parchmentTexture.jpg; sourceTree = "<group>"; };
 		CB7EBBBC1778E8D50022F1EE /* leftArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftArrow.png; sourceTree = "<group>"; };
-		CB84002517737BB400798344 /* MyServing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyServing.h; path = ../MyServing.h; sourceTree = "<group>"; };
-		CB84002617737BB400798344 /* MyServing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyServing.m; path = ../MyServing.m; sourceTree = "<group>"; };
+		CB839AC6179086B90048986C /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		CB839AC7179086B90048986C /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		CB839AC8179086B90048986C /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		CB839ACB179099320048986C /* DetailedFoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedFoodViewController.h; sourceTree = "<group>"; };
+		CB839ACC179099320048986C /* DetailedFoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailedFoodViewController.m; sourceTree = "<group>"; };
+		CB839AD41790A5930048986C /* MyServing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyServing.h; sourceTree = "<group>"; };
+		CB839AD51790A5940048986C /* MyServing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyServing.m; sourceTree = "<group>"; };
+		CB839AD71790BA020048986C /* MyFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyFood.h; path = ../MyFood.h; sourceTree = "<group>"; };
+		CB839AD81790BA020048986C /* MyFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyFood.m; path = ../MyFood.m; sourceTree = "<group>"; };
+		CB839ADA1790C3330048986C /* ActivityLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityLevelViewController.h; sourceTree = "<group>"; };
+		CB839ADB1790C3330048986C /* ActivityLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityLevelViewController.m; sourceTree = "<group>"; };
 		CB84002817737BB400798344 /* MyMeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyMeal.h; path = ../MyMeal.h; sourceTree = "<group>"; };
 		CB84002917737BB400798344 /* MyMeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyMeal.m; path = ../MyMeal.m; sourceTree = "<group>"; };
-		CB84002C1773B2AD00798344 /* MyFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFood.h; sourceTree = "<group>"; };
-		CB84002D1773B2AE00798344 /* MyFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFood.m; sourceTree = "<group>"; };
 		CB87EA76178E40DE00D7A53A /* WelcomeUnitTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeUnitTypeViewController.h; sourceTree = "<group>"; };
 		CB87EA77178E40DE00D7A53A /* WelcomeUnitTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeUnitTypeViewController.m; sourceTree = "<group>"; };
 		CB87EA7A178E47D500D7A53A /* WelcomeMetricHeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeMetricHeightViewController.h; sourceTree = "<group>"; };
@@ -466,15 +477,25 @@
 			name = ProfileInformation;
 			sourceTree = "<group>";
 		};
+		CB839AC5179086B90048986C /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				CB839AC6179086B90048986C /* SVProgressHUD.bundle */,
+				CB839AC7179086B90048986C /* SVProgressHUD.h */,
+				CB839AC8179086B90048986C /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		CB84002B17737BBC00798344 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				CB84002C1773B2AD00798344 /* MyFood.h */,
-				CB84002D1773B2AE00798344 /* MyFood.m */,
+				CB839AD71790BA020048986C /* MyFood.h */,
+				CB839AD81790BA020048986C /* MyFood.m */,
+				CB839AD41790A5930048986C /* MyServing.h */,
+				CB839AD51790A5940048986C /* MyServing.m */,
 				CB84002817737BB400798344 /* MyMeal.h */,
 				CB84002917737BB400798344 /* MyMeal.m */,
-				CB84002517737BB400798344 /* MyServing.h */,
-				CB84002617737BB400798344 /* MyServing.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -524,6 +545,8 @@
 			children = (
 				CB87EA90178F29CB00D7A53A /* ActivityLevelCell.h */,
 				CB87EA91178F29CB00D7A53A /* ActivityLevelCell.m */,
+				CB839ADA1790C3330048986C /* ActivityLevelViewController.h */,
+				CB839ADB1790C3330048986C /* ActivityLevelViewController.m */,
 			);
 			name = ActivityLevel;
 			sourceTree = "<group>";
@@ -559,6 +582,8 @@
 				CBDD400E176CD4FE00444E51 /* AddFoodViewController.m */,
 				CBDD31CA1768E58100E3F641 /* FoodDiaryViewController.h */,
 				CBDD31CB1768E58100E3F641 /* FoodDiaryViewController.m */,
+				CB839ACB179099320048986C /* DetailedFoodViewController.h */,
+				CB839ACC179099320048986C /* DetailedFoodViewController.m */,
 			);
 			name = FoodDiaryClasses;
 			sourceTree = "<group>";
@@ -577,6 +602,7 @@
 		CBDD31921768D39500E3F641 = {
 			isa = PBXGroup;
 			children = (
+				CB839AC5179086B90048986C /* SVProgressHUD */,
 				CB74DBC317714B770018A0A1 /* Pickers */,
 				CB7BFFF7176C13210092F645 /* QuartzCore.framework */,
 				CB7BFFF0176BAD0E0092F645 /* SVHTTPRequest */,
@@ -735,6 +761,7 @@
 				CB17DA59178DD814005DB220 /* apple-logo.png in Resources */,
 				CB87EAA1178F324F00D7A53A /* female-gender-sign-scaled.png in Resources */,
 				CB87EAA3178F32C900D7A53A /* male-gender-sign-scaled.png in Resources */,
+				CB839AC9179086B90048986C /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -771,9 +798,7 @@
 				CB74DBD417714B770018A0A1 /* ActionSheetDistancePicker.m in Sources */,
 				CB74DBD517714B770018A0A1 /* ActionSheetStringPicker.m in Sources */,
 				CB74DBD617714B770018A0A1 /* DistancePickerView.m in Sources */,
-				CB84002717737BB400798344 /* MyServing.m in Sources */,
 				CB84002A17737BB400798344 /* MyMeal.m in Sources */,
-				CB84002E1773B2AF00798344 /* MyFood.m in Sources */,
 				CB9D0E53177DF35400152108 /* ProfileViewController.m in Sources */,
 				CBD6DB45178358100028C768 /* UnitSelectionViewController.m in Sources */,
 				CB29FD98178C92C20024F898 /* FirstNameViewController.m in Sources */,
@@ -805,6 +830,11 @@
 				CB87EAA6178F33C600D7A53A /* WelcomeGenderViewController.m in Sources */,
 				CB87EAAA178F341D00D7A53A /* GenderCell.m in Sources */,
 				CB87EAAD178F3E2800D7A53A /* WelcomeCompleteViewController.m in Sources */,
+				CB839ACA179086B90048986C /* SVProgressHUD.m in Sources */,
+				CB839ACD179099320048986C /* DetailedFoodViewController.m in Sources */,
+				CB839AD61790A5940048986C /* MyServing.m in Sources */,
+				CB839AD91790BA020048986C /* MyFood.m in Sources */,
+				CB839ADC1790C3330048986C /* ActivityLevelViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

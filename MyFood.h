@@ -2,7 +2,7 @@
 //  MyFood.h
 //  FoodDiary
 //
-//  Created by James Hicklin on 2013-06-20.
+//  Created by James Hicklin on 2013-07-12.
 //  Copyright (c) 2013 James Hicklin. All rights reserved.
 //
 
@@ -13,17 +13,18 @@
 
 @interface MyFood : NSManagedObject
 
+@property (nonatomic, retain) NSString * brandName;
+@property (nonatomic, retain) NSDate * date;
 @property (nonatomic, retain) NSString * foodDescription;
+@property (nonatomic, retain) NSNumber * identifier;
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSNumber * selectedServing;
+@property (nonatomic, retain) NSNumber * servingSize;
 @property (nonatomic, retain) NSString * type;
 @property (nonatomic, retain) NSString * url;
-@property (nonatomic, retain) NSString * brandName;
-@property (nonatomic, retain) NSNumber * identifier;
-@property (nonatomic, retain) NSNumber * servingSize;
-@property (nonatomic, retain) NSNumber * selectedServing;
-@property (nonatomic, retain) NSDate * date;
-@property (nonatomic, retain) NSSet *toMyServing;
+@property (nonatomic, retain) NSNumber * servingIndex;
 @property (nonatomic, retain) MyMeal *toMyMeal;
+@property (nonatomic, retain) NSSet *toMyServing;
 @end
 
 @interface MyFood (CoreDataGeneratedAccessors)

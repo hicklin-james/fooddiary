@@ -23,18 +23,26 @@
   NSMutableArray *dinnerFoods;
   NSMutableArray *snacksFoods;
   NSDate *dateToShow;
+  MyFood *foodToPassToDetailView;
+  MyServing *servingToPassToDetailView;
   
 }
 
+@property (nonatomic, retain) MyFood *foodToPassToDetailView;
+@property (nonatomic, retain) MyServing *servingToPassToDetailView;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, strong) NSMutableArray *mealsToday;
-@property (nonatomic, strong) NSMutableArray *breakfastFoods;
-@property (nonatomic, strong) NSMutableArray *lunchFoods;
-@property (nonatomic, strong) NSMutableArray *dinnerFoods;
-@property (nonatomic, strong) NSMutableArray *snacksFoods;
+@property (nonatomic, retain) NSMutableArray *mealsToday;
+@property (nonatomic, retain) NSMutableArray *breakfastFoods;
+@property (nonatomic, retain) NSMutableArray *lunchFoods;
+@property (nonatomic, retain) NSMutableArray *dinnerFoods;
+@property (nonatomic, retain) NSMutableArray *snacksFoods;
 @property (nonatomic, strong) NSDate *dateToShow;
 
-@property (strong, nonatomic) IBOutlet UILabel *calorieCountToday;
+//@property (strong, nonatomic) IBOutlet UILabel *calorieCountToday;
+@property (weak, nonatomic) IBOutlet UILabel *todaysCals;
+@property (weak, nonatomic) IBOutlet UILabel *goalCals;
+@property (weak, nonatomic) IBOutlet UILabel *remainingCals;
+
 @property (weak, nonatomic) IBOutlet UILabel *date;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 - (IBAction)changeToPreviousDay:(id)sender;
