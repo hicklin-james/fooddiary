@@ -11,6 +11,7 @@
 @implementation EnglishWeightCell
 
 @synthesize weightTextField;
+@synthesize weightLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

@@ -47,6 +47,20 @@
 		CB84002717737BB400798344 /* MyServing.m in Sources */ = {isa = PBXBuildFile; fileRef = CB84002617737BB400798344 /* MyServing.m */; };
 		CB84002A17737BB400798344 /* MyMeal.m in Sources */ = {isa = PBXBuildFile; fileRef = CB84002917737BB400798344 /* MyMeal.m */; };
 		CB84002E1773B2AF00798344 /* MyFood.m in Sources */ = {isa = PBXBuildFile; fileRef = CB84002D1773B2AE00798344 /* MyFood.m */; };
+		CB87EA78178E40DE00D7A53A /* WelcomeUnitTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB87EA77178E40DE00D7A53A /* WelcomeUnitTypeViewController.m */; };
+		CB87EA7C178E47D500D7A53A /* WelcomeMetricHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB87EA7B178E47D500D7A53A /* WelcomeMetricHeightViewController.m */; };
+		CB87EA7F178E4A3B00D7A53A /* WelcomeMetricWeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB87EA7E178E4A3B00D7A53A /* WelcomeMetricWeightViewController.m */; };
+		CB87EA82178E55A700D7A53A /* WelcomeEnglishHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB87EA81178E55A700D7A53A /* WelcomeEnglishHeightViewController.m */; };
+		CB87EA86178E55C700D7A53A /* WelcomeEnglishWeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB87EA85178E55C700D7A53A /* WelcomeEnglishWeightViewController.m */; };
+		CB87EA89178F0E1100D7A53A /* WelcomeAgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB87EA88178F0E1100D7A53A /* WelcomeAgeViewController.m */; };
+		CB87EA8C178F1A4100D7A53A /* TimeToReachGoalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB87EA8B178F1A4000D7A53A /* TimeToReachGoalCell.m */; };
+		CB87EA92178F29CB00D7A53A /* ActivityLevelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB87EA91178F29CB00D7A53A /* ActivityLevelCell.m */; };
+		CB87EA95178F2A2C00D7A53A /* WelcomeActivityLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB87EA94178F2A2B00D7A53A /* WelcomeActivityLevelViewController.m */; };
+		CB87EAA1178F324F00D7A53A /* female-gender-sign-scaled.png in Resources */ = {isa = PBXBuildFile; fileRef = CB87EAA0178F324F00D7A53A /* female-gender-sign-scaled.png */; };
+		CB87EAA3178F32C900D7A53A /* male-gender-sign-scaled.png in Resources */ = {isa = PBXBuildFile; fileRef = CB87EAA2178F32C900D7A53A /* male-gender-sign-scaled.png */; };
+		CB87EAA6178F33C600D7A53A /* WelcomeGenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB87EAA5178F33C400D7A53A /* WelcomeGenderViewController.m */; };
+		CB87EAAA178F341D00D7A53A /* GenderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB87EAA9178F341D00D7A53A /* GenderCell.m */; };
+		CB87EAAD178F3E2800D7A53A /* WelcomeCompleteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB87EAAC178F3E2700D7A53A /* WelcomeCompleteViewController.m */; };
 		CB9D0E53177DF35400152108 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9D0E52177DF35400152108 /* ProfileViewController.m */; };
 		CBBE6BCB176967C6005C8CD7 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBE6BC9176967C6005C8CD7 /* EventKit.framework */; };
 		CBBE6BCC176967C6005C8CD7 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBE6BCA176967C6005C8CD7 /* EventKitUI.framework */; };
@@ -161,6 +175,32 @@
 		CB84002917737BB400798344 /* MyMeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyMeal.m; path = ../MyMeal.m; sourceTree = "<group>"; };
 		CB84002C1773B2AD00798344 /* MyFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFood.h; sourceTree = "<group>"; };
 		CB84002D1773B2AE00798344 /* MyFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFood.m; sourceTree = "<group>"; };
+		CB87EA76178E40DE00D7A53A /* WelcomeUnitTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeUnitTypeViewController.h; sourceTree = "<group>"; };
+		CB87EA77178E40DE00D7A53A /* WelcomeUnitTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeUnitTypeViewController.m; sourceTree = "<group>"; };
+		CB87EA7A178E47D500D7A53A /* WelcomeMetricHeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeMetricHeightViewController.h; sourceTree = "<group>"; };
+		CB87EA7B178E47D500D7A53A /* WelcomeMetricHeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeMetricHeightViewController.m; sourceTree = "<group>"; };
+		CB87EA7D178E4A3B00D7A53A /* WelcomeMetricWeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeMetricWeightViewController.h; sourceTree = "<group>"; };
+		CB87EA7E178E4A3B00D7A53A /* WelcomeMetricWeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeMetricWeightViewController.m; sourceTree = "<group>"; };
+		CB87EA80178E55A700D7A53A /* WelcomeEnglishHeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeEnglishHeightViewController.h; sourceTree = "<group>"; };
+		CB87EA81178E55A700D7A53A /* WelcomeEnglishHeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeEnglishHeightViewController.m; sourceTree = "<group>"; };
+		CB87EA84178E55C700D7A53A /* WelcomeEnglishWeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeEnglishWeightViewController.h; sourceTree = "<group>"; };
+		CB87EA85178E55C700D7A53A /* WelcomeEnglishWeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeEnglishWeightViewController.m; sourceTree = "<group>"; };
+		CB87EA87178F0E1100D7A53A /* WelcomeAgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeAgeViewController.h; sourceTree = "<group>"; };
+		CB87EA88178F0E1100D7A53A /* WelcomeAgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeAgeViewController.m; sourceTree = "<group>"; };
+		CB87EA8A178F1A4000D7A53A /* TimeToReachGoalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeToReachGoalCell.h; sourceTree = "<group>"; };
+		CB87EA8B178F1A4000D7A53A /* TimeToReachGoalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeToReachGoalCell.m; sourceTree = "<group>"; };
+		CB87EA90178F29CB00D7A53A /* ActivityLevelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityLevelCell.h; sourceTree = "<group>"; };
+		CB87EA91178F29CB00D7A53A /* ActivityLevelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityLevelCell.m; sourceTree = "<group>"; };
+		CB87EA93178F2A2B00D7A53A /* WelcomeActivityLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeActivityLevelViewController.h; sourceTree = "<group>"; };
+		CB87EA94178F2A2B00D7A53A /* WelcomeActivityLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeActivityLevelViewController.m; sourceTree = "<group>"; };
+		CB87EAA0178F324F00D7A53A /* female-gender-sign-scaled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "female-gender-sign-scaled.png"; sourceTree = "<group>"; };
+		CB87EAA2178F32C900D7A53A /* male-gender-sign-scaled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "male-gender-sign-scaled.png"; sourceTree = "<group>"; };
+		CB87EAA4178F33C400D7A53A /* WelcomeGenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeGenderViewController.h; sourceTree = "<group>"; };
+		CB87EAA5178F33C400D7A53A /* WelcomeGenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeGenderViewController.m; sourceTree = "<group>"; };
+		CB87EAA8178F341D00D7A53A /* GenderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenderCell.h; sourceTree = "<group>"; };
+		CB87EAA9178F341D00D7A53A /* GenderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenderCell.m; sourceTree = "<group>"; };
+		CB87EAAB178F3E2600D7A53A /* WelcomeCompleteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeCompleteViewController.h; sourceTree = "<group>"; };
+		CB87EAAC178F3E2700D7A53A /* WelcomeCompleteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeCompleteViewController.m; sourceTree = "<group>"; };
 		CB9D0E51177DF35400152108 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		CB9D0E52177DF35400152108 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		CBBE6BC9176967C6005C8CD7 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
@@ -239,10 +279,22 @@
 		CB17DA60178DE2B0005DB220 /* SetupViews */ = {
 			isa = PBXGroup;
 			children = (
+				CB87EA83178E55AC00D7A53A /* EnglishViews */,
+				CB87EA79178E47B200D7A53A /* MetricViews */,
 				CB29FDC9178CE8D90024F898 /* WelcomeViewController.h */,
 				CB29FDCA178CE8DA0024F898 /* WelcomeViewController.m */,
 				CB17DA61178DE362005DB220 /* WelcomeNameViewController.h */,
 				CB17DA62178DE362005DB220 /* WelcomeNameViewController.m */,
+				CB87EA76178E40DE00D7A53A /* WelcomeUnitTypeViewController.h */,
+				CB87EA77178E40DE00D7A53A /* WelcomeUnitTypeViewController.m */,
+				CB87EA87178F0E1100D7A53A /* WelcomeAgeViewController.h */,
+				CB87EA88178F0E1100D7A53A /* WelcomeAgeViewController.m */,
+				CB87EA93178F2A2B00D7A53A /* WelcomeActivityLevelViewController.h */,
+				CB87EA94178F2A2B00D7A53A /* WelcomeActivityLevelViewController.m */,
+				CB87EAA4178F33C400D7A53A /* WelcomeGenderViewController.h */,
+				CB87EAA5178F33C400D7A53A /* WelcomeGenderViewController.m */,
+				CB87EAAB178F3E2600D7A53A /* WelcomeCompleteViewController.h */,
+				CB87EAAC178F3E2700D7A53A /* WelcomeCompleteViewController.m */,
 			);
 			name = SetupViews;
 			sourceTree = "<group>";
@@ -401,8 +453,10 @@
 				CB17DA60178DE2B0005DB220 /* SetupViews */,
 				CB9D0E51177DF35400152108 /* ProfileViewController.h */,
 				CB9D0E52177DF35400152108 /* ProfileViewController.m */,
-				CBD6DB43178358100028C768 /* UnitSelectionViewController.h */,
-				CBD6DB44178358100028C768 /* UnitSelectionViewController.m */,
+				CB87EAA7178F340200D7A53A /* Gender */,
+				CB87EA8E178F1A6E00D7A53A /* TimeToReachGoal */,
+				CB87EA8F178F299900D7A53A /* ActivityLevel */,
+				CB87EA75178E40A300D7A53A /* UnitSelection */,
 				CB29FD9C178C9E320024F898 /* FirstName */,
 				CB29FD9D178CA4D00024F898 /* LastName */,
 				CB29FDA4178CA8170024F898 /* Age */,
@@ -423,6 +477,64 @@
 				CB84002617737BB400798344 /* MyServing.m */,
 			);
 			name = Entities;
+			sourceTree = "<group>";
+		};
+		CB87EA75178E40A300D7A53A /* UnitSelection */ = {
+			isa = PBXGroup;
+			children = (
+				CBD6DB44178358100028C768 /* UnitSelectionViewController.m */,
+				CBD6DB43178358100028C768 /* UnitSelectionViewController.h */,
+			);
+			name = UnitSelection;
+			sourceTree = "<group>";
+		};
+		CB87EA79178E47B200D7A53A /* MetricViews */ = {
+			isa = PBXGroup;
+			children = (
+				CB87EA7A178E47D500D7A53A /* WelcomeMetricHeightViewController.h */,
+				CB87EA7B178E47D500D7A53A /* WelcomeMetricHeightViewController.m */,
+				CB87EA7D178E4A3B00D7A53A /* WelcomeMetricWeightViewController.h */,
+				CB87EA7E178E4A3B00D7A53A /* WelcomeMetricWeightViewController.m */,
+			);
+			name = MetricViews;
+			sourceTree = "<group>";
+		};
+		CB87EA83178E55AC00D7A53A /* EnglishViews */ = {
+			isa = PBXGroup;
+			children = (
+				CB87EA80178E55A700D7A53A /* WelcomeEnglishHeightViewController.h */,
+				CB87EA81178E55A700D7A53A /* WelcomeEnglishHeightViewController.m */,
+				CB87EA84178E55C700D7A53A /* WelcomeEnglishWeightViewController.h */,
+				CB87EA85178E55C700D7A53A /* WelcomeEnglishWeightViewController.m */,
+			);
+			name = EnglishViews;
+			sourceTree = "<group>";
+		};
+		CB87EA8E178F1A6E00D7A53A /* TimeToReachGoal */ = {
+			isa = PBXGroup;
+			children = (
+				CB87EA8A178F1A4000D7A53A /* TimeToReachGoalCell.h */,
+				CB87EA8B178F1A4000D7A53A /* TimeToReachGoalCell.m */,
+			);
+			name = TimeToReachGoal;
+			sourceTree = "<group>";
+		};
+		CB87EA8F178F299900D7A53A /* ActivityLevel */ = {
+			isa = PBXGroup;
+			children = (
+				CB87EA90178F29CB00D7A53A /* ActivityLevelCell.h */,
+				CB87EA91178F29CB00D7A53A /* ActivityLevelCell.m */,
+			);
+			name = ActivityLevel;
+			sourceTree = "<group>";
+		};
+		CB87EAA7178F340200D7A53A /* Gender */ = {
+			isa = PBXGroup;
+			children = (
+				CB87EAA8178F341D00D7A53A /* GenderCell.h */,
+				CB87EAA9178F341D00D7A53A /* GenderCell.m */,
+			);
+			name = Gender;
 			sourceTree = "<group>";
 		};
 		CBBE6BCD17696905005C8CD7 /* ShoppingListClasses */ = {
@@ -531,6 +643,8 @@
 		CBDD31D3176909AE00E3F641 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CB87EAA2178F32C900D7A53A /* male-gender-sign-scaled.png */,
+				CB87EAA0178F324F00D7A53A /* female-gender-sign-scaled.png */,
 				CB17DA58178DD814005DB220 /* apple-logo.png */,
 				CB7EBBBC1778E8D50022F1EE /* leftArrow.png */,
 				CB7EBBBA1778CE2B0022F1EE /* parchmentTexture.jpg */,
@@ -619,6 +733,8 @@
 				CB7EBBBB1778CE2B0022F1EE /* parchmentTexture.jpg in Resources */,
 				CB7EBBBD1778E8D50022F1EE /* leftArrow.png in Resources */,
 				CB17DA59178DD814005DB220 /* apple-logo.png in Resources */,
+				CB87EAA1178F324F00D7A53A /* female-gender-sign-scaled.png in Resources */,
+				CB87EAA3178F32C900D7A53A /* male-gender-sign-scaled.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,6 +793,18 @@
 				CB29FDCB178CE8DB0024F898 /* WelcomeViewController.m in Sources */,
 				CB17DA5F178DDEF8005DB220 /* GradientButton.m in Sources */,
 				CB17DA63178DE362005DB220 /* WelcomeNameViewController.m in Sources */,
+				CB87EA78178E40DE00D7A53A /* WelcomeUnitTypeViewController.m in Sources */,
+				CB87EA7C178E47D500D7A53A /* WelcomeMetricHeightViewController.m in Sources */,
+				CB87EA7F178E4A3B00D7A53A /* WelcomeMetricWeightViewController.m in Sources */,
+				CB87EA82178E55A700D7A53A /* WelcomeEnglishHeightViewController.m in Sources */,
+				CB87EA86178E55C700D7A53A /* WelcomeEnglishWeightViewController.m in Sources */,
+				CB87EA89178F0E1100D7A53A /* WelcomeAgeViewController.m in Sources */,
+				CB87EA8C178F1A4100D7A53A /* TimeToReachGoalCell.m in Sources */,
+				CB87EA92178F29CB00D7A53A /* ActivityLevelCell.m in Sources */,
+				CB87EA95178F2A2C00D7A53A /* WelcomeActivityLevelViewController.m in Sources */,
+				CB87EAA6178F33C600D7A53A /* WelcomeGenderViewController.m in Sources */,
+				CB87EAAA178F341D00D7A53A /* GenderCell.m in Sources */,
+				CB87EAAD178F3E2800D7A53A /* WelcomeCompleteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

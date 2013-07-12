@@ -10,6 +10,7 @@
 
 @interface EnglishWeightCell : UITableViewCell 
 
+@property (strong, nonatomic) IBOutlet UILabel *weightLabel;
 @property (strong, nonatomic) IBOutlet UITextField *weightTextField;
 
 @end

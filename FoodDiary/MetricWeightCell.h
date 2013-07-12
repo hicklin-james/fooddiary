@@ -11,5 +11,6 @@
 @interface MetricWeightCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UITextField *weightTextField;
+@property (strong, nonatomic) IBOutlet UILabel *weightLabel;
 
 @end

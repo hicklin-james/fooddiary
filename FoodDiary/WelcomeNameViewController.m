@@ -94,7 +94,7 @@ LastNameCell *lastNameCell;
 - (IBAction)goToNextView:(id)sender {
     
     if ([firstNameCell.firstNameTextField.text isEqual: @""] || [lastNameCell.lastNameTextField.text isEqual: @""]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert!" message:@"Make sure all information has been entered into the fields" delegate:self cancelButtonTitle:@"Go Back" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert!" message:@"Enter valid names into both fields!" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
         [alert show];
     }
     else {
@@ -103,11 +103,21 @@ LastNameCell *lastNameCell;
         [profile setObject:firstNameCell.firstNameTextField.text forKey:@"firstName"];
         [profile setObject:lastNameCell.lastNameTextField.text forKey:@"lastName"];
         [profile synchronize];
+      
+        [firstNameCell.firstNameTextField resignFirstResponder];
+        [lastNameCell.lastNameTextField resignFirstResponder];
         
         // segue to next view
-        [self performSegueWithIdentifier:@"ageWeightHeightSegue" sender:self];
+        [self performSegueWithIdentifier:@"unitTypeSegue" sender:self];
     }
     
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+  
+  [self goToNextView:self];
+  return YES;
+  
 }
 
 

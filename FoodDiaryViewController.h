@@ -34,6 +34,7 @@
 @property (nonatomic, strong) NSMutableArray *snacksFoods;
 @property (nonatomic, strong) NSDate *dateToShow;
 
+@property (strong, nonatomic) IBOutlet UILabel *calorieCountToday;
 @property (weak, nonatomic) IBOutlet UILabel *date;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 - (IBAction)changeToPreviousDay:(id)sender;

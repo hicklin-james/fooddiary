@@ -55,7 +55,6 @@
   controller.dateOfFood = dateOfFood;
   nav.title = self.selectedMeal;
   
-  
 }
 
 //---------------------Delegate Methods----------------------//
@@ -69,7 +68,7 @@
 {
   
   // Return the number of rows in the section.
-  return 4;
+  return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -79,36 +78,47 @@
   if (cell == nil) {
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier];
   }
-  
   if (indexPath.row == 0) {
-    cell.textLabel.text = @"Breakfast";
+    cell.textLabel.font = [UIFont fontWithName:@"Verdana-Bold" size:12];
+    cell.textLabel.text = @"Choose your meal";
+    cell.textLabel.textColor = [UIColor whiteColor];
+    UIColor * color = [UIColor colorWithRed:54/255.0f green:183/255.0f blue:191/255.0f alpha:1.0f];
+    cell.backgroundColor = color;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
   }
   if (indexPath.row == 1) {
-    cell.textLabel.text = @"Lunch";
+    cell.textLabel.text = @"Breakfast";
   }
   if (indexPath.row == 2) {
-    cell.textLabel.text = @"Dinner";
+    cell.textLabel.text = @"Lunch";
   }
   if (indexPath.row == 3) {
+    cell.textLabel.text = @"Dinner";
+  }
+  if (indexPath.row == 4) {
     cell.textLabel.text = @"Snacks";
   }
   
   return cell;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-  
-  return @"Choose your meal";
-}
-
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   
-  UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
-  self.selectedMeal = selectedCell.textLabel.text;
-  [self performSegueWithIdentifier:@"selectFoodSegue" sender:self];
-  [tableView deselectRowAtIndexPath:indexPath animated:YES];
+  if (indexPath.row >= 1) {
+    UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+    self.selectedMeal = selectedCell.textLabel.text;
+    [self performSegueWithIdentifier:@"selectFoodSegue" sender:self];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+  }
   
-  
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+  if (indexPath.row == 0)
+    return 30;
+  else
+    return 46;
 }
 
 @end

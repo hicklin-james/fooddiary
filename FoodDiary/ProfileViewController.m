@@ -116,14 +116,13 @@ NSInteger age;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   static NSString *standardIdentifier = @"cellId";
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:standardIdentifier];
+  
+  UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:standardIdentifier];
+  cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+  cell.textLabel.font = [UIFont systemFontOfSize:11];
+  cell.detailTextLabel.font = [UIFont systemFontOfSize:17];
   
   if (indexPath.section == 0) {
-    
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:standardIdentifier];
-    cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.font = [UIFont systemFontOfSize:11];
-    cell.detailTextLabel.font = [UIFont systemFontOfSize:17];
     
     
     if (indexPath.row == 0) {

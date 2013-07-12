@@ -1,17 +1,16 @@
 //
-//  MetricWeightCell.m
+//  TimeToReachGoalCell.m
 //  FoodDiary
 //
-//  Created by James Hicklin on 2013-07-09.
+//  Created by James Hicklin on 2013-07-11.
 //  Copyright (c) 2013 James Hicklin. All rights reserved.
 //
 
-#import "MetricWeightCell.h"
+#import "TimeToReachGoalCell.h"
 
-@implementation MetricWeightCell
+@implementation TimeToReachGoalCell
 
-@synthesize weightTextField;
-@synthesize weightLabel;
+@synthesize timeTextField;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

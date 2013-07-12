@@ -1,17 +1,16 @@
 //
-//  MetricWeightCell.m
+//  ActivityLevelCell.m
 //  FoodDiary
 //
-//  Created by James Hicklin on 2013-07-09.
+//  Created by James Hicklin on 2013-07-11.
 //  Copyright (c) 2013 James Hicklin. All rights reserved.
 //
 
-#import "MetricWeightCell.h"
+#import "ActivityLevelCell.h"
 
-@implementation MetricWeightCell
+@implementation ActivityLevelCell
 
-@synthesize weightTextField;
-@synthesize weightLabel;
+@synthesize activitySegControl;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

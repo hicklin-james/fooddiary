@@ -89,12 +89,18 @@ NSMutableArray *searchArray;
 - (void)searchBarSearchButtonClicked:(UISearchBar*)searchBar
 {
   [searchArray removeAllObjects];
-  
+  UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+  [spinner setColor:[UIColor grayColor]];
+  spinner.frame = CGRectMake(0, 0, 80, 80);
+  spinner.center = self.view.center;
+  [self.view addSubview:spinner];
+  [spinner startAnimating];
   [[FSClient sharedClient] searchFoods:[searchBar text]
                             pageNumber:0
                             maxResults:20
                             completion:^(NSArray *foods, NSInteger maxResults, NSInteger totalResults, NSInteger pageNumber) {
                               // Use data as you will.
+                              [spinner stopAnimating];
                               if (!foods || !foods.count) {} else {
                                 for (int i = 0; i < [foods count]; i++) {
                                   [searchArray addObject:[foods objectAtIndex:i]];

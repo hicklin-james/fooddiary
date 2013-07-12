@@ -1,17 +1,16 @@
 //
-//  MetricWeightCell.m
+//  GenderCell.m
 //  FoodDiary
 //
-//  Created by James Hicklin on 2013-07-09.
+//  Created by James Hicklin on 2013-07-11.
 //  Copyright (c) 2013 James Hicklin. All rights reserved.
 //
 
-#import "MetricWeightCell.h"
+#import "GenderCell.h"
 
-@implementation MetricWeightCell
+@implementation GenderCell
 
-@synthesize weightTextField;
-@synthesize weightLabel;
+@synthesize genderSegControl;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
