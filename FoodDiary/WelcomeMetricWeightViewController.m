@@ -17,8 +17,6 @@
 @implementation WelcomeMetricWeightViewController
 
 MetricWeightCell *weightCell;
-MetricWeightCell *goalCell;
-TimeToReachGoalCell *timeCell;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -54,7 +52,7 @@ TimeToReachGoalCell *timeCell;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   
-  return 4;
+  return 2;
   
 }
 
@@ -72,20 +70,11 @@ TimeToReachGoalCell *timeCell;
     cell.backgroundColor = color;
     return cell;
   }
-  else if (indexPath.row == 1) {
+  
+  else {
     weightCell = [tableView dequeueReusableCellWithIdentifier:@"weightCell"];
     weightCell.weightLabel.text = @"Current Weight";
     return weightCell;
-  }
-  else if (indexPath.row == 2){
-    goalCell = [tableView dequeueReusableCellWithIdentifier:@"weightCell"];
-    goalCell.weightLabel.text = @"Weight Goal";
-    return goalCell;
-  }
-  else {
-    timeCell = [tableView dequeueReusableCellWithIdentifier:@"timeCell"];
-    timeCell.timeTextField.text = @"1";
-    return timeCell;
   }
 }
 
@@ -94,46 +83,6 @@ TimeToReachGoalCell *timeCell;
     return 30;
   else
     return 46;
-}
-
--(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-  
-  if (textField == timeCell.timeTextField) {
-    // create a UIPicker view as a custom keyboard view
-    UIPickerView* pickerView = [[UIPickerView alloc] init];
-    [pickerView sizeToFit];
-    pickerView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
-    pickerView.delegate = self;
-    pickerView.dataSource = self;
-    pickerView.showsSelectionIndicator = YES;
-    //yourPickerView = pickerView;  //UIPickerView
-    
-    timeCell.timeTextField.inputView = pickerView;
-  }
-  return YES;
-  
-}
-
--(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-  
-  return 1;
-  
-}
-
--(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-  return 36;
-}
-
--(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-  
-  timeCell.timeTextField.text = [NSString stringWithFormat:@"%d", row+1];
-  
-}
-
--(CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
-  
-  return 120;
-  
 }
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
@@ -147,35 +96,24 @@ TimeToReachGoalCell *timeCell;
 
 - (IBAction)goToNextView:(id)sender {
   
-  if ([weightCell.weightTextField.text isEqual: @""] || [goalCell.weightTextField.text isEqual: @""] || [weightCell.weightTextField.text isEqual: @"0"] || [goalCell.weightTextField.text isEqual: @"0"]) {
+  if ([weightCell.weightTextField.text isEqual: @""] || [weightCell.weightTextField.text isEqual: @"0"]) {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert!" message:@"Enter valid weights and time!" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
     [alert show];
   }
   else {
     NSUserDefaults *profile = [NSUserDefaults standardUserDefaults];
   
-    // convert weights to kg
+    // convert weights to lbs
     CGFloat weightInKg = [weightCell.weightTextField.text floatValue];
     CGFloat weightInLbs = weightInKg*2.2046;
-    
-    CGFloat goalWeightInKg = [goalCell.weightTextField.text floatValue];
-    CGFloat goalWeightInLbs = goalWeightInKg*2.2046;
   
-    // save current weight and goal weight
+    // save current weight
     [profile setFloat:weightInLbs forKey:@"lbs"];
     [profile setFloat:weightInKg forKey:@"kg"];
-    
-    [profile setFloat:goalWeightInLbs forKey:@"goalWeightLbs"];
-    [profile setFloat:goalWeightInKg forKey:@"goalWeightKg"];
-  
-    // save time for goal
-    [profile setInteger:[timeCell.timeTextField.text integerValue] forKey:@"timeForGoal"];
     
     [profile synchronize];
     
     [weightCell.weightTextField resignFirstResponder];
-    [goalCell.weightTextField resignFirstResponder];
-    [timeCell.timeTextField resignFirstResponder];
     
     [self performSegueWithIdentifier:@"ageViewSegue" sender:self];
   }

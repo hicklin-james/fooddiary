@@ -90,7 +90,7 @@ ActivityLevelCell *activityLevelCell;
     if (indexPath.row == 0)
         return 30;
     else
-        return 250;
+        return 277;
 }
 
 @end

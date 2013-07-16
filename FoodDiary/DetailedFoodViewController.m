@@ -209,11 +209,12 @@ ActionSheetCustomPicker *servingSizePicker;
         UILabel *servingDescription = (UILabel*)[cell.contentView viewWithTag:25];
         NSString *servingSizeString = [NSString stringWithFormat:@"%d", [[detailedFood servingSize] integerValue]];
         NSString *currentServingString = [[self currentServing] servingDescription];
-        NSString *servingDescriptionString = [servingSizeString stringByAppendingFormat:@" X %@", currentServingString];
+        NSString *servingDescriptionString = [servingSizeString stringByAppendingFormat:@" x %@", currentServingString];
         servingDescription.font = [UIFont systemFontOfSize:10];
         servingDescription.text = servingDescriptionString;
         
-        cell.backgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"parchmentTexture.jpg"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0] ];
+          
+        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"golden-parchment-paper-texture.png"]];
         cell.backgroundView.layer.cornerRadius = 5;
         cell.backgroundView.layer.masksToBounds = YES;
         }
@@ -228,9 +229,9 @@ ActionSheetCustomPicker *servingSizePicker;
             UIColor * color = [UIColor colorWithRed:54/255.0f green:183/255.0f blue:191/255.0f alpha:1.0f];
             cell.backgroundColor = color;
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            return cell;
+            //return cell;
         }
-        if (indexPath.row == 1) {
+        else if (indexPath.row == 1) {
             cell.textLabel.text = @"Serving Size";
             cell.detailTextLabel.text = [self.currentServing servingDescription];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -268,7 +269,7 @@ ActionSheetCustomPicker *servingSizePicker;
     if (indexPath.section == 0)
         return 44;
     else
-        return 305;
+        return 426;
     
 }
 
@@ -278,7 +279,7 @@ ActionSheetCustomPicker *servingSizePicker;
         
         if (indexPath.row == 1) {
             
-            unitPicker = [[ActionSheetCustomPicker alloc] initWithTitle:@"Serving Unit" delegate:self showCancelButton:YES origin:tableView];
+            unitPicker = [[ActionSheetCustomPicker alloc] initWithTitle:@"Serving Unit" delegate:self showCancelButton:NO origin:tableView];
             unitPicker.pickerView.tag = 1;
             [unitPicker showActionSheetPicker];
             
@@ -287,7 +288,7 @@ ActionSheetCustomPicker *servingSizePicker;
             
         }
         if (indexPath.row == 2) {
-            servingSizePicker = [[ActionSheetCustomPicker alloc] initWithTitle:@"Serving Size" delegate:self showCancelButton:YES origin:tableView];
+            servingSizePicker = [[ActionSheetCustomPicker alloc] initWithTitle:@"Serving Size" delegate:self showCancelButton:NO origin:tableView];
             servingSizePicker.pickerView.tag = 2;
             [servingSizePicker showActionSheetPicker];
             
@@ -345,30 +346,7 @@ ActionSheetCustomPicker *servingSizePicker;
         }
     }
     
-    [self.tableView reloadData];
-      /*
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(identifier == %d", [[detailedFood identifier] integerValue]];
-        
-        NSFetchRequest *request = [[NSFetchRequest alloc] init];
-        [request setEntity:[NSEntityDescription entityForName:@"MyFood" inManagedObjectContext:managedObjectContext]];
-        [request setPredicate:predicate];
-        
-        NSError *error = nil;
-        NSArray *results = [managedObjectContext executeFetchRequest:request error:&error];
-        
-        MyFood *temp = [results objectAtIndex:0];
-        
-        temp.selectedServing = [[allServings objectAtIndex:row] servingId];
-  
-        if (![managedObjectContext save:&error]) {
-            [self showDetailedErrorInfo:error];
-        }
-*/
-        
-    
-    
-    
-    
+    [self.tableView reloadData];  
 }
 
 - (void) showDetailedErrorInfo:(NSError*)error {

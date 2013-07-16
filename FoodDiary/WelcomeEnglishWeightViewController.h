@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface WelcomeEnglishWeightViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
+@interface WelcomeEnglishWeightViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 - (IBAction)goToNextView:(id)sender;
 
 @end

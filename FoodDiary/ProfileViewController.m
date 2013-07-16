@@ -158,7 +158,7 @@ NSInteger activityLevel;
       }
     }
     if (indexPath.row == 5) {
-      cell.textLabel.text = @"Weight";
+      cell.textLabel.text = @"Current Weight";
       if (unitType == NO) {
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%.00f lbs", lbs];
       }
@@ -174,6 +174,11 @@ NSInteger activityLevel;
     return cell;
     
   }
+}
+
+-(BOOL)tableView:(UITableView *)tableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  return NO;
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

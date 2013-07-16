@@ -7,6 +7,8 @@
 //
 
 #import "WelcomeCompleteViewController.h"
+#import "MealController.h"
+#import "DateManipulator.h"
 
 @interface WelcomeCompleteViewController ()
 
@@ -15,9 +17,6 @@
 @implementation WelcomeCompleteViewController
 
 @synthesize congratsLabel;
-@synthesize goalTimeLabel;
-@synthesize goalWeightLabel;
-@synthesize calorieIntakeToReachGoalLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -47,62 +46,18 @@
   // Harris Benedict Equation
   CGFloat calsToMaintainWeight = [self harrisBenedict:bmr activityLevel:activityLevel];
   
-  CGFloat currentWeight = [profile floatForKey:@"lbs"];
-  CGFloat goalWeightLbs = [profile floatForKey:@"goalWeightLbs"];
-  CGFloat goalWeightKg = [profile floatForKey:@"goalWeightKg"];
-  NSInteger timeToLose = [profile integerForKey:@"timeForGoal"];
-  BOOL unitType = [profile boolForKey:@"unitType"];
-  
-  CGFloat amountToChange = [self deficitCalculation:currentWeight goalWeight:goalWeightLbs timeToLose:timeToLose];
-  
-  CGFloat totalCalsToConsume;
-  if (currentWeight > goalWeightLbs)
-    totalCalsToConsume = calsToMaintainWeight - amountToChange;
-  else if (currentWeight < goalWeightLbs)
-    totalCalsToConsume = calsToMaintainWeight + amountToChange;
-  else
-    totalCalsToConsume = calsToMaintainWeight;
-  
   congratsLabel.text = [NSString stringWithFormat:@"Congratulations! Your profile is setup! To maintain your current weight, you would be consuming %.00f calories every day!", calsToMaintainWeight];
   
-  if (totalCalsToConsume < 1200 && gender == 1){
-    totalCalsToConsume = (CGFloat)1200;
-    timeToLose = ((CGFloat)3500 * (currentWeight - goalWeightLbs))/(calsToMaintainWeight-1200)/7;
-  }
-  if (totalCalsToConsume < 1800 && gender == 0) {
-    totalCalsToConsume = (CGFloat)1800;
-    timeToLose = ((CGFloat)3500 * (currentWeight - goalWeightLbs))/(calsToMaintainWeight-1800)/7;
-  }
-  goalTimeLabel.text = [NSString stringWithFormat:@"%d weeks", timeToLose];
-  if (unitType == NO){
-    goalWeightLabel.text = [NSString stringWithFormat:@"%.00f lbs", goalWeightLbs];
-  }
-  else {
-    goalWeightLabel.text = [NSString stringWithFormat:@"%.00f kg", goalWeightKg];
-  }
-  calorieIntakeToReachGoalLabel.text = [NSString stringWithFormat:@"%.00f calories", totalCalsToConsume];
-  
   // Save important info
-  [profile setFloat:totalCalsToConsume forKey:@"calsToConsumeToReachGoal"];
+  // After setup, no goal has been set, so assume goal is to maintain weight.
+  [profile setFloat:calsToMaintainWeight forKey:@"calsToConsumeToReachGoal"];
   [profile setFloat:calsToMaintainWeight forKey:@"calsToMaintainWeight"];
-  [profile setFloat:bmr forKey:@"bmr"];
-  [profile setInteger:(NSInteger)timeToLose forKey:@"timeForGoal"];
+  
+  MealController *controller = [MealController sharedInstance];
+  controller.calorieCountTodayFloat = 0;
+  controller.totalCalsNeeded = calsToMaintainWeight;
   
   [profile synchronize];
-  
-}
-
-// Daily calorie deficit calculation - time is in weeks - 3500 cals in one pound
--(CGFloat)deficitCalculation:(CGFloat)currentWeight goalWeight:(CGFloat)goalWeight timeToLose:(NSInteger)timeToLose {
-  
-  CGFloat lbsDifference;
-  if (currentWeight > goalWeight) 
-    lbsDifference = currentWeight - goalWeight;
-  else
-    lbsDifference = goalWeight - currentWeight;
-  
-  CGFloat amountToChange = ((CGFloat)3500 * lbsDifference) / (timeToLose * (CGFloat)7);
-  return amountToChange;
   
 }
 
@@ -159,4 +114,5 @@
   [self dismissViewControllerAnimated:YES completion:nil];
   
 }
+
 @end

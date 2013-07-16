@@ -186,8 +186,8 @@ NSInteger numberOfLinesInHeader;
 
 - (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    if (section == 1)
-        return 1;
+    if (section == 0)
+        return 3;
     else
         return 2;
 }
@@ -203,7 +203,7 @@ NSInteger numberOfLinesInHeader;
     static NSString *standardIdentifier = @"cellIdentifier";
     UITableViewCell *cell;
     // Dequeue or create a cell of the appropriate type.
-    if (indexPath.section == 1) {
+    if (indexPath.section == 1 && indexPath.row != 0) {
         cell = [tableView dequeueReusableCellWithIdentifier:nutrIdentifier];
         if (cell == nil) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nutrIdentifier];
@@ -223,6 +223,16 @@ NSInteger numberOfLinesInHeader;
     
     // Configure the cell.
     if (indexPath.section == 1) {
+      if (indexPath.row == 0) {
+        cell.textLabel.font = [UIFont fontWithName:@"Verdana-Bold" size:12];
+        cell.textLabel.text = [detailedFood name];
+        cell.textLabel.textColor = [UIColor whiteColor];
+        UIColor * color = [UIColor colorWithRed:54/255.0f green:183/255.0f blue:191/255.0f alpha:1.0f];
+        cell.backgroundColor = color;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
+      }
+      else {
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         // calories
         UILabel *calsAmountLabel = (UILabel *)[cell.contentView viewWithTag:1];
@@ -330,25 +340,37 @@ NSInteger numberOfLinesInHeader;
         UILabel *servingDescription = (UILabel*)[cell.contentView viewWithTag:25];
         NSString *servingSizeString = [NSString stringWithFormat:@"%.00f", [self servingSize]];
         NSString *selectedServingString = [[self selectedServing] servingDescription];
-        NSString *servingDescriptionString = [servingSizeString stringByAppendingFormat:@" X %@", selectedServingString];
+        NSString *servingDescriptionString = [servingSizeString stringByAppendingFormat:@" x %@", selectedServingString];
         servingDescription.font = [UIFont systemFontOfSize:10];
         servingDescription.text = servingDescriptionString;
         
-        cell.backgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"parchmentTexture.jpg"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0] ];
+        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"golden-parchment-paper-texture.png"]];
         cell.backgroundView.layer.cornerRadius = 5;
         cell.backgroundView.layer.masksToBounds = YES;
-        
+      }
     }
     
     else {
+      if (indexPath.row == 0) {
         
-        if (indexPath.row == 0) {
+          cell.textLabel.font = [UIFont fontWithName:@"Verdana-Bold" size:12];
+          cell.textLabel.text = @"Serving unit and size";
+          cell.textLabel.textColor = [UIColor whiteColor];
+          UIColor * color = [UIColor colorWithRed:54/255.0f green:183/255.0f blue:191/255.0f alpha:1.0f];
+          cell.backgroundColor = color;
+          cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        }
+      
+        else if (indexPath.row == 1) {
+          
             cell.textLabel.text = @"Serving Size";
             cell.detailTextLabel.text = [self.selectedServing servingDescription];
             
             
         }
-        if (indexPath.row == 1 ) {
+        else {
+          
             cell.textLabel.text = @"Number of servings";
             cell.detailTextLabel.text = [NSString stringWithFormat:@"%.f", [self servingSize]];
         }
@@ -358,116 +380,24 @@ NSInteger numberOfLinesInHeader;
     return cell;
 }
 
-
-- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    
-    // Create label with section title
-    
-    UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
-    
-    // NSLog([NSString stringWithFormat:@"%f",view.frame.size.width]);
-    
-    UILabel *label = [[UILabel alloc] init];
-    label.frame = CGRectMake(self.view.frame.size.width/4, 4, self.view.frame.size.width/2, 40);
-    label.backgroundColor = [UIColor clearColor];
-    label.textColor = [UIColor blackColor];//colorWithRed:55/255.0f green:39/255.0f blue:206/255.0f alpha:1.0f];
-    //label.adjustsFontSizeToFitWidth = YES;
-    label.lineBreakMode = NSLineBreakByWordWrapping;
-    label.numberOfLines = 0;
-    label.shadowColor = [UIColor whiteColor];
-    label.shadowOffset = CGSizeMake(0.0, 1.0);
-    label.font = [UIFont boldSystemFontOfSize:13];
-    label.layer.backgroundColor = [UIColor whiteColor].CGColor;
-    label.layer.cornerRadius = 5;
-    label.layer.masksToBounds = YES;
-    label.layer.borderColor = [UIColor grayColor].CGColor;
-    label.layer.borderWidth = 1;
-    
-    if (section == 1) {
-        label.text = [self.detailedFood name];
-    }
-    else {
-        label.text = @"Unit Selection";
-    }
-    label.textAlignment = NSTextAlignmentCenter;
-    
-    CGSize size =  [label.text sizeWithFont:label.font
-                          constrainedToSize:CGSizeMake(self.view.frame.size.width/2, MAXFLOAT)
-                              lineBreakMode:NSLineBreakByWordWrapping];
-    
-    CGRect labelFrame = label.frame;
-    labelFrame.size.height = size.height + 10;
-    label.frame = labelFrame;
-    
-    [view addSubview:label];
-    // view.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    return view;
-}
-
-
-/*
- -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
- 
- if (section == 0) {
- return @"Unit Selection";
- }
- else {
- return [self.detailedFood name];
- }
- 
- }
- */
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (indexPath.section == 0)
-        return 44;
-    else
-        return 305;
-    
+  if (indexPath.row == 0) {
+    return 30;
+  }
+  if (indexPath.section == 0)
+    return 44;
+  else
+    return 426;
+  
 }
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    
-    UILabel *label = [[UILabel alloc] init];
-    label.frame = CGRectMake(self.view.frame.size.width/4, 4, self.view.frame.size.width/2, 40);
-    label.backgroundColor = [UIColor clearColor];
-    label.textColor = [UIColor blackColor];//colorWithRed:55/255.0f green:39/255.0f blue:206/255.0f alpha:1.0f];
-    //label.adjustsFontSizeToFitWidth = YES;
-    label.lineBreakMode = NSLineBreakByWordWrapping;
-    label.numberOfLines = 0;
-    label.shadowColor = [UIColor whiteColor];
-    label.shadowOffset = CGSizeMake(0.0, 1.0);
-    label.font = [UIFont boldSystemFontOfSize:13];
-    label.layer.backgroundColor = [UIColor whiteColor].CGColor;
-    label.layer.cornerRadius = 5;
-    label.layer.masksToBounds = YES;
-    label.layer.borderColor = [UIColor grayColor].CGColor;
-    label.layer.borderWidth = 1;
-    
-    if (section == 1) {
-        label.text = [self.detailedFood name];
-    }
-    else {
-        label.text = @"Unit Selection";
-    }
-    label.textAlignment = NSTextAlignmentCenter;
-    
-    CGSize size =  [label.text sizeWithFont:label.font
-                          constrainedToSize:CGSizeMake(self.view.frame.size.width/2, MAXFLOAT)
-                              lineBreakMode:NSLineBreakByWordWrapping];
-    
-    return size.height + 15;
-}
-
-
+ 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 0) {
         
-        if (indexPath.row == 0) {
+        if (indexPath.row == 1) {
             
-            unitPicker = [[ActionSheetCustomPicker alloc] initWithTitle:@"Serving Unit" delegate:self showCancelButton:YES origin:tableView];
+            unitPicker = [[ActionSheetCustomPicker alloc] initWithTitle:@"Serving Unit" delegate:self showCancelButton:NO origin:tableView];
             unitPicker.pickerView.tag = 1;
             [unitPicker showActionSheetPicker];
             
@@ -475,8 +405,8 @@ NSInteger numberOfLinesInHeader;
             [temp selectRow:self.servingIndex inComponent:0 animated:NO];
             
         }
-        if (indexPath.row == 1) {
-            servingSizePicker = [[ActionSheetCustomPicker alloc] initWithTitle:@"Serving Size" delegate:self showCancelButton:YES origin:tableView];
+        if (indexPath.row == 2) {
+            servingSizePicker = [[ActionSheetCustomPicker alloc] initWithTitle:@"Serving Size" delegate:self showCancelButton:NO origin:tableView];
             servingSizePicker.pickerView.tag = 2;
             [servingSizePicker showActionSheetPicker];
             

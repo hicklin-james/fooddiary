@@ -2,7 +2,7 @@
 //  MyMeal.h
 //  FoodDiary
 //
-//  Created by James Hicklin on 2013-06-20.
+//  Created by James Hicklin on 2013-07-14.
 //  Copyright (c) 2013 James Hicklin. All rights reserved.
 //
 
@@ -15,6 +15,7 @@
 
 @property (nonatomic, retain) NSDate * date;
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSNumber * calories;
 @property (nonatomic, retain) NSSet *toMyFood;
 @end
 

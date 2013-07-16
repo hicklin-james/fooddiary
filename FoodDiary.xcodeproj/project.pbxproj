@@ -50,7 +50,6 @@
 		CB839AD61790A5940048986C /* MyServing.m in Sources */ = {isa = PBXBuildFile; fileRef = CB839AD51790A5940048986C /* MyServing.m */; };
 		CB839AD91790BA020048986C /* MyFood.m in Sources */ = {isa = PBXBuildFile; fileRef = CB839AD81790BA020048986C /* MyFood.m */; };
 		CB839ADC1790C3330048986C /* ActivityLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB839ADB1790C3330048986C /* ActivityLevelViewController.m */; };
-		CB84002A17737BB400798344 /* MyMeal.m in Sources */ = {isa = PBXBuildFile; fileRef = CB84002917737BB400798344 /* MyMeal.m */; };
 		CB87EA78178E40DE00D7A53A /* WelcomeUnitTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB87EA77178E40DE00D7A53A /* WelcomeUnitTypeViewController.m */; };
 		CB87EA7C178E47D500D7A53A /* WelcomeMetricHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB87EA7B178E47D500D7A53A /* WelcomeMetricHeightViewController.m */; };
 		CB87EA7F178E4A3B00D7A53A /* WelcomeMetricWeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB87EA7E178E4A3B00D7A53A /* WelcomeMetricWeightViewController.m */; };
@@ -65,11 +64,22 @@
 		CB87EAA6178F33C600D7A53A /* WelcomeGenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB87EAA5178F33C400D7A53A /* WelcomeGenderViewController.m */; };
 		CB87EAAA178F341D00D7A53A /* GenderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB87EAA9178F341D00D7A53A /* GenderCell.m */; };
 		CB87EAAD178F3E2800D7A53A /* WelcomeCompleteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB87EAAC178F3E2700D7A53A /* WelcomeCompleteViewController.m */; };
+		CB8D6DBC179313500093358E /* SummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8D6DBB179313500093358E /* SummaryCell.m */; };
+		CB8D6DBF179319A80093358E /* MyMeal.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8D6DBE179319A70093358E /* MyMeal.m */; };
+		CB8D6DC3179321EB0093358E /* MealController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8D6DC2179321EB0093358E /* MealController.m */; };
+		CB8D6DC61793797F0093358E /* DateManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8D6DC51793797F0093358E /* DateManipulator.m */; };
+		CB8D6DD2179491CB0093358E /* HomeTabIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8D6DD0179491CB0093358E /* HomeTabIcon.png */; };
+		CB8D6DD3179491CB0093358E /* HomeTabIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8D6DD1179491CB0093358E /* HomeTabIcon@2x.png */; };
+		CB8D6DD717949DEF0093358E /* GoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8D6DD617949DEF0093358E /* GoalViewController.m */; };
+		CB8D6DDE1794ACD60093358E /* NoGoalSummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8D6DDD1794ACD60093358E /* NoGoalSummaryCell.m */; };
+		CB8D6DE21794B8510093358E /* NoGoalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8D6DE11794B8510093358E /* NoGoalCell.m */; };
+		CB8D6DE61794BC8D0093358E /* NewGoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8D6DE51794BC8D0093358E /* NewGoalViewController.m */; };
+		CB8D6DE91794C5950093358E /* SaveNewGoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8D6DE81794C5950093358E /* SaveNewGoalViewController.m */; };
+		CB9D08681791D1360031AFB1 /* golden-parchment-paper-texture.png in Resources */ = {isa = PBXBuildFile; fileRef = CB9D08671791D1360031AFB1 /* golden-parchment-paper-texture.png */; };
+		CB9D086B1792231D0031AFB1 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9D086A1792231D0031AFB1 /* HomeViewController.m */; };
 		CB9D0E53177DF35400152108 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9D0E52177DF35400152108 /* ProfileViewController.m */; };
 		CBBE6BCB176967C6005C8CD7 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBE6BC9176967C6005C8CD7 /* EventKit.framework */; };
 		CBBE6BCC176967C6005C8CD7 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBE6BCA176967C6005C8CD7 /* EventKitUI.framework */; };
-		CBBE6BD117696964005C8CD7 /* RecipeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBE6BD017696964005C8CD7 /* RecipeTableViewController.m */; };
-		CBBE6BD417696977005C8CD7 /* NewRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBE6BD317696977005C8CD7 /* NewRecipeViewController.m */; };
 		CBD6DB45178358100028C768 /* UnitSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD6DB44178358100028C768 /* UnitSelectionViewController.m */; };
 		CBDD319F1768D39500E3F641 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBDD319E1768D39500E3F641 /* UIKit.framework */; };
 		CBDD31A11768D39500E3F641 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBDD31A01768D39500E3F641 /* Foundation.framework */; };
@@ -94,8 +104,6 @@
 		CBDD31FB17692B5200E3F641 /* SettingsTabIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBDD31F917692B5200E3F641 /* SettingsTabIcon@2x.png */; };
 		CBDD31FD17692D4500E3F641 /* iPhoneIcon_Small.png in Resources */ = {isa = PBXBuildFile; fileRef = CBDD31FC17692D4500E3F641 /* iPhoneIcon_Small.png */; };
 		CBDD31FF17692D7500E3F641 /* iPhoneIcon_Big.png in Resources */ = {isa = PBXBuildFile; fileRef = CBDD31FE17692D7500E3F641 /* iPhoneIcon_Big.png */; };
-		CBDD320217692FD500E3F641 /* ShoppingListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDD320117692FD500E3F641 /* ShoppingListsViewController.m */; };
-		CBDD32051769300000E3F641 /* NewShoppingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDD32041769300000E3F641 /* NewShoppingListViewController.m */; };
 		CBDD400F176CD4FE00444E51 /* AddFoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDD400E176CD4FE00444E51 /* AddFoodViewController.m */; };
 		CBDD4015176CE1C700444E51 /* DetailFoodBeforeSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDD4014176CE1C700444E51 /* DetailFoodBeforeSelectionViewController.m */; };
 /* End PBXBuildFile section */
@@ -184,8 +192,6 @@
 		CB839AD81790BA020048986C /* MyFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyFood.m; path = ../MyFood.m; sourceTree = "<group>"; };
 		CB839ADA1790C3330048986C /* ActivityLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityLevelViewController.h; sourceTree = "<group>"; };
 		CB839ADB1790C3330048986C /* ActivityLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityLevelViewController.m; sourceTree = "<group>"; };
-		CB84002817737BB400798344 /* MyMeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyMeal.h; path = ../MyMeal.h; sourceTree = "<group>"; };
-		CB84002917737BB400798344 /* MyMeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyMeal.m; path = ../MyMeal.m; sourceTree = "<group>"; };
 		CB87EA76178E40DE00D7A53A /* WelcomeUnitTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeUnitTypeViewController.h; sourceTree = "<group>"; };
 		CB87EA77178E40DE00D7A53A /* WelcomeUnitTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeUnitTypeViewController.m; sourceTree = "<group>"; };
 		CB87EA7A178E47D500D7A53A /* WelcomeMetricHeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeMetricHeightViewController.h; sourceTree = "<group>"; };
@@ -212,14 +218,33 @@
 		CB87EAA9178F341D00D7A53A /* GenderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenderCell.m; sourceTree = "<group>"; };
 		CB87EAAB178F3E2600D7A53A /* WelcomeCompleteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeCompleteViewController.h; sourceTree = "<group>"; };
 		CB87EAAC178F3E2700D7A53A /* WelcomeCompleteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeCompleteViewController.m; sourceTree = "<group>"; };
+		CB8D6DBA179313500093358E /* SummaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryCell.h; sourceTree = "<group>"; };
+		CB8D6DBB179313500093358E /* SummaryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryCell.m; sourceTree = "<group>"; };
+		CB8D6DBD179319A70093358E /* MyMeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMeal.h; sourceTree = "<group>"; };
+		CB8D6DBE179319A70093358E /* MyMeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMeal.m; sourceTree = "<group>"; };
+		CB8D6DC1179321EB0093358E /* MealController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealController.h; sourceTree = "<group>"; };
+		CB8D6DC2179321EB0093358E /* MealController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealController.m; sourceTree = "<group>"; };
+		CB8D6DC41793797F0093358E /* DateManipulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateManipulator.h; sourceTree = "<group>"; };
+		CB8D6DC51793797F0093358E /* DateManipulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateManipulator.m; sourceTree = "<group>"; };
+		CB8D6DD0179491CB0093358E /* HomeTabIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HomeTabIcon.png; sourceTree = "<group>"; };
+		CB8D6DD1179491CB0093358E /* HomeTabIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HomeTabIcon@2x.png"; sourceTree = "<group>"; };
+		CB8D6DD517949DEF0093358E /* GoalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalViewController.h; sourceTree = "<group>"; };
+		CB8D6DD617949DEF0093358E /* GoalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalViewController.m; sourceTree = "<group>"; };
+		CB8D6DDC1794ACD60093358E /* NoGoalSummaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoGoalSummaryCell.h; sourceTree = "<group>"; };
+		CB8D6DDD1794ACD60093358E /* NoGoalSummaryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoGoalSummaryCell.m; sourceTree = "<group>"; };
+		CB8D6DE01794B8510093358E /* NoGoalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoGoalCell.h; sourceTree = "<group>"; };
+		CB8D6DE11794B8510093358E /* NoGoalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoGoalCell.m; sourceTree = "<group>"; };
+		CB8D6DE41794BC8D0093358E /* NewGoalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGoalViewController.h; sourceTree = "<group>"; };
+		CB8D6DE51794BC8D0093358E /* NewGoalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewGoalViewController.m; sourceTree = "<group>"; };
+		CB8D6DE71794C5950093358E /* SaveNewGoalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveNewGoalViewController.h; sourceTree = "<group>"; };
+		CB8D6DE81794C5950093358E /* SaveNewGoalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveNewGoalViewController.m; sourceTree = "<group>"; };
+		CB9D08671791D1360031AFB1 /* golden-parchment-paper-texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "golden-parchment-paper-texture.png"; sourceTree = "<group>"; };
+		CB9D08691792231D0031AFB1 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		CB9D086A1792231D0031AFB1 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		CB9D0E51177DF35400152108 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		CB9D0E52177DF35400152108 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		CBBE6BC9176967C6005C8CD7 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		CBBE6BCA176967C6005C8CD7 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
-		CBBE6BCF17696964005C8CD7 /* RecipeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecipeTableViewController.h; path = ../RecipeTableViewController.h; sourceTree = "<group>"; };
-		CBBE6BD017696964005C8CD7 /* RecipeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecipeTableViewController.m; path = ../RecipeTableViewController.m; sourceTree = "<group>"; };
-		CBBE6BD217696977005C8CD7 /* NewRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewRecipeViewController.h; path = ../NewRecipeViewController.h; sourceTree = "<group>"; };
-		CBBE6BD317696977005C8CD7 /* NewRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewRecipeViewController.m; path = ../NewRecipeViewController.m; sourceTree = "<group>"; };
 		CBD6DB43178358100028C768 /* UnitSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitSelectionViewController.h; sourceTree = "<group>"; };
 		CBD6DB44178358100028C768 /* UnitSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitSelectionViewController.m; sourceTree = "<group>"; };
 		CBDD319B1768D39500E3F641 /* FoodDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -248,12 +273,8 @@
 		CBDD31F11769291A00E3F641 /* ProfileTabIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ProfileTabIcon@2x.png"; sourceTree = "<group>"; };
 		CBDD31F817692B5200E3F641 /* SettingsTabIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SettingsTabIcon.png; sourceTree = "<group>"; };
 		CBDD31F917692B5200E3F641 /* SettingsTabIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SettingsTabIcon@2x.png"; sourceTree = "<group>"; };
-		CBDD31FC17692D4500E3F641 /* iPhoneIcon_Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhoneIcon_Small.png; sourceTree = "<group>"; };
-		CBDD31FE17692D7500E3F641 /* iPhoneIcon_Big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhoneIcon_Big.png; sourceTree = "<group>"; };
-		CBDD320017692FD500E3F641 /* ShoppingListsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingListsViewController.h; sourceTree = "<group>"; };
-		CBDD320117692FD500E3F641 /* ShoppingListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingListsViewController.m; sourceTree = "<group>"; };
-		CBDD32031769300000E3F641 /* NewShoppingListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewShoppingListViewController.h; sourceTree = "<group>"; };
-		CBDD32041769300000E3F641 /* NewShoppingListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewShoppingListViewController.m; sourceTree = "<group>"; };
+		CBDD31FC17692D4500E3F641 /* iPhoneIcon_Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPhoneIcon_Small.png; path = ../iPhoneIcon_Small.png; sourceTree = "<group>"; };
+		CBDD31FE17692D7500E3F641 /* iPhoneIcon_Big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPhoneIcon_Big.png; path = ../iPhoneIcon_Big.png; sourceTree = "<group>"; };
 		CBDD400D176CD4FE00444E51 /* AddFoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddFoodViewController.h; path = ../AddFoodViewController.h; sourceTree = "<group>"; };
 		CBDD400E176CD4FE00444E51 /* AddFoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddFoodViewController.m; path = ../AddFoodViewController.m; sourceTree = "<group>"; };
 		CBDD4013176CE1C700444E51 /* DetailFoodBeforeSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailFoodBeforeSelectionViewController.h; sourceTree = "<group>"; };
@@ -471,8 +492,8 @@
 				CB29FD9C178C9E320024F898 /* FirstName */,
 				CB29FD9D178CA4D00024F898 /* LastName */,
 				CB29FDA4178CA8170024F898 /* Age */,
-				CB29FDAB178CB1EE0024F898 /* Height */,
 				CB29FDBA178CC9D00024F898 /* Weight */,
+				CB29FDAB178CB1EE0024F898 /* Height */,
 			);
 			name = ProfileInformation;
 			sourceTree = "<group>";
@@ -490,12 +511,12 @@
 		CB84002B17737BBC00798344 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				CB8D6DBD179319A70093358E /* MyMeal.h */,
+				CB8D6DBE179319A70093358E /* MyMeal.m */,
 				CB839AD71790BA020048986C /* MyFood.h */,
 				CB839AD81790BA020048986C /* MyFood.m */,
 				CB839AD41790A5930048986C /* MyServing.h */,
 				CB839AD51790A5940048986C /* MyServing.m */,
-				CB84002817737BB400798344 /* MyMeal.h */,
-				CB84002917737BB400798344 /* MyMeal.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -560,15 +581,75 @@
 			name = Gender;
 			sourceTree = "<group>";
 		};
-		CBBE6BCD17696905005C8CD7 /* ShoppingListClasses */ = {
+		CB8D6DB91793133A0093358E /* HomeCells */ = {
 			isa = PBXGroup;
 			children = (
-				CBDD320017692FD500E3F641 /* ShoppingListsViewController.h */,
-				CBDD320117692FD500E3F641 /* ShoppingListsViewController.m */,
-				CBDD32031769300000E3F641 /* NewShoppingListViewController.h */,
-				CBDD32041769300000E3F641 /* NewShoppingListViewController.m */,
+				CB8D6DBA179313500093358E /* SummaryCell.h */,
+				CB8D6DBB179313500093358E /* SummaryCell.m */,
+				CB8D6DDC1794ACD60093358E /* NoGoalSummaryCell.h */,
+				CB8D6DDD1794ACD60093358E /* NoGoalSummaryCell.m */,
 			);
-			name = ShoppingListClasses;
+			name = HomeCells;
+			sourceTree = "<group>";
+		};
+		CB8D6DC0179321C20093358E /* MealController */ = {
+			isa = PBXGroup;
+			children = (
+				CB8D6DC1179321EB0093358E /* MealController.h */,
+				CB8D6DC2179321EB0093358E /* MealController.m */,
+			);
+			name = MealController;
+			sourceTree = "<group>";
+		};
+		CB8D6DC7179379EB0093358E /* DateManipulator */ = {
+			isa = PBXGroup;
+			children = (
+				CB8D6DC41793797F0093358E /* DateManipulator.h */,
+				CB8D6DC51793797F0093358E /* DateManipulator.m */,
+			);
+			name = DateManipulator;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		CB8D6DD417949D5F0093358E /* Goal */ = {
+			isa = PBXGroup;
+			children = (
+				CB8D6DE31794BC640093358E /* NewGoalViews */,
+				CB8D6DDF1794B8400093358E /* GoalCells */,
+				CB8D6DD517949DEF0093358E /* GoalViewController.h */,
+				CB8D6DD617949DEF0093358E /* GoalViewController.m */,
+			);
+			name = Goal;
+			sourceTree = "<group>";
+		};
+		CB8D6DDF1794B8400093358E /* GoalCells */ = {
+			isa = PBXGroup;
+			children = (
+				CB8D6DE01794B8510093358E /* NoGoalCell.h */,
+				CB8D6DE11794B8510093358E /* NoGoalCell.m */,
+			);
+			name = GoalCells;
+			sourceTree = "<group>";
+		};
+		CB8D6DE31794BC640093358E /* NewGoalViews */ = {
+			isa = PBXGroup;
+			children = (
+				CB8D6DE41794BC8D0093358E /* NewGoalViewController.h */,
+				CB8D6DE51794BC8D0093358E /* NewGoalViewController.m */,
+				CB8D6DE71794C5950093358E /* SaveNewGoalViewController.h */,
+				CB8D6DE81794C5950093358E /* SaveNewGoalViewController.m */,
+			);
+			name = NewGoalViews;
+			sourceTree = "<group>";
+		};
+		CB9D086C1792232E0031AFB1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CB8D6DB91793133A0093358E /* HomeCells */,
+				CB9D08691792231D0031AFB1 /* HomeViewController.h */,
+				CB9D086A1792231D0031AFB1 /* HomeViewController.m */,
+			);
+			name = Home;
 			sourceTree = "<group>";
 		};
 		CBBE6BCE1769691B005C8CD7 /* FoodDiaryClasses */ = {
@@ -588,29 +669,13 @@
 			name = FoodDiaryClasses;
 			sourceTree = "<group>";
 		};
-		CBBE6BD51769698C005C8CD7 /* RecipeClasses */ = {
-			isa = PBXGroup;
-			children = (
-				CBBE6BCF17696964005C8CD7 /* RecipeTableViewController.h */,
-				CBBE6BD017696964005C8CD7 /* RecipeTableViewController.m */,
-				CBBE6BD217696977005C8CD7 /* NewRecipeViewController.h */,
-				CBBE6BD317696977005C8CD7 /* NewRecipeViewController.m */,
-			);
-			name = RecipeClasses;
-			sourceTree = "<group>";
-		};
 		CBDD31921768D39500E3F641 = {
 			isa = PBXGroup;
 			children = (
 				CB839AC5179086B90048986C /* SVProgressHUD */,
 				CB74DBC317714B770018A0A1 /* Pickers */,
-				CB7BFFF7176C13210092F645 /* QuartzCore.framework */,
 				CB7BFFF0176BAD0E0092F645 /* SVHTTPRequest */,
 				CB7BFFDA176BACB40092F645 /* FatSecret */,
-				CBBE6BC9176967C6005C8CD7 /* EventKit.framework */,
-				CBBE6BCA176967C6005C8CD7 /* EventKitUI.framework */,
-				CBDD31FE17692D7500E3F641 /* iPhoneIcon_Big.png */,
-				CBDD31FC17692D4500E3F641 /* iPhoneIcon_Small.png */,
 				CBDD31A61768D39500E3F641 /* FoodDiary */,
 				CBDD319D1768D39500E3F641 /* Frameworks */,
 				CBDD319C1768D39500E3F641 /* Products */,
@@ -628,6 +693,9 @@
 		CBDD319D1768D39500E3F641 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB7BFFF7176C13210092F645 /* QuartzCore.framework */,
+				CBBE6BC9176967C6005C8CD7 /* EventKit.framework */,
+				CBBE6BCA176967C6005C8CD7 /* EventKitUI.framework */,
 				CBDD319E1768D39500E3F641 /* UIKit.framework */,
 				CBDD31A01768D39500E3F641 /* Foundation.framework */,
 				CBDD31A21768D39500E3F641 /* CoreGraphics.framework */,
@@ -639,15 +707,17 @@
 		CBDD31A61768D39500E3F641 /* FoodDiary */ = {
 			isa = PBXGroup;
 			children = (
-				CB17DA5A178DDDE0005DB220 /* CustomButtons */,
-				CB84002B17737BBC00798344 /* Entities */,
 				CBDD31C01768D3E200E3F641 /* FDiPhone.storyboard */,
 				CBDD31AF1768D39500E3F641 /* FDAppDelegate.h */,
 				CBDD31B01768D39500E3F641 /* FDAppDelegate.m */,
-				CB7EBBBE17792F120022F1EE /* ProfileInformation */,
+				CB9D086C1792232E0031AFB1 /* Home */,
 				CBBE6BCE1769691B005C8CD7 /* FoodDiaryClasses */,
-				CBBE6BD51769698C005C8CD7 /* RecipeClasses */,
-				CBBE6BCD17696905005C8CD7 /* ShoppingListClasses */,
+				CB8D6DD417949D5F0093358E /* Goal */,
+				CB7EBBBE17792F120022F1EE /* ProfileInformation */,
+				CB17DA5A178DDDE0005DB220 /* CustomButtons */,
+				CB84002B17737BBC00798344 /* Entities */,
+				CB8D6DC0179321C20093358E /* MealController */,
+				CB8D6DC7179379EB0093358E /* DateManipulator */,
 				CBDD31B81768D39500E3F641 /* FoodDiary.xcdatamodeld */,
 				CBDD31A71768D39500E3F641 /* Supporting Files */,
 			);
@@ -669,6 +739,11 @@
 		CBDD31D3176909AE00E3F641 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CBDD31FE17692D7500E3F641 /* iPhoneIcon_Big.png */,
+				CBDD31FC17692D4500E3F641 /* iPhoneIcon_Small.png */,
+				CB8D6DD0179491CB0093358E /* HomeTabIcon.png */,
+				CB8D6DD1179491CB0093358E /* HomeTabIcon@2x.png */,
+				CB9D08671791D1360031AFB1 /* golden-parchment-paper-texture.png */,
 				CB87EAA2178F32C900D7A53A /* male-gender-sign-scaled.png */,
 				CB87EAA0178F324F00D7A53A /* female-gender-sign-scaled.png */,
 				CB17DA58178DD814005DB220 /* apple-logo.png */,
@@ -762,6 +837,9 @@
 				CB87EAA1178F324F00D7A53A /* female-gender-sign-scaled.png in Resources */,
 				CB87EAA3178F32C900D7A53A /* male-gender-sign-scaled.png in Resources */,
 				CB839AC9179086B90048986C /* SVProgressHUD.bundle in Resources */,
+				CB9D08681791D1360031AFB1 /* golden-parchment-paper-texture.png in Resources */,
+				CB8D6DD2179491CB0093358E /* HomeTabIcon.png in Resources */,
+				CB8D6DD3179491CB0093358E /* HomeTabIcon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -776,10 +854,6 @@
 				CBDD31B11768D39500E3F641 /* FDAppDelegate.m in Sources */,
 				CBDD31BA1768D39500E3F641 /* FoodDiary.xcdatamodeld in Sources */,
 				CBDD31CC1768E58100E3F641 /* FoodDiaryViewController.m in Sources */,
-				CBDD320217692FD500E3F641 /* ShoppingListsViewController.m in Sources */,
-				CBDD32051769300000E3F641 /* NewShoppingListViewController.m in Sources */,
-				CBBE6BD117696964005C8CD7 /* RecipeTableViewController.m in Sources */,
-				CBBE6BD417696977005C8CD7 /* NewRecipeViewController.m in Sources */,
 				CB7BFFE9176BACB40092F645 /* FSClient.m in Sources */,
 				CB7BFFEA176BACB40092F645 /* FSFood.m in Sources */,
 				CB7BFFEB176BACB40092F645 /* FSServing.m in Sources */,
@@ -798,7 +872,6 @@
 				CB74DBD417714B770018A0A1 /* ActionSheetDistancePicker.m in Sources */,
 				CB74DBD517714B770018A0A1 /* ActionSheetStringPicker.m in Sources */,
 				CB74DBD617714B770018A0A1 /* DistancePickerView.m in Sources */,
-				CB84002A17737BB400798344 /* MyMeal.m in Sources */,
 				CB9D0E53177DF35400152108 /* ProfileViewController.m in Sources */,
 				CBD6DB45178358100028C768 /* UnitSelectionViewController.m in Sources */,
 				CB29FD98178C92C20024F898 /* FirstNameViewController.m in Sources */,
@@ -835,6 +908,16 @@
 				CB839AD61790A5940048986C /* MyServing.m in Sources */,
 				CB839AD91790BA020048986C /* MyFood.m in Sources */,
 				CB839ADC1790C3330048986C /* ActivityLevelViewController.m in Sources */,
+				CB9D086B1792231D0031AFB1 /* HomeViewController.m in Sources */,
+				CB8D6DBC179313500093358E /* SummaryCell.m in Sources */,
+				CB8D6DBF179319A80093358E /* MyMeal.m in Sources */,
+				CB8D6DC3179321EB0093358E /* MealController.m in Sources */,
+				CB8D6DC61793797F0093358E /* DateManipulator.m in Sources */,
+				CB8D6DD717949DEF0093358E /* GoalViewController.m in Sources */,
+				CB8D6DDE1794ACD60093358E /* NoGoalSummaryCell.m in Sources */,
+				CB8D6DE21794B8510093358E /* NoGoalCell.m in Sources */,
+				CB8D6DE61794BC8D0093358E /* NewGoalViewController.m in Sources */,
+				CB8D6DE91794C5950093358E /* SaveNewGoalViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

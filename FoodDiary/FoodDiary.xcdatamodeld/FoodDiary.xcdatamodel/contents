@@ -15,6 +15,7 @@
         <relationship name="toMyServing" toMany="YES" minCount="1" deletionRule="Cascade" destinationEntity="MyServing" inverseName="toMyFood" inverseEntity="MyServing" syncable="YES"/>
     </entity>
     <entity name="MyMeal" representedClassName="MyMeal" syncable="YES">
+        <attribute name="calories" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="toMyFood" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MyFood" inverseName="toMyMeal" inverseEntity="MyFood" syncable="YES"/>
@@ -49,7 +50,7 @@
     </entity>
     <elements>
         <element name="MyFood" positionX="160" positionY="192" width="128" height="225"/>
-        <element name="MyMeal" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="MyMeal" positionX="160" positionY="192" width="128" height="105"/>
         <element name="MyServing" positionX="160" positionY="192" width="128" height="435"/>
     </elements>
 </model>

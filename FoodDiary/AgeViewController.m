@@ -100,7 +100,7 @@ AgeCell *ageCell;
   if (indexPath.row == 0)
     return 30;
   else
-    return 46;
+    return 74;
 }
 
 

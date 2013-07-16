@@ -12,6 +12,8 @@
 #import "FoodDiaryViewController.h"
 #import "ProfileViewController.h"
 #import "WelcomeViewController.h"
+#import "HomeViewController.h"
+#import "MealController.h"
 
 @implementation FDAppDelegate
 
@@ -27,6 +29,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   
+  MealController *controller = [MealController sharedInstance];
   
   NSManagedObjectContext *context = [self managedObjectContext];
   if (!context) {
@@ -34,8 +37,10 @@
   }
   
   UITabBarController *tabController = (UITabBarController *)self.window.rootViewController;
-  UINavigationController *navController = (UINavigationController*)[tabController.viewControllers objectAtIndex:0];
+  //tabController.selectedIndex = 1;
+  UINavigationController *navController = (UINavigationController*)[tabController.viewControllers objectAtIndex:1];
   FoodDiaryViewController *foodDiaryViewController = (FoodDiaryViewController*)navController.topViewController;
+  HomeViewController *homeViewController = (HomeViewController*)[tabController.viewControllers objectAtIndex:0];
   
   NSCalendar *calendar = [NSCalendar currentCalendar];
   NSDate *date = [NSDate date];
@@ -129,11 +134,36 @@
   [FSClient sharedClient].oauthConsumerSecret = @"c82eddab535842068c9ed771cb4c7e84";
 
   foodDiaryViewController.managedObjectContext = context;
-  foodDiaryViewController.mealsToday = mutableMealsToday;
-  foodDiaryViewController.dateToShow = date;
   
+  controller.managedObjectContext = context;
+  controller.mealsToday = mutableMealsToday;
+  controller.dateToShow = date;
+  //foodDiaryViewController.dateToShow = date;
   
+  homeViewController.managedObjectContext = context;
+  
+  NSUserDefaults *profile = [NSUserDefaults standardUserDefaults];
+  CGFloat calsNeeded = [profile floatForKey:@"calsToConsumeToReachGoal"];
+  controller.totalCalsNeeded = calsNeeded;
+  [controller refreshFoodData];
   self.window.backgroundColor = [UIColor whiteColor];
+  
+  UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"FDiPhone" bundle:nil];
+  
+  UITabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"mainTabBarController"];
+  self.window.rootViewController = tabBarController;
+  [self.window makeKeyAndVisible];
+  
+  if ([profile boolForKey:@"profileSet"] == NO) {
+    
+    //[self performSegueWithIdentifier:@"noProfileNameSegue" sender:self];
+
+    UIViewController *vc = [storyboard  instantiateViewControllerWithIdentifier:@"noProfileNavController"];
+    [vc setModalPresentationStyle:UIModalPresentationFullScreen];
+    [tabBarController presentViewController:vc animated:NO completion:nil];
+    
+  }
+  
     return YES;
 }
 
