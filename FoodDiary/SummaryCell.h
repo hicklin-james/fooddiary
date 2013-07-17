@@ -14,6 +14,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *calsRemainingLabel;
 @property (strong, nonatomic) IBOutlet UILabel *weightGoalLabel;
 @property (strong, nonatomic) IBOutlet UILabel *goalDateLabel;
-@property (strong, nonatomic) IBOutlet GradientButton *recordWeightButton;
+
 
 @end

@@ -10,6 +10,10 @@
 
 @implementation SummaryCell
 
+@synthesize calsRemainingLabel;
+@synthesize weightGoalLabel;
+@synthesize goalDateLabel;
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

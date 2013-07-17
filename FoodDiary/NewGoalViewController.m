@@ -75,11 +75,13 @@ NSUserDefaults *profile;
   
   if (indexPath.row == 0) {
     cell.textLabel.font = [UIFont fontWithName:@"Verdana-Bold" size:12];
-    cell.textLabel.text = @"Weight (lbs)";
+    if ([profile boolForKey:@"unitType"])
+      cell.textLabel.text = @"Weight (kg)";
+    else
+      cell.textLabel.text = @"Weight (lbs)";
     cell.textLabel.textColor = [UIColor whiteColor];
     UIColor * color = [UIColor colorWithRed:54/255.0f green:183/255.0f blue:191/255.0f alpha:1.0f];
     cell.backgroundColor = color;
-    return cell;
   }
   else {
     if ([profile boolForKey:@"unitType"]) {
@@ -112,6 +114,8 @@ NSUserDefaults *profile;
     return timeCell;
     }
   }
+  
+    return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

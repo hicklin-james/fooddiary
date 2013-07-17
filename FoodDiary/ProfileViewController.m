@@ -97,22 +97,22 @@ NSInteger activityLevel;
 {
   
   // Return the number of rows in the section.
-  if (self.editing == YES) {
-    if (section == 0)
-      return 7;
+  //if (self.editing == YES) {
+  //  if (section == 0)
+      //return 7;
     //if (section == 1)
     //  return 1;
     //if (section == 2)
     //  return 3;
-  }
-  else {
-    if (section == 0)
-      return 7;
+ // }
+ // else {
+ //   if (section == 0)
+    return 7;
     //if (section == 1)
     //  return 1;
     //if (section == 2)
     //  return 2;
-  }
+ // }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -171,9 +171,9 @@ NSInteger activityLevel;
           cell.textLabel.text = @"Activity Level";
           cell.detailTextLabel.text = [NSString stringWithFormat:@"%d", activityLevel+1];
       }
-    return cell;
-    
   }
+  
+  return cell;
 }
 
 -(BOOL)tableView:(UITableView *)tableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath

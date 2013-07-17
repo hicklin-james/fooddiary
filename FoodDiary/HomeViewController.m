@@ -22,7 +22,6 @@
 
 @implementation HomeViewController
 
-@synthesize managedObjectContext;
 @synthesize dataController;
 @synthesize dateLabel;
 
@@ -350,7 +349,7 @@ DateManipulator *dateManipulator;
   [dataController refreshFoodData];
   //[self refreshFoodData];
   [self.tableView reloadSections:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0,1)] withRowAnimation:UITableViewRowAnimationRight];
-  
+  //[self.tableView reloadData];
 }
 
 - (IBAction)changeToNextDay:(id)sender {

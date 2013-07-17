@@ -11,7 +11,6 @@
 
 @interface HomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITabBarDelegate> {
   
-   NSManagedObjectContext *managedObjectContext;
   MealController *dataController;
   
 }
@@ -21,7 +20,6 @@
 @property (strong, nonatomic) IBOutlet UITabBar *homeTabBar;
 @property (strong, nonatomic) IBOutlet UITabBarItem *summaryItem;
 @property (strong, nonatomic) IBOutlet UITabBarItem *todayItem;
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 @property (strong, nonatomic) IBOutlet UIButton *rightArrowButton;
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;

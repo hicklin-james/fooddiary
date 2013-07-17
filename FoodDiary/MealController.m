@@ -64,7 +64,7 @@ DateManipulator *dateManipulator;
   
   NSMutableArray *results = [self fetchOrderedMealsForDate:todayStart end:todayEnd];
   calorieCountTodayFloat = 0;
-  
+  [mealsToday removeAllObjects];
   if ([results count] == 0) {
     NSLog(@"No meals found today, we must create some");
     [self createMealsForDay:date];
@@ -110,7 +110,7 @@ DateManipulator *dateManipulator;
   
   NSError *error = nil;
   NSArray *mealNames = [NSArray arrayWithObjects:@"Breakfast", @"Lunch", @"Dinner", @"Snacks", nil];
-  for (int i = 0; i < [mealNames count]; i++) {
+  for (int i = 0; i < 4; i++) {
     MyMeal *meal = (MyMeal*)[NSEntityDescription insertNewObjectForEntityForName:@"MyMeal" inManagedObjectContext:managedObjectContext];
     [meal setName:[mealNames objectAtIndex:i]];
     [meal setDate:date];

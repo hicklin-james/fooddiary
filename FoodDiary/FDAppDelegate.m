@@ -36,10 +36,11 @@
     NSLog(@"Couldn't get context to access core data");
   }
   
-  UITabBarController *tabController = (UITabBarController *)self.window.rootViewController;
-  HomeViewController *homeViewController = (HomeViewController*)[tabController.viewControllers objectAtIndex:0];
+  //UITabBarController *tabController = (UITabBarController *)self.window.rootViewController;
+  //HomeViewController *homeViewController = (HomeViewController*)[tabController.viewControllers objectAtIndex:0];
 
-  
+  // not currently doing anything, but useful to have around
+/*
   // Check if this is the first time the app has been launched
   if ([[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"])
   {
@@ -53,7 +54,7 @@
     // This is the first launch ever
     NSLog(@"Welcome to the food diary app!");
   }
-  
+*/  
   [FSClient sharedClient].oauthConsumerKey = @"b066c53bc69a42bba07b5d530f685611";
   [FSClient sharedClient].oauthConsumerSecret = @"c82eddab535842068c9ed771cb4c7e84";
 
@@ -65,7 +66,7 @@
     [controller refreshFoodData];
   //foodDiaryViewController.dateToShow = date;
   
-  homeViewController.managedObjectContext = context;
+ // homeViewController.managedObjectContext = context;
   
   NSUserDefaults *profile = [NSUserDefaults standardUserDefaults];
   CGFloat calsNeeded = [profile floatForKey:@"calsToConsumeToReachGoal"];
@@ -74,11 +75,12 @@
   self.window.backgroundColor = [UIColor whiteColor];
   
   UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"FDiPhone" bundle:nil];
-  
   UITabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"mainTabBarController"];
   self.window.rootViewController = tabBarController;
   [self.window makeKeyAndVisible];
   
+  // If no profile has been created, segue to the profile creation view from here, so that the segue has happened before
+  // the view appears
   if ([profile boolForKey:@"profileSet"] == NO) {
     
     //[self performSegueWithIdentifier:@"noProfileNameSegue" sender:self];
