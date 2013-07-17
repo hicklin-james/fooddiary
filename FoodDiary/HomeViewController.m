@@ -88,7 +88,7 @@ DateManipulator *dateManipulator;
   self.dateLabel.textColor = dateColor;
   self.dateLabel.text = thisDateToShow;
   
-  NSUserDefaults *profile = [NSUserDefaults standardUserDefaults];
+ // NSUserDefaults *profile = [NSUserDefaults standardUserDefaults];
   /*
   if ([profile boolForKey:@"profileSet"] == NO) {
     

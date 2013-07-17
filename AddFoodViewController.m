@@ -21,10 +21,6 @@ NSMutableArray *searchArray;
 
 @implementation AddFoodViewController
 
-@synthesize managedObjectContext;
-@synthesize mealsToday;
-@synthesize dateOfFood;
-
 // flag for no results found - NO for results, YES for no results
 BOOL resultsFlag = NO;
 
@@ -160,9 +156,6 @@ BOOL resultsFlag = NO;
     
     destViewController.detailedFood = self.foodToBeSentToNextView;
     destViewController.mealName = self.title;
-    destViewController.managedObjectContext = managedObjectContext;
-    destViewController.mealsToday = mealsToday;
-    destViewController.dateOfFood = dateOfFood;
     
 }
 

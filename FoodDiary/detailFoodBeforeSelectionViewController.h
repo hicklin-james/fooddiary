@@ -15,16 +15,7 @@
 
 @protocol DetailFoodBeforeSelectionViewControllerDelegate;
 
-@interface DetailFoodBeforeSelectionViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, ActionSheetCustomPickerDelegate> {
-  
-  NSManagedObjectContext *managedObjectContext;
-  NSArray *mealsToday;
-  NSDate *dateOfFood;
-  
-}
-
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, strong) NSArray *mealsToday;
+@interface DetailFoodBeforeSelectionViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, ActionSheetCustomPickerDelegate>
 
 @property (nonatomic, weak) id<DetailFoodBeforeSelectionViewControllerDelegate> delegate;
 @property (nonatomic, strong) FSFood* detailedFood;
@@ -37,7 +28,6 @@
 @property (nonatomic, assign) CGFloat servingSize;
 @property (strong, nonatomic) IBOutlet UIView *nutritionInfoHeaderView;
 @property (strong, nonatomic) IBOutlet UILabel *nutritionInfoHeaderTitle;
-@property (strong, nonatomic) NSDate *dateOfFood;
 
 
 

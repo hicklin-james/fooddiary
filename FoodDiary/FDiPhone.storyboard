@@ -2520,6 +2520,9 @@
                                             <state key="highlighted">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="recordWeightToday:" destination="f9W-uo-S9c" eventType="touchUpInside" id="h7Z-Wn-5RZ"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8qa-3o-wPm">
                                             <rect key="frame" x="129" y="101" width="42" height="21"/>
@@ -2537,7 +2540,7 @@
                                     <segue destination="kuy-bV-qJb" kind="modal" identifier="newGoalSegue" id="ivD-gs-9oW"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="goalCell" rowHeight="182" id="CyZ-fO-Ise">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="goalCell" rowHeight="182" id="CyZ-fO-Ise" customClass="CurrentGoalCell">
                                 <rect key="frame" x="0.0" y="214" width="320" height="183"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -2597,6 +2600,9 @@
                                             <state key="highlighted">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="recordWeightToday:" destination="f9W-uo-S9c" eventType="touchUpInside" id="ZN3-wa-i0d"/>
+                                            </connections>
                                         </button>
                                         <view contentMode="scaleToFill" id="V61-j0-QWn">
                                             <rect key="frame" x="0.0" y="72" width="301" height="2"/>
@@ -2626,6 +2632,11 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <outlet property="currentWeightLabel" destination="LUZ-JX-e09" id="dJu-S9-N6e"/>
+                                    <outlet property="goalDateLabel" destination="SuV-2f-JAg" id="PW4-Cy-Ig4"/>
+                                    <outlet property="goalWeightLabel" destination="qCw-dI-Kdr" id="a4r-1e-Gy1"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -4493,7 +4504,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="7Hb-fy-jzP"/>
+        <segue reference="ivD-gs-9oW"/>
         <segue reference="zkO-Kf-Tg7"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -11,17 +11,8 @@
 #import "FSFood.h"
 #import "MyFood.h"
 
-@interface AddFoodViewController : UIViewController <UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate> {
-  
-  NSManagedObjectContext *managedObjectContext;
-  NSArray *mealsToday;
-  NSDate *dateOfFood;
-  
-}
+@interface AddFoodViewController : UIViewController <UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, strong) NSArray *mealsToday;
-@property (nonatomic, strong) NSDate* dateOfFood;
 @property (nonatomic, weak) FSFood *foodToBeSentToNextView;
 
 -(IBAction)handleCancelButton:(id)sender;

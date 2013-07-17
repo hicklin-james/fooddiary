@@ -25,6 +25,7 @@
 		CB29FDC4178CCCD50024F898 /* MetricWeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FDC3178CCCD50024F898 /* MetricWeightViewController.m */; };
 		CB29FDC7178CCCE30024F898 /* MetricWeightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FDC6178CCCE30024F898 /* MetricWeightCell.m */; };
 		CB29FDCB178CE8DB0024F898 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FDCA178CE8DA0024F898 /* WelcomeViewController.m */; };
+		CB2CD2C01796041B00D3F4B9 /* CurrentGoalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2CD2BF1796041B00D3F4B9 /* CurrentGoalCell.m */; };
 		CB74DBD117714B770018A0A1 /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CB74DBC517714B770018A0A1 /* AbstractActionSheetPicker.m */; };
 		CB74DBD217714B770018A0A1 /* ActionSheetCustomPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CB74DBC717714B770018A0A1 /* ActionSheetCustomPicker.m */; };
 		CB74DBD317714B770018A0A1 /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CB74DBCA17714B770018A0A1 /* ActionSheetDatePicker.m */; };
@@ -144,6 +145,8 @@
 		CB29FDC6178CCCE30024F898 /* MetricWeightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetricWeightCell.m; sourceTree = "<group>"; };
 		CB29FDC9178CE8D90024F898 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		CB29FDCA178CE8DA0024F898 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		CB2CD2BE1796041B00D3F4B9 /* CurrentGoalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentGoalCell.h; sourceTree = "<group>"; };
+		CB2CD2BF1796041B00D3F4B9 /* CurrentGoalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentGoalCell.m; sourceTree = "<group>"; };
 		CB74DBC417714B770018A0A1 /* AbstractActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractActionSheetPicker.h; sourceTree = "<group>"; };
 		CB74DBC517714B770018A0A1 /* AbstractActionSheetPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractActionSheetPicker.m; sourceTree = "<group>"; };
 		CB74DBC617714B770018A0A1 /* ActionSheetCustomPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetCustomPicker.h; sourceTree = "<group>"; };
@@ -627,6 +630,8 @@
 			children = (
 				CB8D6DE01794B8510093358E /* NoGoalCell.h */,
 				CB8D6DE11794B8510093358E /* NoGoalCell.m */,
+				CB2CD2BE1796041B00D3F4B9 /* CurrentGoalCell.h */,
+				CB2CD2BF1796041B00D3F4B9 /* CurrentGoalCell.m */,
 			);
 			name = GoalCells;
 			sourceTree = "<group>";
@@ -918,6 +923,7 @@
 				CB8D6DE21794B8510093358E /* NoGoalCell.m in Sources */,
 				CB8D6DE61794BC8D0093358E /* NewGoalViewController.m in Sources */,
 				CB8D6DE91794C5950093358E /* SaveNewGoalViewController.m in Sources */,
+				CB2CD2C01796041B00D3F4B9 /* CurrentGoalCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

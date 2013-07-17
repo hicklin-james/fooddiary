@@ -15,10 +15,6 @@
 
 @implementation MealSelectionViewController
 
-@synthesize managedObjectContext;
-@synthesize mealsToday;
-@synthesize dateOfFood;
-
 - (IBAction)closeWindow:(id)sender {
   
   [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
@@ -49,10 +45,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   
   UINavigationController *nav = [segue destinationViewController];
-  AddFoodViewController *controller = [segue destinationViewController];
-  controller.mealsToday = mealsToday;
-  controller.managedObjectContext = managedObjectContext;
-  controller.dateOfFood = dateOfFood;
+  //AddFoodViewController *controller = [segue destinationViewController];
   nav.title = self.selectedMeal;
   
 }

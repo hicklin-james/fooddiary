@@ -15,7 +15,6 @@
 // implement NewMealViewControllerDelegate Protocol
 @interface FoodDiaryViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
   
-  NSManagedObjectContext *managedObjectContext;
   MealController *controller;
   MyFood *foodToPassToDetailView;
   MyServing *servingToPassToDetailView;
@@ -24,7 +23,6 @@
 
 @property (nonatomic, retain) MyFood *foodToPassToDetailView;
 @property (nonatomic, retain) MyServing *servingToPassToDetailView;
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) MealController *controller;
 
 @property (weak, nonatomic) IBOutlet UILabel *todaysCals;

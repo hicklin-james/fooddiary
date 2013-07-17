@@ -11,6 +11,7 @@
 #import "FDAppDelegate.h"
 #import "MyMeal.h"
 #import <QuartzCore/QuartzCore.h>
+#import "MealController.h"
 
 @interface DetailFoodBeforeSelectionViewController ()
 
@@ -19,14 +20,14 @@
 ActionSheetCustomPicker *unitPicker;
 ActionSheetCustomPicker *servingSizePicker;
 NSInteger numberOfLinesInHeader;
+NSManagedObjectContext *managedObjectContext;
+NSDate *dateOfFood;
+NSArray *mealsToday;
 
 @implementation DetailFoodBeforeSelectionViewController
-@synthesize managedObjectContext;
-@synthesize mealsToday;
 @synthesize detailedFood;
 @synthesize nutritionInfoHeaderView;
 @synthesize nutritionInfoHeaderTitle;
-@synthesize dateOfFood;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -45,6 +46,11 @@ NSInteger numberOfLinesInHeader;
     self.servingSize = 1;
     FSServing *serving = [self.detailedFood.servings objectAtIndex:0];
     self.selectedServing = serving;
+    
+    MealController *controller = [MealController sharedInstance];
+    mealsToday = [controller mealsToday];
+    managedObjectContext = [controller managedObjectContext];
+    dateOfFood = [controller dateToShow];
 }
 
 - (void)didReceiveMemoryWarning

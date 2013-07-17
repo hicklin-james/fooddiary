@@ -8,17 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MealSelectionViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-  
-  NSManagedObjectContext *managedObjectContext;
-  NSArray *mealsToday;
-  NSDate* dateOfFood;
-  
-}
-
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, strong) NSArray *mealsToday;
-@property (nonatomic, strong) NSDate* dateOfFood;
+@interface MealSelectionViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) NSString* selectedMeal;
 @property (weak, nonatomic) IBOutlet UITableView *mealTable;

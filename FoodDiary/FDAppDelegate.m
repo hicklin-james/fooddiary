@@ -37,83 +37,7 @@
   }
   
   UITabBarController *tabController = (UITabBarController *)self.window.rootViewController;
-  //tabController.selectedIndex = 1;
-  UINavigationController *navController = (UINavigationController*)[tabController.viewControllers objectAtIndex:1];
-  FoodDiaryViewController *foodDiaryViewController = (FoodDiaryViewController*)navController.topViewController;
   HomeViewController *homeViewController = (HomeViewController*)[tabController.viewControllers objectAtIndex:0];
-  
-  NSCalendar *calendar = [NSCalendar currentCalendar];
-  NSDate *date = [NSDate date];
-  NSDateComponents *compsStart = [[NSCalendar currentCalendar] components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:date];
-  [compsStart setHour:0];
-  [compsStart setMinute:0];
-  [compsStart setSecond:0];
-  NSDate *todayStart = [calendar dateFromComponents:compsStart];
-  
-  NSDateComponents *compsEnd = [[NSCalendar currentCalendar] components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:date];
-  [compsEnd setHour:23];
-  [compsEnd setMinute:59];
-  [compsEnd setSecond:59];
-  NSDate *todayEnd = [calendar dateFromComponents:compsEnd];
-  
-  
-  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(date >= %@) AND (date <= %@)", todayStart, todayEnd];
-  NSFetchRequest *request = [[NSFetchRequest alloc] init];
-  [request setEntity:[NSEntityDescription entityForName:@"MyMeal" inManagedObjectContext:context]];
-  [request setPredicate:predicate];
-  
-  NSError *error = nil;
-  NSArray *results = [context executeFetchRequest:request error:&error];
-  
-  NSArray *mealsToday = results;
-  NSMutableArray *mutableMealsToday = [NSMutableArray arrayWithArray:mealsToday];
- // NSMutableArray *breakfast = [[NSMutableArray alloc] init];
-  // NSMutableArray *lunch = [[NSMutableArray alloc] init];
-  // NSMutableArray *dinner = [[NSMutableArray alloc] init];
-  // NSMutableArray *snacks = [[NSMutableArray alloc] init];
-  
-  if ([mutableMealsToday count] == 0) {
-    NSLog(@"No meals found today, we must create some");
-    
-    MyMeal *breakfast = (MyMeal*)[NSEntityDescription insertNewObjectForEntityForName:@"MyMeal" inManagedObjectContext:context];
-    [breakfast setName:@"Breakfast"];
-    [breakfast setDate:date];
-    
-    if (![context save:&error]) {
-      NSLog(@"There was an error saving the data");
-    }
-    
-    MyMeal *lunch = (MyMeal*)[NSEntityDescription insertNewObjectForEntityForName:@"MyMeal" inManagedObjectContext:context];
-    [lunch setName:@"Lunch"];
-    [lunch setDate:date];
-    
-    if (![context save:&error]) {
-      NSLog(@"There was an error saving the data");
-    }
-    
-    MyMeal *dinner = (MyMeal*)[NSEntityDescription insertNewObjectForEntityForName:@"MyMeal" inManagedObjectContext:context];
-    [dinner setName:@"Dinner"];
-    [dinner setDate:date];
-    
-    if (![context save:&error]) {
-      NSLog(@"There was an error saving the data");
-    }
-    
-    MyMeal *snacks = (MyMeal*)[NSEntityDescription insertNewObjectForEntityForName:@"MyMeal" inManagedObjectContext:context];
-    [snacks setName:@"Snacks"];
-    [snacks setDate:date];
-    
-    //NSError *error = nil;
-    if (![context save:&error]) {
-      NSLog(@"There was an error saving the data");
-    }
-    
-    [mutableMealsToday addObject:breakfast];
-    [mutableMealsToday addObject:lunch];
-    [mutableMealsToday addObject:dinner];
-    [mutableMealsToday addObject:snacks];
-    
-  }
 
   
   // Check if this is the first time the app has been launched
@@ -133,11 +57,12 @@
   [FSClient sharedClient].oauthConsumerKey = @"b066c53bc69a42bba07b5d530f685611";
   [FSClient sharedClient].oauthConsumerSecret = @"c82eddab535842068c9ed771cb4c7e84";
 
-  foodDiaryViewController.managedObjectContext = context;
+  //foodDiaryViewController.managedObjectContext = context;
   
   controller.managedObjectContext = context;
-  controller.mealsToday = mutableMealsToday;
-  controller.dateToShow = date;
+//  controller.mealsToday = mutableMealsToday;
+  controller.dateToShow = [NSDate date];
+    [controller refreshFoodData];
   //foodDiaryViewController.dateToShow = date;
   
   homeViewController.managedObjectContext = context;

@@ -19,7 +19,6 @@
 
 @implementation FoodDiaryViewController
 
-@synthesize managedObjectContext;
 @synthesize controller;
 @synthesize foodToPassToDetailView;
 @synthesize servingToPassToDetailView;
@@ -78,14 +77,14 @@ DateManipulator *dateManipulator;
     DetailedFoodViewController *dest = (DetailedFoodViewController*)[segue destinationViewController];
     dest.detailedFood = foodToPassToDetailView;
     dest.currentServing = servingToPassToDetailView;
-    dest.managedObjectContext = managedObjectContext;
+    //dest.managedObjectContext = managedObjectContext;
   }
   else {
-    UINavigationController *nav = [segue destinationViewController];
-    MealSelectionViewController *dest = (MealSelectionViewController*)[nav topViewController];
-    dest.managedObjectContext = managedObjectContext;
-    dest.mealsToday = [controller mealsToday];
-    dest.dateOfFood = controller.dateToShow;
+    //UINavigationController *nav = [segue destinationViewController];
+    //MealSelectionViewController *dest = (MealSelectionViewController*)[nav topViewController];
+    //dest.managedObjectContext = managedObjectContext;
+    //dest.mealsToday = [controller mealsToday];
+    //dest.dateOfFood = controller.dateToShow;
   }
   
 }
@@ -263,11 +262,11 @@ DateManipulator *dateManipulator;
   [self updateCalorieCountAfterDeletion:foodToDelete];
   
   // delete from core data and table
-  [managedObjectContext deleteObject:foodToDelete];
+  [[controller managedObjectContext] deleteObject:foodToDelete];
   [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
   
   NSError *error = nil;
-  if (![managedObjectContext save:&error]) {
+  if (![[controller managedObjectContext] save:&error]) {
     [self showDetailedErrorInfo:error];
   }
 }

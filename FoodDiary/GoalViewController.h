@@ -13,5 +13,6 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 - (IBAction)setNewGoal:(id)sender;
+- (IBAction)recordWeightToday:(id)sender;
 
 @end

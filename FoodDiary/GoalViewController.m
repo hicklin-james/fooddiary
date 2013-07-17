@@ -8,6 +8,8 @@
 
 #import "GoalViewController.h"
 #import "NoGoalCell.h"
+#import "CurrentGoalCell.h"
+#import "DateManipulator.h"
 
 @interface GoalViewController ()
 
@@ -16,6 +18,7 @@
 @implementation GoalViewController
 
 NoGoalCell *noGoalCell;
+CurrentGoalCell *currentGoalCell;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -49,7 +52,7 @@ NoGoalCell *noGoalCell;
 
 //-----------------------------TableView Methods-------------------------------//
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  NSUserDefaults *profile = [NSUserDefaults standardUserDefaults];
+  //NSUserDefaults *profile = [NSUserDefaults standardUserDefaults];
   //if (![profile boolForKey:@"goalSet"])
     return 1;
  // return 2;
@@ -58,9 +61,9 @@ NoGoalCell *noGoalCell;
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   
-  NSUserDefaults *profile = [NSUserDefaults standardUserDefaults];
+ //NSUserDefaults *profile = [NSUserDefaults standardUserDefaults];
   //if (![profile boolForKey:@"goalSet"])
-  return 1;
+  return 2;
   
 //  if (section == 0)
  //   return 3;
@@ -71,13 +74,21 @@ NoGoalCell *noGoalCell;
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   
-  static NSString *standardIdentifier = @"cellId";
-  UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:standardIdentifier];
-  cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
-  cell.textLabel.font = [UIFont systemFontOfSize:11];
-  cell.detailTextLabel.font = [UIFont systemFontOfSize:17];
-  
   NSUserDefaults *profile = [NSUserDefaults standardUserDefaults];
+    
+    if (indexPath.row == 0) {
+        static NSString *CellIdentifier = @"Cell";
+        
+        UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        
+        
+        cell.textLabel.font = [UIFont fontWithName:@"Verdana-Bold"size:12];
+        cell.textLabel.text = @"Current Goal";
+        cell.textLabel.textColor = [UIColor whiteColor];
+        UIColor * color = [UIColor colorWithRed:54/255.0f green:183/255.0f blue:191/255.0f alpha:1.0f];
+        cell.backgroundColor = color;
+        return cell;
+    }
   
   if (![profile boolForKey:@"goalSet"]) {
     noGoalCell = [tableView dequeueReusableCellWithIdentifier:@"noGoalSet"];
@@ -92,14 +103,28 @@ NoGoalCell *noGoalCell;
     return noGoalCell;
   }
   else {
-    cell = [tableView dequeueReusableCellWithIdentifier:@"goalCell"];
-    return cell;
+    currentGoalCell = [tableView dequeueReusableCellWithIdentifier:@"goalCell"];
+      DateManipulator *dateManipulator = [[DateManipulator alloc] init];
+      NSString *goalFinishString = [dateManipulator getStringOfDateWithoutTime:(NSDate*)[profile objectForKey:@"goalFinishDate"]];
+      currentGoalCell.goalDateLabel.text = goalFinishString;
+      if ([profile boolForKey:@"unitType"]) {
+          currentGoalCell.currentWeightLabel.text = [NSString stringWithFormat:@"%.00f kg",[profile floatForKey:@"kg"]];
+          currentGoalCell.goalWeightLabel.text = [NSString stringWithFormat:@"%.00f kg",[profile floatForKey:@"goalWeightKg"]];
+      }
+      else {
+          currentGoalCell.currentWeightLabel.text = [NSString stringWithFormat:@"%.00f lbs",[profile floatForKey:@"lbs"]];
+          currentGoalCell.goalWeightLabel.text = [NSString stringWithFormat:@"%.00f lbs",[profile floatForKey:@"goalWeightLbs"]];
+      }
+
+    return currentGoalCell;
   }
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
   
   NSUserDefaults *profile = [NSUserDefaults standardUserDefaults];
+    if (indexPath.row == 0)
+        return 30;
   if (![profile boolForKey:@"goalSet"]) {
     return 167;
   }
@@ -112,5 +137,15 @@ NoGoalCell *noGoalCell;
   
   [self performSegueWithIdentifier:@"newGoalSegue" sender:self];
   
+}
+
+// Opens a modal view with one input for your weight.
+// FIRST: Check core data if a storedWeight already exists for today.
+// If it does, update it with the weight entered in the text field.
+// OTHERWISE: create a new storedWeight with today's date (without time)
+// store that weight in core data
+- (IBAction)recordWeightToday:(id)sender {
+    
+    [self performSegueWithIdentifier:@"recordWeightSegue" sender:self];
 }
 @end
