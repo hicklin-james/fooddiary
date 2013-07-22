@@ -77,7 +77,7 @@ NSUserDefaults *profile;
   NSDate *goalStartDate = [NSDate date];
   [profile setObject:goalStartDate forKey:@"goalStartDate"];
   
-  DateManipulator *dateManipulator = [[DateManipulator alloc] init];
+  DateManipulator *dateManipulator = [[DateManipulator alloc] initWithDateFormatter];
   NSDate *goalFinishDate = [dateManipulator findDateWithOffset:timeToLose*7 date:goalStartDate];
   [profile setObject:goalFinishDate forKey:@"goalFinishDate"];
   

@@ -19,13 +19,15 @@
 
 ActionSheetCustomPicker *unitPicker;
 ActionSheetCustomPicker *servingSizePicker;
-NSInteger numberOfLinesInHeader;
-NSManagedObjectContext *managedObjectContext;
-NSDate *dateOfFood;
-NSArray *mealsToday;
+MealController *controller;
+//NSInteger numberOfLinesInHeader;
+//NSManagedObjectContext *managedObjectContext;
+//NSDate *dateOfFood;
+//NSArray *mealsToday;
 
 @implementation DetailFoodBeforeSelectionViewController
 @synthesize detailedFood;
+@synthesize foodDescription;
 @synthesize nutritionInfoHeaderView;
 @synthesize nutritionInfoHeaderTitle;
 
@@ -47,10 +49,10 @@ NSArray *mealsToday;
     FSServing *serving = [self.detailedFood.servings objectAtIndex:0];
     self.selectedServing = serving;
     
-    MealController *controller = [MealController sharedInstance];
-    mealsToday = [controller mealsToday];
-    managedObjectContext = [controller managedObjectContext];
-    dateOfFood = [controller dateToShow];
+    controller = [MealController sharedInstance];
+//    mealsToday = [controller mealsToday];
+//    managedObjectContext = [controller managedObjectContext];
+//    dateOfFood = [controller dateToShow];
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,9 +63,10 @@ NSArray *mealsToday;
 
 - (IBAction)addFoodToMeal:(id)sender {
     
-    MyFood *newFood = (MyFood*)[NSEntityDescription insertNewObjectForEntityForName:@"MyFood" inManagedObjectContext:managedObjectContext];
+    MyFood *newFood = (MyFood*)[NSEntityDescription insertNewObjectForEntityForName:@"MyFood" inManagedObjectContext:[controller managedObjectContext]];
     [newFood setBrandName:[self.detailedFood brandName]];
-    [newFood setFoodDescription:[self.detailedFood foodDescription]];
+   // [newFood setFoodDescription:[self.detailedFood foodDescription]];
+    [newFood setFoodDescription:foodDescription];
     [newFood setIdentifier:[NSNumber numberWithInteger:[self.detailedFood identifier]]];
     [newFood setName:[self.detailedFood name]];
     [newFood setType:[self.detailedFood type]];
@@ -74,7 +77,7 @@ NSArray *mealsToday;
     
     
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDate *date = dateOfFood;
+    NSDate *date = [controller dateToShow];
     NSDateComponents *compsStart = [[NSCalendar currentCalendar] components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:date];
     [compsStart setHour:0];
     [compsStart setMinute:0];
@@ -91,11 +94,11 @@ NSArray *mealsToday;
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(date >= %@) AND (date <= %@) AND (name == %@)", todayStart, todayEnd, self.mealName];
     
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:[NSEntityDescription entityForName:@"MyMeal" inManagedObjectContext:managedObjectContext]];
+    [request setEntity:[NSEntityDescription entityForName:@"MyMeal" inManagedObjectContext:[controller managedObjectContext]]];
     [request setPredicate:predicate];
     
     NSError *error = nil;
-    NSArray *results = [managedObjectContext executeFetchRequest:request error:&error];
+    NSArray *results = [[controller managedObjectContext] executeFetchRequest:request error:&error];
     
     NSArray *thisMeal = results;
     MyMeal *theMeal = [thisMeal objectAtIndex:0];
@@ -106,7 +109,7 @@ NSArray *mealsToday;
     
     for (int i = 0; i < [[self.detailedFood servings] count]; i++) {
         
-        MyServing *newServing = (MyServing*)[NSEntityDescription insertNewObjectForEntityForName:@"MyServing" inManagedObjectContext:managedObjectContext];
+        MyServing *newServing = (MyServing*)[NSEntityDescription insertNewObjectForEntityForName:@"MyServing" inManagedObjectContext:[controller managedObjectContext]];
         FSServing *thisServing = [[self.detailedFood servings] objectAtIndex:i];
         [newServing setServingDescription:[thisServing servingDescription]];
         [newServing setServingUrl:[thisServing servingUrl]];
@@ -135,7 +138,7 @@ NSArray *mealsToday;
         [newServing setDate:[NSDate date]];
         [newServing setToMyFood:newFood];
         
-        if (![managedObjectContext save:&error]) {
+        if (![[controller managedObjectContext] save:&error]) {
             NSLog(@"There was an error saving the data");
         }
         

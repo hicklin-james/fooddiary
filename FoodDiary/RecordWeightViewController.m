@@ -11,6 +11,7 @@
 #import "MetricWeightCell.h"
 #import "MealController.h"
 #import "DateManipulator.h"
+#import "StoredWeight.h"
 
 @interface RecordWeightViewController ()
 
@@ -124,14 +125,52 @@ MealController *controller;
   NSCalendar *calendar = [NSCalendar currentCalendar];
   NSDate *date = [controller dateToShow];
   
-  DateManipulator *dateManipulator = [[DateManipulator alloc] init];
+  DateManipulator *dateManipulator = [[DateManipulator alloc] initWithDateFormatter];
   NSDate *start = [dateManipulator getDateForDateAndTime:calendar date:date hour:0 minutes:0 seconds:0];
   NSDate *end = [dateManipulator getDateForDateAndTime:calendar date:date hour:23 minutes:59 seconds:59];
   
   NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(date >= %@) AND (date <= %@)", start, end];
   
   NSFetchRequest *request = [[NSFetchRequest alloc] init];
-  [request setEntity:[NSEntityDescription entityForName:@"storedWeight" inManagedObjectContext:[controller managedObjectContext]]];
+  [request setEntity:[NSEntityDescription entityForName:@"StoredWeight" inManagedObjectContext:[controller managedObjectContext]]];
+  [request setPredicate:predicate];
+  
+  NSError *error = nil;
+  NSArray *results = [[controller managedObjectContext] executeFetchRequest:request error:&error];
+  StoredWeight *weight;
+  CGFloat weightInKg;
+  CGFloat weightInLbs;
+  if ([profile boolForKey:@"unitType"]) {
+    // convert weights to lbs
+    weightInKg = [metricWeightCell.weightTextField.text floatValue];
+    weightInLbs = weightInKg*2.2046;
+  }
+  else {
+    // convert weights to kg
+    weightInLbs = [englishWeightCell.weightTextField.text floatValue];
+    weightInKg = weightInLbs/2.2046;
+  }
+  
+  if ([results count] == 0) {
+    weight = (StoredWeight*)[NSEntityDescription insertNewObjectForEntityForName:@"StoredWeight" inManagedObjectContext:[controller managedObjectContext]];
+    [weight setDate:[controller dateToShow]];
+  }
+  else {
+    weight = [results objectAtIndex:0];
+  }
+  
+  NSUserDefaults *profile = [NSUserDefaults standardUserDefaults];
+  [profile setFloat:weightInLbs forKey:@"lbs"];
+  [profile setFloat:weightInKg forKey:@"kg"];
+  
+  [weight setLbs:[NSNumber numberWithFloat:weightInLbs]];
+  [weight setKg:[NSNumber numberWithFloat:weightInKg]];
+  
+  if (![[controller managedObjectContext] save:&error]) {
+    [controller showDetailedErrorInfo:error];
+  }
+  
+  [self dismissViewControllerAnimated:YES completion:nil];	
   
 }
 @end

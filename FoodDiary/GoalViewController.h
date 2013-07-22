@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GoalViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface GoalViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 - (IBAction)setNewGoal:(id)sender;
 - (IBAction)recordWeightToday:(id)sender;
+- (IBAction)cancelGoal:(id)sender;
 
 @end

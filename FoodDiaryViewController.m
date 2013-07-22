@@ -40,7 +40,7 @@ DateManipulator *dateManipulator;
   // Get shared instance of data controller
   controller = [MealController sharedInstance];
   
-  dateManipulator = [[DateManipulator alloc] init];
+  dateManipulator = [[DateManipulator alloc] initWithDateFormatter];
   
 #define RADIANS(degrees) ((degrees * M_PI) / 180.0)
   CGAffineTransform rotateTransform = CGAffineTransformRotate(CGAffineTransformIdentity,
@@ -158,16 +158,22 @@ DateManipulator *dateManipulator;
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:MyIdentifier];
   }
   if (indexPath.row == 0) {
-    cell.textLabel.font = [UIFont fontWithName:@"Verdana-Bold" size:12];
-    cell.textLabel.text = [[[controller mealsToday] objectAtIndex:indexPath.section] name];
-    cell.textLabel.textColor = [UIColor whiteColor];
-    UIColor * color = [UIColor colorWithRed:54/255.0f green:183/255.0f blue:191/255.0f alpha:1.0f];
-    cell.backgroundColor = color;
+    cell = [tableView dequeueReusableCellWithIdentifier:@"headerCell"];
+    UILabel *headerLabel = (UILabel *)[cell.contentView viewWithTag:6];
+    //cell.textLabel.font = [UIFont fontWithName:@"Verdana-Bold" size:12];
+    headerLabel.text = [[[controller mealsToday] objectAtIndex:indexPath.section] name];
+    
+    UIButton *headerButton = (UIButton*)[cell.contentView viewWithTag:8];
+    [headerButton addTarget:self action:@selector(saveMeal: indexPath:) forControlEvents:UIControlEventTouchUpInside];
+    //cell.textLabel.textColor = [UIColor whiteColor];
+    //UIColor * color = [UIColor colorWithRed:54/255.0f green:183/255.0f blue:191/255.0f alpha:1.0f];
+    //cell.backgroundColor = color;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
   }
   else {
     cell = [tableView dequeueReusableCellWithIdentifier:@"foodCell"];
+    cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     // These will be the food and serving for this cell.
     // breakfastFoods, lunchFoods, dinnerFoods, and snacksFoods are already in order.
     // So we can just use the section and row to get this food.
@@ -196,12 +202,14 @@ DateManipulator *dateManipulator;
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   
-  NSArray *meals = [NSArray arrayWithObjects:[controller breakfastFoods], [controller lunchFoods], [controller dinnerFoods], [controller snacksFoods], nil];
-  foodToPassToDetailView = [[meals objectAtIndex:indexPath.section] objectAtIndex:indexPath.row-1];
-  // Fetch the current serving from core data
-  servingToPassToDetailView = [controller fetchServingFromFood:foodToPassToDetailView];
+  if (indexPath.row > 0) {
+    NSArray *meals = [NSArray arrayWithObjects:[controller breakfastFoods], [controller lunchFoods], [controller dinnerFoods], [controller snacksFoods], nil];
+    foodToPassToDetailView = [[meals objectAtIndex:indexPath.section] objectAtIndex:indexPath.row-1];
+    // Fetch the current serving from core data
+    servingToPassToDetailView = [controller fetchServingFromFood:foodToPassToDetailView];
   
-  [self performSegueWithIdentifier:@"detailedViewSegue" sender:self];
+    [self performSegueWithIdentifier:@"detailedViewSegue" sender:self];
+  }
   
 }
 
@@ -292,6 +300,28 @@ DateManipulator *dateManipulator;
   controller.calorieCountTodayFloat -= [[thisServing calories] floatValue]*[[foodToDelete servingSize]floatValue];
   self.todaysCals.text = [NSString stringWithFormat:@"%.00f", controller.calorieCountTodayFloat];
   [self updateCalorieCount];
+  
+}
+
+NSInteger selectedMealToSave;
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+  
+//  if (buttonIndex == 1) {
+//    [self performSegueWithIdentifier:@"saveMealSegue" sender:self];
+//  }
+  
+}
+
+- (void)saveMeal:(id)sender indexPath:(NSIndexPath*)indexPath {
+  
+  UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Save Meal" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Save", nil];
+  
+  [actionSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
+  [actionSheet showInView:self.tabBarController.view];
+  
+  //NSIndexPath *index = [self.tableView indexPathForCell:sender];
+ // NSLog ([NSString stringWithFormat:@"%d",indexPath.section]);
   
 }
 

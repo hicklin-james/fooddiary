@@ -190,7 +190,7 @@ NSUserDefaults *profile;
   else {
     
     if ([profile boolForKey:@"unitType"]) {
-      // convert weights to kg
+      // convert weights to lbs
       CGFloat weightInKg = [metricWeightCell.weightTextField.text floatValue];
       CGFloat weightInLbs = weightInKg*2.2046;
       
@@ -214,11 +214,11 @@ NSUserDefaults *profile;
       [timeCell.timeTextField resignFirstResponder];
     }
     else {
-      // convert weights to lbs
+      // convert weights to kg
       CGFloat weightInLbs = [englishWeightCell.weightTextField.text floatValue];
       CGFloat weightInKg = weightInLbs/2.2046;
       
-      CGFloat goalWeightInLbs = [englishWeightCell.weightTextField.text floatValue];
+      CGFloat goalWeightInLbs = [englishGoalCell.weightTextField.text floatValue];
       CGFloat goalWeightInKg = goalWeightInLbs/2.2046;
       
       // save current weight and goal weight

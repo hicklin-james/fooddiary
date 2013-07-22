@@ -48,9 +48,15 @@
         <attribute name="vitaminC" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <relationship name="toMyFood" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="MyFood" inverseName="toMyServing" inverseEntity="MyFood" syncable="YES"/>
     </entity>
+    <entity name="StoredWeight" representedClassName="StoredWeight" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="kg" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="lbs" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+    </entity>
     <elements>
         <element name="MyFood" positionX="160" positionY="192" width="128" height="225"/>
         <element name="MyMeal" positionX="160" positionY="192" width="128" height="105"/>
         <element name="MyServing" positionX="160" positionY="192" width="128" height="435"/>
+        <element name="StoredWeight" positionX="160" positionY="192" width="128" height="90"/>
     </elements>
 </model>

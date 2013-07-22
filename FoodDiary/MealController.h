@@ -39,5 +39,6 @@
 -(NSMutableArray*)fetchOrderedMealsForDate:(NSDate*)todayStart end:(NSDate*)todayEnd;
 - (void)refreshFoodData;
 -(MyServing*)fetchServingFromFood:(MyFood*)food;
+- (void) showDetailedErrorInfo:(NSError*)error;
 
 @end

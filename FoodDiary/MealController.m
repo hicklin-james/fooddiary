@@ -30,7 +30,7 @@ DateManipulator *dateManipulator;
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
     sharedInstance = [[MealController alloc] init];
-    dateManipulator = [[DateManipulator alloc] init];
+    dateManipulator = [[DateManipulator alloc] initWithDateFormatter];
   });
   return sharedInstance;
 }

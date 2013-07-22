@@ -8,7 +8,7 @@
 
 #import "WelcomeCompleteViewController.h"
 #import "MealController.h"
-#import "DateManipulator.h"
+
 
 @interface WelcomeCompleteViewController ()
 

@@ -43,7 +43,7 @@ DateManipulator *dateManipulator;
   [super viewDidLoad];
   // Do any additional setup after loading the view.
   
-  dateManipulator = [[DateManipulator alloc] init];
+  dateManipulator = [[DateManipulator alloc] initWithDateFormatter];
   dataController = [MealController sharedInstance];
   self.homeTabBar.selectedItem = self.summaryItem;
   CGRect viewFrame=self.homeTabBar.frame;

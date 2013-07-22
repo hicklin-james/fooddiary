@@ -13,7 +13,7 @@
 @class FoodDiaryMealDataController;
 
 // implement NewMealViewControllerDelegate Protocol
-@interface FoodDiaryViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface FoodDiaryViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate> {
   
   MealController *controller;
   MyFood *foodToPassToDetailView;
@@ -34,5 +34,6 @@
 
 - (IBAction)changeToPreviousDay:(id)sender;
 - (IBAction)changeToNextDay:(id)sender;
+- (void)saveMeal:(id)sender indexPath:(NSIndexPath*)indexPath;
 
 @end

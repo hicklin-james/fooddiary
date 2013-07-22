@@ -19,6 +19,7 @@
 
 @property (nonatomic, weak) id<DetailFoodBeforeSelectionViewControllerDelegate> delegate;
 @property (nonatomic, strong) FSFood* detailedFood;
+@property (nonatomic, strong) NSString *foodDescription;
 @property (nonatomic, strong) FSServing* selectedServing;
 @property (nonatomic, assign) NSInteger servingIndex;
 @property (nonatomic, strong) NSString* mealName;
