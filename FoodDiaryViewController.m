@@ -77,7 +77,7 @@ DateManipulator *dateManipulator;
     DetailedFoodViewController *dest = (DetailedFoodViewController*)[segue destinationViewController];
     dest.detailedFood = foodToPassToDetailView;
     dest.currentServing = servingToPassToDetailView;
-    //dest.managedObjectContext = managedObjectContext;
+    dest.managedObjectContext = [controller managedObjectContext];
   }
   else {
     //UINavigationController *nav = [segue destinationViewController];
@@ -105,7 +105,14 @@ DateManipulator *dateManipulator;
   
   self.goalCals.text = [NSString stringWithFormat:@"%.00f", controller.totalCalsNeeded];
   self.todaysCals.text = [NSString stringWithFormat:@"%.00f", controller.calorieCountTodayFloat];
-  self.remainingCals.text = [NSString stringWithFormat:@"%.00f", controller.totalCalsNeeded-controller.calorieCountTodayFloat];
+  if (controller.totalCalsNeeded-controller.calorieCountTodayFloat <= 0) {
+    self.remainingCals.textColor = [UIColor redColor];
+    self.remainingCals.text = @"0";
+  }
+  else {
+    self.remainingCals.textColor = [UIColor greenColor];
+    self.remainingCals.text = [NSString stringWithFormat:@"%.00f", controller.totalCalsNeeded-controller.calorieCountTodayFloat];
+  }
   
 }
 

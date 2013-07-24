@@ -20,6 +20,7 @@
 @synthesize dateToShow;
 @synthesize totalCalsNeeded;
 @synthesize calorieCountTodayFloat;
+@synthesize initialDate;
 
 DateManipulator *dateManipulator;
 
@@ -31,8 +32,28 @@ DateManipulator *dateManipulator;
   dispatch_once(&onceToken, ^{
     sharedInstance = [[MealController alloc] init];
     dateManipulator = [[DateManipulator alloc] initWithDateFormatter];
+    //[sharedInstance startTimer];
+    
   });
   return sharedInstance;
+}
+
+- (void) startTimer {
+  [NSTimer scheduledTimerWithTimeInterval:60
+                                   target:self
+                                 selector:@selector(tick:)
+                                 userInfo:nil
+                                  repeats:YES];
+}
+
+- (void) tick:(NSTimer *) timer {
+  // Figure this out at some point! TODO
+  NSDate *currentDate = [NSDate date];
+  if (![[dateManipulator getStringOfDateWithoutTime:currentDate] isEqual:[dateManipulator getStringOfDateWithoutTime:initalDate]]) {
+    dateToShow = currentDate;
+    initialDate = currentDate;
+  }
+  
 }
 
 -(NSMutableArray*)fetchOrderedMealsForDate:(NSDate*)todayStart end:(NSDate*)todayEnd {

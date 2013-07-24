@@ -45,6 +45,27 @@ CurrentGoalCell *currentGoalCell;
   
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+  
+  NSUserDefaults *profile = [NSUserDefaults standardUserDefaults];
+  
+  if ([profile boolForKey:@"goalSet"]) {
+    
+    DateManipulator *dateManipulator = [[DateManipulator alloc] initWithDateFormatter];
+    NSDate *finishDate = (NSDate*)[profile objectForKey:@"goalFinishDate"];
+    NSString *finishDateString = [dateManipulator getStringOfDateWithoutTime:finishDate];
+    NSString *todayString = [dateManipulator getStringOfDateWithoutTime:[NSDate date]];
+    
+    if ([todayString isEqual:finishDateString]) {
+      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:@"Today is your finishing date for your goal. Weigh yourself to see if you reached your goal!" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+      [alert show];
+      [profile setBool:NO forKey:@"goalSet"];
+    }
+  }
+  
+}
+
 - (void)didReceiveMemoryWarning
 {
   [super didReceiveMemoryWarning];

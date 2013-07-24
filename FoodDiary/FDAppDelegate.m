@@ -35,26 +35,7 @@
   if (!context) {
     NSLog(@"Couldn't get context to access core data");
   }
-  
-  //UITabBarController *tabController = (UITabBarController *)self.window.rootViewController;
-  //HomeViewController *homeViewController = (HomeViewController*)[tabController.viewControllers objectAtIndex:0];
 
-  // not currently doing anything, but useful to have around
-/*
-  // Check if this is the first time the app has been launched
-  if ([[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"])
-  {
-    // if so, do nothing - print this to terminal just so I know
-    NSLog(@"We've seen you before");
-  }
-  else
-  {
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    // This is the first launch ever
-    NSLog(@"Welcome to the food diary app!");
-  }
-*/  
   [FSClient sharedClient].oauthConsumerKey = @"b066c53bc69a42bba07b5d530f685611";
   [FSClient sharedClient].oauthConsumerSecret = @"c82eddab535842068c9ed771cb4c7e84";
 
@@ -63,7 +44,7 @@
   controller.managedObjectContext = context;
 //  controller.mealsToday = mutableMealsToday;
   controller.dateToShow = [NSDate date];
-    [controller refreshFoodData];
+    //[controller refreshFoodData];
   //foodDiaryViewController.dateToShow = date;
   
  // homeViewController.managedObjectContext = context;

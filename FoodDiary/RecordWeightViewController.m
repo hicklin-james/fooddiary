@@ -153,7 +153,7 @@ MealController *controller;
   
   if ([results count] == 0) {
     weight = (StoredWeight*)[NSEntityDescription insertNewObjectForEntityForName:@"StoredWeight" inManagedObjectContext:[controller managedObjectContext]];
-    [weight setDate:[controller dateToShow]];
+    [weight setDate:[NSDate date]];
   }
   else {
     weight = [results objectAtIndex:0];

@@ -15,6 +15,7 @@
 #import "MealController.h"
 #import "DateManipulator.h"
 #import "RecentlyAddedBeforeSelectionViewController.h"
+#import "CustomFoodBeforeSelectionViewController.h"
 
 @interface AddFoodViewController ()
 
@@ -22,6 +23,7 @@
 
 NSMutableArray *searchArray;
 NSMutableArray *recentlyAddedArray;
+NSMutableArray *customFoodsArray;
 
 @implementation AddFoodViewController
 
@@ -60,7 +62,7 @@ BOOL resultsFlag = NO;
   
   NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(date >= %@)", recentFoodsDate];
   
-  NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES];
+  NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
   NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
   
   NSFetchRequest *request = [[NSFetchRequest alloc] init];
@@ -83,7 +85,7 @@ BOOL resultsFlag = NO;
     // this is very fast constant time lookup in a hash table
     if ([lookup containsObject:identifier])
     {
-     // NSLog(@"item already exists.  removing: %@ at index %d", identifier, index);
+      // NSLog(@"item already exists.  removing: %@ at index %d", identifier, index);
       [recentlyAddedArray removeObjectAtIndex:index];
     }
     else
@@ -92,6 +94,25 @@ BOOL resultsFlag = NO;
       [lookup addObject:identifier];
     }
   }
+  
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  
+  MealController *controller = [MealController sharedInstance];
+  
+  NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+  NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
+  NSFetchRequest *request = [[NSFetchRequest alloc] init];
+  [request setEntity:[NSEntityDescription entityForName:@"CustomFood" inManagedObjectContext:[controller managedObjectContext]]];
+  [request setSortDescriptors:sortDescriptors];
+  NSError *error = nil;
+  NSMutableArray *results = [NSMutableArray arrayWithArray:[[controller managedObjectContext] executeFetchRequest:request error:&error]];
+  customFoodsArray = results;
+  
+  [self.tabBarTableView reloadData];
+  
   
 }
 
@@ -105,13 +126,23 @@ BOOL resultsFlag = NO;
   
 }
 
+- (IBAction)newFood:(id)sender {
+  
+  [self performSegueWithIdentifier:@"newFoodSegue" sender:self];
+  
+}
+
 - (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)section {
   // Return the number of rows in the section.
-  if (aTableView == self.tabBarTableView)
-    return [recentlyAddedArray count];
-  else if (self.tabBar.selectedItem == recentlyAdded)
+  if (aTableView == self.tabBarTableView) {
+    if (self.tabBar.selectedItem == recentlyAdded)
+      return [recentlyAddedArray count]+1;
+    else
+      return [customFoodsArray count]+1;
+    
+  }
+  else //if (self.tabBar.selectedItem == recentlyAdded)
     return [searchArray count];
-  else return 1;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)aTableView {
@@ -133,18 +164,31 @@ BOOL resultsFlag = NO;
   if (tableView == self.tabBarTableView) {
     
     if (self.tabBar.selectedItem == recentlyAdded) {
-      MyFood *food = [recentlyAddedArray objectAtIndex:indexPath.row];
-      cell.textLabel.text = [food name];
-      //NSString *test = [food foodDescription];
-      cell.detailTextLabel.text = [food foodDescription];
-      cell.detailTextLabel.font = [UIFont systemFontOfSize:11];
-      cell.detailTextLabel.numberOfLines = 2;
-    
-      cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+      if (indexPath.row == [recentlyAddedArray count]) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"createFoodCell"];
+        return cell;
+      }
+      else {
+        MyFood *food = [recentlyAddedArray objectAtIndex:indexPath.row];
+        cell.textLabel.text = [food name];
+        //NSString *test = [food foodDescription];
+        cell.detailTextLabel.text = [food foodDescription];
+        cell.detailTextLabel.font = [UIFont systemFontOfSize:11];
+        cell.detailTextLabel.numberOfLines = 2;
+        
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+      }
     }
     else {
-      cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-      cell.textLabel.text = @"hello";
+      if (indexPath.row == [customFoodsArray count]) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"createFoodCell"];
+        return cell;
+      }
+      else {
+        CustomFood *food = [customFoodsArray objectAtIndex:indexPath.row];
+        cell.textLabel.text = [food name];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"Per %@ - Calories: %.00fkcal", [food servingDescription], [[food calories] floatValue]];
+      }
     }
   }
   else {//if (tableView == self.searchDisplayController.searchResultsTableView) {
@@ -167,7 +211,7 @@ BOOL resultsFlag = NO;
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   if (tableView == self.tabBarTableView)
-    return 71;
+    return 53;
   else
     return 71;
 }
@@ -238,29 +282,47 @@ BOOL resultsFlag = NO;
     
   }
   else if (self.tabBar.selectedItem == recentlyAdded){
-    
-    self.recentFoodToBeSentToNextView = [recentlyAddedArray objectAtIndex:indexPath.row];
-    [self performSegueWithIdentifier:@"recentlyAddedFoodSegue" sender:self];
+    if (indexPath.row == [recentlyAddedArray count]) {
+      
+    }
+    else {
+      self.recentFoodToBeSentToNextView = [recentlyAddedArray objectAtIndex:indexPath.row];
+      [self performSegueWithIdentifier:@"recentlyAddedFoodSegue" sender:self];
+      [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
+  }
+  else if (self.tabBar.selectedItem == savedMeals){
+    self.customFoodToBeSentToNextView = [customFoodsArray objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"customFoodDetailSegue" sender:self];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
   }
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   if ([segue.identifier isEqual:@"showFoodDetail"]) {
     DetailFoodBeforeSelectionViewController *destViewController = segue.destinationViewController;
-  
+    
     destViewController.title = [@"Add to " stringByAppendingFormat:[self title],nil];
-  
+    
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
-                                 initWithTitle: @"Back"
-                                 style: UIBarButtonItemStyleBordered
-                                 target: nil action: nil];
+                                   initWithTitle: @"Back"
+                                   style: UIBarButtonItemStyleBordered
+                                   target: nil action: nil];
     [self.navigationItem setBackBarButtonItem: backButton];
-  
+    
     destViewController.detailedFood = self.foodToBeSentToNextView;
     destViewController.mealName = self.title;
     destViewController.foodDescription = self.foodDescription;
+  }
+  
+  else if ([segue.identifier isEqual:@"newFoodSegue"]) {
+    
+  }
+  else if ([segue.identifier isEqual:@"customFoodDetailSegue"]) {
+    CustomFoodBeforeSelectionViewController *destViewController = segue.destinationViewController;
+    destViewController.title = [@"Add to " stringByAppendingFormat:[self title],nil];
+    destViewController.detailedFood = self.customFoodToBeSentToNextView;
+    destViewController.mealName = self.title;
   }
   
   else {
@@ -271,7 +333,7 @@ BOOL resultsFlag = NO;
     destViewController.mealName = self.title;
     
   }
-
+  
 }
 
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {

@@ -8,6 +8,7 @@
 
 #import "WelcomeCompleteViewController.h"
 #import "MealController.h"
+#import "StoredWeight.h"
 
 
 @interface WelcomeCompleteViewController ()
@@ -110,6 +111,20 @@
   NSUserDefaults *profile = [NSUserDefaults standardUserDefaults];
   [profile setBool:YES forKey:@"profileSet"];
   [profile synchronize];
+  
+  CGFloat weightInLbs = [profile floatForKey:@"lbs"];
+  CGFloat weightInKg = [profile floatForKey:@"kg"];
+  
+  MealController *controller = [MealController sharedInstance];
+  StoredWeight *weight = (StoredWeight*)[NSEntityDescription insertNewObjectForEntityForName:@"StoredWeight" inManagedObjectContext:[controller managedObjectContext]];
+  [weight setDate:[NSDate date]];
+  [weight setLbs:[NSNumber numberWithFloat:weightInLbs]];
+  [weight setKg:[NSNumber numberWithFloat:weightInKg]];
+  
+  NSError *error = nil;
+  if (![[controller managedObjectContext] save:&error]) {
+    [controller showDetailedErrorInfo:error];
+  }
   
   [self dismissViewControllerAnimated:YES completion:nil];
   

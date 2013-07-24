@@ -65,6 +65,12 @@ CPTScatterPlot* plot;
 
 }
 
+-(void)viewDidDisappear:(BOOL)animated {
+  [super viewDidDisappear:animated];
+  
+  [self.navigationController popViewControllerAnimated:NO];
+}
+
 // This method is here because this class also functions as datasource for our graph
 // Therefore this class implements the CPTPlotDataSource protocol
 -(NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plotnumberOfRecords {
@@ -100,10 +106,13 @@ CGFloat lastValue;
       dateToCompare = [dateManipulator getStringOfDateWithoutTimeOrDay:[dateManipulator findDateWithOffset:-(84-index) date:today]];
     }
     
-   
+    NSUserDefaults *profile = [NSUserDefaults standardUserDefaults];
   //return [graphData objectAtIndex:index];
   if (index == 0) {
-    lastValue = [[[graphData objectAtIndex:0] lbs ]floatValue];
+    if (![profile boolForKey:@"unitType"])
+      lastValue = [[[graphData objectAtIndex:0] lbs ]floatValue];
+    else
+      lastValue = [[[graphData objectAtIndex:0] kg ]floatValue];
   }
     for (int s = 0; s < [graphData count]; s++) {
       StoredWeight *weight = [graphData objectAtIndex:s];
@@ -111,8 +120,15 @@ CGFloat lastValue;
       NSString *otherString = [dateManipulator getStringOfDateWithoutTimeOrDay:date];
       
       if ([dateToCompare isEqual:otherString]) {
-        lastValue = [[weight lbs] floatValue];
-        return [weight lbs];
+        if (![profile boolForKey:@"unitType"]) {
+          lastValue = [[weight lbs] floatValue];
+          return [weight lbs];
+        }
+        else {
+          lastValue = [[weight kg] floatValue];
+          return [weight kg];
+        }
+        
       }
       
     }
@@ -134,7 +150,7 @@ CGFloat lastValue;
   
   // Create a CPTGraph object and add to hostView
   graph = [[CPTXYGraph alloc] initWithFrame:hostView.bounds];
-  [graph applyTheme:[CPTTheme themeNamed:kCPTDarkGradientTheme]];
+  [graph applyTheme:[CPTTheme themeNamed:kCPTPlainWhiteTheme]];
   
   // attach graph to hostview
   hostView.hostedGraph = graph;
@@ -168,10 +184,15 @@ CGFloat lastValue;
   plot.dataLineStyle = lineStyle;
   
   CPTXYAxis *yAxis = xyAxisSet.yAxis;
-  yAxis.title = @"Weight";
+  NSUserDefaults *profile = [NSUserDefaults standardUserDefaults];
+  if (![profile boolForKey:@"unitType"])
+    yAxis.title = @"Weight (lbs)";
+  else {
+    yAxis.title = @"Weight (kg)";
+  }
   yAxis.titleOffset = 45;
-  yAxis.majorIntervalLength = [[[NSDecimalNumber alloc] initWithInt:2.0] decimalValue];
-  
+  yAxis.majorIntervalLength = [[[NSDecimalNumber alloc] initWithInt:1.0] decimalValue];
+  yAxis.minorTickLength = 0.5;
   xAxis.labelingPolicy = CPTAxisLabelingPolicyNone;
   
   [self setVariablesForTabIndex];
@@ -218,15 +239,34 @@ CGFloat lastValue;
   NSMutableArray *results = [NSMutableArray arrayWithArray:[[controller managedObjectContext] executeFetchRequest:request error:&error]];
   graphData = results;
   
-  CGFloat lowerBound = [[[results objectAtIndex:0] lbs] floatValue];
-  CGFloat upperBound = [[[results objectAtIndex:0] lbs] floatValue];
+  NSUserDefaults *profile = [NSUserDefaults standardUserDefaults];
+  CGFloat lowerBound;
+  CGFloat upperBound;
+  if (![profile boolForKey:@"unitType"]) {
+    lowerBound = [[[results objectAtIndex:0] lbs] floatValue];
+    upperBound = [[[results objectAtIndex:0] lbs] floatValue];
+  }
+  else {
+    lowerBound = [[[results objectAtIndex:0] kg] floatValue];
+    upperBound = [[[results objectAtIndex:0] kg] floatValue];
+  }
   for (int i = 0; i < [results count]; i++) {
+     if (![profile boolForKey:@"unitType"]) { 
     if ([[[results objectAtIndex:i] lbs] floatValue] < lowerBound) {
       lowerBound = [[[results objectAtIndex:i] lbs] floatValue];
     }
     if ([[[results objectAtIndex:i] lbs] floatValue] > upperBound) {
       upperBound = [[[results objectAtIndex:i] lbs] floatValue];
     }
+     }
+     else {
+       if ([[[results objectAtIndex:i] kg] floatValue] < lowerBound) {
+         lowerBound = [[[results objectAtIndex:i] kg] floatValue];
+       }
+       if ([[[results objectAtIndex:i] kg] floatValue] > upperBound) {
+         upperBound = [[[results objectAtIndex:i] kg] floatValue];
+       }
+     }
   }
   
   // Note that these CPTPlotRange are defined by START and LENGTH (not START and END) !!
@@ -259,13 +299,6 @@ CGFloat lastValue;
   return dates;
 }
 
-
--(void)viewWillAppear:(BOOL)animated {
-  
-  [super viewWillAppear:animated];
-  NSLog(@"hello");
-  
-}
 
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
  

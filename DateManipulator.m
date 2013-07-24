@@ -11,6 +11,7 @@
 @implementation DateManipulator
 
 NSDateFormatter *dateFormatter;
+//NSDateComponents *componentsToSubtract;
 //@synthesize dateFormatter;
 
 -(id)initWithDateFormatter
@@ -19,6 +20,7 @@ NSDateFormatter *dateFormatter;
   if(self)
   {
     dateFormatter = [[NSDateFormatter alloc] init];
+   // componentsToSubtract = [[NSDateComponents alloc] init];
     return self;
   }
   return nil;

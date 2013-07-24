@@ -104,7 +104,7 @@ EnglishWeightCell *weightCell;
     [profile setFloat:weightInKg forKey:@"kg"];
     
     [profile synchronize];
-    
+
     [weightCell.weightTextField resignFirstResponder];
     
     [self performSegueWithIdentifier:@"ageViewSegue" sender:self];

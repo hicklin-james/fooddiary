@@ -7,6 +7,7 @@
 //
 
 #import "NewGoalViewController.h"
+#import "SaveNewGoalViewController.h"
 
 @interface NewGoalViewController ()
 
@@ -20,6 +21,9 @@ MetricWeightCell *metricWeightCell;
 MetricWeightCell *metricGoalCell;
 TimeToReachGoalCell *timeCell;
 NSUserDefaults *profile;
+
+CGFloat currentWeightLbs;
+CGFloat currentWeightKg;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -198,9 +202,10 @@ NSUserDefaults *profile;
       CGFloat goalWeightInLbs = goalWeightInKg*2.2046;
       
       // save current weight and goal weight
-      [profile setFloat:weightInLbs forKey:@"lbs"];
-      [profile setFloat:weightInKg forKey:@"kg"];
-      
+      //[profile setFloat:weightInLbs forKey:@"lbs"];
+      //[profile setFloat:weightInKg forKey:@"kg"];
+      currentWeightKg = weightInKg;
+      currentWeightLbs = weightInLbs;
       [profile setFloat:goalWeightInLbs forKey:@"goalWeightLbs"];
       [profile setFloat:goalWeightInKg forKey:@"goalWeightKg"];
       
@@ -222,8 +227,10 @@ NSUserDefaults *profile;
       CGFloat goalWeightInKg = goalWeightInLbs/2.2046;
       
       // save current weight and goal weight
-      [profile setFloat:weightInLbs forKey:@"lbs"];
-      [profile setFloat:weightInKg forKey:@"kg"];
+      //[profile setFloat:weightInLbs forKey:@"lbs"];
+      //[profile setFloat:weightInKg forKey:@"kg"];
+      currentWeightKg = weightInKg;
+      currentWeightLbs = weightInLbs;
       
       [profile setFloat:goalWeightInLbs forKey:@"goalWeightLbs"];
       [profile setFloat:goalWeightInKg forKey:@"goalWeightKg"];
@@ -239,5 +246,15 @@ NSUserDefaults *profile;
     }
     [self performSegueWithIdentifier:@"goalCompleteSegue" sender:self];
   }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  
+  if ([segue.identifier isEqual:@"goalCompleteSegue"]) {
+    SaveNewGoalViewController *vc = segue.destinationViewController;
+    vc.currentWeightLbs = currentWeightLbs;
+    vc.currentWeightKg = currentWeightKg;
+  }
+  
 }
 @end

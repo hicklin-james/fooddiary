@@ -142,7 +142,16 @@ DateManipulator *dateManipulator;
     
     if ([profile boolForKey:@"goalSet"]) {
       summaryCell = [tableView dequeueReusableCellWithIdentifier:@"summaryCell"];
-      summaryCell.calsRemainingLabel.text = [NSString stringWithFormat:@"%.00f", dataController.totalCalsNeeded-dataController.calorieCountTodayFloat];
+     // summaryCell.calsRemainingLabel.text = [NSString stringWithFormat:@"%.00f", dataController.totalCalsNeeded-dataController.calorieCountTodayFloat];
+      if (dataController.totalCalsNeeded-dataController.calorieCountTodayFloat <= 0) {
+        summaryCell.calsRemainingLabel.textColor = [UIColor redColor];
+        summaryCell.calsRemainingLabel.text = @"0";
+      }
+      else {
+        summaryCell.calsRemainingLabel.textColor = [UIColor greenColor];
+        summaryCell.calsRemainingLabel.text = [NSString stringWithFormat:@"%.00f", dataController.totalCalsNeeded-dataController.calorieCountTodayFloat];
+      }
+      
       NSString *goalFinishString = [dateManipulator getStringOfDateWithoutTime:(NSDate*)[profile objectForKey:@"goalFinishDate"]];
       summaryCell.goalDateLabel.text = goalFinishString;
       if ([profile boolForKey:@"unitType"]) {

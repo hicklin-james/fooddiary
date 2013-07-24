@@ -25,7 +25,6 @@
 		CB29FDC4178CCCD50024F898 /* MetricWeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FDC3178CCCD50024F898 /* MetricWeightViewController.m */; };
 		CB29FDC7178CCCE30024F898 /* MetricWeightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FDC6178CCCE30024F898 /* MetricWeightCell.m */; };
 		CB29FDCB178CE8DB0024F898 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FDCA178CE8DA0024F898 /* WelcomeViewController.m */; };
-		CB2AFFED17985F4100ACBF20 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2AFFEC17985F4100ACBF20 /* libCorePlot-CocoaTouch.a */; };
 		CB2AFFF11798AE4700ACBF20 /* Business-Graph-Icon-Final_550.png in Resources */ = {isa = PBXBuildFile; fileRef = CB2AFFF01798AE4700ACBF20 /* Business-Graph-Icon-Final_550.png */; };
 		CB2CD2C01796041B00D3F4B9 /* CurrentGoalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2CD2BF1796041B00D3F4B9 /* CurrentGoalCell.m */; };
 		CB4E19101796E56800722C51 /* RecordWeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4E190F1796E56800722C51 /* RecordWeightViewController.m */; };
@@ -53,9 +52,13 @@
 		CB839AC9179086B90048986C /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB839AC6179086B90048986C /* SVProgressHUD.bundle */; };
 		CB839ACA179086B90048986C /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CB839AC8179086B90048986C /* SVProgressHUD.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		CB839ACD179099320048986C /* DetailedFoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB839ACC179099320048986C /* DetailedFoodViewController.m */; };
-		CB839AD61790A5940048986C /* MyServing.m in Sources */ = {isa = PBXBuildFile; fileRef = CB839AD51790A5940048986C /* MyServing.m */; };
 		CB839AD91790BA020048986C /* MyFood.m in Sources */ = {isa = PBXBuildFile; fileRef = CB839AD81790BA020048986C /* MyFood.m */; };
 		CB839ADC1790C3330048986C /* ActivityLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB839ADB1790C3330048986C /* ActivityLevelViewController.m */; };
+		CB87585B179ECE2E002C7730 /* NewFoodCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB87585A179ECE2E002C7730 /* NewFoodCell.m */; };
+		CB875861179EFB9F002C7730 /* NewFoodAttributesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB875860179EFB9F002C7730 /* NewFoodAttributesViewController.m */; };
+		CB875867179F168E002C7730 /* CustomFoodBeforeSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB875866179F168E002C7730 /* CustomFoodBeforeSelectionViewController.m */; };
+		CB87586A179F18CE002C7730 /* MyServing.m in Sources */ = {isa = PBXBuildFile; fileRef = CB875869179F18CE002C7730 /* MyServing.m */; };
+		CB87586B179F20E4002C7730 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2AFFEC17985F4100ACBF20 /* libCorePlot-CocoaTouch.a */; };
 		CB87EA78178E40DE00D7A53A /* WelcomeUnitTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB87EA77178E40DE00D7A53A /* WelcomeUnitTypeViewController.m */; };
 		CB87EA7C178E47D500D7A53A /* WelcomeMetricHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB87EA7B178E47D500D7A53A /* WelcomeMetricHeightViewController.m */; };
 		CB87EA7F178E4A3B00D7A53A /* WelcomeMetricWeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB87EA7E178E4A3B00D7A53A /* WelcomeMetricWeightViewController.m */; };
@@ -85,6 +88,7 @@
 		CB9D086B1792231D0031AFB1 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9D086A1792231D0031AFB1 /* HomeViewController.m */; };
 		CB9D0E53177DF35400152108 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9D0E52177DF35400152108 /* ProfileViewController.m */; };
 		CB9E4127179C73C900673F74 /* RecentlyAddedBeforeSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9E4126179C73C900673F74 /* RecentlyAddedBeforeSelectionViewController.m */; };
+		CBA20D38179E112A0090A4DE /* NewFoodNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA20D37179E112A0090A4DE /* NewFoodNameViewController.m */; };
 		CBBE6BCB176967C6005C8CD7 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBE6BC9176967C6005C8CD7 /* EventKit.framework */; };
 		CBBE6BCC176967C6005C8CD7 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBE6BCA176967C6005C8CD7 /* EventKitUI.framework */; };
 		CBD6DB45178358100028C768 /* UnitSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD6DB44178358100028C768 /* UnitSelectionViewController.m */; };
@@ -113,6 +117,7 @@
 		CBDD31FF17692D7500E3F641 /* iPhoneIcon_Big.png in Resources */ = {isa = PBXBuildFile; fileRef = CBDD31FE17692D7500E3F641 /* iPhoneIcon_Big.png */; };
 		CBDD400F176CD4FE00444E51 /* AddFoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDD400E176CD4FE00444E51 /* AddFoodViewController.m */; };
 		CBDD4015176CE1C700444E51 /* DetailFoodBeforeSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDD4014176CE1C700444E51 /* DetailFoodBeforeSelectionViewController.m */; };
+		CBE40D72179F253D0056C3F4 /* CustomFood.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE40D71179F253D0056C3F4 /* CustomFood.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -280,12 +285,18 @@
 		CB839AC8179086B90048986C /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		CB839ACB179099320048986C /* DetailedFoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedFoodViewController.h; sourceTree = "<group>"; };
 		CB839ACC179099320048986C /* DetailedFoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailedFoodViewController.m; sourceTree = "<group>"; };
-		CB839AD41790A5930048986C /* MyServing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyServing.h; sourceTree = "<group>"; };
-		CB839AD51790A5940048986C /* MyServing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyServing.m; sourceTree = "<group>"; };
 		CB839AD71790BA020048986C /* MyFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyFood.h; path = ../MyFood.h; sourceTree = "<group>"; };
 		CB839AD81790BA020048986C /* MyFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyFood.m; path = ../MyFood.m; sourceTree = "<group>"; };
 		CB839ADA1790C3330048986C /* ActivityLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityLevelViewController.h; sourceTree = "<group>"; };
 		CB839ADB1790C3330048986C /* ActivityLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityLevelViewController.m; sourceTree = "<group>"; };
+		CB875859179ECE2E002C7730 /* NewFoodCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewFoodCell.h; sourceTree = "<group>"; };
+		CB87585A179ECE2E002C7730 /* NewFoodCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFoodCell.m; sourceTree = "<group>"; };
+		CB87585F179EFB9F002C7730 /* NewFoodAttributesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewFoodAttributesViewController.h; sourceTree = "<group>"; };
+		CB875860179EFB9F002C7730 /* NewFoodAttributesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFoodAttributesViewController.m; sourceTree = "<group>"; };
+		CB875865179F168E002C7730 /* CustomFoodBeforeSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFoodBeforeSelectionViewController.h; sourceTree = "<group>"; };
+		CB875866179F168E002C7730 /* CustomFoodBeforeSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFoodBeforeSelectionViewController.m; sourceTree = "<group>"; };
+		CB875868179F18CE002C7730 /* MyServing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyServing.h; path = ../MyServing.h; sourceTree = "<group>"; };
+		CB875869179F18CE002C7730 /* MyServing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyServing.m; path = ../MyServing.m; sourceTree = "<group>"; };
 		CB87EA76178E40DE00D7A53A /* WelcomeUnitTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeUnitTypeViewController.h; sourceTree = "<group>"; };
 		CB87EA77178E40DE00D7A53A /* WelcomeUnitTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeUnitTypeViewController.m; sourceTree = "<group>"; };
 		CB87EA7A178E47D500D7A53A /* WelcomeMetricHeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeMetricHeightViewController.h; sourceTree = "<group>"; };
@@ -339,6 +350,8 @@
 		CB9D0E52177DF35400152108 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		CB9E4125179C73C900673F74 /* RecentlyAddedBeforeSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentlyAddedBeforeSelectionViewController.h; sourceTree = "<group>"; };
 		CB9E4126179C73C900673F74 /* RecentlyAddedBeforeSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentlyAddedBeforeSelectionViewController.m; sourceTree = "<group>"; };
+		CBA20D36179E112A0090A4DE /* NewFoodNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewFoodNameViewController.h; sourceTree = "<group>"; };
+		CBA20D37179E112A0090A4DE /* NewFoodNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFoodNameViewController.m; sourceTree = "<group>"; };
 		CBBE6BC9176967C6005C8CD7 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		CBBE6BCA176967C6005C8CD7 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		CBD6DB43178358100028C768 /* UnitSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitSelectionViewController.h; sourceTree = "<group>"; };
@@ -375,6 +388,8 @@
 		CBDD400E176CD4FE00444E51 /* AddFoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddFoodViewController.m; path = ../AddFoodViewController.m; sourceTree = "<group>"; };
 		CBDD4013176CE1C700444E51 /* DetailFoodBeforeSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailFoodBeforeSelectionViewController.h; sourceTree = "<group>"; };
 		CBDD4014176CE1C700444E51 /* DetailFoodBeforeSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailFoodBeforeSelectionViewController.m; sourceTree = "<group>"; };
+		CBE40D70179F253D0056C3F4 /* CustomFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFood.h; sourceTree = "<group>"; };
+		CBE40D71179F253D0056C3F4 /* CustomFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFood.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -385,11 +400,11 @@
 				CB7BFFF8176C13210092F645 /* QuartzCore.framework in Frameworks */,
 				CBBE6BCB176967C6005C8CD7 /* EventKit.framework in Frameworks */,
 				CBBE6BCC176967C6005C8CD7 /* EventKitUI.framework in Frameworks */,
+				CB87586B179F20E4002C7730 /* libCorePlot-CocoaTouch.a in Frameworks */,
 				CBDD319F1768D39500E3F641 /* UIKit.framework in Frameworks */,
 				CBDD31A11768D39500E3F641 /* Foundation.framework in Frameworks */,
 				CBDD31A31768D39500E3F641 /* CoreGraphics.framework in Frameworks */,
 				CBDD31A51768D39500E3F641 /* CoreData.framework in Frameworks */,
-				CB2AFFED17985F4100ACBF20 /* libCorePlot-CocoaTouch.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -710,14 +725,16 @@
 		CB84002B17737BBC00798344 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				CBE40D70179F253D0056C3F4 /* CustomFood.h */,
+				CBE40D71179F253D0056C3F4 /* CustomFood.m */,
+				CB875868179F18CE002C7730 /* MyServing.h */,
+				CB875869179F18CE002C7730 /* MyServing.m */,
 				CB4E1915179778E400722C51 /* StoredWeight.h */,
 				CB4E1916179778E400722C51 /* StoredWeight.m */,
 				CB8D6DBD179319A70093358E /* MyMeal.h */,
 				CB8D6DBE179319A70093358E /* MyMeal.m */,
 				CB839AD71790BA020048986C /* MyFood.h */,
 				CB839AD81790BA020048986C /* MyFood.m */,
-				CB839AD41790A5930048986C /* MyServing.h */,
-				CB839AD51790A5940048986C /* MyServing.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -858,9 +875,23 @@
 			name = Home;
 			sourceTree = "<group>";
 		};
+		CBA20D35179E09000090A4DE /* NewFoodClasses */ = {
+			isa = PBXGroup;
+			children = (
+				CBA20D36179E112A0090A4DE /* NewFoodNameViewController.h */,
+				CBA20D37179E112A0090A4DE /* NewFoodNameViewController.m */,
+				CB875859179ECE2E002C7730 /* NewFoodCell.h */,
+				CB87585A179ECE2E002C7730 /* NewFoodCell.m */,
+				CB87585F179EFB9F002C7730 /* NewFoodAttributesViewController.h */,
+				CB875860179EFB9F002C7730 /* NewFoodAttributesViewController.m */,
+			);
+			name = NewFoodClasses;
+			sourceTree = "<group>";
+		};
 		CBBE6BCE1769691B005C8CD7 /* FoodDiaryClasses */ = {
 			isa = PBXGroup;
 			children = (
+				CBA20D35179E09000090A4DE /* NewFoodClasses */,
 				CB7ADA95176F81FB00B0178C /* MealSelectionViewController.h */,
 				CB7ADA96176F81FB00B0178C /* MealSelectionViewController.m */,
 				CBDD4013176CE1C700444E51 /* DetailFoodBeforeSelectionViewController.h */,
@@ -873,6 +904,8 @@
 				CB839ACC179099320048986C /* DetailedFoodViewController.m */,
 				CB9E4125179C73C900673F74 /* RecentlyAddedBeforeSelectionViewController.h */,
 				CB9E4126179C73C900673F74 /* RecentlyAddedBeforeSelectionViewController.m */,
+				CB875865179F168E002C7730 /* CustomFoodBeforeSelectionViewController.h */,
+				CB875866179F168E002C7730 /* CustomFoodBeforeSelectionViewController.m */,
 			);
 			name = FoodDiaryClasses;
 			sourceTree = "<group>";
@@ -1116,7 +1149,6 @@
 				CB87EAAD178F3E2800D7A53A /* WelcomeCompleteViewController.m in Sources */,
 				CB839ACA179086B90048986C /* SVProgressHUD.m in Sources */,
 				CB839ACD179099320048986C /* DetailedFoodViewController.m in Sources */,
-				CB839AD61790A5940048986C /* MyServing.m in Sources */,
 				CB839AD91790BA020048986C /* MyFood.m in Sources */,
 				CB839ADC1790C3330048986C /* ActivityLevelViewController.m in Sources */,
 				CB9D086B1792231D0031AFB1 /* HomeViewController.m in Sources */,
@@ -1134,6 +1166,12 @@
 				CB4E1917179778E400722C51 /* StoredWeight.m in Sources */,
 				CB4E191A1798486C00722C51 /* GraphsViewController.m in Sources */,
 				CB9E4127179C73C900673F74 /* RecentlyAddedBeforeSelectionViewController.m in Sources */,
+				CBA20D38179E112A0090A4DE /* NewFoodNameViewController.m in Sources */,
+				CB87585B179ECE2E002C7730 /* NewFoodCell.m in Sources */,
+				CB875861179EFB9F002C7730 /* NewFoodAttributesViewController.m in Sources */,
+				CB875867179F168E002C7730 /* CustomFoodBeforeSelectionViewController.m in Sources */,
+				CB87586A179F18CE002C7730 /* MyServing.m in Sources */,
+				CBE40D72179F253D0056C3F4 /* CustomFood.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1214,11 +1252,10 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FoodDiary/FoodDiary-Prefix.pch";
-				HEADER_SEARCH_PATHS = CorePlot_1.3/Source/framework;
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "FoodDiary/FoodDiary-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/CorePlot_1.3/Binaries/iOS\"",
 					"\"$(SRCROOT)\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
@@ -1232,11 +1269,10 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FoodDiary/FoodDiary-Prefix.pch";
-				HEADER_SEARCH_PATHS = CorePlot_1.3/Source/framework;
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "FoodDiary/FoodDiary-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/CorePlot_1.3/Binaries/iOS\"",
 					"\"$(SRCROOT)\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";

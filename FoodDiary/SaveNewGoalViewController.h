@@ -8,11 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SaveNewGoalViewController : UIViewController
+@interface SaveNewGoalViewController : UIViewController {
+  
+  CGFloat currentWeightLbs;
+  CGFloat currentWeightKg;
+  
+}
 
 @property (strong, nonatomic) IBOutlet UILabel *goalWeightLabel;
 @property (strong, nonatomic) IBOutlet UILabel *goalDateLabel;
 @property (strong, nonatomic) IBOutlet UILabel *totalCaloriesLabel;
+@property (assign, nonatomic) CGFloat currentWeightLbs;
+@property (assign, nonatomic) CGFloat currentWeightKg;
 
 - (IBAction)saveGoal:(id)sender;
 
