@@ -10,7 +10,7 @@
 
 @interface WelcomeCompleteViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UILabel *congratsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *caloriesLabel;
 
 - (IBAction)closeSetup:(id)sender;
 

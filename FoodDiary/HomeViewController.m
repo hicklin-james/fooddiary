@@ -87,17 +87,6 @@ DateManipulator *dateManipulator;
   self.dateLabel.textColor = dateColor;
   self.dateLabel.text = thisDateToShow;
   
- // NSUserDefaults *profile = [NSUserDefaults standardUserDefaults];
-  /*
-  if ([profile boolForKey:@"profileSet"] == NO) {
-    
-    //[self performSegueWithIdentifier:@"noProfileNameSegue" sender:self];
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"FDiPhone" bundle:nil];
-    UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"noProfileNavController"];
-    [self presentViewController:vc animated:YES completion:nil];
-    
-  }
-  */
   [dataController refreshFoodData];
   
   [self.tableView reloadData];

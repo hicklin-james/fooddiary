@@ -10,6 +10,9 @@
 		CB17DA59178DD814005DB220 /* apple-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = CB17DA58178DD814005DB220 /* apple-logo.png */; };
 		CB17DA5F178DDEF8005DB220 /* GradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CB17DA5E178DDEF8005DB220 /* GradientButton.m */; };
 		CB17DA63178DE362005DB220 /* WelcomeNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB17DA62178DE362005DB220 /* WelcomeNameViewController.m */; };
+		CB2532BF17A32C5200634F32 /* arrow-transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = CB2532BE17A32C5200634F32 /* arrow-transparent.png */; };
+		CB2532C217A32EF200634F32 /* arrow-black-transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = CB2532C017A32EF200634F32 /* arrow-black-transparent.png */; };
+		CB2532C317A32EF200634F32 /* arrow-blue-transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = CB2532C117A32EF200634F32 /* arrow-blue-transparent.png */; };
 		CB29FD98178C92C20024F898 /* FirstNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FD97178C92C20024F898 /* FirstNameViewController.m */; };
 		CB29FD9B178C9CC50024F898 /* FirstNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FD9A178C9CC50024F898 /* FirstNameCell.m */; };
 		CB29FDA0178CA4EF0024F898 /* LastNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FD9F178CA4EF0024F898 /* LastNameCell.m */; };
@@ -27,6 +30,11 @@
 		CB29FDCB178CE8DB0024F898 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FDCA178CE8DA0024F898 /* WelcomeViewController.m */; };
 		CB2AFFF11798AE4700ACBF20 /* Business-Graph-Icon-Final_550.png in Resources */ = {isa = PBXBuildFile; fileRef = CB2AFFF01798AE4700ACBF20 /* Business-Graph-Icon-Final_550.png */; };
 		CB2CD2C01796041B00D3F4B9 /* CurrentGoalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2CD2BF1796041B00D3F4B9 /* CurrentGoalCell.m */; };
+		CB3538A617A2EF0000BABF1C /* UnitSelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3538A517A2EF0000BABF1C /* UnitSelectionCell.m */; };
+		CB3538AA17A2FC1100BABF1C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3538A917A2FC1100BABF1C /* SettingsViewController.m */; };
+		CB3538AE17A3003000BABF1C /* CalibrateProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3538AD17A3003000BABF1C /* CalibrateProfileViewController.m */; };
+		CB3538B217A3050100BABF1C /* CalorieCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3538B117A3050100BABF1C /* CalorieCalculator.m */; };
+		CB3538B417A30C9900BABF1C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB3538B317A30C9900BABF1C /* Default-568h@2x.png */; };
 		CB4B831217A18120003C2B21 /* CurrentFoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4B831117A18120003C2B21 /* CurrentFoodsViewController.m */; };
 		CB4B831517A20D52003C2B21 /* MyFood.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4B831417A20D52003C2B21 /* MyFood.m */; };
 		CB4E19101796E56800722C51 /* RecordWeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4E190F1796E56800722C51 /* RecordWeightViewController.m */; };
@@ -127,6 +135,9 @@
 		CB17DA5E178DDEF8005DB220 /* GradientButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientButton.m; sourceTree = "<group>"; };
 		CB17DA61178DE362005DB220 /* WelcomeNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeNameViewController.h; sourceTree = "<group>"; };
 		CB17DA62178DE362005DB220 /* WelcomeNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeNameViewController.m; sourceTree = "<group>"; };
+		CB2532BE17A32C5200634F32 /* arrow-transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-transparent.png"; sourceTree = "<group>"; };
+		CB2532C017A32EF200634F32 /* arrow-black-transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-black-transparent.png"; sourceTree = "<group>"; };
+		CB2532C117A32EF200634F32 /* arrow-blue-transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-blue-transparent.png"; sourceTree = "<group>"; };
 		CB29FD96178C92C20024F898 /* FirstNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstNameViewController.h; sourceTree = "<group>"; };
 		CB29FD97178C92C20024F898 /* FirstNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstNameViewController.m; sourceTree = "<group>"; };
 		CB29FD99178C9CC40024F898 /* FirstNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstNameCell.h; sourceTree = "<group>"; };
@@ -238,6 +249,15 @@
 		CB2AFFF01798AE4700ACBF20 /* Business-Graph-Icon-Final_550.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Business-Graph-Icon-Final_550.png"; sourceTree = "<group>"; };
 		CB2CD2BE1796041B00D3F4B9 /* CurrentGoalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentGoalCell.h; sourceTree = "<group>"; };
 		CB2CD2BF1796041B00D3F4B9 /* CurrentGoalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentGoalCell.m; sourceTree = "<group>"; };
+		CB3538A417A2EF0000BABF1C /* UnitSelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitSelectionCell.h; sourceTree = "<group>"; };
+		CB3538A517A2EF0000BABF1C /* UnitSelectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitSelectionCell.m; sourceTree = "<group>"; };
+		CB3538A817A2FC1100BABF1C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		CB3538A917A2FC1100BABF1C /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		CB3538AC17A3003000BABF1C /* CalibrateProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalibrateProfileViewController.h; sourceTree = "<group>"; };
+		CB3538AD17A3003000BABF1C /* CalibrateProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalibrateProfileViewController.m; sourceTree = "<group>"; };
+		CB3538B017A3050100BABF1C /* CalorieCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalorieCalculator.h; sourceTree = "<group>"; };
+		CB3538B117A3050100BABF1C /* CalorieCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalorieCalculator.m; sourceTree = "<group>"; };
+		CB3538B317A30C9900BABF1C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		CB4B831017A18120003C2B21 /* CurrentFoodsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentFoodsViewController.h; sourceTree = "<group>"; };
 		CB4B831117A18120003C2B21 /* CurrentFoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentFoodsViewController.m; sourceTree = "<group>"; };
 		CB4B831317A20D51003C2B21 /* MyFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFood.h; sourceTree = "<group>"; };
@@ -634,6 +654,34 @@
 			path = CorePlotHeaders;
 			sourceTree = "<group>";
 		};
+		CB3538A717A2FBE000BABF1C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CB3538AB17A3002100BABF1C /* ProfileCalibration */,
+				CB3538A817A2FC1100BABF1C /* SettingsViewController.h */,
+				CB3538A917A2FC1100BABF1C /* SettingsViewController.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		CB3538AB17A3002100BABF1C /* ProfileCalibration */ = {
+			isa = PBXGroup;
+			children = (
+				CB3538AC17A3003000BABF1C /* CalibrateProfileViewController.h */,
+				CB3538AD17A3003000BABF1C /* CalibrateProfileViewController.m */,
+			);
+			name = ProfileCalibration;
+			sourceTree = "<group>";
+		};
+		CB3538AF17A304DB00BABF1C /* CalorieCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				CB3538B017A3050100BABF1C /* CalorieCalculator.h */,
+				CB3538B117A3050100BABF1C /* CalorieCalculator.m */,
+			);
+			name = CalorieCalculator;
+			sourceTree = "<group>";
+		};
 		CB4B830E17A180DF003C2B21 /* AddFoodClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -774,6 +822,8 @@
 			children = (
 				CBD6DB44178358100028C768 /* UnitSelectionViewController.m */,
 				CBD6DB43178358100028C768 /* UnitSelectionViewController.h */,
+				CB3538A417A2EF0000BABF1C /* UnitSelectionCell.h */,
+				CB3538A517A2EF0000BABF1C /* UnitSelectionCell.m */,
 			);
 			name = UnitSelection;
 			sourceTree = "<group>";
@@ -977,10 +1027,12 @@
 				CBBE6BCE1769691B005C8CD7 /* FoodDiaryClasses */,
 				CB8D6DD417949D5F0093358E /* Goal */,
 				CB7EBBBE17792F120022F1EE /* ProfileInformation */,
+				CB3538A717A2FBE000BABF1C /* Settings */,
 				CB17DA5A178DDDE0005DB220 /* CustomButtons */,
 				CB84002B17737BBC00798344 /* Entities */,
 				CB8D6DC0179321C20093358E /* MealController */,
 				CB8D6DC7179379EB0093358E /* DateManipulator */,
+				CB3538AF17A304DB00BABF1C /* CalorieCalculator */,
 				CBDD31B81768D39500E3F641 /* FoodDiary.xcdatamodeld */,
 				CBDD31A71768D39500E3F641 /* Supporting Files */,
 			);
@@ -1002,6 +1054,10 @@
 		CBDD31D3176909AE00E3F641 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CB2532C017A32EF200634F32 /* arrow-black-transparent.png */,
+				CB2532C117A32EF200634F32 /* arrow-blue-transparent.png */,
+				CB2532BE17A32C5200634F32 /* arrow-transparent.png */,
+				CB3538B317A30C9900BABF1C /* Default-568h@2x.png */,
 				CB2AFFF01798AE4700ACBF20 /* Business-Graph-Icon-Final_550.png */,
 				CBDD31FE17692D7500E3F641 /* iPhoneIcon_Big.png */,
 				CBDD31FC17692D4500E3F641 /* iPhoneIcon_Small.png */,
@@ -1105,6 +1161,10 @@
 				CB8D6DD2179491CB0093358E /* HomeTabIcon.png in Resources */,
 				CB8D6DD3179491CB0093358E /* HomeTabIcon@2x.png in Resources */,
 				CB2AFFF11798AE4700ACBF20 /* Business-Graph-Icon-Final_550.png in Resources */,
+				CB3538B417A30C9900BABF1C /* Default-568h@2x.png in Resources */,
+				CB2532BF17A32C5200634F32 /* arrow-transparent.png in Resources */,
+				CB2532C217A32EF200634F32 /* arrow-black-transparent.png in Resources */,
+				CB2532C317A32EF200634F32 /* arrow-blue-transparent.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1194,6 +1254,10 @@
 				CBE40D72179F253D0056C3F4 /* CustomFood.m in Sources */,
 				CB4B831217A18120003C2B21 /* CurrentFoodsViewController.m in Sources */,
 				CB4B831517A20D52003C2B21 /* MyFood.m in Sources */,
+				CB3538A617A2EF0000BABF1C /* UnitSelectionCell.m in Sources */,
+				CB3538AA17A2FC1100BABF1C /* SettingsViewController.m in Sources */,
+				CB3538AE17A3003000BABF1C /* CalibrateProfileViewController.m in Sources */,
+				CB3538B217A3050100BABF1C /* CalorieCalculator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

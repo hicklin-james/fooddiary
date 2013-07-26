@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ActionSheetCustomPicker.h"
 
-@interface ProfileViewController : UIViewController 
+@interface ProfileViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 

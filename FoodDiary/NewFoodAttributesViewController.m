@@ -174,7 +174,7 @@ NewFoodCell *ironCell;
     return calciumCell;
   }
   // if (indexPath.row == 16
-  else {
+  else  if (indexPath.row == 16){
    // ironCell = [tableView dequeueReusableCellWithIdentifier:@"ironCell"];
     return ironCell;
   }

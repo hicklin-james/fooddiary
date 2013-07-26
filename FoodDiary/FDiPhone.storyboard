@@ -125,7 +125,6 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="createNewGoal:" destination="QPI-Fb-gbg" eventType="touchUpInside" id="wFr-Ds-Xoj"/>
-                                                        <segue destination="kuy-bV-qJb" kind="modal" identifier="newGoalSegue" id="NYD-su-6iD"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -133,6 +132,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="remainingCalsToday" destination="CRv-tZ-cIN" id="a5C-a0-T4V"/>
+                                            <segue destination="kuy-bV-qJb" kind="modal" identifier="newGoalSegue" id="TFp-pn-pmY"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="nutritionalInfo" rowHeight="426" id="Gmz-5p-KaN">
@@ -765,15 +765,15 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="p4w-E0-USE">
-                                <rect key="frame" x="5" y="49" width="26" height="21"/>
+                                <rect key="frame" x="0.0" y="45" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                <state key="normal" image="leftArrow.png">
+                                <state key="normal" image="arrow-black-transparent.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="highlighted">
+                                <state key="highlighted" image="arrow-blue-transparent.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -788,15 +788,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Xfh-LS-NIy">
-                                <rect key="frame" x="290" y="49" width="26" height="21"/>
+                                <rect key="frame" x="269" y="45" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                <state key="normal" image="leftArrow.png">
+                                <state key="normal" image="arrow-black-transparent.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="highlighted">
+                                <state key="highlighted" image="arrow-blue-transparent.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -848,31 +848,49 @@
             </objects>
             <point key="canvasLocation" x="227" y="-463"/>
         </scene>
-        <!--View Controller - Settings-->
+        <!--Settings View Controller - Settings-->
         <scene sceneID="H7n-t2-cce">
             <objects>
-                <viewController title="Settings" id="DJZ-G5-mfr" sceneMemberID="viewController">
+                <viewController title="Settings" id="DJZ-G5-mfr" customClass="SettingsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gT9-rQ-LbN">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3a0-Yv-YIV">
-                                <rect key="frame" x="0.0" y="44" width="320" height="455"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="3a0-Yv-YIV">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="6G6-jP-Jyb">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="manageFoodsCell" id="6G6-jP-Jyb">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <rect key="frame" x="10" y="1" width="280" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Manage Custom Foods" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SQu-pr-xcD">
-                                                    <rect key="frame" x="10" y="11" width="190" height="21"/>
+                                                    <rect key="frame" x="9" y="11" width="190" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="11"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="calibrateProfileCell" id="w1Y-ks-NLC">
+                                        <rect key="frame" x="0.0" y="91" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Calibrate daily calorie requirements with current profile" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gIg-ta-hQv">
+                                                    <rect key="frame" x="10" y="0.0" width="225" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="11"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                             </subviews>
@@ -880,22 +898,92 @@
                                         </view>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="DJZ-G5-mfr" id="EwB-4R-f3g"/>
+                                    <outlet property="delegate" destination="DJZ-G5-mfr" id="AEj-yr-kX7"/>
+                                </connections>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="XwE-dE-X84">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Settings" id="Ppu-vd-k7c"/>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="SettingsTabIcon.png" id="S4z-VK-KgA"/>
+                    <navigationItem key="navigationItem" title="Settings" id="rgi-AF-jyY"/>
+                    <connections>
+                        <segue destination="6er-A7-qTv" kind="push" identifier="calibrateProfileSegue" id="2tb-WZ-NYY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2O-NG-9Fz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="318" y="2058"/>
+            <point key="canvasLocation" x="844" y="2058"/>
+        </scene>
+        <!--Calibrate Profile View Controller - Calibrate Profile-->
+        <scene sceneID="vcL-vM-N0b">
+            <objects>
+                <viewController id="6er-A7-qTv" customClass="CalibrateProfileViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lyk-SH-RKu">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="277" sectionHeaderHeight="10" sectionFooterHeight="10" id="kYo-YY-NBs">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="calibrateProfileCell" rowHeight="277" id="61F-5D-Zxo">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="279"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="276"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PrF-ki-ChA">
+                                                    <rect key="frame" x="10" y="3" width="280" height="151"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <string key="text">If your weight has changed by more than 5kg or 11lbs since your last calibration, it is a good idea to calibrate your profile. This ensures that your daily calorie needs match your current weight as closely as possible.</string>
+                                                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Note: You cannot calibrate your profile when a goal is set. Complete your goal (or give up on it) to calibrate your profile." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" id="5VC-DH-1Ea">
+                                                    <rect key="frame" x="10" y="152" width="280" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="9"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="khW-ou-bfw" customClass="GradientButton">
+                                                    <rect key="frame" x="39" y="221" width="222" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.18823529410000001" green="0.82352941180000006" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <state key="normal" title="Tap here to calibrate">
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="calibrateProfile:" destination="6er-A7-qTv" eventType="touchUpInside" id="hdB-7f-Gns"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="6er-A7-qTv" id="5PT-EE-StJ"/>
+                                    <outlet property="delegate" destination="6er-A7-qTv" id="NM1-ME-dzo"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Calibrate Profile" id="azz-ve-f3q"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ldk-hD-ua4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1339" y="2551"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="5HI-db-RzM">
@@ -956,7 +1044,6 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="286"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                <color key="separatorColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="firstNameCell" id="54F-mt-de0" customClass="FirstNameCell">
                                         <rect key="frame" x="0.0" y="46" width="320" height="45"/>
@@ -1052,21 +1139,39 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" id="9Va-ei-cap">
-                                <rect key="frame" x="35" y="97" width="250" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Metric (cm, kg)"/>
-                                    <segment title="English (feet, lbs)"/>
-                                </segments>
-                            </segmentedControl>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Choose your unit type" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c1G-3e-wq0">
-                                <rect key="frame" x="67" y="15" width="187" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
-                                <color key="textColor" red="0.11246891119999999" green="0.74039381380000002" blue="0.1666870802" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="64" sectionHeaderHeight="10" sectionFooterHeight="10" id="jyO-6a-BOo">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="unitSelectionCell" rowHeight="64" id="eCj-BZ-RGt" customClass="UnitSelectionCell">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="63"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="9Va-ei-cap">
+                                                    <rect key="frame" x="14" y="10" width="272" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <segments>
+                                                        <segment title="Metric (cm, kg)"/>
+                                                        <segment title="English (feet, lbs)"/>
+                                                    </segments>
+                                                </segmentedControl>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="unitSelectionSegControl" destination="9Va-ei-cap" id="Ssk-qz-Fsv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="PrX-LA-6Sx" id="AnG-CZ-6GO"/>
+                                    <outlet property="delegate" destination="PrX-LA-6Sx" id="F4X-Oj-6qL"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     </view>
@@ -1079,7 +1184,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="unitControl" destination="9Va-ei-cap" id="H5i-48-h58"/>
+                        <outlet property="tableView" destination="jyO-6a-BOo" id="bgm-HC-RpK"/>
                         <segue destination="0A0-vY-fuT" kind="push" identifier="englishHeightSegue" id="f06-Bg-nle"/>
                         <segue destination="tYs-6Y-f3k" kind="push" identifier="metricHeightSegue" id="dTn-dr-PXk"/>
                     </connections>
@@ -1625,18 +1730,18 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Congratulations! Your profile is setup! To maintain your current weight, you would be consuming xxxx calories every day!" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J7c-OI-Hr3">
-                                <rect key="frame" x="42" y="0.0" width="236" height="132"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Congratulations! Your profile is setup! To maintain your current weight, you should be consuming:" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J7c-OI-Hr3">
+                                <rect key="frame" x="42" y="0.0" width="236" height="116"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bTn-iA-upk" customClass="GradientButton">
-                                <rect key="frame" x="67" y="200" width="186" height="44"/>
+                                <rect key="frame" x="67" y="245" width="186" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.18823529410000001" green="0.82352941180000006" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="12"/>
                                 <state key="normal" title="FINISH">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1648,18 +1753,24 @@
                                     <action selector="closeSetup:" destination="k53-Ko-bmY" eventType="touchUpInside" id="h8h-KX-EWN"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XzN-BH-jtU">
-                                <rect key="frame" x="15" y="262" width="290" height="50"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Set a goal for yourself in the goal tab for motivation!" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YEU-ag-iri">
+                                <rect key="frame" x="42" y="178" width="236" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Disclaimer - If your goal weight was not a realistic goal for your chosen time frame, FoodBuddy adjusts the number of weeks to correspond to the minimum recommended calorie intake of 1200 calories for women and 1800 calories for men.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Set a goal for yourself in the goal tab for motivation!" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YEU-ag-iri">
-                                <rect key="frame" x="42" y="140" width="236" height="52"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="XXXX calories" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="w81-39-gZ4">
+                                <rect key="frame" x="42" y="102" width="163" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="19"/>
+                                <color key="textColor" red="0.31555296340829331" green="1" blue="0.4014493576308884" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="daily." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QRt-12-5QA">
+                                <rect key="frame" x="42" y="140" width="230" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1668,7 +1779,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="f0a-02-pP9"/>
                     <connections>
-                        <outlet property="congratsLabel" destination="J7c-OI-Hr3" id="eCN-08-5xz"/>
+                        <outlet property="caloriesLabel" destination="w81-39-gZ4" id="IbF-vN-H5D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="21s-lA-tOY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4698,7 +4809,7 @@
                         <segue destination="br5-Js-kos" kind="relationship" relationship="viewControllers" id="AQx-OU-Afs"/>
                         <segue destination="EA9-BP-GOG" kind="relationship" relationship="viewControllers" id="xYR-PK-b4Y"/>
                         <segue destination="DaL-y9-8TO" kind="relationship" relationship="viewControllers" id="5Oe-jC-iQv"/>
-                        <segue destination="DJZ-G5-mfr" kind="relationship" relationship="viewControllers" id="yMb-en-R45"/>
+                        <segue destination="zoH-lE-Bpx" kind="relationship" relationship="viewControllers" id="yMb-en-R45"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OrI-zm-oO2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -5205,7 +5316,7 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" id="fqz-OQ-HST">
-                                                    <rect key="frame" x="148" y="6" width="97" height="30"/>
+                                                    <rect key="frame" x="151" y="6" width="97" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -5294,14 +5405,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="XXXX calories" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Thj-1q-qKL">
-                                <rect key="frame" x="15" y="251" width="291" height="31"/>
+                                <rect key="frame" x="15" y="203" width="291" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
                                 <color key="textColor" red="0.18823529410000001" green="0.82352941180000006" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VSx-A6-ysl" customClass="GradientButton">
-                                <rect key="frame" x="74" y="309" width="172" height="33"/>
+                                <rect key="frame" x="67" y="253" width="172" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.12408799655699154" green="0.54472175133511336" blue="0.58270886479591844" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -5316,6 +5427,14 @@
                                     <action selector="saveGoal:" destination="2AI-HM-e0K" eventType="touchUpInside" id="Twg-a6-Yht"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6J8-sf-KzQ">
+                                <rect key="frame" x="15" y="331" width="290" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Disclaimer - If your goal weight was not a realistic goal for your chosen time frame, FoodBuddy adjusts the number of weeks to correspond to the minimum recommended calorie intake of 1200 calories for women and 1800 calories for men.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     </view>
@@ -5358,7 +5477,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="1n5-El-SJ2">
-                                <rect key="frame" x="0.0" y="31" width="320" height="29"/>
+                                <rect key="frame" x="5" y="30" width="311" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.21176470588235294" green="0.71764705882352942" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -5433,15 +5552,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZQD-W6-NWf">
-                                <rect key="frame" x="5" y="5" width="26" height="21"/>
+                                <rect key="frame" x="0.0" y="1" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                <state key="normal" image="leftArrow.png">
+                                <state key="normal" image="arrow-black-transparent.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="highlighted">
+                                <state key="highlighted" image="arrow-blue-transparent.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -5449,15 +5568,15 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9kN-uF-Yhv">
-                                <rect key="frame" x="290" y="5" width="26" height="21"/>
+                                <rect key="frame" x="269" y="1" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                <state key="normal" image="leftArrow.png">
+                                <state key="normal" image="arrow-black-transparent.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="highlighted">
+                                <state key="highlighted" image="arrow-blue-transparent.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -5537,6 +5656,7 @@
                         <outlet property="rightArrowButton" destination="9kN-uF-Yhv" id="Sdm-Cx-bsQ"/>
                         <outlet property="tableView" destination="61m-g9-ExB" id="abs-PP-wBH"/>
                         <outlet property="todaysCals" destination="qxr-SX-QQg" id="FDq-2y-gsK"/>
+                        <outlet property="topBarView" destination="1n5-El-SJ2" id="YdL-xI-7Qh"/>
                         <segue destination="PSo-GV-9s5" kind="push" identifier="detailedViewSegue" id="qfV-hb-2oL"/>
                     </connections>
                 </viewController>
@@ -6304,7 +6424,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fxp-Za-khw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1965" y="1692"/>
+            <point key="canvasLocation" x="2491" y="1692"/>
         </scene>
         <!--Metric Height View Controller - Edit Metric Height-->
         <scene sceneID="LH9-sb-Tzp">
@@ -6379,7 +6499,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FMJ-ZS-9VY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1965" y="2313"/>
+            <point key="canvasLocation" x="2491" y="2313"/>
         </scene>
         <!--English Weight View Controller - Edit English Weight-->
         <scene sceneID="sg7-PU-XoC">
@@ -6610,7 +6730,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9OG-pj-4ZN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2501" y="2313"/>
+            <point key="canvasLocation" x="3027" y="2313"/>
         </scene>
         <!--Age View Controller - Edit Age-->
         <scene sceneID="KIp-7L-1Yy">
@@ -6649,9 +6769,9 @@
                                                     </connections>
                                                 </textField>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" id="Ufx-HR-AaZ">
-                                                    <rect key="frame" x="7" y="39" width="286" height="26"/>
+                                                    <rect key="frame" x="7" y="38" width="286" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <string key="text">Note that changes to your profile won't automatically update your daily calorie goal. Your updated profile will be used when you set a new goal.</string>
+                                                    <string key="text">Note that changes to your profile won't automatically update your daily calorie goal. Your updated profile will be used when you set a new goal or calibrate your profile in your settings.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -6977,6 +7097,25 @@
             </objects>
             <point key="canvasLocation" x="2513" y="-4100"/>
         </scene>
+        <!--Navigation Controller - Settings-->
+        <scene sceneID="4zn-u4-u1D">
+            <objects>
+                <navigationController id="zoH-lE-Bpx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="SettingsTabIcon.png" id="S4z-VK-KgA"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="If2-pT-lfm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DJZ-G5-mfr" kind="relationship" relationship="rootViewController" id="TwH-bI-PqB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0sK-zy-Jvx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="318" y="2058"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Business-Graph-Icon-Final_550.png" width="550" height="440"/>
@@ -6986,10 +7125,381 @@
         <image name="RecipesTabIcon.png" width="30" height="30"/>
         <image name="SettingsTabIcon.png" width="30" height="30"/>
         <image name="apple-logo.png" width="352" height="387"/>
+        <image name="arrow-black-transparent.png" width="259" height="127"/>
+        <image name="arrow-blue-transparent.png" width="259" height="127"/>
         <image name="female-gender-sign-scaled.png" width="50" height="40"/>
-        <image name="leftArrow.png" width="60" height="60"/>
         <image name="male-gender-sign-scaled.png" width="50" height="40"/>
     </resources>
+    <classes>
+        <class className="ActivityLevelCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ActivityLevelCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="activitySegControl" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+        <class className="ActivityLevelViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ActivityLevelViewController.h"/>
+        </class>
+        <class className="AddFoodViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddFoodViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="handleCancelButton:"/>
+                <relationship kind="action" name="newFood:"/>
+                <relationship kind="action" name="saveFoodsFromThisView:"/>
+                <relationship kind="action" name="transitionToCurrentFoods:"/>
+                <relationship kind="outlet" name="foodsInMealButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="recentlyAdded" candidateClass="UITabBarItem"/>
+                <relationship kind="outlet" name="savedMeals" candidateClass="UITabBarItem"/>
+                <relationship kind="outlet" name="tabBar" candidateClass="UITabBar"/>
+                <relationship kind="outlet" name="tabBarTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="AgeCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AgeCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="ageTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="AgeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AgeViewController.h"/>
+        </class>
+        <class className="CalibrateProfileViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CalibrateProfileViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="calibrateProfile:"/>
+            </relationships>
+        </class>
+        <class className="CurrentFoodsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CurrentFoodsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="closeCurrentFoods:"/>
+                <relationship kind="action" name="saveCurrentFoods:"/>
+            </relationships>
+        </class>
+        <class className="CurrentGoalCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CurrentGoalCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="currentWeightLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="goalDateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="goalWeightLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="CustomFoodBeforeSelectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomFoodBeforeSelectionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="saveFood:"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="DetailFoodBeforeSelectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailFoodBeforeSelectionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addFoodToMeal:"/>
+                <relationship kind="outlet" name="nutInfoTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="nutritionInfoHeaderTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nutritionInfoHeaderView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="unitPicker" candidateClass="UIPickerView"/>
+            </relationships>
+        </class>
+        <class className="DetailedFoodViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailedFoodViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="EnglishHeightCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EnglishHeightCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="heightLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="EnglishHeightViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EnglishHeightViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="pickerView" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="EnglishWeightCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EnglishWeightCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="weightLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="weightTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="EnglishWeightViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EnglishWeightViewController.h"/>
+        </class>
+        <class className="FirstNameCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstNameCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="firstNameTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="FirstNameViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstNameViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="FoodDiaryViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FoodDiaryViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="changeToNextDay:"/>
+                <relationship kind="action" name="changeToPreviousDay:"/>
+                <relationship kind="outlet" name="addFoodsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="date" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="goalCals" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="remainingCals" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="rightArrowButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="todaysCals" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="topBarView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="GenderCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GenderCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="genderSegControl" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+        <class className="GoalViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GoalViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelGoal:"/>
+                <relationship kind="action" name="recordWeightToday:"/>
+                <relationship kind="action" name="setNewGoal:"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="GradientButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GradientButton.h"/>
+        </class>
+        <class className="GraphsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GraphsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="eightWeeksButton" candidateClass="UITabBarItem"/>
+                <relationship kind="outlet" name="fourWeeksButton" candidateClass="UITabBarItem"/>
+                <relationship kind="outlet" name="graphView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="tabBar" candidateClass="UITabBar"/>
+                <relationship kind="outlet" name="twelveWeeksButton" candidateClass="UITabBarItem"/>
+            </relationships>
+        </class>
+        <class className="HomeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="changeToNextDay:"/>
+                <relationship kind="action" name="changeToPreviousDay:"/>
+                <relationship kind="action" name="createNewGoal:"/>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="homeTabBar" candidateClass="UITabBar"/>
+                <relationship kind="outlet" name="rightArrowButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="summaryItem" candidateClass="UITabBarItem"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="todayItem" candidateClass="UITabBarItem"/>
+            </relationships>
+        </class>
+        <class className="LastNameCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LastNameCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="lastNameTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="LastNameViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LastNameViewController.h"/>
+        </class>
+        <class className="MealSelectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MealSelectionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="closeWindow:"/>
+                <relationship kind="outlet" name="mealTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="MetricHeightCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MetricHeightCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="heightTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="MetricHeightViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MetricHeightViewController.h"/>
+        </class>
+        <class className="MetricWeightCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MetricWeightCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="weightLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="weightTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="MetricWeightViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MetricWeightViewController.h"/>
+        </class>
+        <class className="NewFoodAttributesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewFoodAttributesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="saveCustomFood:"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="NewFoodCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewFoodCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="NewFoodNameViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewFoodNameViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelNewFood:"/>
+                <relationship kind="action" name="nextView:"/>
+            </relationships>
+        </class>
+        <class className="NewGoalViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewGoalViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelNewGoal:"/>
+                <relationship kind="action" name="goToNextView:"/>
+            </relationships>
+        </class>
+        <class className="NoGoalCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NoGoalCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="weightLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NoGoalSummaryCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NoGoalSummaryCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="remainingCalsToday" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ProfileViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="RecentlyAddedBeforeSelectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecentlyAddedBeforeSelectionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="saveFood:"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="RecordWeightViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecordWeightViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelRecordWeight:"/>
+                <relationship kind="action" name="saveRecordWeight:"/>
+            </relationships>
+        </class>
+        <class className="SaveNewGoalViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SaveNewGoalViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="saveGoal:"/>
+                <relationship kind="outlet" name="goalDateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="goalWeightLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="totalCaloriesLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
+        </class>
+        <class className="SummaryCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SummaryCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="calsRemainingLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="goalDateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="weightGoalLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="TimeToReachGoalCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TimeToReachGoalCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="timeTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="UnitSelectionCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UnitSelectionCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="unitSelectionSegControl" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+        <class className="UnitSelectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UnitSelectionViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="WelcomeActivityLevelViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcomeActivityLevelViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="goToNextView:"/>
+            </relationships>
+        </class>
+        <class className="WelcomeAgeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcomeAgeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="goToNextView:"/>
+            </relationships>
+        </class>
+        <class className="WelcomeCompleteViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcomeCompleteViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="closeSetup:"/>
+                <relationship kind="outlet" name="caloriesLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="WelcomeEnglishHeightViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcomeEnglishHeightViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="goToNextView:"/>
+                <relationship kind="outlet" name="pickerView" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="WelcomeEnglishWeightViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcomeEnglishWeightViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="goToNextView:"/>
+            </relationships>
+        </class>
+        <class className="WelcomeGenderViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcomeGenderViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="goToNextView:"/>
+            </relationships>
+        </class>
+        <class className="WelcomeMetricHeightViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcomeMetricHeightViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="goToNextView:"/>
+            </relationships>
+        </class>
+        <class className="WelcomeMetricWeightViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcomeMetricWeightViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="goToNextView:"/>
+            </relationships>
+        </class>
+        <class className="WelcomeNameViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcomeNameViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="goToNextView:"/>
+            </relationships>
+        </class>
+        <class className="WelcomeUnitTypeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcomeUnitTypeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="goToNextView:"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="WelcomeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcomeViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
@@ -6997,7 +7507,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="zkO-Kf-Tg7"/>
-        <segue reference="Fdk-1t-aIq"/>
         <segue reference="EFc-ca-sZA"/>
+        <segue reference="TFp-pn-pmY"/>
     </inferredMetricsTieBreakers>
 </document>

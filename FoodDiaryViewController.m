@@ -38,6 +38,7 @@ DateManipulator *dateManipulator;
 {
   [super viewDidLoad];
   // Get shared instance of data controller
+    [self.topBarView.layer setCornerRadius:10];
   controller = [MealController sharedInstance];
   
   dateManipulator = [[DateManipulator alloc] initWithDateFormatter];

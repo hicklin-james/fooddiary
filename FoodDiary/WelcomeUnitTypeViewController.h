@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WelcomeUnitTypeViewController : UIViewController
+@interface WelcomeUnitTypeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 - (IBAction)goToNextView:(id)sender;
-
-@property (strong, nonatomic) IBOutlet UISegmentedControl *unitControl;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

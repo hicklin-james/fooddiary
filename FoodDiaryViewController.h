@@ -25,6 +25,7 @@
 @property (nonatomic, retain) MyServing *servingToPassToDetailView;
 @property (nonatomic, strong) MealController *controller;
 
+@property (strong, nonatomic) IBOutlet UIView *topBarView;
 @property (weak, nonatomic) IBOutlet UILabel *todaysCals;
 @property (weak, nonatomic) IBOutlet UILabel *goalCals;
 @property (weak, nonatomic) IBOutlet UILabel *remainingCals;

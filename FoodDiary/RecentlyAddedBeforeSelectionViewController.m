@@ -42,6 +42,7 @@ MealController *controller;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
   controller = [MealController sharedInstance];
+    servingSize = 1;
   NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES];
   NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
   

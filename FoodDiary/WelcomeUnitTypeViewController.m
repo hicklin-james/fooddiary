@@ -7,6 +7,7 @@
 //
 
 #import "WelcomeUnitTypeViewController.h"
+#import "UnitSelectionCell.h"
 
 @interface WelcomeUnitTypeViewController ()
 
@@ -14,7 +15,7 @@
 
 @implementation WelcomeUnitTypeViewController
 
-@synthesize unitControl;
+UnitSelectionCell *unitSelectionCell;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,10 +30,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-  UIFont *font = [UIFont boldSystemFontOfSize:12.0f];
+    unitSelectionCell = [self.tableView dequeueReusableCellWithIdentifier:@"unitSelectionCell"];
+  UIFont *font = [UIFont boldSystemFontOfSize:11.0f];
   NSDictionary *attributes = [NSDictionary dictionaryWithObject:font
                                                          forKey:UITextAttributeFont];
-  [unitControl setTitleTextAttributes:attributes
+  [unitSelectionCell.unitSelectionSegControl setTitleTextAttributes:attributes
                                   forState:UIControlStateNormal];
 
 }
@@ -43,18 +45,54 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 2;
+}
+
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    
+    if (indexPath.row == 0) {
+        cell.textLabel.font = [UIFont fontWithName:@"Verdana-Bold" size:12];
+        cell.textLabel.text = @"Select your unit";
+        cell.textLabel.textColor = [UIColor whiteColor];
+        UIColor * color = [UIColor colorWithRed:54/255.0f green:183/255.0f blue:191/255.0f alpha:1.0f];
+        cell.backgroundColor = color;
+        return cell;
+    }
+    else {
+        return unitSelectionCell;
+    }
+    
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0)
+        return 30;
+    else
+        return 64;
+}
+
+
 - (IBAction)goToNextView:(id)sender {
   
   NSUserDefaults *profile = [NSUserDefaults standardUserDefaults];
   
-  if (unitControl.selectedSegmentIndex == 0) {
+  if (unitSelectionCell.unitSelectionSegControl.selectedSegmentIndex == 0) {
     [profile setBool:YES forKey:@"unitType"];
   }
-  if (unitControl.selectedSegmentIndex == 1) {
+  if (unitSelectionCell.unitSelectionSegControl.selectedSegmentIndex == 1) {
     [profile setBool:NO forKey:@"unitType"];
   }
   
-  if (unitControl.selectedSegmentIndex == 0)
+  if (unitSelectionCell.unitSelectionSegControl.selectedSegmentIndex == 0)
     [self performSegueWithIdentifier:@"metricHeightSegue" sender:self];
   else
     [self performSegueWithIdentifier:@"englishHeightSegue" sender:self];

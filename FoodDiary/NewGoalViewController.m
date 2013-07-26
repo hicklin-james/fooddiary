@@ -92,6 +92,7 @@ CGFloat currentWeightKg;
       if (indexPath.row == 1) {
     metricWeightCell = [tableView dequeueReusableCellWithIdentifier:@"metricWeightCell"];
     metricWeightCell.weightLabel.text = @"Current Weight";
+    metricWeightCell.weightTextField.text = [profile stringForKey:@"kg"];
     return metricWeightCell;
   }
      else if (indexPath.row == 2 ){ 
@@ -104,6 +105,7 @@ CGFloat currentWeightKg;
       if (indexPath.row == 1) {
         englishWeightCell = [tableView dequeueReusableCellWithIdentifier:@"englishWeightCell"];
         englishWeightCell.weightLabel.text = @"Current Weight";
+          englishWeightCell.weightTextField.text = [profile stringForKey:@"lbs"];
         return englishWeightCell;
       }
       else if (indexPath.row == 2 ) {
