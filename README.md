@@ -3,7 +3,9 @@ fooddiary
 
 Personal project to learn objective-c. A full scale food diary and calorie counter, using core data.
 
-Connects to external REST api for food data
+Connects to external REST api for food data.
+
+Feel free to contact me regarding application details.
 
 See images of current version below.
 
