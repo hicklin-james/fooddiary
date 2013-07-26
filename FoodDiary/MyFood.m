@@ -2,7 +2,7 @@
 //  MyFood.m
 //  FoodDiary
 //
-//  Created by James Hicklin on 2013-07-12.
+//  Created by James Hicklin on 2013-07-25.
 //  Copyright (c) 2013 James Hicklin. All rights reserved.
 //
 
@@ -19,10 +19,11 @@
 @dynamic identifier;
 @dynamic name;
 @dynamic selectedServing;
+@dynamic servingIndex;
 @dynamic servingSize;
 @dynamic type;
 @dynamic url;
-@dynamic servingIndex;
+@dynamic dateOfCreation;
 @dynamic toMyMeal;
 @dynamic toMyServing;
 

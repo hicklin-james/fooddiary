@@ -31,6 +31,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *date;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UIButton *rightArrowButton;
+@property (strong, nonatomic) IBOutlet UILabel *addFoodsLabel;
 
 - (IBAction)changeToPreviousDay:(id)sender;
 - (IBAction)changeToNextDay:(id)sender;

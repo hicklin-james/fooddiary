@@ -101,10 +101,10 @@ NewFoodCell *ironCell;
   
   if (indexPath.row == 0) {
     if (indexPath.section == 0) {
-      cell = [tableView dequeueReusableCellWithIdentifier:@"sectionOneHeader"];
+      cell = [self.tableView dequeueReusableCellWithIdentifier:@"sectionOneHeader"];
     }
     else {
-      cell = [tableView dequeueReusableCellWithIdentifier:@"sectionTwoHeader"];
+      cell = [self.tableView dequeueReusableCellWithIdentifier:@"sectionTwoHeader"];
     }
   }
   else if (indexPath.row == 1) {
@@ -213,7 +213,6 @@ NewFoodCell *ironCell;
       [customFood setFat:[NSNumber numberWithFloat:[fatCell.textField.text floatValue]]];
     }
     if (![satFatCell.textField.text isEqualToString:@""]) {
-      NSLog(satFatCell.textField.text);
       [customFood setSaturatedFat:[NSNumber numberWithFloat:[satFatCell.textField.text floatValue]]];
     }
     if (![polyunsatFatCell.textField.text isEqualToString:@""]) {
@@ -256,6 +255,7 @@ NewFoodCell *ironCell;
     MealController *controller = [MealController sharedInstance];
     
     NSError *error = nil;
+    [[controller managedObjectContext] insertObject:customFood];
     
     if (![[controller managedObjectContext] save:&error]) {
       [controller showDetailedErrorInfo:error];

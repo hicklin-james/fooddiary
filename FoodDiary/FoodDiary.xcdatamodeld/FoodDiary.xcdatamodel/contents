@@ -25,6 +25,7 @@
     <entity name="MyFood" representedClassName="MyFood" syncable="YES">
         <attribute name="brandName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateOfCreation" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="foodDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="identifier" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -77,7 +78,7 @@
     </entity>
     <elements>
         <element name="CustomFood" positionX="160" positionY="192" width="128" height="345"/>
-        <element name="MyFood" positionX="160" positionY="192" width="128" height="225"/>
+        <element name="MyFood" positionX="160" positionY="192" width="128" height="240"/>
         <element name="MyMeal" positionX="160" positionY="192" width="128" height="105"/>
         <element name="MyServing" positionX="160" positionY="192" width="128" height="435"/>
         <element name="StoredWeight" positionX="160" positionY="192" width="128" height="90"/>

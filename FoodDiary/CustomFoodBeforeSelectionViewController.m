@@ -12,6 +12,7 @@
 #import "MyFood.h"
 #import "MyServing.h"
 #import "MyMeal.h"
+#import "AddFoodViewController.h"
 
 @interface CustomFoodBeforeSelectionViewController ()
 
@@ -416,7 +417,10 @@ MealController *controller;
 - (IBAction)saveFood:(id)sender {
   
   MealController *controller = [MealController sharedInstance];
-  MyFood *newFood = (MyFood*)[NSEntityDescription insertNewObjectForEntityForName:@"MyFood" inManagedObjectContext:[controller managedObjectContext]];
+  
+  NSEntityDescription *entity = [NSEntityDescription entityForName:@"MyFood" inManagedObjectContext:[controller managedObjectContext]];
+  MyFood *newFood = (MyFood*)[[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:nil];
+  
   CustomFood *foodToBeAdded = detailedFood;
   
   [newFood setBrandName:[foodToBeAdded brandName]];
@@ -429,7 +433,7 @@ MealController *controller;
   [newFood setFoodDescription: [NSString stringWithFormat:@"Per %@ - Calories: %.00fkcal", [foodToBeAdded servingDescription], [[foodToBeAdded calories] floatValue]]];
   
   
-  NSCalendar *calendar = [NSCalendar currentCalendar];
+/*  NSCalendar *calendar = [NSCalendar currentCalendar];
   NSDate *date = [controller dateToShow];
   NSDateComponents *compsStart = [[NSCalendar currentCalendar] components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:date];
   [compsStart setHour:0];
@@ -457,53 +461,49 @@ MealController *controller;
   
   [newFood setDate:date];
   [newFood setToMyMeal:theMeal];
+  */
+//  NSDate *date = [controller dateToShow];
+//  [newFood setDate:date];
   
-  MyServing *newServing = (MyServing*)[NSEntityDescription insertNewObjectForEntityForName:@"MyServing" inManagedObjectContext:[controller managedObjectContext]];
+  NSMutableArray *tempServings = [[NSMutableArray alloc] init];
+  
+  entity = [NSEntityDescription entityForName:@"MyServing" inManagedObjectContext:[controller managedObjectContext]];
+  MyServing *newServing = (MyServing*)[[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:nil];
+  
   [newServing setServingDescription:[detailedFood servingDescription]];
   [newServing setServingId:[NSNumber numberWithInteger:0]];
   [newServing setCalories:[detailedFood calories]];
   
-//  if ([detailedFood carbohydrates] != nil)
+
     [newServing setCarbohydrates:[detailedFood carbohydrates]];
-//  if ([detailedFood protein] != nil)
     [newServing setProtein:[detailedFood protein]];
-//  if ([detailedFood fat] != nil)
     [newServing setFat:[detailedFood fat]];
-//  if ([detailedFood saturatedFat] != nil)
     [newServing setSaturatedFat:[detailedFood saturatedFat]];
-//  if ([detailedFood polyunsaturatedFat] != nil)
     [newServing setPolyunsaturatedFat:[detailedFood polyunsaturatedFat]];
-//  if ([detailedFood monounsaturatedFat] != nil)
     [newServing setMonounsaturatedFat:[detailedFood monounsaturatedFat]];
-//  if ([detailedFood transFat] != nil)
     [newServing setTransFat:[detailedFood transFat]];
-//  if ([detailedFood cholesterol] != nil)
     [newServing setCholesterol:[detailedFood cholesterol]];
-//  if ([detailedFood sodium] != nil)
     [newServing setSodium:[detailedFood sodium]];
-//  if ([detailedFood potassium] != nil)
     [newServing setPotassium:[detailedFood potassium]];
-//  if ([detailedFood fiber] != nil)
     [newServing setFiber:[detailedFood fiber]];
-//  if ([detailedFood sugar] != nil)
     [newServing setSugar:[detailedFood sugar]];
-//  if ([detailedFood vitaminC] != nil)
     [newServing setVitaminC:[detailedFood vitaminC]];
-//  if ([detailedFood vitaminA] != nil)
     [newServing setVitaminA:[detailedFood vitaminA]];
-//  if ([detailedFood calcium] != nil)
     [newServing setCalcium:[detailedFood calcium]];
-//  if ([detailedFood iron] != nil)
     [newServing setIron:[detailedFood iron]];
   
-  [newServing setDate:[NSDate date]];
-  [newServing setToMyFood:newFood];
+    [newServing setDate:[NSDate date]];
+    [tempServings addObject:newServing];
   
-  if (![[controller managedObjectContext] save:&error]) {
-    NSLog(@"There was an error saving the data");
-  }
-  
-  [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+//  if (![[controller managedObjectContext] save:&error]) {
+//    NSLog(@"There was an error saving the data");
+//  }
+  AddFoodViewController *vc = [[self.navigationController viewControllers] objectAtIndex:1];
+  [vc.temporaryFoods addObject:newFood];
+  [vc.temporaryServings addObject:tempServings];
+  [vc.searchDisplayController setActive:NO];
+  [self.navigationController popViewControllerAnimated:YES];
+//  [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
   
 }
 @end

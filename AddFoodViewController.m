@@ -16,6 +16,7 @@
 #import "DateManipulator.h"
 #import "RecentlyAddedBeforeSelectionViewController.h"
 #import "CustomFoodBeforeSelectionViewController.h"
+#import "CurrentFoodsViewController.h"
 
 @interface AddFoodViewController ()
 
@@ -27,6 +28,9 @@ NSMutableArray *customFoodsArray;
 
 @implementation AddFoodViewController
 
+@synthesize temporaryServings;
+@synthesize temporaryFoods;
+@synthesize foodsInMealButton;
 @synthesize recentlyAdded;
 @synthesize savedMeals;
 
@@ -75,8 +79,13 @@ BOOL resultsFlag = NO;
   
   recentlyAddedArray = results;
   
+  temporaryFoods = [[NSMutableArray alloc] init];
+  temporaryServings = [[NSMutableArray alloc] init];
+  
   // Remove duplicate foods from array
   NSMutableSet *lookup = [[NSMutableSet alloc] init];
+  NSMutableArray *arrayCopy = [[NSMutableArray alloc] init];
+  
   for (int index = 0; index < [recentlyAddedArray count]; index++)
   {
     MyFood *curr = [recentlyAddedArray objectAtIndex:index];
@@ -85,16 +94,19 @@ BOOL resultsFlag = NO;
     // this is very fast constant time lookup in a hash table
     if ([lookup containsObject:identifier])
     {
-      // NSLog(@"item already exists.  removing: %@ at index %d", identifier, index);
-      [recentlyAddedArray removeObjectAtIndex:index];
+       NSLog(@"item already exists.  removing: %@ at index %d", identifier, index);
+      //[recentlyAddedArray removeObjectAtIndex:index];
     }
     else
     {
-      //NSLog(@"distinct item.  keeping %@ at index %d", identifier, index);
+      NSLog(@"distinct item.  keeping %@ at index %d", identifier, index);
       [lookup addObject:identifier];
+      [arrayCopy addObject:curr];
     }
   }
   
+    recentlyAddedArray = arrayCopy;
+
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -111,8 +123,31 @@ BOOL resultsFlag = NO;
   NSMutableArray *results = [NSMutableArray arrayWithArray:[[controller managedObjectContext] executeFetchRequest:request error:&error]];
   customFoodsArray = results;
   
+  //[self.searchDisplayController setActive:NO];
+  
+  [self setupFoodsInMealButton];
+  
   [self.tabBarTableView reloadData];
   
+}
+
+-(void)setupFoodsInMealButton {
+  
+  if ([temporaryFoods count] == 0) {
+    //foodsInMealButton.titleLabel.text = @"No items added to meal";
+    [foodsInMealButton setTitle:@"No items added to meal" forState:UIControlStateNormal];
+    [foodsInMealButton setTitle:@"No items added to meal" forState:UIControlStateHighlighted];
+  }
+  else if ([temporaryFoods count] == 1){
+    foodsInMealButton.titleLabel.numberOfLines = 0;
+    [foodsInMealButton setTitle:[NSString stringWithFormat:@"%d food in meal, tap here to see food", [temporaryFoods count]] forState:UIControlStateNormal];
+    [foodsInMealButton setTitle:[NSString stringWithFormat:@"%d food in meal, tap here to see food", [temporaryFoods count]] forState:UIControlStateHighlighted];
+  }
+  else {
+    foodsInMealButton.titleLabel.numberOfLines = 0;
+    [foodsInMealButton setTitle:[NSString stringWithFormat:@"%d foods in meal, tap here to see foods", [temporaryFoods count]] forState:UIControlStateNormal];
+    [foodsInMealButton setTitle:[NSString stringWithFormat:@"%d foods in meal, tap here to see foods", [temporaryFoods count]] forState:UIControlStateHighlighted];
+  }
   
 }
 
@@ -130,6 +165,20 @@ BOOL resultsFlag = NO;
   
   [self performSegueWithIdentifier:@"newFoodSegue" sender:self];
   
+}
+
+- (IBAction)transitionToCurrentFoods:(id)sender {
+  
+  if ([temporaryFoods count] > 0) {
+    
+    [self performSegueWithIdentifier:@"currentMealFoodsSegue" sender:self];
+    
+  }
+  
+}
+
+- (IBAction)saveFoodsFromThisView:(id)sender {
+  [self saveFoods];
 }
 
 - (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)section {
@@ -325,13 +374,21 @@ BOOL resultsFlag = NO;
     destViewController.mealName = self.title;
   }
   
-  else {
+  else if ([segue.identifier isEqual:@"recentlyAddedFoodSegue"]) {
     
     RecentlyAddedBeforeSelectionViewController *destViewController = segue.destinationViewController;
     destViewController.title = [@"Add to " stringByAppendingFormat:[self title],nil];
     destViewController.foodToBeAdded = self.recentFoodToBeSentToNextView;
     destViewController.mealName = self.title;
     
+  }
+  
+  else {
+    
+    CurrentFoodsViewController *destViewController = segue.destinationViewController;
+    destViewController.mealTitle = self.title;
+    destViewController.servings = temporaryServings;
+    destViewController.foods = temporaryFoods;
   }
   
 }
@@ -342,5 +399,62 @@ BOOL resultsFlag = NO;
   
 }
 
+-(void)saveFoods {
+  
+  MealController *controller = [MealController sharedInstance];
+  NSCalendar *calendar = [NSCalendar currentCalendar];
+  NSDate *date = [controller dateToShow];
+  NSDateComponents *compsStart = [[NSCalendar currentCalendar] components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:date];
+  [compsStart setHour:0];
+  [compsStart setMinute:0];
+  [compsStart setSecond:0];
+  NSDate *todayStart = [calendar dateFromComponents:compsStart];
+  
+  NSDateComponents *compsEnd = [[NSCalendar currentCalendar] components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:date];
+  [compsEnd setHour:23];
+  [compsEnd setMinute:59];
+  [compsEnd setSecond:59];
+  NSDate *todayEnd = [calendar dateFromComponents:compsEnd];
+  
+  
+  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(date >= %@) AND (date <= %@) AND (name == %@)", todayStart, todayEnd, self.title];
+  
+  NSFetchRequest *request = [[NSFetchRequest alloc] init];
+  [request setEntity:[NSEntityDescription entityForName:@"MyMeal" inManagedObjectContext:[controller managedObjectContext]]];
+  [request setPredicate:predicate];
+  
+  NSError *error = nil;
+  NSArray *results = [[controller managedObjectContext] executeFetchRequest:request error:&error];
+  
+  NSArray *thisMeal = results;
+  MyMeal *theMeal = [thisMeal objectAtIndex:0];
+
+  for (int i = 0; i < [temporaryFoods count]; i++) {
+    
+    MyFood *food = [temporaryFoods objectAtIndex:i];
+    [[controller managedObjectContext] insertObject:food];
+    NSMutableArray *servings = [temporaryServings objectAtIndex:i];
+    for (int s = 0; s < [servings count]; s++) {
+      MyServing *serving = [servings objectAtIndex:s];
+      [[controller managedObjectContext] insertObject:serving];
+      [serving setToMyFood:food];
+    }
+    //[[controller managedObjectContext] insertObject:food];
+    [food setToMyMeal:theMeal];
+    NSDate *date = [controller dateToShow];
+    [food setDateOfCreation:[NSDate date]];
+     [food setDate:date];
+    
+   // [[controller managedObjectContext] insertObject:food];
+    
+    if (![[controller managedObjectContext] save:&error]) {
+      [controller showDetailedErrorInfo:error];
+    }
+    
+  }
+  
+  [self dismissViewControllerAnimated:YES completion:nil];
+  
+}
 
 @end

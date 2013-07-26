@@ -9,6 +9,7 @@
 #import "RecentlyAddedBeforeSelectionViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "MealController.h"
+#import "AddFoodViewController.h"
 
 @interface RecentlyAddedBeforeSelectionViewController ()
 
@@ -390,7 +391,9 @@ MealController *controller;
 
 - (IBAction)saveFood:(id)sender {
   
-  MyFood *newFood = (MyFood*)[NSEntityDescription insertNewObjectForEntityForName:@"MyFood" inManagedObjectContext:[controller managedObjectContext]];
+  NSEntityDescription *entity = [NSEntityDescription entityForName:@"MyFood" inManagedObjectContext:[controller managedObjectContext]];
+  MyFood *newFood = (MyFood*)[[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:nil];
+  
   [newFood setBrandName:[foodToBeAdded brandName]];
   // [newFood setFoodDescription:[self.detailedFood foodDescription]];
   [newFood setFoodDescription:[foodToBeAdded foodDescription]];
@@ -402,7 +405,7 @@ MealController *controller;
   [newFood setSelectedServing:[currentServing servingId]];
   [newFood setServingIndex:[NSNumber numberWithInteger:servingIndex]];
   
-  NSCalendar *calendar = [NSCalendar currentCalendar];
+/*  NSCalendar *calendar = [NSCalendar currentCalendar];
   NSDate *date = [controller dateToShow];
   NSDateComponents *compsStart = [[NSCalendar currentCalendar] components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:date];
   [compsStart setHour:0];
@@ -431,11 +434,15 @@ MealController *controller;
   
   [newFood setDate:date];
   [newFood setToMyMeal:theMeal];
-  
+*/  
+//  NSDate *date = [controller dateToShow];
+//  [newFood setDate:date];
+  NSMutableArray *tempServings = [[NSMutableArray alloc] init];
   
   for (int i = 0; i < [allServings count]; i++) {
     
-    MyServing *newServing = (MyServing*)[NSEntityDescription insertNewObjectForEntityForName:@"MyServing" inManagedObjectContext:[controller managedObjectContext]];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"MyServing" inManagedObjectContext:[controller managedObjectContext]];
+    MyServing *newServing = (MyServing*)[[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:nil];
     MyServing *thisServing = [allServings objectAtIndex:i];
     [newServing setServingDescription:[thisServing servingDescription]];
     [newServing setServingUrl:[thisServing servingUrl]];
@@ -462,15 +469,22 @@ MealController *controller;
     [newServing setCalcium:[thisServing calcium]];
     [newServing setIron:[thisServing iron]];
     [newServing setDate:[NSDate date]];
-    [newServing setToMyFood:newFood];
     
-    if (![[controller managedObjectContext] save:&error]) {
-      NSLog(@"There was an error saving the data");
-    }
+    [tempServings addObject:newServing];
+    
+//    if (![[controller managedObjectContext] save:&error]) {
+//      NSLog(@"There was an error saving the data");
+//    }
     
   }
   
-  [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+  AddFoodViewController *vc = [[self.navigationController viewControllers] objectAtIndex:1];
+  [vc.temporaryFoods addObject:newFood];
+  [vc.temporaryServings addObject:tempServings];
+  [vc.searchDisplayController setActive:NO];
+  [self.navigationController popViewControllerAnimated:YES];
+  
+//  [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 
   
 }

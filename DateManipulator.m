@@ -90,4 +90,13 @@ NSDateFormatter *dateFormatter;
   
 }
 
+-(NSString*) getStringOfDate:(NSDate*)date {
+  
+  NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+  formatter.dateFormat = @"MM/dd/yy/HH-mm";
+  
+  return [formatter stringFromDate:date];
+  
+}
+
 @end

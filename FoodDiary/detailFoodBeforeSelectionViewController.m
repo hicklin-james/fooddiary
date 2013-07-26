@@ -12,6 +12,7 @@
 #import "MyMeal.h"
 #import <QuartzCore/QuartzCore.h>
 #import "MealController.h"
+#import "AddFoodViewController.h"
 
 @interface DetailFoodBeforeSelectionViewController ()
 
@@ -62,8 +63,9 @@ MealController *controller;
 }
 
 - (IBAction)addFoodToMeal:(id)sender {
-    
-    MyFood *newFood = (MyFood*)[NSEntityDescription insertNewObjectForEntityForName:@"MyFood" inManagedObjectContext:[controller managedObjectContext]];
+  
+   NSEntityDescription *entity = [NSEntityDescription entityForName:@"MyFood" inManagedObjectContext:[controller managedObjectContext]];
+    MyFood *newFood = (MyFood*)[[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:nil];
     [newFood setBrandName:[self.detailedFood brandName]];
    // [newFood setFoodDescription:[self.detailedFood foodDescription]];
     [newFood setFoodDescription:foodDescription];
@@ -75,41 +77,16 @@ MealController *controller;
     [newFood setSelectedServing:[NSNumber numberWithInteger:[self.selectedServing servingIdValue]]];
     [newFood setServingIndex:[NSNumber numberWithInteger:self.servingIndex]];
     
+//    NSDate *date = [controller dateToShow];
     
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDate *date = [controller dateToShow];
-    NSDateComponents *compsStart = [[NSCalendar currentCalendar] components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:date];
-    [compsStart setHour:0];
-    [compsStart setMinute:0];
-    [compsStart setSecond:0];
-    NSDate *todayStart = [calendar dateFromComponents:compsStart];
-    
-    NSDateComponents *compsEnd = [[NSCalendar currentCalendar] components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:date];
-    [compsEnd setHour:23];
-    [compsEnd setMinute:59];
-    [compsEnd setSecond:59];
-    NSDate *todayEnd = [calendar dateFromComponents:compsEnd];
-    
-    
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(date >= %@) AND (date <= %@) AND (name == %@)", todayStart, todayEnd, self.mealName];
-    
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:[NSEntityDescription entityForName:@"MyMeal" inManagedObjectContext:[controller managedObjectContext]]];
-    [request setPredicate:predicate];
-    
-    NSError *error = nil;
-    NSArray *results = [[controller managedObjectContext] executeFetchRequest:request error:&error];
-    
-    NSArray *thisMeal = results;
-    MyMeal *theMeal = [thisMeal objectAtIndex:0];
-    
-    [newFood setDate:date];
-    [newFood setToMyMeal:theMeal];
-    
-    
+//    [newFood setDate:date];
+    //[newFood setToMyMeal:theMeal];
+    NSMutableArray *tempServings = [[NSMutableArray alloc] init];
+  
     for (int i = 0; i < [[self.detailedFood servings] count]; i++) {
-        
-        MyServing *newServing = (MyServing*)[NSEntityDescription insertNewObjectForEntityForName:@"MyServing" inManagedObjectContext:[controller managedObjectContext]];
+      
+      NSEntityDescription *entity = [NSEntityDescription entityForName:@"MyServing" inManagedObjectContext:[controller managedObjectContext]];
+        MyServing *newServing = (MyServing*)[[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:nil];
         FSServing *thisServing = [[self.detailedFood servings] objectAtIndex:i];
         [newServing setServingDescription:[thisServing servingDescription]];
         [newServing setServingUrl:[thisServing servingUrl]];
@@ -136,15 +113,19 @@ MealController *controller;
         [newServing setCalcium:[NSNumber numberWithFloat:[thisServing calciumValue]]];
         [newServing setIron:[NSNumber numberWithFloat:[thisServing ironValue]]];
         [newServing setDate:[NSDate date]];
-        [newServing setToMyFood:newFood];
-        
-        if (![[controller managedObjectContext] save:&error]) {
-            NSLog(@"There was an error saving the data");
-        }
+        //[newServing setToMyFood:newFood];
+      [tempServings addObject:newServing];
+        //if (![[controller managedObjectContext] save:&error]) {
+        //    NSLog(@"There was an error saving the data");
+        //}
         
     }
-    
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+   AddFoodViewController *vc = [[self.navigationController viewControllers] objectAtIndex:1];
+  [vc.temporaryFoods addObject:newFood];
+  [vc.temporaryServings addObject:tempServings];
+  [vc.searchDisplayController setActive:NO];
+  [self.navigationController popViewControllerAnimated:YES];
+    //[self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     
 }
 

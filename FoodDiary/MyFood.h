@@ -2,7 +2,7 @@
 //  MyFood.h
 //  FoodDiary
 //
-//  Created by James Hicklin on 2013-07-12.
+//  Created by James Hicklin on 2013-07-25.
 //  Copyright (c) 2013 James Hicklin. All rights reserved.
 //
 
@@ -19,10 +19,11 @@
 @property (nonatomic, retain) NSNumber * identifier;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * selectedServing;
+@property (nonatomic, retain) NSNumber * servingIndex;
 @property (nonatomic, retain) NSNumber * servingSize;
 @property (nonatomic, retain) NSString * type;
 @property (nonatomic, retain) NSString * url;
-@property (nonatomic, retain) NSNumber * servingIndex;
+@property (nonatomic, retain) NSDate * dateOfCreation;
 @property (nonatomic, retain) MyMeal *toMyMeal;
 @property (nonatomic, retain) NSSet *toMyServing;
 @end

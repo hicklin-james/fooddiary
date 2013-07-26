@@ -12,8 +12,15 @@
 #import "MyFood.h"
 #import "CustomFood.h"
 
-@interface AddFoodViewController : UIViewController <UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate, UITabBarDelegate>
+@interface AddFoodViewController : UIViewController <UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate, UITabBarDelegate> {
+  
+  NSMutableArray *temporaryFoods;
+  NSMutableArray *temporaryServings;
+  
+}
 
+@property (nonatomic, strong) NSMutableArray *temporaryServings;
+@property (nonatomic, strong) NSMutableArray *temporaryFoods;
 @property (nonatomic, weak) FSFood *foodToBeSentToNextView;
 @property (nonatomic, weak) MyFood *recentFoodToBeSentToNextView;
 @property (nonatomic, weak) CustomFood *customFoodToBeSentToNextView;
@@ -22,9 +29,13 @@
 @property (strong, nonatomic) IBOutlet UITabBarItem *recentlyAdded;
 @property (strong, nonatomic) IBOutlet UITabBarItem *savedMeals;
 @property (strong, nonatomic) IBOutlet UITableView *tabBarTableView;
+@property (strong, nonatomic) IBOutlet UIButton *foodsInMealButton;
 
 -(IBAction)handleCancelButton:(id)sender;
 - (IBAction)newFood:(id)sender;
+- (IBAction)transitionToCurrentFoods:(id)sender;
+- (IBAction)saveFoodsFromThisView:(id)sender;
+-(void)saveFoods;
 
 @end
 

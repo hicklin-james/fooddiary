@@ -123,7 +123,7 @@ MealController *controller;
 - (IBAction)saveRecordWeight:(id)sender {
   
   NSCalendar *calendar = [NSCalendar currentCalendar];
-  NSDate *date = [controller dateToShow];
+  NSDate *date = [NSDate date];//[controller dateToShow];
   
   DateManipulator *dateManipulator = [[DateManipulator alloc] initWithDateFormatter];
   NSDate *start = [dateManipulator getDateForDateAndTime:calendar date:date hour:0 minutes:0 seconds:0];
@@ -153,7 +153,7 @@ MealController *controller;
   
   if ([results count] == 0) {
     weight = (StoredWeight*)[NSEntityDescription insertNewObjectForEntityForName:@"StoredWeight" inManagedObjectContext:[controller managedObjectContext]];
-    [weight setDate:[NSDate date]];
+    [weight setDate:date];
   }
   else {
     weight = [results objectAtIndex:0];

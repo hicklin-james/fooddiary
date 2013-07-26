@@ -62,6 +62,9 @@ DateManipulator *dateManipulator;
   [controller refreshFoodData];
   [self updateCalorieCount];
   
+  self.tableView.sectionFooterHeight = 0.0;
+  self.tableView.sectionHeaderHeight = 0.0;
+ // [self.view sendSubviewToBack:self.addFoodsLabel];
   [self.tableView reloadData];
   
 }
@@ -133,23 +136,57 @@ DateManipulator *dateManipulator;
   return 4;
 }
 
+
+/*
+- (NSInteger)checkNumberOfSections {
+  
+  NSInteger count = 0;
+  for (int i = 0; i < 4; i++) {
+    NSArray *foods = [[[controller mealsToday] objectAtIndex:i] allObjects];
+    if ([foods count] > 0)
+      count++;
+  }
+  
+  return count;
+  
+}
+*/
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
   
+  if ([[controller breakfastFoods] count] > 0 || [[controller lunchFoods] count] > 0 || [[controller dinnerFoods] count] > 0 || [[controller snacksFoods] count] > 0) {
+    self.addFoodsLabel.hidden = YES;
+  }
+  else {
+    self.addFoodsLabel.hidden = NO;
+  }
+  
   if (section == 0) {
-    return [[controller breakfastFoods] count]+1;
+    if ([[controller breakfastFoods] count] > 0)
+      return [[controller breakfastFoods] count]+1;
+    else
+      return 0;
   }
   
   if (section == 1) {
-    return [[controller lunchFoods] count]+1;
+    if ([[controller lunchFoods] count] > 0)
+      return [[controller lunchFoods] count]+1;
+    else
+      return 0;
   }
   
   if (section == 2) {
-    return [[controller dinnerFoods] count]+1;
+    if ([[controller dinnerFoods] count] > 0)
+      return [[controller dinnerFoods] count]+1;
+    else return 0;
   }
   
   if (section == 3) {
-    return [[controller snacksFoods] count]+1;
+    if ([[controller snacksFoods] count] > 0)
+      return [[controller snacksFoods] count]+1;
+    else
+      return 0;
   }
   
   NSLog(@"Something weird happened and the section wasn't there, so returning nil");
@@ -232,12 +269,18 @@ DateManipulator *dateManipulator;
 {
   if(section == 0)
     return 6;
+  if ([self tableView:tableView numberOfRowsInSection:section]==0) {
+    return 0;
+  }
   return 1.0;
 }
 
 
 -(CGFloat)tableView:(UITableView*)tableView heightForFooterInSection:(NSInteger)section
 {
+  if ([self tableView:tableView numberOfRowsInSection:section]==0) {
+    return 0;
+  }
   return 5.0;
 }
 
@@ -278,7 +321,10 @@ DateManipulator *dateManipulator;
   
   // delete from core data and table
   [[controller managedObjectContext] deleteObject:foodToDelete];
-  [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
+  if ([mealFoods count] > 0)
+    [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
+  else
+    [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, [NSIndexPath indexPathForRow:indexPath.row-1 inSection:indexPath.section],nil] withRowAnimation:YES];
   
   NSError *error = nil;
   if (![[controller managedObjectContext] save:&error]) {

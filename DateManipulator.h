@@ -16,6 +16,7 @@
 -(UIColor*)createDateColor:(NSString*)todayString dateToShowString:(NSString*)dateToShowString;
 - (NSDate *) getDateForDateAndTime:(NSCalendar *)calendar date:(NSDate*)date hour:(NSInteger)hour minutes:(NSInteger)minutes seconds:(NSInteger)seconds;
 -(NSString*) getStringOfDateWithoutTimeOrDay:(NSDate*)date;
+-(NSString*) getStringOfDate:(NSDate*)date;
 
 
 @end

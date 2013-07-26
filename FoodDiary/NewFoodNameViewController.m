@@ -135,7 +135,9 @@ CustomFood *tempFood;
   else {
     
     MealController *controller = [MealController sharedInstance];
-    CustomFood *food = (CustomFood*)[NSEntityDescription insertNewObjectForEntityForName:@"CustomFood" inManagedObjectContext:[controller managedObjectContext]];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"CustomFood" inManagedObjectContext:[controller managedObjectContext]];
+    CustomFood *food = (CustomFood*)[[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:nil];
+    //CustomFood *food = (CustomFood*)[NSEntityDescription insertNewObjectForEntityForName:@"CustomFood" inManagedObjectContext:[controller managedObjectContext]];
     [food setName:nameCell.textField.text];
     [food setServingDescription:servingSizeCell.textField.text];
     [food setBrandName:brandNameCell.textField.text];

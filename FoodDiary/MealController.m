@@ -98,11 +98,16 @@ DateManipulator *dateManipulator;
     MyMeal *meal = [mealsToday objectAtIndex:i];
     //NSLog([meal name], nil);
     
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"dateOfCreation" ascending:YES];
     NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
     
-    NSArray *tempFoods = [[meal toMyFood] allObjects];
-    NSMutableArray *foods = [NSMutableArray arrayWithArray:[tempFoods sortedArrayUsingDescriptors:sortDescriptors]];
+    NSArray *foodsArray = [[meal toMyFood] sortedArrayUsingDescriptors:sortDescriptors];
+    NSMutableArray *foods = [NSMutableArray arrayWithArray:foodsArray];
+    //NSMutableArray *foods = [NSMutableArray arrayWithArray:[tempFoods sortedArrayUsingDescriptors:sortDescriptors]];
+    for (int s = 0; s < [foods count]; s++) {
+      MyFood *food = [foods objectAtIndex:s];
+      NSLog ([dateManipulator getStringOfDate:[food date]],nil);
+    }
     
     [self updateCalorieCount:foods meal:meal];
     [self updateGlobalArraysWithFoods:foods integer:i];
@@ -167,7 +172,6 @@ DateManipulator *dateManipulator;
   for (int i = 0; i < [foods count]; i++) {
     MyFood *currentFood = [foods objectAtIndex:i];
     MyServing *currentServing = [self fetchServingFromFood:currentFood];
-    
     calorieCountTodayFloat += [[currentServing calories]floatValue] * [[currentFood servingSize]floatValue];
     calsForMeal += [[currentServing calories]floatValue] * [[currentFood servingSize]floatValue];
   }
