@@ -106,7 +106,7 @@ DateManipulator *dateManipulator;
     //NSMutableArray *foods = [NSMutableArray arrayWithArray:[tempFoods sortedArrayUsingDescriptors:sortDescriptors]];
     for (int s = 0; s < [foods count]; s++) {
       MyFood *food = [foods objectAtIndex:s];
-      NSLog ([dateManipulator getStringOfDate:[food date]],nil);
+      //NSLog ([dateManipulator getStringOfDate:[food date]],nil);
     }
     
     [self updateCalorieCount:foods meal:meal];
