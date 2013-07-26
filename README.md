@@ -1,7 +1,9 @@
 fooddiary
 =========
 
-Personal project to learn objective-c. A full scale food diary and calorie counter.
+Personal project to learn objective-c. A full scale food diary and calorie counter, using core data.
+
+Connects to external REST api for food data
 
 See images of current version below.
 
