@@ -50,7 +50,7 @@ DateManipulator *dateManipulator;
   //change these parameters according to you.
   //viewFrame.origin.y -=50;
   //viewFrame.origin.x -=20;
-  viewFrame.size.height=47;
+  viewFrame.size.height=35;
   //viewFrame.size.width=300;
   self.homeTabBar.frame=viewFrame;
   
@@ -59,8 +59,8 @@ DateManipulator *dateManipulator;
                                                               RADIANS(180.0));
   self.rightArrowButton.transform = rotateTransform;
   
-  [self.summaryItem setTitlePositionAdjustment:UIOffsetMake(0, -17)];
-  [self.todayItem setTitlePositionAdjustment:UIOffsetMake(0, -17)];
+  [self.summaryItem setTitlePositionAdjustment:UIOffsetMake(0, -10)];
+  [self.todayItem setTitlePositionAdjustment:UIOffsetMake(0, -10)];
 
 }
 
@@ -80,6 +80,8 @@ DateManipulator *dateManipulator;
 -(void)viewWillAppear:(BOOL)animated {
   
   [super viewWillAppear:animated];
+  
+  //[dataController checkDateToday];
   
   NSString *todayString = [dateManipulator getStringOfDateWithoutTime:[NSDate date]];
   NSString *thisDateToShow = [dateManipulator getStringOfDateWithoutTime:dataController.dateToShow];

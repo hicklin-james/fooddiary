@@ -40,6 +40,7 @@
 		CB4E19101796E56800722C51 /* RecordWeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4E190F1796E56800722C51 /* RecordWeightViewController.m */; };
 		CB4E1917179778E400722C51 /* StoredWeight.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4E1916179778E400722C51 /* StoredWeight.m */; };
 		CB4E191A1798486C00722C51 /* GraphsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4E19191798486C00722C51 /* GraphsViewController.m */; };
+		CB6EC5FE17A58FD100262EDE /* ManageFoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6EC5FD17A58FD100262EDE /* ManageFoodsViewController.m */; };
 		CB74DBD117714B770018A0A1 /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CB74DBC517714B770018A0A1 /* AbstractActionSheetPicker.m */; };
 		CB74DBD217714B770018A0A1 /* ActionSheetCustomPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CB74DBC717714B770018A0A1 /* ActionSheetCustomPicker.m */; };
 		CB74DBD317714B770018A0A1 /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CB74DBCA17714B770018A0A1 /* ActionSheetDatePicker.m */; };
@@ -82,6 +83,7 @@
 		CB87EAA6178F33C600D7A53A /* WelcomeGenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB87EAA5178F33C400D7A53A /* WelcomeGenderViewController.m */; };
 		CB87EAAA178F341D00D7A53A /* GenderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB87EAA9178F341D00D7A53A /* GenderCell.m */; };
 		CB87EAAD178F3E2800D7A53A /* WelcomeCompleteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB87EAAC178F3E2700D7A53A /* WelcomeCompleteViewController.m */; };
+		CB8B6ED017A6B5190099F640 /* UpdateCustomFoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8B6ECF17A6B5190099F640 /* UpdateCustomFoodViewController.m */; };
 		CB8D6DBC179313500093358E /* SummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8D6DBB179313500093358E /* SummaryCell.m */; };
 		CB8D6DBF179319A80093358E /* MyMeal.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8D6DBE179319A70093358E /* MyMeal.m */; };
 		CB8D6DC3179321EB0093358E /* MealController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8D6DC2179321EB0093358E /* MealController.m */; };
@@ -268,6 +270,8 @@
 		CB4E1916179778E400722C51 /* StoredWeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoredWeight.m; sourceTree = "<group>"; };
 		CB4E19181798486C00722C51 /* GraphsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphsViewController.h; sourceTree = "<group>"; };
 		CB4E19191798486C00722C51 /* GraphsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphsViewController.m; sourceTree = "<group>"; };
+		CB6EC5FC17A58FD100262EDE /* ManageFoodsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageFoodsViewController.h; sourceTree = "<group>"; };
+		CB6EC5FD17A58FD100262EDE /* ManageFoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageFoodsViewController.m; sourceTree = "<group>"; };
 		CB74DBC417714B770018A0A1 /* AbstractActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractActionSheetPicker.h; sourceTree = "<group>"; };
 		CB74DBC517714B770018A0A1 /* AbstractActionSheetPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractActionSheetPicker.m; sourceTree = "<group>"; };
 		CB74DBC617714B770018A0A1 /* ActionSheetCustomPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetCustomPicker.h; sourceTree = "<group>"; };
@@ -346,6 +350,8 @@
 		CB87EAA9178F341D00D7A53A /* GenderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenderCell.m; sourceTree = "<group>"; };
 		CB87EAAB178F3E2600D7A53A /* WelcomeCompleteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeCompleteViewController.h; sourceTree = "<group>"; };
 		CB87EAAC178F3E2700D7A53A /* WelcomeCompleteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeCompleteViewController.m; sourceTree = "<group>"; };
+		CB8B6ECE17A6B5190099F640 /* UpdateCustomFoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateCustomFoodViewController.h; sourceTree = "<group>"; };
+		CB8B6ECF17A6B5190099F640 /* UpdateCustomFoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateCustomFoodViewController.m; sourceTree = "<group>"; };
 		CB8D6DBA179313500093358E /* SummaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryCell.h; sourceTree = "<group>"; };
 		CB8D6DBB179313500093358E /* SummaryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryCell.m; sourceTree = "<group>"; };
 		CB8D6DBD179319A70093358E /* MyMeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMeal.h; sourceTree = "<group>"; };
@@ -657,6 +663,7 @@
 		CB3538A717A2FBE000BABF1C /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				CB6EC5FB17A58FB400262EDE /* ManageFoods */,
 				CB3538AB17A3002100BABF1C /* ProfileCalibration */,
 				CB3538A817A2FC1100BABF1C /* SettingsViewController.h */,
 				CB3538A917A2FC1100BABF1C /* SettingsViewController.m */,
@@ -716,6 +723,17 @@
 				CB4E190F1796E56800722C51 /* RecordWeightViewController.m */,
 			);
 			name = RecordWeightViews;
+			sourceTree = "<group>";
+		};
+		CB6EC5FB17A58FB400262EDE /* ManageFoods */ = {
+			isa = PBXGroup;
+			children = (
+				CB6EC5FC17A58FD100262EDE /* ManageFoodsViewController.h */,
+				CB6EC5FD17A58FD100262EDE /* ManageFoodsViewController.m */,
+				CB8B6ECE17A6B5190099F640 /* UpdateCustomFoodViewController.h */,
+				CB8B6ECF17A6B5190099F640 /* UpdateCustomFoodViewController.m */,
+			);
+			name = ManageFoods;
 			sourceTree = "<group>";
 		};
 		CB74DBC317714B770018A0A1 /* Pickers */ = {
@@ -1258,6 +1276,8 @@
 				CB3538AA17A2FC1100BABF1C /* SettingsViewController.m in Sources */,
 				CB3538AE17A3003000BABF1C /* CalibrateProfileViewController.m in Sources */,
 				CB3538B217A3050100BABF1C /* CalorieCalculator.m in Sources */,
+				CB6EC5FE17A58FD100262EDE /* ManageFoodsViewController.m in Sources */,
+				CB8B6ED017A6B5190099F640 /* UpdateCustomFoodViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

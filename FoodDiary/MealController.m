@@ -20,7 +20,6 @@
 @synthesize dateToShow;
 @synthesize totalCalsNeeded;
 @synthesize calorieCountTodayFloat;
-@synthesize initialDate;
 
 DateManipulator *dateManipulator;
 
@@ -36,24 +35,6 @@ DateManipulator *dateManipulator;
     
   });
   return sharedInstance;
-}
-
-- (void) startTimer {
-  [NSTimer scheduledTimerWithTimeInterval:60
-                                   target:self
-                                 selector:@selector(tick:)
-                                 userInfo:nil
-                                  repeats:YES];
-}
-
-- (void) tick:(NSTimer *) timer {
-  // Figure this out at some point! TODO
-  NSDate *currentDate = [NSDate date];
-  if (![[dateManipulator getStringOfDateWithoutTime:currentDate] isEqual:[dateManipulator getStringOfDateWithoutTime:initalDate]]) {
-    dateToShow = currentDate;
-    initialDate = currentDate;
-  }
-  
 }
 
 -(NSMutableArray*)fetchOrderedMealsForDate:(NSDate*)todayStart end:(NSDate*)todayEnd {
@@ -104,10 +85,10 @@ DateManipulator *dateManipulator;
     NSArray *foodsArray = [[meal toMyFood] sortedArrayUsingDescriptors:sortDescriptors];
     NSMutableArray *foods = [NSMutableArray arrayWithArray:foodsArray];
     //NSMutableArray *foods = [NSMutableArray arrayWithArray:[tempFoods sortedArrayUsingDescriptors:sortDescriptors]];
-    for (int s = 0; s < [foods count]; s++) {
-      MyFood *food = [foods objectAtIndex:s];
+    //for (int s = 0; s < [foods count]; s++) {
+   //   MyFood *food = [foods objectAtIndex:s];
       //NSLog ([dateManipulator getStringOfDate:[food date]],nil);
-    }
+    //}
     
     [self updateCalorieCount:foods meal:meal];
     [self updateGlobalArraysWithFoods:foods integer:i];

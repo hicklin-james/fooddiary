@@ -14,17 +14,15 @@
 #import "WelcomeViewController.h"
 #import "HomeViewController.h"
 #import "MealController.h"
+#import "DateManipulator.h"
 
 @implementation FDAppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize today;
 
-@synthesize breakfastArray;
-@synthesize lunchArray;
-@synthesize dinnerArray;
-@synthesize snacksArray;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -38,16 +36,10 @@
 
   [FSClient sharedClient].oauthConsumerKey = @"b066c53bc69a42bba07b5d530f685611";
   [FSClient sharedClient].oauthConsumerSecret = @"c82eddab535842068c9ed771cb4c7e84";
-
-  //foodDiaryViewController.managedObjectContext = context;
   
   controller.managedObjectContext = context;
-//  controller.mealsToday = mutableMealsToday;
   controller.dateToShow = [NSDate date];
-    //[controller refreshFoodData];
-  //foodDiaryViewController.dateToShow = date;
-  
- // homeViewController.managedObjectContext = context;
+  today = [NSDate date];
   
   NSUserDefaults *profile = [NSUserDefaults standardUserDefaults];
   CGFloat calsNeeded = [profile floatForKey:@"calsToConsumeToReachGoal"];
@@ -60,11 +52,14 @@
   self.window.rootViewController = tabBarController;
   [self.window makeKeyAndVisible];
   
+//  HomeViewController *hvc = [[tabBarController viewControllers] objectAtIndex:0];
+//  FoodDiaryViewController *fdvc = [[tabBarController viewControllers] objectAtIndex:1];
+//  hvc.today = [NSDate date];
+//  fdvc.today = [NSDate date];
+  
   // If no profile has been created, segue to the profile creation view from here, so that the segue has happened before
   // the view appears
   if ([profile boolForKey:@"profileSet"] == NO) {
-    
-    //[self performSegueWithIdentifier:@"noProfileNameSegue" sender:self];
 
     UIViewController *vc = [storyboard  instantiateViewControllerWithIdentifier:@"noProfileNavController"];
     [vc setModalPresentationStyle:UIModalPresentationFullScreen];
@@ -90,6 +85,42 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
   // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+  [self checkDateToday];
+}
+
+// check if the date has changed, and go to the next day if it has.
+-(void)checkDateToday {
+  
+  DateManipulator *dateManipulator = [[DateManipulator alloc] initWithDateFormatter];
+  MealController *controller = [MealController sharedInstance];
+  // Get current date
+  NSString *currentDateString = [dateManipulator getStringOfDateWithoutTime:[NSDate date]];
+  NSString *todayString = [dateManipulator getStringOfDateWithoutTime:today];
+  
+  if (![currentDateString isEqual:todayString]) {
+    controller.dateToShow = [NSDate date];
+    today = [NSDate date];
+    
+    UITabBarController *tabBarController = (UITabBarController*)self.window.rootViewController;
+    HomeViewController *hvc = [[tabBarController viewControllers] objectAtIndex:0];
+    UINavigationController *fdnavc = [[tabBarController viewControllers] objectAtIndex:1];
+    FoodDiaryViewController *fdvc = (FoodDiaryViewController*)[fdnavc topViewController];
+    
+    //NSString *todayString = [dateManipulator getStringOfDateWithoutTime:[NSDate date]];
+    NSString *thisDateToShow = [dateManipulator getStringOfDateWithoutTime:controller.dateToShow];
+    UIColor *dateColor = [dateManipulator createDateColor:todayString dateToShowString:thisDateToShow];
+    hvc.dateLabel.textColor = dateColor;
+    hvc.dateLabel.text = thisDateToShow;
+    fdvc.date.textColor = dateColor;
+    fdvc.date.text = thisDateToShow;
+    
+    [controller refreshFoodData];
+    
+    [hvc.tableView reloadData];
+    [fdvc.tableView reloadData];
+    
+  }
+  
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
@@ -105,6 +136,7 @@
 
 - (void)saveContext
 {
+
     NSError *error = nil;
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
     if (managedObjectContext != nil) {

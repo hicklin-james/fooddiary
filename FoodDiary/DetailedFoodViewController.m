@@ -38,7 +38,7 @@ ActionSheetCustomPicker *servingSizePicker;
 {
   [super viewDidLoad];
   // Do any additional setup after loading the view.
-  
+  self.title = [detailedFood name];
   NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES];
   NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
   

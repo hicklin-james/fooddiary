@@ -54,6 +54,8 @@ DateManipulator *dateManipulator;
   
   [super viewWillAppear:animated];
   
+ // [controller checkDateToday];
+  
   NSString *todayString = [dateManipulator getStringOfDateWithoutTime:[NSDate date]];
   NSString *thisDateToShow = [dateManipulator getStringOfDateWithoutTime:controller.dateToShow];
   UIColor *dateColor = [dateManipulator createDateColor:todayString dateToShowString:thisDateToShow];
@@ -72,25 +74,14 @@ DateManipulator *dateManipulator;
 
 // Called before segue into another view
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  
   // set the FoodDiaryViewController as the delegate for the new view
-  if ([segue.identifier isEqual: @"noProfileNameSegue"]) {
-    
-  }
-  else if ([segue.identifier isEqual: @"detailedViewSegue"]) {
-    // UINavigationController *nav = [segue destinationViewController];
+  if ([segue.identifier isEqual: @"detailedViewSegue"]) {
     DetailedFoodViewController *dest = (DetailedFoodViewController*)[segue destinationViewController];
     dest.detailedFood = foodToPassToDetailView;
     dest.currentServing = servingToPassToDetailView;
     dest.managedObjectContext = [controller managedObjectContext];
   }
-  else {
-    //UINavigationController *nav = [segue destinationViewController];
-    //MealSelectionViewController *dest = (MealSelectionViewController*)[nav topViewController];
-    //dest.managedObjectContext = managedObjectContext;
-    //dest.mealsToday = [controller mealsToday];
-    //dest.dateOfFood = controller.dateToShow;
-  }
-  
 }
 
 - (void)didReceiveMemoryWarning
@@ -128,7 +119,6 @@ DateManipulator *dateManipulator;
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-
 //--------------------Table View Delegate Methods------------------//
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)aTableView {
@@ -136,22 +126,6 @@ DateManipulator *dateManipulator;
   //return [self checkNumberOfSections];
   return 4;
 }
-
-
-/*
-- (NSInteger)checkNumberOfSections {
-  
-  NSInteger count = 0;
-  for (int i = 0; i < 4; i++) {
-    NSArray *foods = [[[controller mealsToday] objectAtIndex:i] allObjects];
-    if ([foods count] > 0)
-      count++;
-  }
-  
-  return count;
-  
-}
-*/
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -252,7 +226,7 @@ DateManipulator *dateManipulator;
     foodToPassToDetailView = [[meals objectAtIndex:indexPath.section] objectAtIndex:indexPath.row-1];
     // Fetch the current serving from core data
     servingToPassToDetailView = [controller fetchServingFromFood:foodToPassToDetailView];
-  
+    
     [self performSegueWithIdentifier:@"detailedViewSegue" sender:self];
   }
   
@@ -405,8 +379,8 @@ NSInteger selectedMealToSave;
   NSDate *nextDay = [dateManipulator findDateWithOffset:1 date:controller.dateToShow];
   controller.dateToShow = nextDay;
   
-  NSDate *today = [NSDate date];
-  NSString *todayString = [dateManipulator getStringOfDateWithoutTime:today];
+  NSDate *todayDate = [NSDate date];
+  NSString *todayString = [dateManipulator getStringOfDateWithoutTime:todayDate];
   NSString *thisDateToShow = [dateManipulator getStringOfDateWithoutTime:controller.dateToShow];
   UIColor *dateColor = [dateManipulator createDateColor:todayString dateToShowString:thisDateToShow];
   self.date.textColor = dateColor;

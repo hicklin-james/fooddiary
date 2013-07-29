@@ -20,7 +20,6 @@
   NSMutableArray *dinnerFoods;
   NSMutableArray *snacksFoods;
   NSDate *dateToShow;
-  NSDate *initalDate;
   CGFloat totalCalsNeeded;
   CGFloat calorieCountTodayFloat;
   
@@ -35,7 +34,6 @@
 @property (nonatomic, retain) NSMutableArray *dinnerFoods;
 @property (nonatomic, retain) NSMutableArray *snacksFoods;
 @property (nonatomic, strong) NSDate *dateToShow;
-@property (nonatomic, strong) NSDate *initialDate;
 
 +(MealController*)sharedInstance;
 -(NSMutableArray*)fetchOrderedMealsForDate:(NSDate*)todayStart end:(NSDate*)todayEnd;
