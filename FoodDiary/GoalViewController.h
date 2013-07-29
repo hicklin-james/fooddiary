@@ -15,5 +15,6 @@
 - (IBAction)setNewGoal:(id)sender;
 - (IBAction)recordWeightToday:(id)sender;
 - (IBAction)cancelGoal:(id)sender;
+- (IBAction)calibrateProfile:(id)sender;
 
 @end

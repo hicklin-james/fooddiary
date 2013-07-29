@@ -135,16 +135,19 @@ BOOL resultsFlag = NO;
   
   if ([temporaryFoods count] == 0) {
     //foodsInMealButton.titleLabel.text = @"No items added to meal";
+     [foodsInMealButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [foodsInMealButton setTitle:@"No items added to meal" forState:UIControlStateNormal];
     [foodsInMealButton setTitle:@"No items added to meal" forState:UIControlStateHighlighted];
   }
   else if ([temporaryFoods count] == 1){
     foodsInMealButton.titleLabel.numberOfLines = 0;
+    [foodsInMealButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [foodsInMealButton setTitle:[NSString stringWithFormat:@"%d food in meal, tap here to see food", [temporaryFoods count]] forState:UIControlStateNormal];
     [foodsInMealButton setTitle:[NSString stringWithFormat:@"%d food in meal, tap here to see food", [temporaryFoods count]] forState:UIControlStateHighlighted];
   }
   else {
     foodsInMealButton.titleLabel.numberOfLines = 0;
+    [foodsInMealButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [foodsInMealButton setTitle:[NSString stringWithFormat:@"%d foods in meal, tap here to see foods", [temporaryFoods count]] forState:UIControlStateNormal];
     [foodsInMealButton setTitle:[NSString stringWithFormat:@"%d foods in meal, tap here to see foods", [temporaryFoods count]] forState:UIControlStateHighlighted];
   }

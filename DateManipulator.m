@@ -29,7 +29,7 @@ NSDateFormatter *dateFormatter;
 -(NSString*) getStringOfDateWithoutTime:(NSDate*)date {
   
   //NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-  dateFormatter.dateFormat = @"EEEE, MM/dd/yy";
+  dateFormatter.dateFormat = @"EEEE, MM/dd/yyyy";
   
   NSString *dateString = [dateFormatter stringFromDate: date];
   
@@ -41,13 +41,6 @@ NSDateFormatter *dateFormatter;
   
   //NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
   dateFormatter.dateFormat = @"MM/dd/yy";
-  //NSDateComponents *components = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:[NSDate date]];
-  
-  //NSString *dayString = [NSString stringWithFormat:@"%d/",[components day]];
-  //NSString *monthString = [NSString stringWithFormat:@"%d/",[components month]];
-  //NSString *yearString = [NSString stringWithFormat:@"%d",[components year]];
-  
-  //NSString *stringToReturn = [dayString stringByAppendingFormat:[monthString stringByAppendingFormat:dayString,nil],nil];
   
   NSString *dateString = [dateFormatter stringFromDate: date];
   
@@ -92,10 +85,10 @@ NSDateFormatter *dateFormatter;
 
 -(NSString*) getStringOfDate:(NSDate*)date {
   
-  NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-  formatter.dateFormat = @"MM/dd/yy/HH-mm";
+  //NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+  dateFormatter.dateFormat = @"MM/dd/yy/HH-mm";
   
-  return [formatter stringFromDate:date];
+  return [dateFormatter stringFromDate:date];
   
 }
 

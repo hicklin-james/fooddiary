@@ -11,6 +11,7 @@
 #import "CurrentGoalCell.h"
 #import "DateManipulator.h"
 #import "MealController.h"
+#import "CalorieCalculator.h"
 
 @interface GoalViewController ()
 
@@ -52,14 +53,24 @@ CurrentGoalCell *currentGoalCell;
   
   if ([profile boolForKey:@"goalSet"]) {
     
-    DateManipulator *dateManipulator = [[DateManipulator alloc] initWithDateFormatter];
+    // DateManipulator *dateManipulator = [[DateManipulator alloc] initWithDateFormatter];
     NSDate *finishDate = (NSDate*)[profile objectForKey:@"goalFinishDate"];
-    NSString *finishDateString = [dateManipulator getStringOfDateWithoutTime:finishDate];
-    NSString *todayString = [dateManipulator getStringOfDateWithoutTime:[NSDate date]];
+    //NSDate *todayDate = [NSDate date];
+    //NSString *finishDateString = [dateManipulator getStringOfDateWithoutTime:finishDate];
+    //NSString *todayString = [dateManipulator getStringOfDateWithoutTime:[NSDate date]];
     
-    if ([todayString isEqual:finishDateString]) {
-      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:@"Today is your finishing date for your goal. Weigh yourself to see if you reached your goal!" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
-      [alert show];
+    if ([finishDate timeIntervalSinceNow] < 0.0) {
+      
+      [self performSegueWithIdentifier:@"goalCompleteSegue" sender:self];
+      //   NSString *goalWeightString;
+      //  if ([profile boolForKey:@"unitType"]) {
+      //    goalWeightString = [NSString stringWithFormat:@"%.00f kg", [profile floatForKey:@"goalWeightKg"]];
+      //  }
+      // else {
+      //   goalWeightString = [NSString stringWithFormat:@"%.00f lbs", [profile floatForKey:@"goalWeightLbs"]];
+      // }
+      //  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:[NSString stringWithFormat:@"Your goal date has passed. Weigh in to see if you reached your goal of %@!" , goalWeightString] delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+      //   [alert show];
       [profile setBool:NO forKey:@"goalSet"];
     }
   }
@@ -195,6 +206,42 @@ CurrentGoalCell *currentGoalCell;
   
   UIAlertView *giveUpOnGoalAlert = [[UIAlertView alloc] initWithTitle:@"GIVE UP ON GOAL" message:@"Are you sure you want to give up on this goal?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
   [giveUpOnGoalAlert show];
+  
+}
+
+- (IBAction)calibrateProfile:(id)sender {
+  NSUserDefaults *profile = [NSUserDefaults standardUserDefaults];
+  
+  CGFloat metricWeight = [profile floatForKey:@"kg"];
+  CGFloat metricHeight = [profile floatForKey:@"cm"];
+  NSInteger age = [profile integerForKey:@"age"];
+  // MALE == 0, FEMALE == 1
+  NSInteger gender = [profile integerForKey:@"gender"];
+  
+  CalorieCalculator *calorieCalculator = [[CalorieCalculator alloc] init];
+  
+  CGFloat bmr = [calorieCalculator calculateBMR:metricWeight height:metricHeight age:age gender:gender];
+  
+  NSInteger activityLevel = [profile integerForKey:@"activityLevel"];
+  
+  // Harris Benedict Equation
+  CGFloat calsToMaintainWeight = [calorieCalculator harrisBenedict:bmr activityLevel:activityLevel];
+  
+  // caloriesLabel.text = [NSString stringWithFormat:@"%.00f calories", calsToMaintainWeight];
+  
+  // Save important info
+  // After setup, no goal has been set, so assume goal is to maintain weight.
+  [profile setFloat:calsToMaintainWeight forKey:@"calsToConsumeToReachGoal"];
+  [profile setFloat:calsToMaintainWeight forKey:@"calsToMaintainWeight"];
+  MealController *controller = [MealController sharedInstance];
+  controller.totalCalsNeeded = calsToMaintainWeight;
+  
+  [profile synchronize];
+  
+  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Calibration Complete" message:[NSString stringWithFormat:@"Your profile has been calibrated! Your new daily calorie requirement to maintain your current weight is %.00f calories", calsToMaintainWeight] delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+  
+  [alert show];
+  
   
 }
 

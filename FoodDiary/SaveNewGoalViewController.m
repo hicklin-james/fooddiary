@@ -78,10 +78,12 @@ NSUserDefaults *profile;
   if (totalCalsToConsume < 1200 && gender == 1){
     totalCalsToConsume = (CGFloat)1200;
    timeToLose = ((CGFloat)3500 * (currentWeight - goalWeightLbs))/(calsToMaintainWeight-1200)/7;
+    [self showWarningAlert];
    }
   if (totalCalsToConsume < 1800 && gender == 0) {
     totalCalsToConsume = (CGFloat)1800;
     timeToLose = ((CGFloat)3500 * (currentWeight - goalWeightLbs))/(calsToMaintainWeight-1800)/7;
+    [self showWarningAlert];
   }
    goalDateLabel.text = [NSString stringWithFormat:@"%d weeks", timeToLose];
   if (unitType == NO){
@@ -110,6 +112,11 @@ NSUserDefaults *profile;
   
 }
 
+-(void)showWarningAlert {
+  
+  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning!" message:@"The goal you set resulted in a daily calorie goal of fewer than the minimum recommended number of calories per day (1800 for men and 1200 for women). Food Buddy adjusted the time frame accordingly." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+  [alert show];
+}
 
 - (void)didReceiveMemoryWarning
 {

@@ -316,7 +316,7 @@ DateManipulator *dateManipulator;
   [ironAmountLabel setText:ironInfoString];
 
   
-  cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"golden-parchment-paper-texture.png"]];
+  //cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"golden-parchment-paper-texture.png"]];
   cell.backgroundView.layer.cornerRadius = 5;
   cell.backgroundView.layer.masksToBounds = YES;
   

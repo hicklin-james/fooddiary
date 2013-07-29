@@ -17,5 +17,6 @@
 
 @property (strong, nonatomic) CustomFood *customFood;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+- (IBAction)saveCustomFood:(id)sender;
 
 @end

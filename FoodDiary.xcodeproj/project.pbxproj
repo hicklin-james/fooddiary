@@ -13,6 +13,9 @@
 		CB2532BF17A32C5200634F32 /* arrow-transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = CB2532BE17A32C5200634F32 /* arrow-transparent.png */; };
 		CB2532C217A32EF200634F32 /* arrow-black-transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = CB2532C017A32EF200634F32 /* arrow-black-transparent.png */; };
 		CB2532C317A32EF200634F32 /* arrow-blue-transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = CB2532C117A32EF200634F32 /* arrow-blue-transparent.png */; };
+		CB29329317A6D5950057DA56 /* redButton.png in Resources */ = {isa = PBXBuildFile; fileRef = CB29329217A6D5950057DA56 /* redButton.png */; };
+		CB29329517A6E6690057DA56 /* grayButton.png in Resources */ = {isa = PBXBuildFile; fileRef = CB29329417A6E6690057DA56 /* grayButton.png */; };
+		CB29329817A70DE30057DA56 /* GoalCompleteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29329717A70DE30057DA56 /* GoalCompleteViewController.m */; };
 		CB29FD98178C92C20024F898 /* FirstNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FD97178C92C20024F898 /* FirstNameViewController.m */; };
 		CB29FD9B178C9CC50024F898 /* FirstNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FD9A178C9CC50024F898 /* FirstNameCell.m */; };
 		CB29FDA0178CA4EF0024F898 /* LastNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29FD9F178CA4EF0024F898 /* LastNameCell.m */; };
@@ -140,6 +143,10 @@
 		CB2532BE17A32C5200634F32 /* arrow-transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-transparent.png"; sourceTree = "<group>"; };
 		CB2532C017A32EF200634F32 /* arrow-black-transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-black-transparent.png"; sourceTree = "<group>"; };
 		CB2532C117A32EF200634F32 /* arrow-blue-transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-blue-transparent.png"; sourceTree = "<group>"; };
+		CB29329217A6D5950057DA56 /* redButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redButton.png; sourceTree = "<group>"; };
+		CB29329417A6E6690057DA56 /* grayButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayButton.png; sourceTree = "<group>"; };
+		CB29329617A70DE30057DA56 /* GoalCompleteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalCompleteViewController.h; sourceTree = "<group>"; };
+		CB29329717A70DE30057DA56 /* GoalCompleteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalCompleteViewController.m; sourceTree = "<group>"; };
 		CB29FD96178C92C20024F898 /* FirstNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstNameViewController.h; sourceTree = "<group>"; };
 		CB29FD97178C92C20024F898 /* FirstNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstNameViewController.m; sourceTree = "<group>"; };
 		CB29FD99178C9CC40024F898 /* FirstNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstNameCell.h; sourceTree = "<group>"; };
@@ -937,6 +944,8 @@
 				CB8D6DD617949DEF0093358E /* GoalViewController.m */,
 				CB4E19181798486C00722C51 /* GraphsViewController.h */,
 				CB4E19191798486C00722C51 /* GraphsViewController.m */,
+				CB29329617A70DE30057DA56 /* GoalCompleteViewController.h */,
+				CB29329717A70DE30057DA56 /* GoalCompleteViewController.m */,
 			);
 			name = Goal;
 			sourceTree = "<group>";
@@ -1072,6 +1081,8 @@
 		CBDD31D3176909AE00E3F641 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CB29329417A6E6690057DA56 /* grayButton.png */,
+				CB29329217A6D5950057DA56 /* redButton.png */,
 				CB2532C017A32EF200634F32 /* arrow-black-transparent.png */,
 				CB2532C117A32EF200634F32 /* arrow-blue-transparent.png */,
 				CB2532BE17A32C5200634F32 /* arrow-transparent.png */,
@@ -1183,6 +1194,8 @@
 				CB2532BF17A32C5200634F32 /* arrow-transparent.png in Resources */,
 				CB2532C217A32EF200634F32 /* arrow-black-transparent.png in Resources */,
 				CB2532C317A32EF200634F32 /* arrow-blue-transparent.png in Resources */,
+				CB29329317A6D5950057DA56 /* redButton.png in Resources */,
+				CB29329517A6E6690057DA56 /* grayButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1278,6 +1291,7 @@
 				CB3538B217A3050100BABF1C /* CalorieCalculator.m in Sources */,
 				CB6EC5FE17A58FD100262EDE /* ManageFoodsViewController.m in Sources */,
 				CB8B6ED017A6B5190099F640 /* UpdateCustomFoodViewController.m in Sources */,
+				CB29329817A70DE30057DA56 /* GoalCompleteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
