@@ -23,23 +23,23 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+  self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+  if (self) {
+    // Custom initialization
+  }
+  return self;
 }
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
+  [super viewDidLoad];
+  // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -54,14 +54,17 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)aTableView {
   // Return the number of sections.
-  return 1;
+  return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
   
   // Return the number of rows in the section.
-  return 5;
+  if (section == 0)
+    return 5;
+  else
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -71,7 +74,7 @@
   if (cell == nil) {
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier];
   }
-  if (indexPath.row == 0) {
+  if (indexPath.row == 0 && indexPath.section == 0) {
     cell.textLabel.font = [UIFont fontWithName:@"Verdana-Bold" size:12];
     cell.textLabel.text = @"Choose your meal";
     cell.textLabel.textColor = [UIColor whiteColor];
@@ -80,35 +83,47 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
   }
-  if (indexPath.row == 1) {
-    cell.textLabel.text = @"Breakfast";
+  if (indexPath.section == 0) {
+    if (indexPath.row == 1) {
+      cell.textLabel.text = @"Breakfast";
+    }
+    if (indexPath.row == 2) {
+      cell.textLabel.text = @"Lunch";
+    }
+    if (indexPath.row == 3) {
+      cell.textLabel.text = @"Dinner";
+    }
+    if (indexPath.row == 4) {
+      cell.textLabel.text = @"Snacks";
+    }
   }
-  if (indexPath.row == 2) {
-    cell.textLabel.text = @"Lunch";
+  else if (indexPath.section == 1) {
+    if (indexPath.row == 0) {
+      cell.textLabel.text = @"Add an exercise";
+    }
   }
-  if (indexPath.row == 3) {
-    cell.textLabel.text = @"Dinner";
+  else {
+    if (indexPath.row == 0) {
+      cell.textLabel.text = @"Add Water";
+    }
   }
-  if (indexPath.row == 4) {
-    cell.textLabel.text = @"Snacks";
-  }
-  
+  cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
   return cell;
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   
-  if (indexPath.row >= 1) {
+  if (indexPath.row >= 1 && indexPath.section == 0) {
     UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
     self.selectedMeal = selectedCell.textLabel.text;
     [self performSegueWithIdentifier:@"selectFoodSegue" sender:self];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
   }
+  [tableView deselectRowAtIndexPath:indexPath animated:YES];
   
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-  if (indexPath.row == 0)
+  if (indexPath.row == 0 && indexPath.section == 0)
     return 30;
   else
     return 46;

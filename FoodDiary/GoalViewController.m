@@ -43,34 +43,15 @@ CurrentGoalCell *currentGoalCell;
   
   [self.tableView reloadData];
   
-  
 }
 
 -(void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
-  
   NSUserDefaults *profile = [NSUserDefaults standardUserDefaults];
-  
   if ([profile boolForKey:@"goalSet"]) {
-    
-    // DateManipulator *dateManipulator = [[DateManipulator alloc] initWithDateFormatter];
-    NSDate *finishDate = (NSDate*)[profile objectForKey:@"goalFinishDate"];
-    //NSDate *todayDate = [NSDate date];
-    //NSString *finishDateString = [dateManipulator getStringOfDateWithoutTime:finishDate];
-    //NSString *todayString = [dateManipulator getStringOfDateWithoutTime:[NSDate date]];
-    
+    NSDate *finishDate = (NSDate*)[profile objectForKey:@"goalFinishDate"];  
     if ([finishDate timeIntervalSinceNow] < 0.0) {
-      
       [self performSegueWithIdentifier:@"goalCompleteSegue" sender:self];
-      //   NSString *goalWeightString;
-      //  if ([profile boolForKey:@"unitType"]) {
-      //    goalWeightString = [NSString stringWithFormat:@"%.00f kg", [profile floatForKey:@"goalWeightKg"]];
-      //  }
-      // else {
-      //   goalWeightString = [NSString stringWithFormat:@"%.00f lbs", [profile floatForKey:@"goalWeightLbs"]];
-      // }
-      //  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:[NSString stringWithFormat:@"Your goal date has passed. Weigh in to see if you reached your goal of %@!" , goalWeightString] delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
-      //   [alert show];
       [profile setBool:NO forKey:@"goalSet"];
     }
   }
@@ -93,16 +74,7 @@ CurrentGoalCell *currentGoalCell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  
-  //NSUserDefaults *profile = [NSUserDefaults standardUserDefaults];
-  //if (![profile boolForKey:@"goalSet"])
   return 3;
-  
-  //  if (section == 0)
-  //   return 3;
-  // else
-  //   return 1;
-  
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -164,6 +136,7 @@ CurrentGoalCell *currentGoalCell;
   
   if (indexPath.row == 2) {
     [self performSegueWithIdentifier:@"graphViewSegue" sender:self];
+    NSLog(@"Hello after the segue");
   }
   
 }

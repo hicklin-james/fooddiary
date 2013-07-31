@@ -27,6 +27,7 @@
 - (IBAction)changeToPreviousDay:(id)sender;
 - (IBAction)changeToNextDay:(id)sender;
 - (IBAction)createNewGoal:(id)sender;
+- (IBAction)addFood:(id)sender;
 
 
 

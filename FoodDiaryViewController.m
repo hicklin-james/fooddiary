@@ -102,7 +102,7 @@ DateManipulator *dateManipulator;
   self.todaysCals.text = [NSString stringWithFormat:@"%.00f", controller.calorieCountTodayFloat];
   if (controller.totalCalsNeeded-controller.calorieCountTodayFloat <= 0) {
     self.remainingCals.textColor = [UIColor redColor];
-    self.remainingCals.text = @"0";
+    self.remainingCals.text = [NSString stringWithFormat:@"%.00f", controller.totalCalsNeeded-controller.calorieCountTodayFloat];
   }
   else {
     self.remainingCals.textColor = [UIColor greenColor];
@@ -391,6 +391,20 @@ NSInteger selectedMealToSave;
   //[self refreshFoodData];
   [self.tableView reloadSections:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0,4)] withRowAnimation:UITableViewRowAnimationLeft];
   //[self.tableView reloadData];
+}
+
+- (IBAction)toggleEditing:(id)sender {
+  
+  [self.tableView setEditing:!self.tableView.editing animated:YES];
+  if (self.tableView.editing) {
+    self.editButton.title = @"Done";
+    self.editButton.style = UIBarButtonItemStyleDone;
+  }
+  else {
+    self.editButton.title = @"Edit";
+    self.editButton.style = UIBarButtonItemStylePlain;
+  }
+  
 }
 
 @end

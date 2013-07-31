@@ -48,10 +48,10 @@ DateManipulator *dateManipulator;
   self.homeTabBar.selectedItem = self.summaryItem;
   CGRect viewFrame=self.homeTabBar.frame;
   //change these parameters according to you.
-  //viewFrame.origin.y -=50;
-  //viewFrame.origin.x -=20;
+  //viewFrame.origin.y =0;
+  //viewFrame.origin.x =0;
   viewFrame.size.height=35;
-  //viewFrame.size.width=300;
+  //viewFrame.size.width=320;
   self.homeTabBar.frame=viewFrame;
   
   #define RADIANS(degrees) ((degrees * M_PI) / 180.0)
@@ -136,7 +136,7 @@ DateManipulator *dateManipulator;
      // summaryCell.calsRemainingLabel.text = [NSString stringWithFormat:@"%.00f", dataController.totalCalsNeeded-dataController.calorieCountTodayFloat];
       if (dataController.totalCalsNeeded-dataController.calorieCountTodayFloat <= 0) {
         summaryCell.calsRemainingLabel.textColor = [UIColor redColor];
-        summaryCell.calsRemainingLabel.text = @"0";
+        summaryCell.calsRemainingLabel.text = [NSString stringWithFormat:@"%.00f", dataController.totalCalsNeeded-dataController.calorieCountTodayFloat];
       }
       else {
         summaryCell.calsRemainingLabel.textColor = [UIColor greenColor];
@@ -376,5 +376,22 @@ DateManipulator *dateManipulator;
   
   [self performSegueWithIdentifier:@"newGoalSegue" sender:self];
   
+}
+
+- (IBAction)addFood:(id)sender {
+  
+  [self performSegueWithIdentifier:@"addFoodSegue" sender:self];
+  [NSTimer scheduledTimerWithTimeInterval:0.3
+                                   target:self
+                                 selector:@selector(changeTab:)
+                                 userInfo:nil
+                                  repeats:NO];
+  //tbc.selectedIndex = 1;
+  
+}
+
+-(void)changeTab:(id)sender {
+  UITabBarController *tbc = self.tabBarController;
+  tbc.selectedIndex = 1;
 }
 @end

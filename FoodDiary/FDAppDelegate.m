@@ -95,7 +95,7 @@
   MealController *controller = [MealController sharedInstance];
   // Get current date
   NSString *currentDateString = [dateManipulator getStringOfDateWithoutTime:[NSDate date]];
-  NSString *todayString = [dateManipulator getStringOfDateWithoutTime:today];
+  NSString *todayString = [dateManipulator getStringOfDateWithoutTime:[NSDate date]];
   
   if (![currentDateString isEqual:todayString]) {
     controller.dateToShow = [NSDate date];

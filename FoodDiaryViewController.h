@@ -32,9 +32,11 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UIButton *rightArrowButton;
 @property (strong, nonatomic) IBOutlet UILabel *addFoodsLabel;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *editButton;
 
 - (IBAction)changeToPreviousDay:(id)sender;
 - (IBAction)changeToNextDay:(id)sender;
+- (IBAction)toggleEditing:(id)sender;
 - (void)saveMeal:(id)sender indexPath:(NSIndexPath*)indexPath;
 
 @end

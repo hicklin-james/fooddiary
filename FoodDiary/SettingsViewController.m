@@ -70,7 +70,7 @@
   else {
     //cell = [tableView dequeueReusableCellWithIdentifier:@"calibrateProfileCell"];
     cell.textLabel.numberOfLines = 0;
-    cell.textLabel.text = @"Calibrate profile";
+    cell.textLabel.text = @"Calibrate Profile";
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
   }
   

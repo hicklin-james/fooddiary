@@ -8,6 +8,9 @@
 
 #import "EnglishWeightViewController.h"
 #import "EnglishWeightCell.h"
+#import "StoredWeight.h"
+#import "MealController.h"
+#import "DateManipulator.h"
 
 @interface EnglishWeightViewController ()
 
@@ -54,6 +57,38 @@ EnglishWeightCell *weightCell;
   
   [profile setFloat:weightInLbs forKey:@"lbs"];
   [profile setFloat:weightInKg forKey:@"kg"];
+  
+  MealController *controller = [MealController sharedInstance];
+  NSCalendar *calendar = [NSCalendar currentCalendar];
+  NSDate *date = [controller dateToShow];
+  
+  DateManipulator *dateManipulator = [[DateManipulator alloc] initWithDateFormatter];
+  NSDate *start = [dateManipulator getDateForDateAndTime:calendar date:date hour:0 minutes:0 seconds:0];
+  NSDate *end = [dateManipulator getDateForDateAndTime:calendar date:date hour:23 minutes:59 seconds:59];
+  
+  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(date >= %@) AND (date <= %@)", start, end];
+  
+  NSFetchRequest *request = [[NSFetchRequest alloc] init];
+  [request setEntity:[NSEntityDescription entityForName:@"StoredWeight" inManagedObjectContext:[controller managedObjectContext]]];
+  [request setPredicate:predicate];
+  
+  NSError *error = nil;
+  NSArray *results = [[controller managedObjectContext] executeFetchRequest:request error:&error];
+  StoredWeight *weight;
+  if ([results count] == 0) {
+    weight = (StoredWeight*)[NSEntityDescription insertNewObjectForEntityForName:@"StoredWeight" inManagedObjectContext:[controller managedObjectContext]];
+    [weight setDate:[NSDate date]];
+  }
+  else {
+    weight = [results objectAtIndex:0];
+  }
+  [weight setLbs:[NSNumber numberWithFloat:weightInLbs]];
+  [weight setKg:[NSNumber numberWithFloat:weightInKg]];
+  
+  if (![[controller managedObjectContext] save:&error]) {
+    [controller showDetailedErrorInfo:error];
+  }
+
   
   [profile synchronize];
   
