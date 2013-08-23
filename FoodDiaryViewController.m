@@ -38,7 +38,7 @@ DateManipulator *dateManipulator;
 {
   [super viewDidLoad];
   // Get shared instance of data controller
-    [self.topBarView.layer setCornerRadius:10];
+  [self.topBarView.layer setCornerRadius:10];
   controller = [MealController sharedInstance];
   
   dateManipulator = [[DateManipulator alloc] initWithDateFormatter];
@@ -47,29 +47,26 @@ DateManipulator *dateManipulator;
   CGAffineTransform rotateTransform = CGAffineTransformRotate(CGAffineTransformIdentity,
                                                               RADIANS(180.0));
   self.rightArrowButton.transform = rotateTransform;
+  self.tableView.sectionFooterHeight = 0.0;
+  self.tableView.sectionHeaderHeight = 0.0;
   
 }
 
 - (void) viewWillAppear:(BOOL)animated {
-  
   [super viewWillAppear:animated];
+  [self setupDateColor];
+  [controller refreshFoodData];
+  [self updateCalorieCount];
+  [self.tableView reloadData];
   
- // [controller checkDateToday];
-  
+}
+
+-(void)setupDateColor {
   NSString *todayString = [dateManipulator getStringOfDateWithoutTime:[NSDate date]];
   NSString *thisDateToShow = [dateManipulator getStringOfDateWithoutTime:controller.dateToShow];
   UIColor *dateColor = [dateManipulator createDateColor:todayString dateToShowString:thisDateToShow];
   self.date.textColor = dateColor;
   self.date.text = thisDateToShow;
-  
-  [controller refreshFoodData];
-  [self updateCalorieCount];
-  
-  self.tableView.sectionFooterHeight = 0.0;
-  self.tableView.sectionHeaderHeight = 0.0;
- // [self.view sendSubviewToBack:self.addFoodsLabel];
-  [self.tableView reloadData];
-  
 }
 
 // Called before segue into another view
@@ -122,21 +119,20 @@ DateManipulator *dateManipulator;
 //--------------------Table View Delegate Methods------------------//
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)aTableView {
-  // Return the number of sections.
-  //return [self checkNumberOfSections];
+  // 4 sections - 1 for breakfast, lunch, dinner, and snacks
   return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-  
+  // if any of the meals have foods in them, hide the label telling users to add a good to their day
   if ([[controller breakfastFoods] count] > 0 || [[controller lunchFoods] count] > 0 || [[controller dinnerFoods] count] > 0 || [[controller snacksFoods] count] > 0) {
     self.addFoodsLabel.hidden = YES;
   }
   else {
     self.addFoodsLabel.hidden = NO;
   }
-  
+  // if the meal for that section has no foods in it, return 0, so that the section appears hidden
   if (section == 0) {
     if ([[controller breakfastFoods] count] > 0)
       return [[controller breakfastFoods] count]+1;
@@ -179,14 +175,7 @@ DateManipulator *dateManipulator;
   if (indexPath.row == 0) {
     cell = [tableView dequeueReusableCellWithIdentifier:@"headerCell"];
     UILabel *headerLabel = (UILabel *)[cell.contentView viewWithTag:6];
-    //cell.textLabel.font = [UIFont fontWithName:@"Verdana-Bold" size:12];
     headerLabel.text = [[[controller mealsToday] objectAtIndex:indexPath.section] name];
-    
-    UIButton *headerButton = (UIButton*)[cell.contentView viewWithTag:8];
-    [headerButton addTarget:self action:@selector(saveMeal: indexPath:) forControlEvents:UIControlEventTouchUpInside];
-    //cell.textLabel.textColor = [UIColor whiteColor];
-    //UIColor * color = [UIColor colorWithRed:54/255.0f green:183/255.0f blue:191/255.0f alpha:1.0f];
-    //cell.backgroundColor = color;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
   }
@@ -240,6 +229,8 @@ DateManipulator *dateManipulator;
     return 47;
 }
 
+// The folowing 4 delegate methods ensure that there is no awkward space between hidden sections
+// in the table
 -(CGFloat)tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section
 {
   if(section == 0)
@@ -270,13 +261,9 @@ DateManipulator *dateManipulator;
 }
 
 
--(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-  
-  if (indexPath.row == 0)
-    return NO;
-  else
-    return YES;
-  
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  return !(indexPath.row == 0);
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -335,21 +322,9 @@ NSInteger selectedMealToSave;
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
   
-//  if (buttonIndex == 1) {
-//    [self performSegueWithIdentifier:@"saveMealSegue" sender:self];
-//  }
-  
-}
-
-- (void)saveMeal:(id)sender indexPath:(NSIndexPath*)indexPath {
-  
-  UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Save Meal" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Save", nil];
-  
-  [actionSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
-  [actionSheet showInView:self.tabBarController.view];
-  
-  //NSIndexPath *index = [self.tableView indexPathForCell:sender];
- // NSLog ([NSString stringWithFormat:@"%d",indexPath.section]);
+  //  if (buttonIndex == 1) {
+  //    [self performSegueWithIdentifier:@"saveMealSegue" sender:self];
+  //  }
   
 }
 
@@ -393,8 +368,8 @@ NSInteger selectedMealToSave;
   //[self.tableView reloadData];
 }
 
-- (IBAction)toggleEditing:(id)sender {
-  
+- (IBAction)toggleEditing:(id)sender
+{  
   [self.tableView setEditing:!self.tableView.editing animated:YES];
   if (self.tableView.editing) {
     self.editButton.title = @"Done";

@@ -37,6 +37,5 @@
 - (IBAction)changeToPreviousDay:(id)sender;
 - (IBAction)changeToNextDay:(id)sender;
 - (IBAction)toggleEditing:(id)sender;
-- (void)saveMeal:(id)sender indexPath:(NSIndexPath*)indexPath;
 
 @end

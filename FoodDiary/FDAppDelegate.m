@@ -33,17 +33,15 @@
   if (!context) {
     NSLog(@"Couldn't get context to access core data");
   }
-
-  [FSClient sharedClient].oauthConsumerKey = @"b066c53bc69a42bba07b5d530f685611";
-  [FSClient sharedClient].oauthConsumerSecret = @"c82eddab535842068c9ed771cb4c7e84";
+  
+  [self prepareFatSecret];
   
   controller.managedObjectContext = context;
   controller.dateToShow = [NSDate date];
   today = [NSDate date];
   
   NSUserDefaults *profile = [NSUserDefaults standardUserDefaults];
-  CGFloat calsNeeded = [profile floatForKey:@"calsToConsumeToReachGoal"];
-  controller.totalCalsNeeded = calsNeeded;
+  controller.totalCalsNeeded = [profile floatForKey:@"calsToConsumeToReachGoal"];
   [controller refreshFoodData];
   self.window.backgroundColor = [UIColor whiteColor];
   
@@ -51,11 +49,6 @@
   UITabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"mainTabBarController"];
   self.window.rootViewController = tabBarController;
   [self.window makeKeyAndVisible];
-  
-//  HomeViewController *hvc = [[tabBarController viewControllers] objectAtIndex:0];
-//  FoodDiaryViewController *fdvc = [[tabBarController viewControllers] objectAtIndex:1];
-//  hvc.today = [NSDate date];
-//  fdvc.today = [NSDate date];
   
   // If no profile has been created, segue to the profile creation view from here, so that the segue has happened before
   // the view appears
@@ -68,6 +61,11 @@
   }
   
     return YES;
+}
+
+-(void)prepareFatSecret {
+  [FSClient sharedClient].oauthConsumerKey = @"b066c53bc69a42bba07b5d530f685611";
+  [FSClient sharedClient].oauthConsumerSecret = @"c82eddab535842068c9ed771cb4c7e84";
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -106,7 +104,6 @@
     UINavigationController *fdnavc = [[tabBarController viewControllers] objectAtIndex:1];
     FoodDiaryViewController *fdvc = (FoodDiaryViewController*)[fdnavc topViewController];
     
-    //NSString *todayString = [dateManipulator getStringOfDateWithoutTime:[NSDate date]];
     NSString *thisDateToShow = [dateManipulator getStringOfDateWithoutTime:controller.dateToShow];
     UIColor *dateColor = [dateManipulator createDateColor:todayString dateToShowString:thisDateToShow];
     hvc.dateLabel.textColor = dateColor;
