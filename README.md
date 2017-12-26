@@ -9,10 +9,6 @@ Feel free to contact me regarding application details.
 
 See images of current version below.
 
-![Alt text](/FoodDiary/screens/Screen Shot 2013-07-26 at 4.22.00 PM.png "Screenshot 1")
-
-
-![Alt text](/FoodDiary/screens/Screen Shot 2013-07-26 at 4.25.56 PM.png "Screenshot 2")
-
-
-![Alt text](/FoodDiary/screens/Screen Shot 2013-07-26 at 4.32.05 PM.png "Screenshot 3")
+![Alt text](https://github.com/hicklin-james/fooddiary/blob/master/FoodDiary/screens/Screen%20Shot%202013-07-26%20at%204.22.00%20PM.png "Screenshot 1")
+![Alt text](https://github.com/hicklin-james/fooddiary/blob/master/FoodDiary/screens/Screen%20Shot%202013-07-26%20at%204.25.56%20PM.png "Screenshot 2")
+![Alt text](https://github.com/hicklin-james/fooddiary/blob/master/FoodDiary/screens/Screen%20Shot%202013-07-26%20at%204.32.05%20PM.png "Screenshot 3")
